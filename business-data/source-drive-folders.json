@@ -1,0 +1,83 @@
+{
+  "project": "Orplyn",
+  "saved_at": "2026-07-16",
+  "asset_root": "assets/raw/google-drive",
+  "folders": [
+    {
+      "category": "discharge",
+      "url": "https://drive.google.com/drive/folders/1E5Nh_TErDVH4F9mQP9Xt5OYhYDuVRO2Y"
+    },
+    {
+      "category": "dtf",
+      "url": "https://drive.google.com/drive/folders/1LewfhQmT-7OhhrhzPePDOoksowH2T9vq"
+    },
+    {
+      "category": "foil",
+      "url": "https://drive.google.com/drive/folders/164NAx_rSJz3CfanAOndP-MRfxRbcsGNV"
+    },
+    {
+      "category": "fullprint",
+      "url": "https://drive.google.com/drive/folders/1NJatQq7ipmC1PjoUTGCh9D0gJTmKCQ94"
+    },
+    {
+      "category": "gid",
+      "url": "https://drive.google.com/drive/folders/1TpELEOHzxKxSNzL3EPZDjNB-8ycH-ys1"
+    },
+    {
+      "category": "gliter",
+      "url": "https://drive.google.com/drive/folders/11BHKnOEawbRaTTHySWNa8LdaTUyD4LYN"
+    },
+    {
+      "category": "gradasi",
+      "url": "https://drive.google.com/drive/folders/1yqlTjdnoXH0qqeCDFXy67AyVtQYqiENW"
+    },
+    {
+      "category": "hd",
+      "url": "https://drive.google.com/drive/folders/1LNQ2kAmZkAq8o2RU1ABJ13QeLLD2vlDW"
+    },
+    {
+      "category": "jersey",
+      "url": "https://drive.google.com/drive/folders/1ynm7NRBsV1HOyHbJPh0s9BZvXgRQXMoZ"
+    },
+    {
+      "category": "kaos-polos",
+      "url": "https://drive.google.com/drive/folders/1ah1bALKD5uFURsS8FrUmLhXNmWBDui2r"
+    },
+    {
+      "category": "pasta",
+      "url": "https://drive.google.com/drive/folders/1AgY9F5tJ-r0X1BSY6Ecj36OujHkcVsaZ"
+    },
+    {
+      "category": "plastisol",
+      "url": "https://drive.google.com/drive/folders/1oLymaXyojI6KRnztwysuAOuv88WnJBZF"
+    },
+    {
+      "category": "plastik",
+      "url": "https://drive.google.com/drive/folders/1oLymaXyojI6KRnztwysuAOuv88WnJBZF"
+    },
+    {
+      "category": "puff",
+      "url": "https://drive.google.com/drive/folders/1dWMa-A96I6wX_E9J5mQEMlud0cAdwqRv"
+    },
+    {
+      "category": "sablon-bahan-denim",
+      "url": "https://drive.google.com/drive/folders/1xr-k5SP7ib2wFJrSeDGyK2QdDy01q6hv"
+    },
+    {
+      "category": "thermo",
+      "url": "https://drive.google.com/drive/folders/1AKTIT3RWDNhTsJ9A0p94BqLt4_ZTMjh_"
+    },
+    {
+      "category": "totebag",
+      "url": "https://drive.google.com/drive/folders/16m6fSf5Ql0QRMct_-lTomyxbCS5-H600"
+    },
+    {
+      "category": "bludru",
+      "url": "https://drive.google.com/drive/folders/1aezWHfpMDmdFcdfmgT6JmlCcnGW4RmEc"
+    },
+    {
+      "category": "bordir",
+      "url": "https://drive.google.com/drive/folders/1kudwlAZNuYjx1XC97tiSPTgjr6vbkU2R"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+# Local authentication and downloader state must never be shared.
+tools/instagram-archive/secrets/*
+tools/instagram-archive/state/*
+
+# Temporary or partial downloads.
+tools/download-temp/
+__pycache__/
+*.pyc
+*.part
+.DS_Store
+
+# Raw media stays local/Drive-backed for now; optimized website assets remain tracked.
+assets/raw/
+
+# JavaScript dependencies and generated app output.
+node_modules/
+website/node_modules/
+website/.next/
+website/dist/
+website/build/
+website/.wrangler/
+website/.vinext/
+
+# Local environment files.
+.env
+.env.*
+!.env.example

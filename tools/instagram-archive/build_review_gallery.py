@@ -1,0 +1,338 @@
+#!/usr/bin/env python3
+import argparse
+import csv
+import html
+from pathlib import Path
+from urllib.parse import quote
+
+
+VIDEO_EXTENSIONS = {".mp4", ".mov", ".webm"}
+IMAGE_EXTENSIONS = {".jpg", ".jpeg", ".png", ".webp"}
+PRIORITY_ORDER = {"P0": 0, "P1": 1, "P2": 2, "": 3}
+
+
+def escaped(value):
+    return html.escape(str(value or ""), quote=True)
+
+
+def relative_asset_url(asset_prefix, relative_path):
+    parts = [quote(part) for part in Path(relative_path).parts]
+    return asset_prefix.rstrip("/") + "/" + "/".join(parts)
+
+
+def load_rows(path):
+    with path.open(newline="", encoding="utf-8-sig") as handle:
+        rows = list(csv.DictReader(handle))
+    rows.sort(
+        key=lambda row: (
+            PRIORITY_ORDER.get(row.get("priority", ""), 9),
+            row.get("post_date", ""),
+        ),
+        reverse=False,
+    )
+    return rows
+
+
+def media_markup(row, asset_prefix):
+    files = [item.strip() for item in row.get("local_files", "").split("|") if item.strip()]
+    videos = [item for item in files if Path(item).suffix.lower() in VIDEO_EXTENSIONS]
+    images = [item for item in files if Path(item).suffix.lower() in IMAGE_EXTENSIONS]
+    poster = next((item for item in images if Path(item).stem.endswith("p")), None)
+    poster = poster or (images[0] if images else None)
+
+    if videos:
+        source = relative_asset_url(asset_prefix, videos[0])
+        poster_attr = (
+            f' poster="{escaped(relative_asset_url(asset_prefix, poster))}"'
+            if poster
+            else ""
+        )
+        return (
+            f'<video controls preload="metadata"{poster_attr}>'
+            f'<source src="{escaped(source)}" type="video/mp4">'
+            "</video>"
+        )
+    if images:
+        source = relative_asset_url(asset_prefix, images[0])
+        alt = f"Preview post Instagram {row.get('shortcode', '')}"
+        return f'<img src="{escaped(source)}" alt="{escaped(alt)}" loading="lazy">'
+    return '<div class="missing-media">Preview tidak tersedia</div>'
+
+
+def card_markup(row, asset_prefix):
+    status = row.get("review_status") or "unreviewed"
+    priority = row.get("priority") or "-"
+    local_count = row.get("media_count") or "0"
+    source_url = row.get("source_url") or "https://www.instagram.com/orplyn.id/"
+    caption = row.get("caption") or "Caption kosong"
+    notes = row.get("notes") or "Belum ada catatan kurasi."
+    channel_use = row.get("channel_use") or "Belum ditentukan"
+    funnel_role = (row.get("funnel_role") or "Belum ditentukan").replace("_", " ")
+    rights = row.get("rights_checked") or "pending"
+
+    return f"""
+      <article class="asset-card" data-status="{escaped(status)}" data-priority="{escaped(priority)}">
+        <div class="media-frame">
+          {media_markup(row, asset_prefix)}
+          <span class="media-count">{escaped(local_count)} file</span>
+        </div>
+        <div class="card-body">
+          <div class="card-heading">
+            <div>
+              <span class="status status-{escaped(status)}">{escaped(status)}</span>
+              <span class="priority priority-{escaped(priority.lower())}">{escaped(priority)}</span>
+            </div>
+            <a class="source-link" href="{escaped(source_url)}" target="_blank" rel="noreferrer">Buka post</a>
+          </div>
+          <h2>{escaped(funnel_role)}</h2>
+          <dl>
+            <div><dt>Channel</dt><dd>{escaped(channel_use)}</dd></div>
+            <div><dt>Catatan</dt><dd>{escaped(notes)}</dd></div>
+            <div><dt>Izin</dt><dd>{escaped(rights)}</dd></div>
+          </dl>
+          <details>
+            <summary>Caption asli</summary>
+            <p>{escaped(caption)}</p>
+          </details>
+          <footer>
+            <span>{escaped(row.get('post_date', '')[:10])}</span>
+            <code>{escaped(row.get('shortcode', ''))}</code>
+          </footer>
+        </div>
+      </article>
+    """
+
+
+def page_markup(rows, asset_prefix):
+    status_counts = {
+        status: sum(row.get("review_status") == status for row in rows)
+        for status in ("selected", "reserve", "hold")
+    }
+    cards = "\n".join(card_markup(row, asset_prefix) for row in rows)
+    return f"""<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orplyn - Kurasi Aset Instagram</title>
+  <style>
+    :root {{
+      color-scheme: light;
+      --ink: #1c211e;
+      --muted: #626a64;
+      --line: #d6dad5;
+      --surface: #ffffff;
+      --page: #f3f5f1;
+      --green: #2f7248;
+      --yellow: #a66f0e;
+      --red: #a43e35;
+      --blue: #2d637c;
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      background: var(--page);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+    }}
+    a {{ color: inherit; }}
+    .topbar {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px max(24px, calc((100vw - 1440px) / 2));
+      background: #171b18;
+      color: white;
+      border-bottom: 4px solid #56a66f;
+    }}
+    .topbar h1 {{ margin: 0; font-size: 24px; line-height: 1.2; }}
+    .topbar p {{ margin: 6px 0 0; color: #c8d0ca; font-size: 14px; }}
+    .profile-link {{ color: white; font-weight: 700; font-size: 14px; }}
+    main {{ max-width: 1440px; margin: 0 auto; padding: 26px 24px 48px; }}
+    .summary {{
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      border: 1px solid var(--line);
+      background: var(--surface);
+      border-radius: 6px;
+      overflow: hidden;
+    }}
+    .metric {{ padding: 16px 18px; border-right: 1px solid var(--line); }}
+    .metric:last-child {{ border-right: 0; }}
+    .metric strong {{ display: block; font-size: 24px; line-height: 1; }}
+    .metric span {{ display: block; margin-top: 6px; color: var(--muted); font-size: 13px; }}
+    .controls {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 22px 0 16px;
+    }}
+    .tabs {{ display: inline-flex; border: 1px solid #aeb5af; border-radius: 6px; overflow: hidden; }}
+    .tabs button {{
+      min-height: 38px;
+      padding: 0 14px;
+      border: 0;
+      border-right: 1px solid #aeb5af;
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }}
+    .tabs button:last-child {{ border-right: 0; }}
+    .tabs button[aria-selected="true"] {{ background: #1f2822; color: #fff; }}
+    label {{ display: flex; align-items: center; gap: 8px; color: var(--muted); font-size: 13px; font-weight: 700; }}
+    select {{ min-height: 38px; border: 1px solid #aeb5af; border-radius: 6px; background: #fff; padding: 0 34px 0 10px; color: var(--ink); }}
+    .asset-grid {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }}
+    .asset-card {{
+      min-width: 0;
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 7px;
+    }}
+    .asset-card[hidden] {{ display: none; }}
+    .media-frame {{ position: relative; aspect-ratio: 9 / 12; background: #0d0f0e; overflow: hidden; }}
+    .media-frame img, .media-frame video {{ width: 100%; height: 100%; display: block; object-fit: cover; }}
+    .media-count {{
+      position: absolute;
+      right: 8px;
+      bottom: 8px;
+      padding: 4px 7px;
+      background: rgba(16, 18, 17, 0.84);
+      color: #fff;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+    }}
+    .missing-media {{ display: grid; place-items: center; height: 100%; color: #fff; font-size: 13px; }}
+    .card-body {{ padding: 14px; }}
+    .card-heading {{ display: flex; align-items: center; justify-content: space-between; gap: 10px; }}
+    .status, .priority {{ font-size: 11px; line-height: 1; font-weight: 800; text-transform: uppercase; }}
+    .priority {{ margin-left: 8px; }}
+    .status-selected {{ color: var(--green); }}
+    .status-reserve {{ color: var(--yellow); }}
+    .status-hold {{ color: var(--red); }}
+    .priority-p0 {{ color: var(--red); }}
+    .priority-p1 {{ color: var(--blue); }}
+    .priority-p2 {{ color: var(--muted); }}
+    .source-link {{ color: var(--blue); font-size: 12px; font-weight: 700; }}
+    h2 {{ margin: 12px 0 13px; font-size: 16px; line-height: 1.3; text-transform: capitalize; }}
+    dl {{ margin: 0; }}
+    dl > div {{ padding: 9px 0; border-top: 1px solid #e7e9e6; }}
+    dt {{ margin: 0 0 3px; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }}
+    dd {{ margin: 0; font-size: 13px; line-height: 1.45; overflow-wrap: anywhere; }}
+    details {{ border-top: 1px solid #e7e9e6; padding: 10px 0 0; }}
+    summary {{ color: var(--blue); cursor: pointer; font-size: 12px; font-weight: 700; }}
+    details p {{ margin: 8px 0 0; color: var(--muted); white-space: pre-line; font-size: 12px; line-height: 1.5; }}
+    footer {{ display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; color: var(--muted); font-size: 11px; }}
+    code {{ font-size: 11px; overflow-wrap: anywhere; }}
+    .empty {{ display: none; padding: 48px 0; color: var(--muted); text-align: center; }}
+    @media (max-width: 1080px) {{ .asset-grid {{ grid-template-columns: repeat(3, minmax(0, 1fr)); }} }}
+    @media (max-width: 780px) {{
+      .summary {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+      .metric:nth-child(2) {{ border-right: 0; }}
+      .metric:nth-child(-n+2) {{ border-bottom: 1px solid var(--line); }}
+      .asset-grid {{ grid-template-columns: repeat(2, minmax(0, 1fr)); }}
+      .controls {{ align-items: stretch; flex-direction: column; }}
+      .tabs {{ display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }}
+      .tabs button {{ padding: 0 8px; }}
+      label {{ justify-content: space-between; }}
+    }}
+    @media (max-width: 520px) {{
+      .topbar {{ align-items: flex-start; padding: 18px; }}
+      .profile-link {{ font-size: 12px; }}
+      main {{ padding: 18px 14px 36px; }}
+      .asset-grid {{ grid-template-columns: 1fr; }}
+    }}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div>
+      <h1>Kurasi Aset Instagram</h1>
+      <p>@orplyn.id · batch publik terbaru · 16 Juli 2026</p>
+    </div>
+    <a class="profile-link" href="https://www.instagram.com/orplyn.id/" target="_blank" rel="noreferrer">Profil Instagram</a>
+  </header>
+  <main>
+    <section class="summary" aria-label="Ringkasan kurasi">
+      <div class="metric"><strong>{len(rows)}</strong><span>Post diarsipkan</span></div>
+      <div class="metric"><strong>{status_counts['selected']}</strong><span>Terpilih</span></div>
+      <div class="metric"><strong>{status_counts['reserve']}</strong><span>Cadangan</span></div>
+      <div class="metric"><strong>{status_counts['hold']}</strong><span>Perlu konfirmasi</span></div>
+    </section>
+    <div class="controls">
+      <div class="tabs" role="tablist" aria-label="Status kurasi">
+        <button type="button" data-status-filter="all" aria-selected="true">Semua</button>
+        <button type="button" data-status-filter="selected" aria-selected="false">Terpilih</button>
+        <button type="button" data-status-filter="reserve" aria-selected="false">Cadangan</button>
+        <button type="button" data-status-filter="hold" aria-selected="false">Tahan</button>
+      </div>
+      <label>Prioritas
+        <select id="priority-filter">
+          <option value="all">Semua</option>
+          <option value="P0">P0</option>
+          <option value="P1">P1</option>
+          <option value="P2">P2</option>
+        </select>
+      </label>
+    </div>
+    <section class="asset-grid" id="asset-grid" aria-live="polite">
+      {cards}
+    </section>
+    <p class="empty" id="empty-state">Tidak ada aset pada filter ini.</p>
+  </main>
+  <script>
+    const cards = [...document.querySelectorAll('.asset-card')];
+    const statusButtons = [...document.querySelectorAll('[data-status-filter]')];
+    const prioritySelect = document.querySelector('#priority-filter');
+    const emptyState = document.querySelector('#empty-state');
+    let statusFilter = 'all';
+
+    function applyFilters() {{
+      let visible = 0;
+      cards.forEach((card) => {{
+        const statusMatch = statusFilter === 'all' || card.dataset.status === statusFilter;
+        const priorityMatch = prioritySelect.value === 'all' || card.dataset.priority === prioritySelect.value;
+        card.hidden = !(statusMatch && priorityMatch);
+        if (!card.hidden) visible += 1;
+      }});
+      emptyState.style.display = visible ? 'none' : 'block';
+    }}
+
+    statusButtons.forEach((button) => {{
+      button.addEventListener('click', () => {{
+        statusFilter = button.dataset.statusFilter;
+        statusButtons.forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+        applyFilters();
+      }});
+    }});
+    prioritySelect.addEventListener('change', applyFilters);
+  </script>
+</body>
+</html>
+"""
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Build a visual Instagram asset review gallery")
+    parser.add_argument("--review-csv", required=True, type=Path)
+    parser.add_argument("--output", required=True, type=Path)
+    parser.add_argument("--asset-prefix", required=True)
+    args = parser.parse_args()
+
+    rows = load_rows(args.review_csv)
+    args.output.parent.mkdir(parents=True, exist_ok=True)
+    temporary = args.output.with_suffix(args.output.suffix + ".tmp")
+    temporary.write_text(page_markup(rows, args.asset_prefix), encoding="utf-8")
+    temporary.replace(args.output)
+    print(f"Review gallery updated: {args.output}")
+
+
+if __name__ == "__main__":
+    main()
