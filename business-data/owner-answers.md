@@ -2,7 +2,7 @@
 
 Last updated: 18 Juli 2026
 
-Dokumen ini hanya untuk jawaban owner/admin yang sudah diterima. Jangan mengisi asumsi marketing sebagai fakta. Sumber terbaru berasal dari formulir Word yang diisi pada 17 Juli 2026 oleh Aulia/Admin:
+Dokumen ini hanya untuk jawaban owner/admin yang sudah diterima. Jangan mengisi asumsi marketing sebagai fakta. Sumber awal berasal dari formulir Word yang diisi pada 17 Juli 2026 oleh Aulia/Admin. Status domain diperbarui dari jawaban langsung user pada 18 Juli 2026:
 
 - `deliverables/owner-research/Orplyn - Form Owner Tahap 1.docx`
 - `deliverables/owner-research/Orplyn - Form Owner Tahap 2.docx`
@@ -16,12 +16,12 @@ Catatan penting: checkbox "jawaban sudah diperiksa/disetujui owner" belum ditand
 - PIC WhatsApp: Aulia.
 - Jam aktif admin: Senin-Sabtu, 08:00-19:00.
 - Jam operasional workshop/toko: 08:00-17:00.
-- Domain final: belum punya.
+- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia.
 - Email bisnis: `orplyn.id@gmail.com`.
 - Area layanan: seluruh Indonesia.
 - Customer boleh datang dan pickup; janji disarankan tetapi tidak wajib.
 - Google Business Profile: ada, PIC/email `orplyn.id@gmail.com`, akses tersedia.
-- Domain/registrar, Search Console, Analytics/Tag Manager, Google Ads, dan CRM: belum ada.
+- Registrar domain: DomaiNesia. Cloudflare onboarding, Search Console, Analytics/Tag Manager, Google Ads, dan CRM belum selesai.
 - Instagram/Meta dan TikTok/marketplace: ada, PIC/email `orplyn.id@gmail.com`, akses tersedia.
 
 ## Product Rules

@@ -22,6 +22,7 @@ Per 18 Juli 2026:
 - Web funnel sudah dibangun di `website/`.
 - Container lokal bernama `orplyn-web` berjalan di OrbStack pada `http://localhost:3010`.
 - Staging publik terisolasi berjalan di VPS bersama pada `https://orplyn.103-59-94-121.nip.io`, sengaja `noindex`, dengan deployment portabel di `ops/production/`.
+- Domain final `orplyn.id` dibeli melalui DomaiNesia pada 18 Juli 2026; onboarding Cloudflare, DNS, HTTPS origin, dan production build belum selesai.
 - Homepage memakai dua jalur order dan tiga offer utama; dedicated DTF/satuan, enam landing lain, portfolio, kontak, privasi, schema, sitemap, robots, dan `llms.txt` sudah tersedia.
 - Form WhatsApp memakai nomor nyata, Lead ID, MOQ-aware quantity, use case, deadline, lokasi, UTM, landing page, GCLID/GBRAID/WBRAID, dan event teknis terpisah dari qualified lead.
 - Local/staging sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
@@ -29,7 +30,7 @@ Per 18 Juli 2026:
 - Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
 - Checklist Word Google Business Profile, SEO, dan tracking tersedia di `deliverables/launch-readiness/`.
 - Lint tidak punya error, production build berhasil, enam smoke test lulus, container sehat, dan core routes HTTP 200.
-- Website belum siap menerima traffic acquisition karena lead log, domain final, tracking IDs, approval harga/proof, manual QA, dan end-to-end WhatsApp test belum selesai.
+- Website belum siap menerima traffic acquisition karena aktivasi Cloudflare/domain, lead log, tracking IDs, approval harga/proof, manual QA, dan end-to-end WhatsApp test belum selesai.
 
 ## Strategy In One Line
 
@@ -70,7 +71,7 @@ Urutan kerja yang direkomendasikan:
 
 1. Uji satu CTA ke WhatsApp nyata dan catat satu Lead ID sampai qualified, quoted, won/lost, revenue, serta gross profit.
 2. Buat lead log operasional berdasarkan `marketing/06-whatsapp-sales/wa-sales-flow.md`.
-3. Dapatkan domain final, pasang HTTPS, Search Console, Google tag, dan Google Ads conversion; baru izinkan indexing.
+3. Aktifkan Cloudflare untuk `orplyn.id`, pasang HTTPS origin, canonical final, Search Console, Google tag, dan Google Ads conversion; baru izinkan indexing.
 4. Minta owner approve price anchor, rush order, capacity, QC/rework, proof, dan testimoni.
 5. Jalankan checklist `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`, termasuk audit Google Business Profile dan konsistensi NAP.
 6. Buat paket/range harga untuk DTF satuan, event/community, dan kaos polos; publish hanya setelah approved.

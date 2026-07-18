@@ -21,10 +21,10 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | Business identity and location | Verified | Keep NAP consistent |
 | Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Conversion-focused rebuild deployed to noindex staging | Domain, manual QA, and end-to-end lead test |
+| Web funnel source | Conversion-focused rebuild deployed to noindex staging | Cloudflare activation, manual QA, and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
-| Shared VPS staging | Healthy at `orplyn.103-59-94-121.nip.io`; isolated and resource-limited | Final domain and production build |
-| Technical SEO foundation | Prepared; staging intentionally noindex | Final domain, public indexing, and Search Console |
+| Shared VPS staging | Healthy at `orplyn.103-59-94-121.nip.io`; isolated and resource-limited | `orplyn.id` production build |
+| Technical SEO foundation | Prepared; staging intentionally noindex | Cloudflare DNS/HTTPS, public indexing, and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
@@ -79,7 +79,7 @@ Google Ads jangan dioptimalkan hanya untuk clicks atau page views.
 - Model penjualan: Orplyn melayani pesanan satuan dan grosir. Kaos polos dan DTF bisa 1 pcs; manual/plastisol, special ink, fullprint, totebag/merch, bordir/seragam, dan jersey punya MOQ berbeda.
 - WhatsApp sales: `082317579311` / `6282317579311`, PIC Aulia.
 - Admin aktif Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
-- Domain: belum punya. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
+- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia. Cloudflare belum aktif. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
 - Area layanan: seluruh Indonesia; customer boleh datang/pickup, janji disarankan tetapi tidak wajib.
 - Pembayaran: transfer bank dan marketplace; DP 50%, pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Data minimum untuk hitung harga: jenis produk, jumlah pesanan, ukuran, bahan, jenis sablon, dan desain.
@@ -105,7 +105,7 @@ Data di atas boleh dipakai untuk strategi dan konfigurasi internal. Harga mulai,
 
 ### P0, wajib sebelum public launch
 
-- Domain final yang dimiliki owner.
+- Cloudflare onboarding, nameserver DomaiNesia, DNS apex/www, HTTPS origin, dan canonical final untuk `orplyn.id`.
 - WhatsApp nyata sudah dipasang; uji end-to-end sampai lead log masih wajib.
 - Target maksimal first response dan SOP admin disepakati.
 - Format quotation final dipilih: chat WhatsApp, PDF, spreadsheet, atau kombinasi.
@@ -617,6 +617,7 @@ Before using a raw asset:
 - Added a portable `linux/amd64` release workflow with checksum, non-root/read-only runtime, health-gated deployment, automatic config rollback, Caddy validation/reload, and public route verification.
 - Deployed noindex staging at `https://orplyn.103-59-94-121.nip.io`; verified HTTPS, canonical, robots, page/header noindex, real WhatsApp build value, resource limits, and unaffected Kohnu/9Router health.
 - Documented future hosting migration around a stable final domain and unchanged URL paths. A hosting-only move changes DNS after the new origin is tested; a domain change requires one-to-one permanent redirects and a separate SEO migration process.
+- Owner purchased `orplyn.id` through DomaiNesia. Public WHOIS showed the new registration, current `NSX1/NSX2.DOMAINESIA.COM` nameservers, and unsigned DNSSEC before Cloudflare onboarding.
 
 ## 16. Immediate Next Actions
 
@@ -624,7 +625,7 @@ The next agent should not start by redesigning the website. Start here:
 
 1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
 2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
-3. Get or choose the public domain, build a final-domain image, set HTTPS/canonical/Search Console/Google tag, verify it, and only then remove both application and Caddy staging `noindex` controls.
+3. Finish Cloudflare onboarding for `orplyn.id`, build the final-domain image, set HTTPS/canonical/Search Console/Google tag, verify it, and only then remove both application and Caddy staging `noindex` controls.
 4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
 5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
 6. Agree the first-response target and quotation format with Aulia.

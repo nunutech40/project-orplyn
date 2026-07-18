@@ -4,7 +4,6 @@ Status 18 Juli 2026: Form Owner Tahap 1, Form Owner Tahap 2, dan Survey Customer
 
 ## P0 - Sebelum Public Launch
 
-- Domain apa yang akan dipakai untuk website Orplyn?
 - Apakah owner menyetujui nomor WhatsApp publik `082317579311` / `6282317579311` untuk semua CTA website?
 - Target maksimal balas lead baru: kurang dari 5 menit, 5-15 menit, 16-30 menit, 31-60 menit, atau lebih?
 - Format quotation final: cukup chat WhatsApp, perlu PDF, spreadsheet, aplikasi, atau kombinasi?

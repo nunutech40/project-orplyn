@@ -154,7 +154,7 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 
 ## Critical Unknowns
 
-1. Domain final.
+1. Aktivasi nameserver Cloudflare, DNS final, HTTPS origin, dan canonical `https://orplyn.id`.
 2. Target maksimal first response dan SOP follow-up detail.
 3. Format quotation final.
 4. Tier harga grosir detail dan approval publik untuk harga mulai.

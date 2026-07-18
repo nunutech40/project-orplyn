@@ -61,7 +61,7 @@ Halaman yang tersedia:
 - Halaman kontak dan lokasi Google Maps.
 - Structured data, sitemap, robots, dan `llms.txt` untuk search/AI discovery.
 
-Konfigurasi ada di `website/.env.example`. Nomor WhatsApp sales sudah tersedia, tetapi sebelum traffic publik masuk masih perlu domain final, ID tracking Google, dan test end-to-end lead sampai WhatsApp/log.
+Konfigurasi ada di `website/.env.example`. Nomor WhatsApp sales dan domain `orplyn.id` sudah tersedia, tetapi sebelum traffic publik masuk masih perlu aktivasi Cloudflare/HTTPS, ID tracking Google, dan test end-to-end lead sampai WhatsApp/log.
 
 Staging publik berjalan di `https://orplyn.103-59-94-121.nip.io` dan sengaja `noindex`. Ini hanya alamat QA, bukan domain SEO final. Deployment dan aturan migrasi hosting ada di `ops/production/README.md` serta `ops/production/MIGRATION-SEO.md`.
 
@@ -74,7 +74,7 @@ Staging publik berjalan di `https://orplyn.103-59-94-121.nip.io` dan sengaja `no
 5. Pakai konten organik dari asset yang sudah ada.
 6. Jalankan Google Ads setelah landing page, WA CTA, dan tracking siap.
 
-Status saat ini: langkah 1-4 sudah disiapkan, batch awal konten sudah dikurasi, dan formulir owner/customer sudah terisi. Nomor WhatsApp tersedia; domain final, tracking, approval klaim publik, dan test lead end-to-end masih dibutuhkan untuk aktivasi publik.
+Status saat ini: langkah 1-4 sudah disiapkan, batch awal konten sudah dikurasi, dan formulir owner/customer sudah terisi. Nomor WhatsApp dan domain final tersedia; Cloudflare/HTTPS, tracking, approval klaim publik, dan test lead end-to-end masih dibutuhkan untuk aktivasi publik.
 
 ## Current Known Data
 
@@ -87,7 +87,7 @@ Status saat ini: langkah 1-4 sudah disiapkan, batch awal konten sudah dikurasi, 
 - Goal utama: sales
 - Goal minimal: leads masuk ke WhatsApp
 - Model penjualan: satuan dan grosir dengan MOQ/lead time berbeda per produk
-- Domain: belum punya
+- Domain: `orplyn.id` melalui DomaiNesia; aktivasi Cloudflare sedang disiapkan
 
 ## Instagram Asset Archive
 

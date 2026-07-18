@@ -46,7 +46,7 @@ Goal halaman bukan branding doang, tapi membuat calon customer cepat:
 - WhatsApp sales: `082317579311`, PIC Aulia.
 - Admin aktif: Senin-Sabtu, 08:00-19:00.
 - Workshop: 08:00-17:00.
-- Domain: belum punya.
+- Domain final: `orplyn.id`, dibeli melalui DomaiNesia; aktivasi Cloudflare dan production origin sedang disiapkan.
 - Area layanan: seluruh Indonesia.
 - DP: 50%; pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Target 3 bulan: Jabodetabek, 30-50 qualified lead/bulan, 10-20 customer baru/bulan.
