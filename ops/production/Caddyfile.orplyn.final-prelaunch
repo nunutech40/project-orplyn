@@ -1,0 +1,29 @@
+# Final-domain prelaunch route. Keep X-Robots-Tag until the public launch gate
+# passes and the image is rebuilt with NEXT_PUBLIC_ALLOW_INDEXING=true.
+www.orplyn.id {
+    header X-Robots-Tag "noindex, nofollow"
+    redir https://orplyn.id{uri} permanent
+}
+
+orplyn.id {
+    encode zstd gzip
+
+    @nonReadMethod method POST PUT PATCH DELETE CONNECT TRACE OPTIONS
+    respond @nonReadMethod 405
+
+    reverse_proxy orplyn-web:3000
+
+    header {
+        Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        X-Content-Type-Options "nosniff"
+        X-Robots-Tag "noindex, nofollow"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        -Server
+    }
+
+    log {
+        output stdout
+        format console
+    }
+}

@@ -23,7 +23,7 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
 | Web funnel source | Conversion-focused rebuild deployed to noindex staging | Cloudflare activation, manual QA, and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
-| Shared VPS staging | Healthy at `orplyn.103-59-94-121.nip.io`; isolated and resource-limited | `orplyn.id` production build |
+| Shared VPS staging | Healthy; final-domain noindex build and Caddy routes prepared | Activate Cloudflare nameservers for `orplyn.id` |
 | Technical SEO foundation | Prepared; staging intentionally noindex | Cloudflare DNS/HTTPS, public indexing, and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
@@ -79,7 +79,7 @@ Google Ads jangan dioptimalkan hanya untuk clicks atau page views.
 - Model penjualan: Orplyn melayani pesanan satuan dan grosir. Kaos polos dan DTF bisa 1 pcs; manual/plastisol, special ink, fullprint, totebag/merch, bordir/seragam, dan jersey punya MOQ berbeda.
 - WhatsApp sales: `082317579311` / `6282317579311`, PIC Aulia.
 - Admin aktif Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
-- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia. Cloudflare belum aktif. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
+- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia. Cloudflare zone memakai `cleo.ns.cloudflare.com` dan `stella.ns.cloudflare.com`; delegasi masih pending. DNS yang disiapkan: proxied `A @ -> 103.59.94.121` dan `CNAME www -> orplyn.id`. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
 - Area layanan: seluruh Indonesia; customer boleh datang/pickup, janji disarankan tetapi tidak wajib.
 - Pembayaran: transfer bank dan marketplace; DP 50%, pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Data minimum untuk hitung harga: jenis produk, jumlah pesanan, ukuran, bahan, jenis sablon, dan desain.
@@ -222,7 +222,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
 - Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
 - VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
-- Deployed image: `orplyn-web:20260718T080616Z-2abecbe` for `linux/amd64`.
+- Deployed image: `orplyn-web:20260718T084033Z-5d0b85b` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
 - Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
 - Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
 - Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
@@ -284,6 +284,7 @@ Verified on 18 Juli 2026 after the conversion/offer rebuild:
 - Post-deploy checks: Orplyn healthy at about 58 MiB idle memory, no host port, about 905 MiB host memory available, and 23 GiB disk available.
 - Kohnu API/web/Postgres remained healthy; `kohnu.com`, `app.kohnu.com`, and the 9Router dashboard still returned HTTP 200 after Caddy reload.
 - Public scanners attempted fake Next server-action POSTs immediately after staging launch. The app has no server-side form endpoint, so Caddy now rejects all non-GET/HEAD methods with HTTP 405 before they reach Node.
+- Final-domain prelaunch image passed canonical, WhatsApp, robots, and noindex checks. Caddy routes for `orplyn.id` plus permanent `www` redirect validated successfully before nameserver activation; Kohnu remained HTTP 200.
 - Automated visual browser backend was unavailable. Desktop and mobile still need final manual visual QA before public launch.
 
 ## 8. Environment Configuration
@@ -618,6 +619,7 @@ Before using a raw asset:
 - Deployed noindex staging at `https://orplyn.103-59-94-121.nip.io`; verified HTTPS, canonical, robots, page/header noindex, real WhatsApp build value, resource limits, and unaffected Kohnu/9Router health.
 - Documented future hosting migration around a stable final domain and unchanged URL paths. A hosting-only move changes DNS after the new origin is tested; a domain change requires one-to-one permanent redirects and a separate SEO migration process.
 - Owner purchased `orplyn.id` through DomaiNesia. Public WHOIS showed the new registration, current `NSX1/NSX2.DOMAINESIA.COM` nameservers, and unsigned DNSSEC before Cloudflare onboarding.
+- Cloudflare imported the intended proxied apex/www records and assigned `cleo.ns.cloudflare.com` plus `stella.ns.cloudflare.com`. Prepared and deployed a final-domain noindex image and Caddy apex/www routes before delegating nameservers.
 
 ## 16. Immediate Next Actions
 
@@ -625,7 +627,7 @@ The next agent should not start by redesigning the website. Start here:
 
 1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
 2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
-3. Finish Cloudflare onboarding for `orplyn.id`, build the final-domain image, set HTTPS/canonical/Search Console/Google tag, verify it, and only then remove both application and Caddy staging `noindex` controls.
+3. Replace DomaiNesia nameservers with the assigned Cloudflare pair, wait for activation, verify edge/origin HTTPS and `www` redirect, then set Full (strict). Keep both application and Caddy `noindex` controls until Search Console, tracking, QA, and lead-flow gates pass.
 4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
 5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
 6. Agree the first-response target and quotation format with Aulia.

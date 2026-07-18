@@ -63,7 +63,7 @@ Halaman yang tersedia:
 
 Konfigurasi ada di `website/.env.example`. Nomor WhatsApp sales dan domain `orplyn.id` sudah tersedia, tetapi sebelum traffic publik masuk masih perlu aktivasi Cloudflare/HTTPS, ID tracking Google, dan test end-to-end lead sampai WhatsApp/log.
 
-Staging publik berjalan di `https://orplyn.103-59-94-121.nip.io` dan sengaja `noindex`. Ini hanya alamat QA, bukan domain SEO final. Deployment dan aturan migrasi hosting ada di `ops/production/README.md` serta `ops/production/MIGRATION-SEO.md`.
+Staging publik berjalan di `https://orplyn.103-59-94-121.nip.io` dan sengaja `noindex`. Final-domain noindex build dan route `orplyn.id`/`www` sudah disiapkan di VPS; aktivasi nameserver Cloudflare masih pending. Deployment dan aturan migrasi hosting ada di `ops/production/README.md` serta `ops/production/MIGRATION-SEO.md`.
 
 ## Priority Plan
 

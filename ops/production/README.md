@@ -22,6 +22,11 @@ Current shared VPS:
 - staging hostname: `orplyn.103-59-94-121.nip.io`
 - Caddy config: `/opt/kohnu/deploy/production/Caddyfile`
 
+Final-domain preparation files:
+
+- `final-domain.env.example` builds `https://orplyn.id` with indexing disabled.
+- `Caddyfile.orplyn.final-prelaunch` serves apex plus the `www` redirect with a proxy-level `noindex` backstop.
+
 Orplyn only joins the proxy-facing edge network. It must never join `kohnu-production_internal`, `kohnu-production_outbound`, or either Postgres network.
 
 ## Build A Release
@@ -61,6 +66,15 @@ Install the staging block with validation and automatic config restore:
 
 ```bash
 ./install-caddy-route.sh
+```
+
+Install the final-domain prelaunch route:
+
+```bash
+./install-caddy-route.sh \
+  /opt/kohnu/deploy/production/Caddyfile \
+  /opt/orplyn/Caddyfile.orplyn.final-prelaunch \
+  kohnu-production-caddy-1
 ```
 
 For a different host, pass the Caddyfile, snippet, and Caddy container explicitly. Manual validation and reload use:
