@@ -222,7 +222,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
 - Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
 - VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
-- Deployed image: `orplyn-web:20260718T084033Z-5d0b85b` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
+- Deployed image: `orplyn-web:20260718T163017Z-d510d86` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
 - Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
 - Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
 - Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
@@ -270,7 +270,7 @@ Important: `llms.txt` tidak menjamin sebuah AI akan merekomendasikan Orplyn. Pub
 
 ### Quality status
 
-Verified on 18 Juli 2026 after the conversion/offer rebuild:
+Verified on 18 Juli 2026 after the conversion/offer rebuild and mobile hero simplification:
 
 - `npm run lint`: zero errors, 9 image optimization warnings only.
 - `npm run build`: passed.
@@ -285,7 +285,8 @@ Verified on 18 Juli 2026 after the conversion/offer rebuild:
 - Kohnu API/web/Postgres remained healthy; `kohnu.com`, `app.kohnu.com`, and the 9Router dashboard still returned HTTP 200 after Caddy reload.
 - Public scanners attempted fake Next server-action POSTs immediately after staging launch. The app has no server-side form endpoint, so Caddy now rejects all non-GET/HEAD methods with HTTP 405 before they reach Node.
 - Final-domain prelaunch image passed canonical, WhatsApp, robots, and noindex checks. Caddy routes for `orplyn.id` plus permanent `www` redirect validated successfully before nameserver activation; Kohnu remained HTTP 200.
-- Automated visual browser backend was unavailable. Desktop and mobile still need final manual visual QA before public launch.
+- Automated Playwright screenshots passed at `375x667`, `390x844`, and `1440x900`: hero copy and CTAs fit, the short-screen location no longer sits behind the fixed WhatsApp CTA, and the next section remains visible.
+- Public release `orplyn-web:20260718T163017Z-d510d86` passed all route, canonical, HTTPS, robots, and intentional-noindex checks. Live HTML contains the revised H1, supporting copy, and CTA; the VPS container is healthy.
 
 ## 8. Environment Configuration
 
@@ -627,6 +628,7 @@ Before using a raw asset:
 - Completed a live SEO acquisition audit across source, public HTML, all 11 sitemap URLs, redirects, crawler access, metadata, schema, performance indicators, local intent, offer/proof, WhatsApp measurement, current SERP competitors, and official Google/OpenAI/Cloudflare guidance. Technical readiness is strong, but organic acquisition remains blocked by intentional noindex, missing Search Console/tag/lead log, pending GBP/entity work, and weak approved proof/price anchors. The durable audit is `marketing/02-seo-google/seo-acquisition-audit-2026-07-18.md`.
 - Defined the review acquisition workstream in `marketing/02-seo-google/review-acquisition-plan-2026-07-18.md`: WhatsApp requests honest feedback and Google Business Profile is the primary public review destination. A live Maps snapshot also exposed P0 inconsistencies: GBP still shows phone `0811-9719-953`, `lynk.id/orplyn.id`, and Saturday hours `07.00-23.00`, while the current funnel uses phone `0823-1757-9311`, `orplyn.id`, and different admin/workshop hours. Added a policy-safe WhatsApp review template under `deliverables/launch-readiness/`, an owner-ready request for five representative orders under `deliverables/owner-research/`, and recorded that commercial photos should follow verified order/use-case priority, not likes alone.
 - Consolidated every remaining human-only dependency into `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. The queue uses one active `NEXT` item at a time, separates owner/user/admin responsibilities, defines required evidence and done conditions, and sequences GBP/reviews, proof/offers, WhatsApp/lead log, Cloudflare/Search Console/GA4, QA/indexing, weekly operations, and the later Ads pilot. Current manual next action is M-01: confirm the conflicting GBP phone, website, hours, ownership, and real-world business name.
+- Recorded external mobile feedback that the homepage first screen was too wordy and slower to explain the business than the structured service cards. Simplified the hero to the literal H1 `Jasa sablon kaos custom di Ciputat`, a two-sentence single/batch message, and the CTAs `Minta estimasi` plus `Lihat layanan`; detailed MOQ and production guidance remains below the hero. Fixed the short-screen location/WhatsApp overlap, verified three responsive viewports, and deployed the health-checked release `orplyn-web:20260718T163017Z-d510d86` to `https://orplyn.id` with indexing still disabled.
 
 ## 16. Immediate Next Actions
 
