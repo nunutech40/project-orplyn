@@ -626,10 +626,13 @@ Before using a raw asset:
 - Cloudflare Universal SSL became active. Public apex returned `HTTP/2 200`, public `www` returned `HTTP/2 301` to the apex, and the complete deployment verification passed with indexing intentionally disabled.
 - Completed a live SEO acquisition audit across source, public HTML, all 11 sitemap URLs, redirects, crawler access, metadata, schema, performance indicators, local intent, offer/proof, WhatsApp measurement, current SERP competitors, and official Google/OpenAI/Cloudflare guidance. Technical readiness is strong, but organic acquisition remains blocked by intentional noindex, missing Search Console/tag/lead log, pending GBP/entity work, and weak approved proof/price anchors. The durable audit is `marketing/02-seo-google/seo-acquisition-audit-2026-07-18.md`.
 - Defined the review acquisition workstream in `marketing/02-seo-google/review-acquisition-plan-2026-07-18.md`: WhatsApp requests honest feedback and Google Business Profile is the primary public review destination. A live Maps snapshot also exposed P0 inconsistencies: GBP still shows phone `0811-9719-953`, `lynk.id/orplyn.id`, and Saturday hours `07.00-23.00`, while the current funnel uses phone `0823-1757-9311`, `orplyn.id`, and different admin/workshop hours. Added a policy-safe WhatsApp review template under `deliverables/launch-readiness/`, an owner-ready request for five representative orders under `deliverables/owner-research/`, and recorded that commercial photos should follow verified order/use-case priority, not likes alone.
+- Consolidated every remaining human-only dependency into `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. The queue uses one active `NEXT` item at a time, separates owner/user/admin responsibilities, defines required evidence and done conditions, and sequences GBP/reviews, proof/offers, WhatsApp/lead log, Cloudflare/Search Console/GA4, QA/indexing, weekly operations, and the later Ads pilot. Current manual next action is M-01: confirm the conflicting GBP phone, website, hours, ownership, and real-world business name.
 
 ## 16. Immediate Next Actions
 
 The next agent should not start by redesigning the website. Start here:
+
+Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. Keep exactly one item marked `NEXT`; current item is M-01, confirmation of GBP phone, hours, ownership, and real-world business name.
 
 1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
 2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.

@@ -1,0 +1,476 @@
+ORPLYN - DAFTAR TUGAS MANUAL
+Terakhir diperbarui: 18 Juli 2026
+
+TUJUAN
+
+Daftar ini hanya berisi pekerjaan yang membutuhkan keputusan, akses akun, konfirmasi, izin, atau tindakan manusia. Pekerjaan teknis yang dapat dikerjakan agent setelah input tersedia tidak dimasukkan sebagai beban manual.
+
+CARA PAKAI
+
+- Kerjakan hanya item berstatus NEXT terlebih dahulu.
+- Setelah selesai, tulis tanggal dan bukti pada bagian HASIL.
+- Ubah NEXT menjadi DONE, lalu naikkan item berikutnya menjadi NEXT.
+- Jangan meminta semua data kepada owner sekaligus kecuali owner memang ingin menyelesaikannya dalam satu sesi.
+- Jangan membuka indexing atau menjalankan Google Ads sebelum launch gate selesai.
+
+STATUS
+
+- NEXT: dikerjakan sekarang.
+- TODO: belum dikerjakan dan belum terhalang.
+- WAITING: menunggu hasil item sebelumnya.
+- LATER: dikerjakan setelah website mulai menerima traffic.
+- DONE: selesai dengan bukti.
+
+============================================================
+M-01 [NEXT] KONFIRMASI DATA GOOGLE BUSINESS PROFILE
+============================================================
+
+PIC: User + owner/Aulia
+
+Yang perlu ditanyakan:
+
+1. Apakah `0811-9719-953` masih aktif dan masih boleh tampil di Google Maps?
+2. Apakah nomor publik yang benar harus diganti menjadi WhatsApp `0823-1757-9311`?
+3. Jam bisnis yang benar untuk setiap hari apa? Bedakan jam customer dapat datang, jam admin WhatsApp, dan jam produksi bila perlu.
+4. Siapa yang memegang akses Google Business Profile melalui `orplyn.id@gmail.com`?
+5. Nama apa yang benar-benar tampil pada signage, invoice, kemasan, dan branding fisik?
+
+Pesan siap kirim:
+
+Halo Kak, saya sedang merapikan Google Business Profile Orplyn. Saat ini Google Maps masih menampilkan nomor 0811-9719-953, link lynk.id/orplyn.id, dan jam Sabtu 07.00-23.00. Website baru memakai nomor 0823-1757-9311 dan orplyn.id.
+
+Mohon konfirmasi:
+1. Nomor 0811 masih aktif atau harus diganti?
+2. Nomor publik yang benar nomor mana?
+3. Jam customer boleh datang untuk setiap hari apa saja?
+4. Apakah akses Google Business Profile melalui orplyn.id@gmail.com masih bisa dibuka?
+5. Nama bisnis yang benar-benar dipakai pada papan nama/signage apa?
+
+HASIL:
+
+Tanggal selesai:
+Jawaban owner/PIC:
+Bukti/screenshot:
+
+============================================================
+M-02 [WAITING M-01] PERBAIKI PROFIL GOOGLE BUSINESS
+============================================================
+
+PIC: User atau PIC GBP
+
+Tindakan manual:
+
+- Login ke Google Business Profile.
+- Perbaiki telepon berdasarkan jawaban M-01.
+- Ganti website menjadi `https://orplyn.id`.
+- Perbaiki business hours dan special hours.
+- Pastikan alamat serta pin tetap benar.
+- Konfirmasi nama bisnis sesuai real-world name.
+- Periksa primary category dan secondary categories.
+- Tambahkan tiga layanan utama: sablon/kaos custom satuan, kaos event/community, dan kaos polos satuan/grosir.
+- Simpan screenshot sebelum dan sesudah.
+
+DONE WHEN:
+
+Profil publik menampilkan nama, telepon, website, jam, kategori, alamat, dan pin yang sudah disetujui.
+
+HASIL:
+
+Tanggal selesai:
+Bukti/screenshot:
+
+============================================================
+M-03 [WAITING M-02] AUDIT DAN AMBIL LINK REVIEW RESMI
+============================================================
+
+PIC: User atau PIC GBP
+
+Tindakan manual:
+
+- Catat jumlah review dan rating yang terlihat di dashboard.
+- Catat review lama yang masih relevan dan link review-nya.
+- Buka `Read reviews` lalu `Get more reviews`.
+- Salin link review resmi dan unduh QR code.
+- Uji link pada ponsel yang tidak login sebagai owner.
+- Simpan link di file template permintaan review.
+
+DONE WHEN:
+
+Jumlah review/rating saat ini diketahui dan link membuka form review Orplyn yang benar.
+
+HASIL:
+
+Jumlah review:
+Rating:
+Link review resmi:
+Bukti/screenshot:
+
+============================================================
+M-04 [WAITING M-03] SIAPKAN CUSTOMER UNTUK REVIEW
+============================================================
+
+PIC: Aulia/admin
+
+Tindakan manual:
+
+- Pilih 10-15 order selesai yang dapat diverifikasi.
+- Campurkan event/community, vendor/repeat, kantor/sekolah, dan satuan.
+- Jangan hanya memilih customer yang diperkirakan akan memberi lima bintang.
+- Pastikan tidak ada masalah order yang belum ditangani.
+- Isi Customer ID, tanggal order selesai, produk/use case, dan status request.
+- Setujui template pada `deliverables/launch-readiness/Orplyn - Template Permintaan Review WhatsApp.txt`.
+
+DONE WHEN:
+
+Ada daftar customer nyata dan template sudah berisi link resmi.
+
+HASIL:
+
+Jumlah customer siap dihubungi:
+PIC pengirim:
+Tanggal mulai:
+
+============================================================
+M-05 [WAITING M-04] KIRIM BATCH REVIEW PERTAMA
+============================================================
+
+PIC: Aulia/admin
+
+Tindakan manual:
+
+- Kirim bertahap melalui WhatsApp setelah order diterima.
+- Jangan meminta lima bintang atau kalimat tertentu.
+- Jangan memberi diskon, hadiah, atau cashback.
+- Kirim maksimum satu reminder setelah 5-7 hari.
+- Catat request, reminder, review masuk, link review, izin kutip, dan status balasan.
+- Balas setiap review dengan relevan tanpa membuka data pribadi.
+
+DONE WHEN:
+
+Batch pertama selesai dan response rate dapat dihitung.
+
+HASIL:
+
+Request terkirim:
+Review masuk:
+Response rate:
+Catatan tema review:
+
+============================================================
+M-06 [TODO] MINTA LIMA ORDER DAN FOTO PALING REPRESENTATIF
+============================================================
+
+PIC: Owner
+
+Gunakan pesan pada:
+`deliverables/owner-research/Orplyn - Permintaan Data Produk dan Foto Prioritas.txt`
+
+Data yang wajib didapat:
+
+- use case dan produk;
+- quantity/range;
+- bahan dan teknik;
+- customer baru/repeat;
+- ketepatan deadline;
+- alasan laris/repeat/menguntungkan;
+- link foto/video;
+- izin desain, logo, wajah, nama, dan kutipan.
+
+DONE WHEN:
+
+Lima order mempunyai konteks bisnis dan status hak publikasi yang jelas.
+
+HASIL:
+
+Tanggal diterima:
+Jumlah order lengkap:
+Folder/link aset:
+
+============================================================
+M-07 [TODO] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
+============================================================
+
+PIC: Owner
+
+Yang perlu diputuskan:
+
+- starting price/range DTF atau kaos custom satuan;
+- paket/range event/community;
+- harga satuan dan tier grosir kaos polos;
+- faktor yang mengubah harga;
+- kapasitas aman per minggu/bulan;
+- rush order, cut-off, dan surcharge bila ada;
+- aturan QC, reject, rework, dan komplain;
+- teknik in-house versus partner;
+- klaim dan proof yang boleh dipublikasikan.
+
+DONE WHEN:
+
+Tiga offer dapat dibandingkan tanpa mengarang harga, kapasitas, atau garansi.
+
+HASIL:
+
+Tanggal approval:
+Dokumen/source:
+Catatan batasan:
+
+============================================================
+M-08 [TODO] PUTUSKAN SLA SALES DAN FORMAT QUOTATION
+============================================================
+
+PIC: Owner + Aulia
+
+Yang perlu diputuskan:
+
+- target first response pada jam admin;
+- siapa backup ketika Aulia tidak tersedia;
+- kapan lead dianggap qualified;
+- berapa kali follow-up dan jaraknya;
+- quotation memakai chat WhatsApp, PDF, spreadsheet, atau kombinasi;
+- cara mencatat lost reason dan order won.
+
+DONE WHEN:
+
+Admin mempunyai aturan respons dan quotation yang konsisten.
+
+HASIL:
+
+Target first response:
+Format quotation:
+PIC backup:
+
+============================================================
+M-09 [TODO] UJI WHATSAPP DARI WEBSITE PADA PONSEL
+============================================================
+
+PIC: User + Aulia
+
+Tindakan manual:
+
+- Buka `https://orplyn.id` pada ponsel.
+- Isi brief satuan dan kirim.
+- Isi brief produksi/batch dan kirim.
+- Pastikan pesan sampai ke Aulia dengan Lead ID, produk, jumlah, deadline, lokasi, dan source.
+- Pastikan admin dapat membalas tanpa meminta semua data dari awal.
+- Simpan screenshot pengirim dan penerima.
+
+DONE WHEN:
+
+Dua test lead sampai dengan data lengkap dan dapat ditindaklanjuti.
+
+HASIL:
+
+Tanggal test:
+Lead ID satuan:
+Lead ID batch:
+Bukti/screenshot:
+
+============================================================
+M-10 [TODO] PILIH TEMPAT LEAD LOG
+============================================================
+
+PIC: User + Aulia
+
+Keputusan manual:
+
+- Pilih Google Sheets, spreadsheet lokal, Notion, atau CRM lain.
+- Tentukan siapa yang mengisi dan siapa yang memeriksa mingguan.
+- Setujui field: Lead ID, source, campaign, produk, jumlah, qualified, quote, nilai quote, won/lost, revenue, gross profit, lost reason, dan response time.
+
+Setelah platform dipilih, agent dapat membuat templatenya.
+
+DONE WHEN:
+
+Platform dan PIC sudah dipilih, lalu satu test lead bergerak sampai won/lost.
+
+HASIL:
+
+Platform:
+PIC input:
+PIC review:
+Link/file:
+
+============================================================
+M-11 [TODO] KONFIRMASI CLOUDFLARE FULL STRICT
+============================================================
+
+PIC: User
+
+Tindakan manual:
+
+- Buka Cloudflare `orplyn.id`.
+- Masuk ke SSL/TLS.
+- Pastikan encryption mode `Full (strict)`.
+- Jangan mengaktifkan setting cache agresif untuk HTML tanpa review teknis.
+- Simpan screenshot.
+
+DONE WHEN:
+
+Mode `Full (strict)` terlihat dan website tetap dapat diakses.
+
+HASIL:
+
+Tanggal:
+Bukti/screenshot:
+
+============================================================
+M-12 [TODO] BUAT DAN VERIFIKASI SEARCH CONSOLE
+============================================================
+
+PIC: User
+
+Tindakan manual:
+
+- Buat Domain Property `orplyn.id`.
+- Tambahkan TXT verification melalui Cloudflare DNS.
+- Pastikan ownership verified.
+- Jangan submit sitemap sebelum launch indexing disetujui.
+- Kirim verification token atau bukti verified kepada agent.
+
+DONE WHEN:
+
+Domain Property verified dan user utama mempunyai akses penuh.
+
+HASIL:
+
+Tanggal verified:
+Akun owner:
+Bukti/screenshot:
+
+============================================================
+M-13 [TODO] BUAT GA4/GOOGLE TAG
+============================================================
+
+PIC: User
+
+Tindakan manual:
+
+- Buat GA4 property dan web stream untuk `https://orplyn.id`.
+- Catat Measurement ID `G-...`.
+- Tentukan akun yang menjadi owner jangka panjang.
+- Berikan Measurement ID kepada agent untuk dipasang.
+- Google Ads conversion dibuat setelah lead log dan business conversion siap.
+
+DONE WHEN:
+
+Measurement ID tersedia dan ownership akun jelas.
+
+HASIL:
+
+Measurement ID:
+Akun owner:
+Bukti/screenshot:
+
+============================================================
+M-14 [WAITING M-06, M-07, M-09, M-10, M-12, M-13] MANUAL QA FINAL
+============================================================
+
+PIC: User + Aulia + agent
+
+Tindakan manual:
+
+- Periksa homepage dan money pages pada ponsel serta desktop.
+- Periksa telepon, alamat, jam, Maps, harga/offer, MOQ, lead time, dan proof.
+- Uji semua CTA WhatsApp.
+- Pastikan tidak ada klaim atau foto tanpa izin.
+- Periksa event GA4 setelah tag dipasang.
+- Catat masalah dan bukti perbaikan.
+
+DONE WHEN:
+
+Tidak ada blocker P0 pada mobile, desktop, sales flow, tracking, atau klaim.
+
+HASIL:
+
+Tanggal QA:
+Perangkat:
+Blocker tersisa:
+
+============================================================
+M-15 [WAITING M-14] SETUJUI WEBSITE UNTUK INDEXING PUBLIK
+============================================================
+
+PIC: User + owner
+
+Keputusan manual:
+
+- Konfirmasi data bisnis, offer, proof, WhatsApp, admin, tracking, dan GBP sudah siap.
+- Beri persetujuan eksplisit kepada agent untuk membuka indexing.
+- Agent akan menghapus application/proxy noindex dalam satu release dan memverifikasi deployment.
+
+DONE WHEN:
+
+User menulis persetujuan launch dan hasil deployment menunjukkan indexing aktif.
+
+HASIL:
+
+Tanggal approval:
+Approver:
+Bukti deployment:
+
+============================================================
+M-16 [WAITING M-15] SUBMIT INDEXING DAN SITEMAP
+============================================================
+
+PIC: User + agent
+
+Tindakan manual:
+
+- Submit `https://orplyn.id/sitemap.xml` ke Search Console.
+- Inspect homepage, DTF satuan, event/community, dan kaos polos.
+- Request indexing untuk empat money pages bila diperlukan.
+- Catat hasil coverage dan masalah crawl.
+
+DONE WHEN:
+
+Sitemap diterima dan empat money pages dapat diproses Google.
+
+HASIL:
+
+Tanggal submit:
+Status sitemap:
+Status empat halaman:
+
+============================================================
+M-17 [LATER] OPERASI REVIEW, PROOF, DAN SEO MINGGUAN
+============================================================
+
+PIC: User + Aulia + owner
+
+Rutinitas:
+
+- Minta review secara konsisten setelah order selesai.
+- Balas review dan catat tema/objection.
+- Tambahkan case study hanya setelah izin.
+- Periksa Search Console dan lead outcomes mingguan.
+- Bandingkan landing session, brief, qualified lead, quote, sale, revenue, dan gross profit.
+- Minta data order 90 hari dan wawancarai total 8-12 customer/lost lead secara bertahap.
+
+============================================================
+M-18 [LATER, SETELAH DATA CONVERSION SIAP] GOOGLE ADS PILOT
+============================================================
+
+PIC: User + owner + agent
+
+Keputusan manual:
+
+- Pilih satu offer saja untuk pilot pertama.
+- Setujui budget Rp100 ribu-Rp700 ribu per bulan.
+- Pastikan billing dan akses Google Ads aktif.
+- Pastikan qualified lead/converted lead dapat dicatat.
+- Jangan menilai hasil hanya dari click atau WhatsApp open.
+
+DONE WHEN:
+
+Satu campaign high-intent berjalan dengan landing page relevan dan hasil sampai sale dapat diukur.
+
+============================================================
+RINGKASAN URUTAN
+============================================================
+
+1. M-01 sampai M-05: rapikan GBP dan mulai review asli.
+2. M-06 sampai M-10: lengkapi proof, offer, sales process, dan lead log.
+3. M-11 sampai M-13: selesaikan Cloudflare, Search Console, dan Analytics.
+4. M-14 sampai M-16: QA, buka indexing, dan submit ke Google.
+5. M-17: jalankan operasi mingguan.
+6. M-18: Google Ads hanya setelah conversion siap.
