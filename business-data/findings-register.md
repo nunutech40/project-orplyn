@@ -114,6 +114,20 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: custom apparel production bukan retail video commerce; data ini tidak memprediksi conversion Orplyn.
 - Marketing implication: uji video proof proses, hasil, QC, dan case study dengan qualified WA lead sebagai outcome.
 
+### O-007 - Google Business Profile belum konsisten dengan funnel baru
+
+- Observed: snapshot Google Maps publik 18 Juli 2026 menampilkan telepon `0811-9719-953`, website `https://lynk.id/orplyn.id`, dan jam Sabtu `07.00-23.00`.
+- Contrast: website/data owner memakai WhatsApp `0823-1757-9311`, domain `https://orplyn.id`, jam admin `08.00-19.00`, dan jam workshop `08.00-17.00`.
+- Source: public Google Maps place endpoint untuk Place ID `ChIJU3Dd1W7vaS4RTctFBDXmEcA`, `business-data/owner-answers.md`, dan website production data.
+- Limit: nomor lama mungkin masih aktif dan jam GBP mungkin memiliki fungsi berbeda; owner harus mengonfirmasi sebelum data diubah.
+- Marketing implication: rapikan ownership, telepon, website, jam, kategori, dan services sebelum mengirim traffic atau review request ke GBP.
+
+### O-008 - Review publik belum dapat diarsipkan dari snapshot
+
+- Observed: snapshot publik menyediakan tombol `Beri rating dan ulas`, tetapi tidak mengembalikan teks review atau aggregate rating yang dapat diarsipkan.
+- Limit: ini tidak membuktikan jumlah review pasti nol; dashboard owner/PIC GBP tetap menjadi source of truth untuk inventory review.
+- Marketing implication: audit review dari dashboard harus dilakukan sebelum memilih review untuk website atau menjalankan outreach.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -152,9 +166,16 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Validation: sample-to-batch rate, repeat, gross profit, dan beban admin.
 - Guardrail: jangan mensubsidi satuan bila unit economics dan operational load tidak sehat.
 
+### H-007 - Commercial proof lebih kuat daripada galeri bestseller generik
+
+- Hypothesis: asset yang menunjukkan use case prioritas, quantity, proses, hasil, dan repeat context akan lebih meyakinkan daripada foto yang dipilih hanya berdasarkan likes atau estetika.
+- Evidence direction: owner sudah menempatkan event/komunitas sebagai segmen paling sering order, repeat, omzet besar, dan margin baik; exact bestseller product/technique belum tersedia.
+- Validation: data order 3-6 bulan, izin publikasi, landing-to-qualified-lead rate, dan pertanyaan customer terhadap proof yang ditampilkan.
+- Guardrail: jangan melabeli foto sebagai bestseller, order besar, atau repeat tanpa data dan izin.
+
 ## Critical Unknowns
 
-1. Aktivasi nameserver Cloudflare, DNS final, HTTPS origin, dan canonical `https://orplyn.id`.
+1. Konfirmasi dan perbaiki perbedaan telepon, website, serta jam Google Business Profile terhadap website/data owner.
 2. Target maksimal first response dan SOP follow-up detail.
 3. Format quotation final.
 4. Tier harga grosir detail dan approval publik untuk harga mulai.
@@ -166,6 +187,8 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 10. Search Console, Analytics/Tag Manager, Google Ads conversion, dan CRM/lead log.
 11. Keyword volume, CPC, Maps grid ranking, dan external share of voice.
 12. Response dan economics dari outbound per vertical B2B.
+13. Jumlah/rating review GBP saat ini, link request resmi, dan review/testimoni yang sudah mendapat izin kutip.
+14. Lima order paling representatif dalam 3-6 bulan terakhir beserta produk, teknik, quantity, repeat status, aset, dan izin publikasi.
 
 ## Strategic Implications Of Satuan + Grosir
 
@@ -202,6 +225,14 @@ Owner answers menjelaskan kemampuan dan economics internal. Market research menj
 ### D-005 - Growth work dikelola sebagai experiment backlog
 
 Market recommendation diterjemahkan menjadi hypothesis, gate, primary metric, guardrail, dan stop rule di `marketing/07-market-research/growth-experiment-backlog.md`. Ide tidak otomatis menjadi komitmen campaign.
+
+### D-006 - WhatsApp meminta review, Google menjadi tujuan utama
+
+WhatsApp dipakai untuk meminta feedback setelah order selesai. Customer diarahkan ke link review resmi Google Business Profile dan bebas menulis pengalaman apa adanya. Tidak ada request lima bintang, script wajib, review gating, atau insentif. Testimoni WhatsApp hanya dipakai sebagai proof website/content setelah disensor dan diberi izin terpisah.
+
+### D-007 - Pilihan foto mengikuti commercial priority
+
+Hero, landing, dan case study memprioritaskan order/use case yang paling relevan dengan target sales, memiliki proof kuat, serta mendapat izin. Likes dan visual appeal tetap dipertimbangkan, tetapi tidak menggantikan data order, repeat, margin, intent, dan hak publikasi. Event/community batch menjadi prioritas awal; exact bestseller tetap harus dikonfirmasi dari data owner/order.
 
 ## Documentation Protocol
 

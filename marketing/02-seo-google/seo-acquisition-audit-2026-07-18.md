@@ -35,7 +35,7 @@ Jangan membuka indexing hanya karena domain sudah hidup. Selesaikan P0, lalu buk
 | Crawl dan indexing | Blocked by design | Meta robots, robots.txt, dan proxy header masih menutup index |
 | Primary keyword-intent map | Strong | Homepage, DTF satuan, event/community, dan kaos polos sudah terpisah |
 | Secondary service depth | Partial | Empat service page masih memakai template dan proof yang dangkal |
-| Local SEO/entity | Partial | NAP website cocok dengan Maps, tetapi naming, category, ownership, services, dan review belum diaudit final |
+| Local SEO/entity | Blocked | Alamat/pin cocok, tetapi telepon, website, dan jam GBP berbeda dari funnel; naming, ownership, services, dan review belum diaudit final |
 | Offer clarity | Partial | MOQ dan lead time jelas; range harga dan paket belum disetujui owner |
 | Production proof | Weak | Foto nyata tersedia, tetapi portfolio belum menjadi case study atau trust proof |
 | WhatsApp qualification | Strong foundation | Brief menyaring lane, produk, jumlah, use case, deadline, desain, dan lokasi |
@@ -122,10 +122,12 @@ Recommendation:
 Yang sudah benar:
 
 - Maps short link mengarah ke nama `ORPLYN KAOS POLOS DAN SABLON CUSTOM` dan alamat Jl. Legoso Sel. II No.43.
-- Alamat website, nomor WhatsApp, jam, dan lokasi konsisten dengan data project.
+- Alamat dan pin GBP sesuai dengan lokasi project.
+- Website memakai nomor WhatsApp, jam admin/workshop, dan domain yang sudah diberikan owner/user.
 
 Yang belum final:
 
+- snapshot publik GBP masih menampilkan telepon `0811-9719-953`, website `https://lynk.id/orplyn.id`, dan jam Sabtu `07.00-23.00`, sedangkan funnel memakai WhatsApp `0823-1757-9311`, `https://orplyn.id`, jam admin `08.00-19.00`, dan jam workshop `08.00-17.00`;
 - code memakai `Orplyn`, `Orplyn Apparel & Print Studio`, dan descriptor `Kaos Polos & Sablon Custom`;
 - Maps memakai nama panjang all-caps;
 - belum ada bukti audit ownership, primary category, secondary category, website field, WhatsApp, services, description, photos, review, dan hours/special hours;
@@ -134,6 +136,8 @@ Yang belum final:
 Recommendation:
 
 - owner tunjuk satu PIC GBP;
+- konfirmasi apakah nomor `0811-9719-953` masih aktif dan fungsi jam `07.00-23.00` sebelum mengubah profile;
+- setelah dikonfirmasi, samakan telepon, website `https://orplyn.id`, serta business hours pada GBP dan website;
 - verifikasi nama pada signage, invoice, kemasan, dan branding nyata;
 - gunakan real-world name yang sama pada GBP, website entity schema, Instagram, dan citation;
 - pilih satu primary category yang paling menggambarkan bisnis, lalu categories tambahan secukupnya;
@@ -431,4 +435,3 @@ Competitor pages were used only as qualitative SERP observations, not as verifie
 - https://www.rumahsabloncepat.com/tentang-kami/
 - https://www.abyadscreenprinting.com/sablon-kaos-satuan/
 - https://berkaos.com/jasa-sablon-kaos/tangerang/
-
