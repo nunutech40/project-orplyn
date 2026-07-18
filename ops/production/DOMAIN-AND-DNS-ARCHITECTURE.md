@@ -13,7 +13,7 @@ Dokumen ini adalah sumber teknis utama untuk hubungan domain, Cloudflare, VPS, r
 | Cloudflare plan | Free | Authoritative DNS, reverse proxy, edge TLS, CDN, dan protection |
 | Cloudflare nameserver 1 | `cleo.ns.cloudflare.com` | Sudah disimpan di DomaiNesia |
 | Cloudflare nameserver 2 | `stella.ns.cloudflare.com` | Sudah disimpan di DomaiNesia |
-| Delegation status | Pending propagation | Cloudflare belum menandai zone Active saat snapshot dibuat |
+| Delegation status | Active in public DNS | Registry `.id` dan resolver `1.1.1.1` sudah memakai nameserver Cloudflare |
 | Apex DNS record | `A @ -> 103.59.94.121` | Proxied / orange cloud |
 | WWW DNS record | `CNAME www -> orplyn.id` | Proxied / orange cloud |
 | Origin public IP | `103.59.94.121` | Shared VPS yang menjalankan Caddy dan Orplyn |
@@ -21,18 +21,24 @@ Dokumen ini adalah sumber teknis utama untuk hubungan domain, Cloudflare, VPS, r
 | Docker project | `orplyn-production` | Terpisah dari project Kohnu |
 | App service | `orplyn-web:3000` | Hanya dapat diakses dari Docker edge network |
 | Reverse proxy | Caddy milik shared VPS | Menerima host `orplyn.id` dan meneruskan ke Orplyn |
+| Origin TLS | Active | Sertifikat Let's Encrypt valid untuk apex dan `www` |
+| Cloudflare edge TLS | Provisioning | Public HTTPS masih gagal handshake saat pemeriksaan terakhir |
 | Canonical URL | `https://orplyn.id` | Build final-domain sudah terpasang |
 | Indexing status | Disabled | Prelaunch `noindex` di aplikasi dan Caddy |
 
-Propagation evidence at 18 Juli 2026 15:51 WIB:
+Activation evidence at 18 Juli 2026 15:55 WIB:
 
 - DomaiNesia displayed `Changes Saved Successfully` for the Cloudflare nameserver pair.
-- Cloudflare dashboard status was `Waiting for your registrar to propagate your new nameservers`.
-- The `.id` registry authority still returned `nsx1.domainesia.com` and `nsx2.domainesia.com`.
+- The `.id` registry authority returned `cleo.ns.cloudflare.com` and `stella.ns.cloudflare.com`.
+- Resolver `1.1.1.1` returned the same Cloudflare nameserver pair.
+- Resolver `1.1.1.1` returned Cloudflare edge addresses for the apex, proving that the proxied record is active.
 - `cleo.ns.cloudflare.com` already answered `A orplyn.id -> 103.59.94.121`.
 - `stella.ns.cloudflare.com` already answered `CNAME www.orplyn.id -> orplyn.id`.
+- Caddy obtained Let's Encrypt certificates for `orplyn.id` and `www.orplyn.id`.
+- Direct-origin HTTPS returned `200` for the apex and `301` from `www` to the apex, both with prelaunch `X-Robots-Tag` protection.
+- Cloudflare Universal SSL was still provisioning: public `https://orplyn.id` returned a TLS handshake failure at the edge during the last check.
 
-This is a normal pending-delegation state: the Cloudflare zone is configured, while the registry update is still propagating.
+DNS delegation and origin HTTPS are active. Public launch remains blocked until Cloudflare marks the zone and Universal SSL certificate active, public HTTPS succeeds, and the remaining launch gates pass.
 
 ## Istilah Sederhana
 
@@ -128,7 +134,7 @@ Cloudflare -- HTTPS / valid origin certificate --> Caddy VPS
 
 Target encryption mode Cloudflare adalah `Full (strict)`. Jangan memakai `Flexible`, karena koneksi Cloudflare ke origin menjadi HTTP dan dapat menyebabkan redirect loop serta menurunkan keamanan.
 
-Caddy mengelola sertifikat origin untuk `orplyn.id` dan `www.orplyn.id`. Aktifkan Full (strict) hanya setelah sertifikat origin terbit dan koneksi langsung ke origin sudah diverifikasi.
+Caddy mengelola sertifikat origin untuk `orplyn.id` dan `www.orplyn.id`. Sertifikat origin sudah terbit dan koneksi langsung telah diverifikasi pada 18 Juli 2026. Target Cloudflare tetap `Full (strict)`; jangan menurunkannya ke `Flexible` untuk mengatasi masa provisioning Universal SSL.
 
 ## Current SEO Safety
 

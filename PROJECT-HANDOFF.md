@@ -12,7 +12,7 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Staging publik yang terisolasi sudah berjalan di VPS bersama dan sengaja `noindex`; prioritas berikutnya adalah lead log operasional, domain, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
+Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Final domain sudah terdelegasi ke Cloudflare dan origin HTTPS valid, tetapi Cloudflare Universal SSL masih provisioning; website tetap sengaja `noindex`. Prioritas berikutnya adalah menuntaskan edge HTTPS, lead log operasional, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
 
 ### Current status board
 
@@ -21,10 +21,10 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | Business identity and location | Verified | Keep NAP consistent |
 | Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Conversion-focused rebuild deployed to noindex staging | Cloudflare activation, manual QA, and end-to-end lead test |
+| Web funnel source | Conversion-focused final-domain build deployed with noindex | Cloudflare edge TLS, manual QA, and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
-| Shared VPS staging | Healthy; final-domain noindex build and Caddy routes prepared | Activate Cloudflare nameservers for `orplyn.id` |
-| Technical SEO foundation | Prepared; staging intentionally noindex | Cloudflare DNS/HTTPS, public indexing, and Search Console |
+| Shared VPS staging | Healthy; final-domain routes and valid origin TLS active | Wait for Cloudflare Universal SSL, then verify Full (strict) |
+| Technical SEO foundation | Prepared; final domain intentionally noindex | Public edge HTTPS, indexing decision, and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
@@ -79,7 +79,7 @@ Google Ads jangan dioptimalkan hanya untuk clicks atau page views.
 - Model penjualan: Orplyn melayani pesanan satuan dan grosir. Kaos polos dan DTF bisa 1 pcs; manual/plastisol, special ink, fullprint, totebag/merch, bordir/seragam, dan jersey punya MOQ berbeda.
 - WhatsApp sales: `082317579311` / `6282317579311`, PIC Aulia.
 - Admin aktif Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
-- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia. Cloudflare zone memakai `cleo.ns.cloudflare.com` dan `stella.ns.cloudflare.com`; delegasi masih pending. DNS yang disiapkan: proxied `A @ -> 103.59.94.121` dan `CNAME www -> orplyn.id`. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
+- Domain final: `orplyn.id`, dibeli 18 Juli 2026 melalui DomaiNesia. Registry `.id` dan resolver publik sudah mendelegasikan domain ke `cleo.ns.cloudflare.com` dan `stella.ns.cloudflare.com`. DNS aktif: proxied `A @ -> 103.59.94.121` dan `CNAME www -> orplyn.id`. Origin TLS valid; Cloudflare Universal SSL masih provisioning pada pemeriksaan 18 Juli 2026 15:55 WIB. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
 - Area layanan: seluruh Indonesia; customer boleh datang/pickup, janji disarankan tetapi tidak wajib.
 - Pembayaran: transfer bank dan marketplace; DP 50%, pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Data minimum untuk hitung harga: jenis produk, jumlah pesanan, ukuran, bahan, jenis sablon, dan desain.
@@ -105,7 +105,7 @@ Data di atas boleh dipakai untuk strategi dan konfigurasi internal. Harga mulai,
 
 ### P0, wajib sebelum public launch
 
-- Cloudflare onboarding, nameserver DomaiNesia, DNS apex/www, HTTPS origin, dan canonical final untuk `orplyn.id`.
+- Cloudflare Universal SSL aktif, public edge HTTPS berhasil, dan mode `Full (strict)` terverifikasi untuk `orplyn.id`. Nameserver, DNS apex/www, canonical final, dan HTTPS origin sudah selesai.
 - WhatsApp nyata sudah dipasang; uji end-to-end sampai lead log masih wajib.
 - Target maksimal first response dan SOP admin disepakati.
 - Format quotation final dipilih: chat WhatsApp, PDF, spreadsheet, atau kombinasi.
@@ -622,6 +622,7 @@ Before using a raw asset:
 - Owner purchased `orplyn.id` through DomaiNesia. Public WHOIS showed the new registration, current `NSX1/NSX2.DOMAINESIA.COM` nameservers, and unsigned DNSSEC before Cloudflare onboarding.
 - Cloudflare imported the intended proxied apex/www records and assigned `cleo.ns.cloudflare.com` plus `stella.ns.cloudflare.com`. Prepared and deployed a final-domain noindex image and Caddy apex/www routes before delegating nameservers.
 - DomaiNesia saved the Cloudflare nameserver pair successfully. Added `ops/production/DOMAIN-AND-DNS-ARCHITECTURE.md` as the durable record for registrar, DNS, apex/www, Cloudflare proxy, origin IP, Caddy/Docker routing, TLS, noindex, and future hosting migration.
+- Public registry and resolver `1.1.1.1` now delegate `orplyn.id` to Cloudflare. Caddy obtained valid Let's Encrypt certificates for apex and `www`; direct-origin HTTPS returns `200` on apex and permanent redirect from `www`. Cloudflare edge Universal SSL was still provisioning at the last check, so public launch and indexing remain blocked.
 
 ## 16. Immediate Next Actions
 
@@ -629,7 +630,7 @@ The next agent should not start by redesigning the website. Start here:
 
 1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
 2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
-3. Replace DomaiNesia nameservers with the assigned Cloudflare pair, wait for activation, verify edge/origin HTTPS and `www` redirect, then set Full (strict). Keep both application and Caddy `noindex` controls until Search Console, tracking, QA, and lead-flow gates pass.
+3. Wait for Cloudflare Universal SSL to become active, verify public edge HTTPS and the `www` redirect, then confirm `Full (strict)`. Nameserver delegation and origin TLS are already complete. Keep both application and Caddy `noindex` controls until Search Console, tracking, QA, and lead-flow gates pass.
 4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
 5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
 6. Agree the first-response target and quotation format with Aulia.
