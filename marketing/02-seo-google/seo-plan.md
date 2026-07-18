@@ -2,9 +2,11 @@
 
 ## Status
 
-Technical foundation sudah tersedia: high-intent homepage, halaman DTF satuan, halaman event/community, kaos polos, service pages, metadata, canonical config, image alt, FAQ, LocalBusiness/Service/FAQ schema, sitemap, robots, dan NAP terlihat. Nomor WhatsApp dan jam sudah nyata. Staging sekarang sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
+Technical foundation sudah tersedia: high-intent homepage, halaman DTF satuan, halaman event/community, kaos polos, service pages, metadata, canonical config, image alt, FAQ, LocalBusiness/Service/FAQ schema, sitemap, robots, dan NAP terlihat. Nomor WhatsApp dan jam sudah nyata. Final domain `https://orplyn.id` sudah aktif melalui Cloudflare, tetapi masih sengaja `noindex` melalui aplikasi dan Caddy.
 
-Yang masih pending adalah domain publik, Search Console, Google Business Profile, konsistensi nama bisnis, review autentik, tracking, manual QA, dan perubahan `NEXT_PUBLIC_ALLOW_INDEXING=true` hanya saat launch gate lulus.
+Yang masih pending adalah Search Console, Google tag/Analytics, lead log sampai sale, Google Business Profile, konsistensi nama bisnis, review autentik, proof/offer approval, manual QA, launch config, dan perubahan `NEXT_PUBLIC_ALLOW_INDEXING=true` hanya saat launch gate lulus.
+
+Audit terbaru dan urutan eksekusinya tersedia di `marketing/02-seo-google/seo-acquisition-audit-2026-07-18.md`.
 
 Checklist operasional dengan prioritas, PIC, dan kolom bukti selesai sudah tersedia di `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`. Dokumen itu menjadi runbook pelaksanaan; file ini tetap menjadi arah strategi SEO internal.
 
@@ -16,12 +18,13 @@ Membuat Orplyn muncul saat orang mencari jasa kaos polos dan sablon custom di ar
 
 ## Priority SEO Work
 
-1. Aktifkan domain publik dan verifikasi Search Console.
-2. Optimalkan Google Business Profile dan konsistensi NAP.
-3. Samakan nama, alamat, nomor, jam, Maps, dan domain di website/GBP/Instagram.
-4. Setelah launch, izinkan indexing dan verifikasi homepage, DTF satuan, event/community, serta kaos polos.
-5. Tambahkan review/testimoni yang sah dan foto produksi nyata.
-6. Perluas content hanya berdasarkan query Search Console, pertanyaan customer, dan case study nyata.
+1. Verifikasi Search Console Domain Property, pasang Google tag, dan uji lead log end-to-end.
+2. Optimalkan Google Business Profile, real-world business name, category, dan konsistensi NAP.
+3. Dapatkan approval owner untuk offer, price anchor, proof, dan material visual.
+4. Buat launch config yang menghapus application dan Caddy `noindex` secara bersamaan.
+5. Izinkan indexing dan verifikasi homepage, DTF satuan, event/community, serta kaos polos.
+6. Tambahkan review/testimoni yang sah dan ubah portfolio menjadi case study produksi.
+7. Perluas content hanya berdasarkan query Search Console, pertanyaan customer, dan case study nyata.
 
 ## Seed Keywords
 

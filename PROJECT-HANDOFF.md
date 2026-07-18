@@ -624,6 +624,7 @@ Before using a raw asset:
 - DomaiNesia saved the Cloudflare nameserver pair successfully. Added `ops/production/DOMAIN-AND-DNS-ARCHITECTURE.md` as the durable record for registrar, DNS, apex/www, Cloudflare proxy, origin IP, Caddy/Docker routing, TLS, noindex, and future hosting migration.
 - Public registry and resolver `1.1.1.1` now delegate `orplyn.id` to Cloudflare. Caddy obtained valid Let's Encrypt certificates for apex and `www`; direct-origin HTTPS returns `200` on apex and permanent redirect from `www`.
 - Cloudflare Universal SSL became active. Public apex returned `HTTP/2 200`, public `www` returned `HTTP/2 301` to the apex, and the complete deployment verification passed with indexing intentionally disabled.
+- Completed a live SEO acquisition audit across source, public HTML, all 11 sitemap URLs, redirects, crawler access, metadata, schema, performance indicators, local intent, offer/proof, WhatsApp measurement, current SERP competitors, and official Google/OpenAI/Cloudflare guidance. Technical readiness is strong, but organic acquisition remains blocked by intentional noindex, missing Search Console/tag/lead log, pending GBP/entity work, and weak approved proof/price anchors. The durable audit is `marketing/02-seo-google/seo-acquisition-audit-2026-07-18.md`.
 
 ## 16. Immediate Next Actions
 
