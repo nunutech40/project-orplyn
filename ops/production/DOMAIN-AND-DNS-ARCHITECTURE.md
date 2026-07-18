@@ -22,11 +22,11 @@ Dokumen ini adalah sumber teknis utama untuk hubungan domain, Cloudflare, VPS, r
 | App service | `orplyn-web:3000` | Hanya dapat diakses dari Docker edge network |
 | Reverse proxy | Caddy milik shared VPS | Menerima host `orplyn.id` dan meneruskan ke Orplyn |
 | Origin TLS | Active | Sertifikat Let's Encrypt valid untuk apex dan `www` |
-| Cloudflare edge TLS | Provisioning | Public HTTPS masih gagal handshake saat pemeriksaan terakhir |
+| Cloudflare edge TLS | Active | Universal SSL melayani HTTPS publik melalui Cloudflare |
 | Canonical URL | `https://orplyn.id` | Build final-domain sudah terpasang |
 | Indexing status | Disabled | Prelaunch `noindex` di aplikasi dan Caddy |
 
-Activation evidence at 18 Juli 2026 15:55 WIB:
+Activation evidence at 18 Juli 2026 16:00 WIB:
 
 - DomaiNesia displayed `Changes Saved Successfully` for the Cloudflare nameserver pair.
 - The `.id` registry authority returned `cleo.ns.cloudflare.com` and `stella.ns.cloudflare.com`.
@@ -36,9 +36,12 @@ Activation evidence at 18 Juli 2026 15:55 WIB:
 - `stella.ns.cloudflare.com` already answered `CNAME www.orplyn.id -> orplyn.id`.
 - Caddy obtained Let's Encrypt certificates for `orplyn.id` and `www.orplyn.id`.
 - Direct-origin HTTPS returned `200` for the apex and `301` from `www` to the apex, both with prelaunch `X-Robots-Tag` protection.
-- Cloudflare Universal SSL was still provisioning: public `https://orplyn.id` returned a TLS handshake failure at the edge during the last check.
+- Cloudflare Universal SSL serves public HTTPS successfully.
+- Public apex returned `HTTP/2 200` through Cloudflare.
+- Public `www` returned `HTTP/2 301` to `https://orplyn.id/`.
+- `./ops/production/verify-deployment.sh https://orplyn.id false` passed with indexing disabled.
 
-DNS delegation and origin HTTPS are active. Public launch remains blocked until Cloudflare marks the zone and Universal SSL certificate active, public HTTPS succeeds, and the remaining launch gates pass.
+DNS delegation, Cloudflare edge HTTPS, and origin HTTPS are active. Public indexing and acquisition remain blocked until the remaining tracking, QA, lead-flow, and owner-approval gates pass.
 
 ## Istilah Sederhana
 
@@ -132,7 +135,7 @@ Browser -- HTTPS / Cloudflare edge certificate --> Cloudflare
 Cloudflare -- HTTPS / valid origin certificate --> Caddy VPS
 ```
 
-Target encryption mode Cloudflare adalah `Full (strict)`. Jangan memakai `Flexible`, karena koneksi Cloudflare ke origin menjadi HTTP dan dapat menyebabkan redirect loop serta menurunkan keamanan.
+Target encryption mode Cloudflare adalah `Full (strict)`. Jangan memakai `Flexible`, karena koneksi Cloudflare ke origin menjadi HTTP dan dapat menyebabkan redirect loop serta menurunkan keamanan. Status mode tersebut tetap perlu dikonfirmasi di dashboard Cloudflare karena tidak dapat dibuktikan hanya dari response publik.
 
 Caddy mengelola sertifikat origin untuk `orplyn.id` dan `www.orplyn.id`. Sertifikat origin sudah terbit dan koneksi langsung telah diverifikasi pada 18 Juli 2026. Target Cloudflare tetap `Full (strict)`; jangan menurunkannya ke `Flexible` untuk mengatasi masa provisioning Universal SSL.
 
