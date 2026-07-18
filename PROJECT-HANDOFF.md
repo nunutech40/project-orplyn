@@ -12,7 +12,7 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Staging sengaja `noindex`; prioritas berikutnya adalah lead log operasional, domain, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
+Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Staging publik yang terisolasi sudah berjalan di VPS bersama dan sengaja `noindex`; prioritas berikutnya adalah lead log operasional, domain, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
 
 ### Current status board
 
@@ -21,8 +21,9 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | Business identity and location | Verified | Keep NAP consistent |
 | Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Conversion-focused rebuild complete locally | Domain, manual QA, and end-to-end lead test |
-| Docker/OrbStack runtime | Healthy | Keep production checks passing |
+| Web funnel source | Conversion-focused rebuild deployed to noindex staging | Domain, manual QA, and end-to-end lead test |
+| Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
+| Shared VPS staging | Healthy at `orplyn.103-59-94-121.nip.io`; isolated and resource-limited | Final domain and production build |
 | Technical SEO foundation | Prepared; staging intentionally noindex | Final domain, public indexing, and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
@@ -218,10 +219,13 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 
 - Source: `website/`.
 - Stack: vinext, React 19, TypeScript, Vite, Lucide.
-- Runtime lokal: Docker/OrbStack.
-- Container: `orplyn-web`.
-- URL: `http://localhost:3010`.
-- Healthcheck: aktif.
+- Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
+- Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
+- VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
+- Deployed image: `orplyn-web:20260718T080616Z-2abecbe` for `linux/amd64`.
+- Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
+- Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
+- Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
 
 ### Routes
 
@@ -275,6 +279,11 @@ Verified on 18 Juli 2026 after the conversion/offer rebuild:
 - Container health: healthy.
 - Homepage, DTF landing, privacy, sitemap, robots, and `llms.txt`: HTTP 200.
 - Runtime checks confirmed literal H1, real WhatsApp display, two order lanes, three primary offers, privacy link, and staging `noindex`.
+- Portable `linux/amd64` release passed a local hardened-container test and checksum verification.
+- Public staging verification passed all core routes, exact canonical URL, HTTPS, `robots.txt`, page-level `noindex`, and proxy-level `X-Robots-Tag`.
+- Post-deploy checks: Orplyn healthy at about 58 MiB idle memory, no host port, about 905 MiB host memory available, and 23 GiB disk available.
+- Kohnu API/web/Postgres remained healthy; `kohnu.com`, `app.kohnu.com`, and the 9Router dashboard still returned HTTP 200 after Caddy reload.
+- Public scanners attempted fake Next server-action POSTs immediately after staging launch. The app has no server-side form endpoint, so Caddy now rejects all non-GET/HEAD methods with HTTP 405 before they reach Node.
 - Automated visual browser backend was unavailable. Desktop and mobile still need final manual visual QA before public launch.
 
 ## 8. Environment Configuration
@@ -295,6 +304,8 @@ Optional until tracking setup:
 - `GOOGLE_SITE_VERIFICATION`
 
 `NEXT_PUBLIC_*` values are bundled at build time. Rebuild the Docker image after changing them.
+
+Portable production files are in `ops/production/`. The versioned image archive, Compose contract, Caddy route installer, health-gated deploy, rollback, verification, and no-URL-change SEO migration runbook are independent of Kohnu source and Compose.
 
 ## 9. Technical Runbook
 
@@ -336,6 +347,21 @@ npm run lint
 npm run build
 node --test tests/rendered-html.test.mjs
 ```
+
+Build and deploy a portable release:
+
+```bash
+./ops/production/build-release.sh ops/production/.env.production
+scp ops/production/releases/orplyn-RELEASE-linux-amd64.tar.gz* searchyourjob@103.59.94.121:/opt/orplyn/releases/
+ssh searchyourjob@103.59.94.121
+cd /opt/orplyn
+./deploy.sh releases/orplyn-RELEASE-linux-amd64.tar.gz orplyn-web:RELEASE
+```
+
+Full deployment and migration runbooks:
+
+- `ops/production/README.md`
+- `ops/production/MIGRATION-SEO.md`
 
 ## 10. Public Launch Roadmap
 
@@ -587,6 +613,10 @@ Before using a raw asset:
 - Added visible NAP/hours, unified schema naming, a privacy notice, and `NEXT_PUBLIC_ALLOW_INDEXING=false` for localhost/staging.
 - Reduced the future Ads pilot to one Search campaign and one offer at launch because the owner trial budget is too small to split learning responsibly.
 - Rebuilt Docker successfully; lint had zero errors, production build passed, 6 smoke tests passed, container was healthy, and six core routes returned HTTP 200.
+- Audited the shared Kohnu VPS and accepted it for Orplyn V1 with strict isolation: separate `/opt/orplyn`, separate Compose project, no public app port, proxy-network-only access, and conservative resource limits.
+- Added a portable `linux/amd64` release workflow with checksum, non-root/read-only runtime, health-gated deployment, automatic config rollback, Caddy validation/reload, and public route verification.
+- Deployed noindex staging at `https://orplyn.103-59-94-121.nip.io`; verified HTTPS, canonical, robots, page/header noindex, real WhatsApp build value, resource limits, and unaffected Kohnu/9Router health.
+- Documented future hosting migration around a stable final domain and unchanged URL paths. A hosting-only move changes DNS after the new origin is tested; a domain change requires one-to-one permanent redirects and a separate SEO migration process.
 
 ## 16. Immediate Next Actions
 
@@ -594,7 +624,7 @@ The next agent should not start by redesigning the website. Start here:
 
 1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
 2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
-3. Get or choose the public domain, then set HTTPS, canonical URL, Search Console, Google tag, and only then change `NEXT_PUBLIC_ALLOW_INDEXING=true`.
+3. Get or choose the public domain, build a final-domain image, set HTTPS/canonical/Search Console/Google tag, verify it, and only then remove both application and Caddy staging `noindex` controls.
 4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
 5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
 6. Agree the first-response target and quotation format with Aulia.

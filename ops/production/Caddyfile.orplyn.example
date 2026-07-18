@@ -1,0 +1,48 @@
+# Staging: keep NEXT_PUBLIC_ALLOW_INDEXING=false in the image and retain the
+# X-Robots-Tag header below. Replace the hostname when a final domain exists.
+orplyn.103-59-94-121.nip.io {
+    encode zstd gzip
+
+    @nonReadMethod method POST PUT PATCH DELETE CONNECT TRACE OPTIONS
+    respond @nonReadMethod 405
+
+    reverse_proxy orplyn-web:3000
+
+    header {
+        Strict-Transport-Security "max-age=31536000"
+        X-Content-Type-Options "nosniff"
+        X-Robots-Tag "noindex, nofollow"
+        Referrer-Policy "strict-origin-when-cross-origin"
+        Permissions-Policy "camera=(), microphone=(), geolocation=()"
+        -Server
+    }
+
+    log {
+        output stdout
+        format console
+    }
+}
+
+# Final-domain example. Build the image with NEXT_PUBLIC_SITE_URL set to this
+# exact HTTPS origin and NEXT_PUBLIC_ALLOW_INDEXING=true before enabling it.
+#
+# www.example.com {
+#     redir https://example.com{uri} permanent
+# }
+#
+# example.com {
+#     encode zstd gzip
+#
+#     @nonReadMethod method POST PUT PATCH DELETE CONNECT TRACE OPTIONS
+#     respond @nonReadMethod 405
+#
+#     reverse_proxy orplyn-web:3000
+#
+#     header {
+#         Strict-Transport-Security "max-age=31536000; includeSubDomains"
+#         X-Content-Type-Options "nosniff"
+#         Referrer-Policy "strict-origin-when-cross-origin"
+#         Permissions-Policy "camera=(), microphone=(), geolocation=()"
+#         -Server
+#     }
+# }

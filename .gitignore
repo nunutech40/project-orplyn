@@ -21,6 +21,10 @@ website/build/
 website/.wrangler/
 website/.vinext/
 
+# Portable deployment release bundles stay local or in artifact storage.
+ops/production/releases/*
+!ops/production/releases/.gitkeep
+
 # Local environment files.
 .env
 .env.*

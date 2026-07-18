@@ -1,0 +1,47 @@
+name: ${COMPOSE_PROJECT_NAME:-orplyn-production}
+
+services:
+  orplyn-web:
+    image: ${ORPLYN_IMAGE:?Set ORPLYN_IMAGE in .env.production}
+    restart: unless-stopped
+    init: true
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 100
+    mem_limit: ${ORPLYN_MEMORY_LIMIT:-256m}
+    cpus: ${ORPLYN_CPU_LIMIT:-0.50}
+    expose:
+      - "3000"
+    networks:
+      edge:
+        aliases:
+          - orplyn-web
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - fetch('http://127.0.0.1:3000/').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+    stop_grace_period: 15s
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"
+    labels:
+      com.orplyn.role: web-funnel
+      com.orplyn.release: ${ORPLYN_RELEASE:-unknown}
+
+networks:
+  edge:
+    external: true
+    name: ${ORPLYN_EDGE_NETWORK:?Set ORPLYN_EDGE_NETWORK in .env.production}

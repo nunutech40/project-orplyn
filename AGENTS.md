@@ -20,7 +20,8 @@ Per 18 Juli 2026:
 - Tool Docker incremental ada di `tools/instagram-archive/`; katalog visual marketer ada di `deliverables/content/Orplyn - Kurasi Aset Instagram.html`.
 - Skill Hermes `orplyn-marketing-ops` aktif dari `/Users/nununugraha/mybusinessmap`; update aset, ringkasan kurasi, status launch, dan sinkronisasi snapshot dapat dijalankan dari runtime Hermes.
 - Web funnel sudah dibangun di `website/`.
-- Container production bernama `orplyn-web` berjalan di OrbStack pada `http://localhost:3010`.
+- Container lokal bernama `orplyn-web` berjalan di OrbStack pada `http://localhost:3010`.
+- Staging publik terisolasi berjalan di VPS bersama pada `https://orplyn.103-59-94-121.nip.io`, sengaja `noindex`, dengan deployment portabel di `ops/production/`.
 - Homepage memakai dua jalur order dan tiga offer utama; dedicated DTF/satuan, enam landing lain, portfolio, kontak, privasi, schema, sitemap, robots, dan `llms.txt` sudah tersedia.
 - Form WhatsApp memakai nomor nyata, Lead ID, MOQ-aware quantity, use case, deadline, lokasi, UTM, landing page, GCLID/GBRAID/WBRAID, dan event teknis terpisah dari qualified lead.
 - Local/staging sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
@@ -28,7 +29,7 @@ Per 18 Juli 2026:
 - Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
 - Checklist Word Google Business Profile, SEO, dan tracking tersedia di `deliverables/launch-readiness/`.
 - Lint tidak punya error, production build berhasil, enam smoke test lulus, container sehat, dan core routes HTTP 200.
-- Website belum siap menerima traffic publik karena lead log, domain final, tracking IDs, approval harga/proof, manual QA, dan end-to-end WhatsApp test belum selesai.
+- Website belum siap menerima traffic acquisition karena lead log, domain final, tracking IDs, approval harga/proof, manual QA, dan end-to-end WhatsApp test belum selesai.
 
 ## Strategy In One Line
 
@@ -110,6 +111,17 @@ node --test tests/rendered-html.test.mjs
 ```
 
 Local production URL: `http://localhost:3010`.
+
+Portable VPS deployment:
+
+```bash
+./ops/production/build-release.sh ops/production/.env.production
+ssh searchyourjob@103.59.94.121
+cd /opt/orplyn
+docker compose --env-file .env.production -f compose.production.yml ps
+```
+
+Hosting migration rules are in `ops/production/MIGRATION-SEO.md`. Keep the final domain and paths unchanged when moving hosts; test the new origin first, then change DNS only.
 
 Instagram archive:
 

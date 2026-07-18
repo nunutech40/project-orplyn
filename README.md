@@ -44,6 +44,8 @@ Jangan mulai Google Ads atau mengirim traffic publik sebelum launch gate di `PRO
   Checklist operasional Google Business Profile, SEO, dan tracking dalam format Word.
 - `website/`
   Funnel web Orplyn yang sudah siap dijalankan lewat OrbStack/Docker.
+- `ops/production/`
+  Deployment VPS portabel, rollback, verifikasi, integrasi Caddy, dan runbook migrasi hosting tanpa mengubah URL SEO.
 - `tools/`
   Tooling internal, termasuk downloader Instagram incremental dan generator katalog kurasi.
 
@@ -54,12 +56,14 @@ Website production lokal berjalan di `http://localhost:3010` melalui container `
 Halaman yang tersedia:
 
 - Funnel utama dengan CTA dan form brief WhatsApp.
-- Enam landing page kebutuhan untuk SEO dan Google Ads.
+- Tujuh landing page kebutuhan untuk SEO dan Google Ads.
 - Portfolio hasil produksi.
 - Halaman kontak dan lokasi Google Maps.
 - Structured data, sitemap, robots, dan `llms.txt` untuk search/AI discovery.
 
 Konfigurasi ada di `website/.env.example`. Nomor WhatsApp sales sudah tersedia, tetapi sebelum traffic publik masuk masih perlu domain final, ID tracking Google, dan test end-to-end lead sampai WhatsApp/log.
+
+Staging publik berjalan di `https://orplyn.103-59-94-121.nip.io` dan sengaja `noindex`. Ini hanya alamat QA, bukan domain SEO final. Deployment dan aturan migrasi hosting ada di `ops/production/README.md` serta `ops/production/MIGRATION-SEO.md`.
 
 ## Priority Plan
 
