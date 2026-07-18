@@ -2,7 +2,9 @@
 
 ## Status
 
-Belum diluncurkan dan sengaja ditunda. Landing pages dan conversion hook sudah disiapkan, tetapi launch gate belum lulus karena nomor WhatsApp, domain, tracking ID, offer, economics, area target, dan kesiapan admin belum dikonfirmasi.
+Belum diluncurkan dan sengaja ditunda. Landing pages dan conversion hook sudah disiapkan. Nomor WhatsApp, admin, area prioritas, target lead, budget trial, produk prioritas, dan aturan order awal sudah dikonfirmasi dari form owner 17 Juli 2026.
+
+Launch gate belum lulus karena domain, Google tag/conversion, Search Console, approval copy publik, capacity/economics, lead log, dan uji WhatsApp end-to-end belum selesai.
 
 ## When To Start
 
@@ -14,6 +16,16 @@ Google Ads sebaiknya mulai setelah:
 - keyword, offer, MOQ, lead time, dan area layanan sudah jelas;
 - admin siap membalas dan mencatat lead dengan cepat;
 - qualified lead, quotation, sale, dan revenue dapat dihubungkan ke sumber campaign.
+
+Owner inputs for pilot:
+
+- Area prioritas: Jabodetabek.
+- Produk prioritas: kaos polos, kaos custom, jasa sablon.
+- Target qualified lead: 30-50 per bulan.
+- Target customer baru: 10-20 per bulan.
+- Budget trial: Rp100.000-Rp700.000 per bulan.
+- Durasi pilot: 1-2 bulan.
+- Pause rule: hentikan/kurangi Ads jika produksi atau admin overload.
 
 ## Campaign Priority
 
@@ -37,6 +49,8 @@ Satuan dan grosir harus mempunyai search terms, landing copy, qualification, tar
 - Bordir kaos/topi.
 - Vendor kaos event/komunitas/kantor.
 - Totebag custom.
+
+Initial budget owner masih kecil untuk banyak campaign. Saat launch pertama, pilih 1-2 theme paling jelas saja, misalnya `kaos custom/sablon DTF satuan` dan `kaos event/komunitas grosir`, lalu scale setelah ada data qualified lead.
 
 ## Landing Page Requirement
 
@@ -66,7 +80,7 @@ Secondary:
 
 - direction click ke Google Maps;
 - service atau portfolio engagement;
-- phone click hanya jika nomor publik sudah tersedia.
+- WhatsApp click hanya sebagai secondary signal, bukan ukuran sales utama.
 
 Jika volume memungkinkan, import qualified lead atau sale sebagai offline conversion agar bidding tidak belajar dari lead sampah.
 

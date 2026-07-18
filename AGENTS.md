@@ -10,10 +10,11 @@ Jangan mengubah project menjadi sekadar website company profile, katalog pasif, 
 
 ## Current State
 
-Per 16 Juli 2026:
+Per 18 Juli 2026:
 
 - Data brand, lokasi, Instagram, dan sumber Google Drive sudah disimpan.
-- Owner sudah mengonfirmasi model penjualan satuan dan grosir; detail produk, MOQ, serta tier belum terisi.
+- Owner/admin sudah mengisi form Tahap 1 dan Tahap 2 pada 17 Juli 2026; model satuan/grosir, MOQ awal, lead time awal, payment rules, segment priority, dan growth target sudah dirangkum di `business-data/owner-answers.md`.
+- WhatsApp sales tersedia: `082317579311` / `6282317579311`, PIC Aulia, admin aktif Senin-Sabtu 08:00-19:00.
 - Asset mentah berjumlah 156 file, sekitar 606 MB, dalam 20 kategori, termasuk dua logo transparan.
 - Dua belas post Instagram terbaru sudah diarsipkan menjadi 28 media file, sekitar 89 MB. Kurasi awal: 8 selected, 2 reserve, 2 hold; seluruh izin publikasi masih `pending`.
 - Tool Docker incremental ada di `tools/instagram-archive/`; katalog visual marketer ada di `deliverables/content/Orplyn - Kurasi Aset Instagram.html`.
@@ -22,10 +23,10 @@ Per 16 Juli 2026:
 - Container production bernama `orplyn-web` berjalan di OrbStack pada `http://localhost:3010`.
 - Homepage, enam service landing page, portfolio, kontak, schema, sitemap, robots, `llms.txt`, form brief, dan tracking hook sudah tersedia.
 - External market snapshot dan growth experiment backlog tersedia di `marketing/07-market-research/`.
-- Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; Tahap 1 adalah file yang dikirim lebih dulu.
+- Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
 - Checklist Word Google Business Profile, SEO, dan tracking tersedia di `deliverables/launch-readiness/`.
 - Lint tidak punya error, production build berhasil, dan tiga smoke test lulus.
-- Website belum siap menerima traffic publik karena nomor WhatsApp sales dan domain final belum diberikan.
+- Website belum siap menerima traffic publik karena domain final, tracking, approval klaim publik, dan end-to-end lead test belum selesai.
 
 ## Strategy In One Line
 
@@ -64,11 +65,11 @@ Jika dua sumber bertentangan, jangan menebak. Pakai informasi owner yang paling 
 
 Urutan kerja yang direkomendasikan:
 
-1. Dapatkan data P0 owner: nomor WhatsApp, domain, admin, jam respon, MOQ, lead time, area layanan, dan metode order.
-2. Konfigurasikan `.env`, rebuild Docker, dan uji WhatsApp end-to-end dengan nomor nyata.
-3. Pasang domain publik, HTTPS, Search Console, Google tag, dan Google Ads conversion.
+1. Konfigurasikan `.env` dengan `NEXT_PUBLIC_WHATSAPP_NUMBER=6282317579311`, rebuild Docker, dan uji WhatsApp end-to-end dengan lead log.
+2. Dapatkan domain final, pasang HTTPS, Search Console, Google tag, dan Google Ads conversion.
+3. Minta owner approve public wording untuk MOQ, lead time, harga mulai, rush order, QC/rework, proof, dan testimoni.
 4. Jalankan checklist `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`, termasuk audit Google Business Profile dan konsistensi NAP.
-5. Tambahkan offer, pricing anchor, proof, dan FAQ hanya setelah datanya dikonfirmasi.
+5. Buat paket/range harga internal untuk event/komunitas, DTF satuan, kaos polos, dan tas custom; publish hanya setelah approved.
 6. Uji event/panitia hanya bila capacity dan deadline cut-off aman.
 7. Jalankan content organik dari asset nyata dan pilot outbound 50 account untuk membangun trust serta baseline demand.
 8. Jalankan pilot Google Search Ads high-intent setelah semua launch gate lulus.

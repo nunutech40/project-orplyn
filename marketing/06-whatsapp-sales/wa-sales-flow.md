@@ -2,7 +2,9 @@
 
 ## Status
 
-Website sudah menghasilkan prefilled brief berisi nama, produk, jumlah, deadline, status desain, source, dan campaign. Nomor WhatsApp nyata, PIC admin, response-time target, template follow-up, dan lead status tracking masih harus disepakati dengan owner.
+Website sudah menghasilkan prefilled brief berisi nama, produk, jumlah, deadline, status desain, source, dan campaign. Nomor WhatsApp sales sudah dikonfirmasi: `6282317579311`. PIC/admin utama: Aulia. Jam admin Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
+
+Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari semua CTA, target first response, format lead log, dan template follow-up final.
 
 ## Goal
 
@@ -12,11 +14,13 @@ Mengubah chat masuk menjadi inquiry yang jelas dan bisa di-quote cepat.
 
 Halo kak, terima kasih sudah menghubungi Orplyn. Boleh info kebutuhan kakak?
 
-1. Mau buat produk apa? kaos/totebag/jersey/bordir/lainnya
+1. Jenis produknya apa? kaos polos, kaos custom, sablon DTF, sablon manual, bordir, jersey, totebag, atau lainnya.
 2. Jumlah pcs berapa?
-3. Sudah ada desain?
-4. Untuk deadline kapan?
-5. Lokasi pengiriman/ambil di mana?
+3. Ukuran dan bahan yang diinginkan apa? Kalau belum tahu, kami bantu rekomendasikan.
+4. Jenis sablon/produksinya sudah ada pilihan?
+5. Sudah ada desain/file?
+6. Untuk deadline kapan?
+7. Lokasi pengiriman atau mau pickup di workshop?
 
 Nanti kami bantu cek bahan, teknik produksi, estimasi harga, dan waktu pengerjaan.
 
@@ -24,11 +28,34 @@ Nanti kami bantu cek bahan, teknik produksi, estimasi harga, dan waktu pengerjaa
 
 - Product type
 - Quantity
+- Size breakdown
+- Material
 - Design readiness
 - Print area/technique
 - Deadline
 - Delivery location
 - Budget range, if needed
+
+Minimum data untuk quotation dari owner: jenis produk, jumlah, ukuran, bahan, jenis sablon, dan desain.
+
+## Order Rules From Owner
+
+- Kaos polos: satuan bisa, MOQ 1 pcs, grosir mulai 6 pcs, estimasi 2 hari.
+- Sablon DTF: satuan bisa, MOQ 1 pcs, grosir mulai 12 pcs, estimasi 2 hari.
+- Sablon manual/plastisol: satuan belum diarahkan, MOQ 12 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+- Special ink: MOQ 12 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+- Bordir/seragam: MOQ 6 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+- Jersey custom: MOQ 6 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+- Fullprint: MOQ 12 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+- Totebag/merchandise: MOQ 12 pcs, grosir mulai 100 pcs, estimasi 3-7 hari.
+
+Catatan publikasi: lead time tergantung antrean, jumlah, deadline, kesulitan desain, dan ketersediaan bahan. Jangan tampilkan sebagai janji mutlak sebelum owner approve copy final.
+
+## Follow-Up Rule
+
+- Follow-up lead 1-2 kali.
+- Lead dianggap tidak aktif setelah 7 hari tanpa respons.
+- Saat ini lead masih dicatat di WhatsApp; lead log/CRM sederhana perlu dibuat sebelum Ads jalan.
 
 ## Closing Angle
 
@@ -36,6 +63,8 @@ Nanti kami bantu cek bahan, teknik produksi, estimasi harga, dan waktu pengerjaa
 - Beri estimasi harga mulai.
 - Minta file desain untuk quote lebih akurat.
 - Tawarkan opsi sesuai budget dan deadline.
+- Untuk order event/komunitas, tekankan konsultasi bahan dan teknik agar hasil sesuai deadline dan budget.
+- Untuk reseller/vendor, arahkan ke aturan grosir dan repeat order.
 
 ## WhatsApp CTA Copy
 

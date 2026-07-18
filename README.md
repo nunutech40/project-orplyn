@@ -59,7 +59,7 @@ Halaman yang tersedia:
 - Halaman kontak dan lokasi Google Maps.
 - Structured data, sitemap, robots, dan `llms.txt` untuk search/AI discovery.
 
-Konfigurasi ada di `website/.env.example`. Sebelum traffic publik masuk, isi nomor WhatsApp sales, domain final, dan ID tracking Google bila sudah tersedia.
+Konfigurasi ada di `website/.env.example`. Nomor WhatsApp sales sudah tersedia, tetapi sebelum traffic publik masuk masih perlu domain final, ID tracking Google, dan test end-to-end lead sampai WhatsApp/log.
 
 ## Priority Plan
 
@@ -70,16 +70,20 @@ Konfigurasi ada di `website/.env.example`. Sebelum traffic publik masuk, isi nom
 5. Pakai konten organik dari asset yang sudah ada.
 6. Jalankan Google Ads setelah landing page, WA CTA, dan tracking siap.
 
-Status saat ini: langkah 1-4 sudah disiapkan dan batch awal konten sudah dikurasi. Nomor WhatsApp owner dan domain final masih dibutuhkan untuk aktivasi publik.
+Status saat ini: langkah 1-4 sudah disiapkan, batch awal konten sudah dikurasi, dan formulir owner/customer sudah terisi. Nomor WhatsApp tersedia; domain final, tracking, approval klaim publik, dan test lead end-to-end masih dibutuhkan untuk aktivasi publik.
 
 ## Current Known Data
 
 - Brand: ORPLYN KAOS POLOS DAN SABLON CUSTOM
 - Lokasi: Legoso, Ciputat Timur, Tangerang Selatan
 - Instagram: `@orplyn.id`
+- WhatsApp sales: `082317579311` / `6282317579311`
+- PIC admin: Aulia
+- Admin aktif: Senin-Sabtu, 08:00-19:00
 - Goal utama: sales
 - Goal minimal: leads masuk ke WhatsApp
-- Model penjualan: satuan dan grosir; detail rule per produk masih menunggu owner
+- Model penjualan: satuan dan grosir dengan MOQ/lead time berbeda per produk
+- Domain: belum punya
 
 ## Instagram Asset Archive
 
@@ -114,11 +118,11 @@ Project induk di-mount read-only. Hanya folder output arsip, katalog, galeri, da
 File yang boleh langsung dikirim lewat WhatsApp atau dibuka di Word/Google Docs:
 
 - `deliverables/owner-research/Orplyn - Form Owner Tahap 1.docx`
-  Kirim lebih dulu. Berisi data wajib untuk mengaktifkan WhatsApp, offer, website, SEO, dan Ads secara benar.
+  Versi terisi 17 Juli 2026. Berisi data wajib untuk mengaktifkan WhatsApp, offer, website, SEO, dan Ads secara benar.
 - `deliverables/owner-research/Orplyn - Form Owner Tahap 2.docx`
-  Kirim setelah Tahap 1. Berisi profil customer, economics, proof, positioning, akses akun, dan target growth.
+  Versi terisi 17 Juli 2026. Berisi profil customer, economics, proof, positioning, akses akun, dan target growth.
 - `deliverables/owner-research/Orplyn - Survey Customer.docx`
-  Dipakai tim untuk wawancara 8-12 customer/lost lead; bukan pekerjaan rumah utama owner.
+  Berisi responden awal C001; lanjutkan sampai 8-12 customer/lost lead.
 
 Dokumen internal pendukung:
 

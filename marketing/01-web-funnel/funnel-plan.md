@@ -2,7 +2,9 @@
 
 ## Status
 
-Versi awal funnel sudah diimplementasikan di `website/` dan berjalan lokal melalui OrbStack. Blocker public launch adalah nomor WhatsApp, domain, commercial facts, tracking ID, dan final manual QA.
+Versi awal funnel sudah diimplementasikan di `website/` dan berjalan lokal melalui OrbStack. Nomor WhatsApp, PIC admin, jam admin, aturan minimum order, lead time awal, area layanan, pembayaran, dan model satuan/grosir sudah dikonfirmasi dari form owner 17 Juli 2026.
+
+Blocker public launch sekarang adalah domain final, tracking ID, Search Console/Google tag, approval copy publik, lead log, uji WhatsApp end-to-end, dan final manual QA.
 
 ## Funnel Name
 
@@ -25,6 +27,17 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 5. Use cases: komunitas, event, kantor, brand clothing, sekolah/kampus.
 6. FAQ: minimum order, estimasi produksi, file desain, pembayaran, pengiriman.
 7. Final CTA: konsultasi via WhatsApp.
+
+## Confirmed Conversion Inputs
+
+- WhatsApp sales: `6282317579311`.
+- PIC/admin: Aulia.
+- Jam admin: Senin-Sabtu 08:00-19:00.
+- Workshop/toko: 08:00-17:00; customer boleh datang/pickup, janji disarankan tapi tidak wajib.
+- Area layanan: seluruh Indonesia, dengan prioritas marketing Jabodetabek.
+- Pembayaran: transfer bank dan marketplace.
+- DP: 50%; pelunasan setelah produksi selesai dan sebelum barang dikirim.
+- Data minimum quotation: jenis produk, jumlah, ukuran, bahan, jenis sablon, desain.
 
 ## CTA Direction
 
@@ -53,5 +66,5 @@ Alternative CTA:
 - Source tracking dengan UTM dan `gclid`: implemented.
 - Google Ads conversion hook: implemented, belum dikonfigurasi.
 - Qualified lead, quote, sale, dan revenue: belum ada lead log atau CRM.
-- Phone click: tidak digunakan karena nomor publik belum tersedia.
+- Phone click/WhatsApp click: bisa digunakan sebagai secondary signal setelah nomor nyata diuji.
 - Scroll depth: belum diimplementasikan dan bukan prioritas sebelum sales tracking.

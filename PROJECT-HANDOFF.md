@@ -1,6 +1,6 @@
 # Orplyn Project Handoff
 
-Last updated: 16 Juli 2026
+Last updated: 18 Juli 2026
 
 Dokumen ini adalah single source of truth untuk melanjutkan project Orplyn dari chat, model, atau agent lain. Baca dokumen ini sebelum mengusulkan strategi baru atau mengubah website.
 
@@ -12,24 +12,24 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web versi awal sudah dibangun dan berjalan secara lokal di OrbStack. Prioritas selanjutnya bukan menambah fitur acak, melainkan melengkapi data owner, mengaktifkan nomor WhatsApp dan domain, memasang measurement, lalu meluncurkan channel acquisition secara bertahap.
+Funnel web versi awal sudah dibangun dan berjalan secara lokal di OrbStack. Form owner/customer tahap awal sudah terisi, sehingga prioritas berikutnya adalah rebuild website dengan WhatsApp nyata, finalisasi domain, pemasangan measurement, penyusunan paket/range harga yang disetujui owner, lalu peluncuran channel acquisition secara bertahap.
 
 ### Current status board
 
 | Workstream | Status | Next gate |
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
-| Commercial facts and offer | Blocked by owner input | Complete P0 and P1 questions |
+| Commercial facts and offer | Partially confirmed from owner/admin forms | Owner approval for public claims, tier pricing, capacity |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Complete locally | Configure real WA and domain |
+| Web funnel source | Complete locally | Rebuild with real WA, domain, and end-to-end lead test |
 | Docker/OrbStack runtime | Healthy | Keep production checks passing |
 | Technical SEO foundation | Prepared | Public indexing and Search Console |
-| Google Business Profile | Operational checklist prepared; audit pending | Confirm owner access and complete P0 rows |
+| Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Code and operational checklist prepared | Add real IDs and verify an end-to-end lead |
 | Organic content system | Initial Instagram batch curated | Confirm rights, prepare P0 variants, and set cadence |
 | External market intelligence | Initial snapshot complete | Validate keyword volume, Maps rank, and experiments |
-| Owner research pack | Word forms prepared | Send Tahap 1 and capture confirmed answers |
+| Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
 | Google Ads | Intentionally deferred | Pass Phase 1 launch gate |
@@ -75,14 +75,22 @@ Google Ads jangan dioptimalkan hanya untuk clicks atau page views.
 - Lokasi: Jl. Legoso Sel. II No.43, Pisangan, Ciputat Timur, Tangerang Selatan, Banten 15419.
 - Google Maps: `https://maps.app.goo.gl/CF2yTrHvkHe8d6cRA`.
 - Instagram: `https://www.instagram.com/orplyn.id/`.
-- Model penjualan: Orplyn melayani pesanan satuan dan grosir. Cakupan produk, MOQ, batas grosir, dan tier harga belum dikonfirmasi.
+- Model penjualan: Orplyn melayani pesanan satuan dan grosir. Kaos polos dan DTF bisa 1 pcs; manual/plastisol, special ink, fullprint, totebag/merch, bordir/seragam, dan jersey punya MOQ berbeda.
+- WhatsApp sales: `082317579311` / `6282317579311`, PIC Aulia.
+- Admin aktif Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
+- Domain: belum punya. Email bisnis dan akun utama: `orplyn.id@gmail.com`.
+- Area layanan: seluruh Indonesia; customer boleh datang/pickup, janji disarankan tetapi tidak wajib.
+- Pembayaran: transfer bank dan marketplace; DP 50%, pelunasan setelah produksi selesai dan sebelum barang dikirim.
+- Data minimum untuk hitung harga: jenis produk, jumlah pesanan, ukuran, bahan, jenis sablon, dan desain.
+- Segmen paling kuat dari input owner/admin: event/komunitas, vendor, sekolah/kampus, dan kantor/perusahaan.
+- Target awal: 30-50 qualified lead/bulan, 10-20 customer baru/bulan, budget iklan percobaan Rp100 ribu-Rp700 ribu/bulan.
 - Layanan yang terlihat dari sumber dan asset: kaos polos, sablon custom, DTF, sablon manual, plastisol, discharge, rubber, puff, high density, foil, glitter, bludru, fullprint, bordir, jersey, totebag, dan apparel lain.
 - Asset mentah: 156 file, sekitar 606 MB, dalam 20 kategori di `assets/raw/google-drive/`.
 - Arsip Instagram terbaru: 12 dari 29 post publik, 28 media file, sekitar 89 MB di `assets/raw/instagram/orplyn.id/`. Kurasi awal: 8 selected, 2 reserve, 2 hold; izin publikasi seluruhnya masih pending.
 - Runtime Hermes memiliki skill `orplyn-marketing-ops` untuk update arsip publik, membaca status kurasi dan launch checklist, serta menyinkronkan snapshot project ke vault MyBusiness.
 - Logo transparan tersedia dalam versi putih dan hitam di `assets/raw/google-drive/logo/`.
 
-Data di atas boleh dipakai. Data yang belum dikonfirmasi tidak boleh diubah menjadi klaim publik.
+Data di atas boleh dipakai untuk strategi dan konfigurasi internal. Harga mulai, garansi/QC, kapasitas, testimoni, logo customer, dan case study tetap butuh approval eksplisit sebelum menjadi klaim publik karena checkbox persetujuan owner belum ditandai di formulir.
 
 ### External market evidence (observed, not owner facts)
 
@@ -96,24 +104,21 @@ Data di atas boleh dipakai. Data yang belum dikonfirmasi tidak boleh diubah menj
 
 ### P0, wajib sebelum public launch
 
-- Nomor WhatsApp sales yang benar.
-- Siapa yang merespons WhatsApp dan jam aktif admin.
 - Domain final yang dimiliki owner.
-- Minimum order setiap kategori dan produk apa saja yang bisa satuan.
-- Batas jumlah mulai grosir serta tier harga setiap kategori.
-- Lead time normal dan aturan untuk rush order.
-- Area layanan dan kemampuan pengiriman.
-- Status pickup atau kunjungan workshop.
-- Akses atau PIC Google Business Profile.
+- WhatsApp nyata dipasang ke website dan diuji end-to-end sampai lead log.
+- Target maksimal first response dan SOP admin disepakati.
+- Format quotation final dipilih: chat WhatsApp, PDF, spreadsheet, atau kombinasi.
+- Search Console, Google tag/Analytics, dan Ads conversion disiapkan.
+- Google Business Profile diaudit dan akses/PIC diverifikasi.
+- Approval owner untuk klaim publik: harga mulai, MOQ, lead time, QC/garansi, review/testimoni, dan material visual.
 
 ### P1, wajib sebelum Ads dibesarkan
 
-- Produk atau segmen dengan margin dan kapasitas terbaik.
-- Harga mulai atau pricing anchor yang aman dipublikasikan.
-- Paket untuk event, komunitas, kantor, sekolah, atau brand.
-- Kapasitas produksi per minggu atau per bulan.
-- Metode pembayaran, DP, revisi, dan pembatalan.
-- Bukti sosial yang boleh dipakai: review, testimoni, logo customer, repeat order.
+- Tier harga grosir detail.
+- Produk/segmen dengan kapasitas paling aman.
+- Paket/range harga untuk event, komunitas, DTF satuan, dan grosir.
+- Omzet, order rata-rata, AOV, margin, dan CAC sehat.
+- Bukti sosial yang sudah mendapat izin: review, testimoni, logo customer, repeat order.
 - Baseline close rate dan average order value bila tersedia.
 
 ### P2, memperkuat optimasi
@@ -124,7 +129,7 @@ Data di atas boleh dipakai. Data yang belum dikonfirmasi tidak boleh diubah menj
 - Daftar pertanyaan customer yang paling sering muncul.
 - Data repeat customer dan musim permintaan.
 
-Form yang dikirim ke owner ada di `deliverables/owner-research/Orplyn - Form Owner Tahap 1.docx`. File `.md` di `marketing/00-brief/` adalah sumber kerja internal, bukan format yang diberikan kepada owner.
+Form owner/customer yang sudah terisi ada di `deliverables/owner-research/`. File `.md` di `marketing/00-brief/` adalah sumber kerja internal, bukan format yang diberikan kepada owner.
 
 ## 5. Positioning And Target Hypothesis
 
@@ -132,7 +137,7 @@ Form yang dikirim ke owner ada di `deliverables/owner-research/Orplyn - Form Own
 
 Orplyn adalah vendor apparel dan print studio lokal di Ciputat untuk kebutuhan event, komunitas, kantor, organisasi, clothing brand, jersey, bordir, totebag, dan kaos custom dengan pilihan teknik digital maupun manual.
 
-Model satuan dan grosir sebaiknya menjadi dua jalur intent di bawah positioning tersebut, bukan dua brand terpisah. Detail offer masing-masing jalur menunggu owner survey dan data lead/order.
+Model satuan dan grosir menjadi dua jalur intent di bawah positioning tersebut, bukan dua brand terpisah. Data owner/admin sudah memberi rule awal per produk, tetapi tier harga dan approval klaim publik masih perlu diselesaikan.
 
 ### Why this positioning
 
@@ -143,18 +148,17 @@ Model satuan dan grosir sebaiknya menjadi dua jalur intent di bawah positioning 
 
 ### Initial buyer segments
 
-Urutan ini masih hipotesis sampai owner memberikan data margin dan kapasitas:
+Urutan ini diperbarui dari form owner/admin dan satu survey customer awal. Tetap validasi dengan data lead/order 90 hari sebelum budget iklan dibesarkan:
 
-1. Event, komunitas, kampus, sekolah, organisasi, dan gathering kantor.
-2. Clothing brand dan merchandise kreator.
-3. Tim olahraga dan komunitas jersey.
-4. Seragam, kemeja, emblem, dan bordir organisasi.
-5. Totebag, seminar kit, dan merchandise promosi.
-6. Pembeli kaos polos.
+1. Event dan komunitas: sering order, repeat, nilai tipikal Rp10 juta-Rp30 juta.
+2. Vendor/reseller: repeat dan relevan untuk kaos custom serta sablon manual.
+3. Sekolah/kampus dan kantor/perusahaan: potensi omzet/margin, cocok untuk seragam/event.
+4. Pembeli satuan lokal: bisa menjadi entry offer, tetapi sering sensitif harga dan belum punya spesifikasi/desain jelas.
+5. Clothing brand, tim olahraga, dan merchandise: layak diuji sebagai channel/offer spesifik.
 
 External market snapshot mendukung pengujian outbound UMKM/corporate lokal dan partner channel selain inbound Search. Signal ini belum membuktikan profitability atau urutan segment.
 
-Jangan mengunci budget Ads besar berdasarkan urutan ini sebelum divalidasi dengan owner dan data lead.
+Jangan mengunci budget Ads besar berdasarkan urutan ini sebelum divalidasi dengan data lead, quote, order, margin, dan kapasitas.
 
 ## 6. Funnel Architecture
 
@@ -229,7 +233,8 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 ### Conversion behavior
 
 - Form utama ada di `website/app/components/QuoteBuilder.tsx`.
-- Nomor placeholder: `6280000000000`.
+- Nomor placeholder bawaan: `6280000000000`.
+- Nomor owner/admin yang perlu dipakai untuk build publik: `6282317579311`.
 - Jika placeholder masih aktif, form menampilkan status dan tidak membuka nomor palsu.
 - Form membaca `utm_source`, `utm_campaign`, dan `gclid`.
 - Event utama: `generate_lead`.
@@ -326,20 +331,21 @@ node --test tests/rendered-html.test.mjs
 
 Deliverables:
 
-- Complete P0 questions.
-- Decide primary segment and offer.
-- Confirm MOQ, lead time, payment, delivery, and pickup.
-- Collect at least initial review or testimonial proof where permitted.
+- Resolve remaining P0 gaps: domain, first-response target, quotation format, and owner approval for public claims.
+- Decide primary offer around event/komunitas, vendor/reseller, DTF satuan, and kaos polos.
+- Turn confirmed MOQ, lead time, payment, delivery, and pickup rules into website/WA-safe language.
+- Collect permissioned review/testimonial/case-study proof where permitted.
+- Create simple package/range-price options for customer qualification; publish only after owner approval.
 
 Exit gate:
 
-No major public claim is based on guessing.
+No major public claim is based on guessing, and owner has approved pricing/proof language that will appear publicly.
 
 ### Phase 1: Conversion-ready public website
 
 Deliverables:
 
-- Configure real WhatsApp number.
+- Configure real WhatsApp number `6282317579311`.
 - Connect owned domain and HTTPS.
 - Perform mobile and desktop QA.
 - Test every CTA and generated WhatsApp message.
@@ -405,11 +411,11 @@ Landing mapping:
 Initial operating rules:
 
 - Use high-intent Search first.
-- Restrict geography to serviceable areas confirmed by owner.
+- Start with Jabodetabek while allowing broader shipping language only where relevant.
 - Build negative keyword list for jobs, tutorials, machines, ink supplies, templates, free designs, and unrelated DIY intent.
 - Do not launch Performance Max before reliable conversion data and enough creative assets.
 - Do not scale based on cheap clicks. Scale based on qualified leads and sales.
-- Set budget only after margin, average order value, capacity, and acceptable acquisition cost are known.
+- Start with the owner/admin trial range Rp100 ribu-Rp700 ribu per month only after Phase 1 is passed, then scale only after margin, average order value, capacity, and acceptable acquisition cost are known.
 
 ### Phase 5: Optimization and scale
 
@@ -555,21 +561,24 @@ Before using a raw asset:
 - Installed `orplyn-marketing-ops` into Hermes with native `gallery-dl` 1.32.1 and `ffmpeg`, a read-only parent source mount, narrowly scoped writable output mounts, and no Docker socket.
 - Smoke-tested the active Hermes container: public incremental update found 12 posts and 28 existing media without duplication; content status, launch status, skill discovery, and project sync passed.
 - Kept full-history Instagram access disabled until a Netscape `cookies.txt` file is deliberately added to the read-only Hermes secret mount; no password or cookie value is stored in the project or vault.
+- Replaced old/empty owner-research Word forms with the filled 17 Juli 2026 versions and removed the temporary Word lock file.
+- Moved owner/admin answers into `business-data/owner-answers.md`: WhatsApp `082317579311`, PIC Aulia, product MOQ/lead time, payment rules, segment priorities, growth targets, and customer voice C001.
+- Kept price, proof, capacity, and QC language gated for owner approval because the filled forms did not mark the owner-approval checkbox.
 
 ## 16. Immediate Next Actions
 
 The next agent should not start by redesigning the website. Start here:
 
-1. Send `deliverables/owner-research/Orplyn - Form Owner Tahap 1.docx` and complete it in one structured owner interview.
-2. Assign PIC and start the P0 rows in `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`.
-3. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
-4. Confirm capacity and deadline cut-off for a July-August event/panitia test; skip it if production cannot guarantee delivery.
-5. Collect at least 30 anonymized leads/orders using `customer-data-template.md` and interview 8-12 customers/lost leads using `deliverables/owner-research/Orplyn - Survey Customer.docx`.
-6. Record confirmed answers in `business-data/owner-answers.md` and update `business-data/findings-register.md`.
-7. Configure the real WhatsApp number and domain, then rebuild Docker and test all CTA paths.
-8. Complete GBP, authentic review outreach, public indexing, Search Console, and end-to-end lead measurement.
-9. Start a 50-account local UMKM/corporate outbound pilot with source and outcome tracking.
-10. Only then prepare the Search Ads pilot by lane.
+1. Configure `NEXT_PUBLIC_WHATSAPP_NUMBER=6282317579311`, rebuild Docker, and run one end-to-end CTA-to-WA test with lead logging.
+2. Get or choose the public domain, then set HTTPS, canonical URL, Search Console, and Google tag.
+3. Ask owner to approve public wording for MOQ, lead time, kaos polos mulai Rp33 ribu, rush order, QC/rework, and proof/testimonial usage.
+4. Build a simple package/range-price sheet for event/komunitas, DTF satuan, kaos polos, and tas custom; keep it internal until approved.
+5. Confirm capacity and overload thresholds before running ads or event/panitia pushes.
+6. Assign PIC and start the P0 rows in `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`.
+7. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
+8. Collect at least 30 anonymized leads/orders using `customer-data-template.md` and interview 7-11 more customers/lost leads beyond C001.
+9. Complete GBP, authentic review outreach, public indexing, Search Console, and end-to-end lead measurement.
+10. Only then prepare the Search Ads pilot by lane, starting within the Rp100 ribu-Rp700 ribu/month trial range.
 
 ## 17. Handoff Checklist For Every Future Session
 
