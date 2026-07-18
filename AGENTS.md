@@ -21,12 +21,14 @@ Per 18 Juli 2026:
 - Skill Hermes `orplyn-marketing-ops` aktif dari `/Users/nununugraha/mybusinessmap`; update aset, ringkasan kurasi, status launch, dan sinkronisasi snapshot dapat dijalankan dari runtime Hermes.
 - Web funnel sudah dibangun di `website/`.
 - Container production bernama `orplyn-web` berjalan di OrbStack pada `http://localhost:3010`.
-- Homepage, enam service landing page, portfolio, kontak, schema, sitemap, robots, `llms.txt`, form brief, dan tracking hook sudah tersedia.
-- External market snapshot dan growth experiment backlog tersedia di `marketing/07-market-research/`.
+- Homepage memakai dua jalur order dan tiga offer utama; dedicated DTF/satuan, enam landing lain, portfolio, kontak, privasi, schema, sitemap, robots, dan `llms.txt` sudah tersedia.
+- Form WhatsApp memakai nomor nyata, Lead ID, MOQ-aware quantity, use case, deadline, lokasi, UTM, landing page, GCLID/GBRAID/WBRAID, dan event teknis terpisah dari qualified lead.
+- Local/staging sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
+- External market snapshot, offer/SERP refresh, dan growth experiment backlog tersedia di `marketing/07-market-research/`.
 - Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
 - Checklist Word Google Business Profile, SEO, dan tracking tersedia di `deliverables/launch-readiness/`.
-- Lint tidak punya error, production build berhasil, dan tiga smoke test lulus.
-- Website belum siap menerima traffic publik karena domain final, tracking, approval klaim publik, dan end-to-end lead test belum selesai.
+- Lint tidak punya error, production build berhasil, enam smoke test lulus, container sehat, dan core routes HTTP 200.
+- Website belum siap menerima traffic publik karena lead log, domain final, tracking IDs, approval harga/proof, manual QA, dan end-to-end WhatsApp test belum selesai.
 
 ## Strategy In One Line
 
@@ -65,25 +67,27 @@ Jika dua sumber bertentangan, jangan menebak. Pakai informasi owner yang paling 
 
 Urutan kerja yang direkomendasikan:
 
-1. Konfigurasikan `.env` dengan `NEXT_PUBLIC_WHATSAPP_NUMBER=6282317579311`, rebuild Docker, dan uji WhatsApp end-to-end dengan lead log.
-2. Dapatkan domain final, pasang HTTPS, Search Console, Google tag, dan Google Ads conversion.
-3. Minta owner approve public wording untuk MOQ, lead time, harga mulai, rush order, QC/rework, proof, dan testimoni.
-4. Jalankan checklist `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`, termasuk audit Google Business Profile dan konsistensi NAP.
-5. Buat paket/range harga internal untuk event/komunitas, DTF satuan, kaos polos, dan tas custom; publish hanya setelah approved.
-6. Uji event/panitia hanya bila capacity dan deadline cut-off aman.
-7. Jalankan content organik dari asset nyata dan pilot outbound 50 account untuk membangun trust serta baseline demand.
-8. Jalankan pilot Google Search Ads high-intent setelah semua launch gate lulus.
-9. Optimalkan berdasarkan qualified lead rate, cost per qualified lead, quote rate, sale rate, revenue, dan gross profit.
+1. Uji satu CTA ke WhatsApp nyata dan catat satu Lead ID sampai qualified, quoted, won/lost, revenue, serta gross profit.
+2. Buat lead log operasional berdasarkan `marketing/06-whatsapp-sales/wa-sales-flow.md`.
+3. Dapatkan domain final, pasang HTTPS, Search Console, Google tag, dan Google Ads conversion; baru izinkan indexing.
+4. Minta owner approve price anchor, rush order, capacity, QC/rework, proof, dan testimoni.
+5. Jalankan checklist `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`, termasuk audit Google Business Profile dan konsistensi NAP.
+6. Buat paket/range harga untuk DTF satuan, event/community, dan kaos polos; publish hanya setelah approved.
+7. Uji event/panitia hanya bila capacity dan deadline cut-off aman.
+8. Jalankan content organik dari asset nyata dan pilot outbound 50 account untuk membangun trust serta baseline demand.
+9. Jalankan satu pilot Google Search Ads high-intent setelah semua launch gate lulus.
+10. Optimalkan berdasarkan qualified lead rate, cost per qualified lead, quote rate, sale rate, revenue, dan gross profit.
 
 ## Website Invariants
 
 - Nomor placeholder adalah `6280000000000`. Form sengaja tidak membuka WhatsApp jika placeholder masih aktif.
 - Konfigurasi ada di `website/.env.example`.
+- Local/staging harus memakai `NEXT_PUBLIC_ALLOW_INDEXING=false`; ubah ke `true` hanya setelah launch gate lulus.
 - Variable `NEXT_PUBLIC_*` masuk ke client bundle saat build. Setelah mengubahnya, rebuild image Docker.
 - Canonical URL, sitemap, robots, dan social URL berasal dari `NEXT_PUBLIC_SITE_URL`.
-- Lead form membaca `utm_source`, `utm_campaign`, dan `gclid`.
-- Submit valid memicu `generate_lead`; konfigurasi Ads juga dapat memicu `conversion`.
-- Service page dan schema harus tetap indexable dan relevan dengan intent pencarian.
+- Lead form membaca UTM, landing page, `gclid`, `gbraid`, dan `wbraid` serta membuat Lead ID.
+- Submit valid memicu `whatsapp_brief_submit`, `generate_lead`, dan `whatsapp_open`; konfigurasi Ads dapat memicu secondary `lead started` conversion.
+- Service page dan schema harus relevan dengan intent pencarian; indexing publik hanya diaktifkan saat domain dan launch gate siap.
 - Social preview berada di `website/public/og.png`.
 - Official brand variants berada di `website/public/brand/` dan dibuat ulang dengan `npm run brand:build`.
 

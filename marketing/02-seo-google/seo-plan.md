@@ -2,7 +2,9 @@
 
 ## Status
 
-Technical foundation sudah tersedia: local copy, service pages, metadata, canonical config, image alt text, FAQ, LocalBusiness/Service/FAQ schema, sitemap, dan robots. Yang masih pending adalah domain publik, Search Console, Google Business Profile, NAP dengan nomor nyata, review, dan indexing verification.
+Technical foundation sudah tersedia: high-intent homepage, halaman DTF satuan, halaman event/community, kaos polos, service pages, metadata, canonical config, image alt, FAQ, LocalBusiness/Service/FAQ schema, sitemap, robots, dan NAP terlihat. Nomor WhatsApp dan jam sudah nyata. Staging sekarang sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
+
+Yang masih pending adalah domain publik, Search Console, Google Business Profile, konsistensi nama bisnis, review autentik, tracking, manual QA, dan perubahan `NEXT_PUBLIC_ALLOW_INDEXING=true` hanya saat launch gate lulus.
 
 Checklist operasional dengan prioritas, PIC, dan kolom bukti selesai sudah tersedia di `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`. Dokumen itu menjadi runbook pelaksanaan; file ini tetap menjadi arah strategi SEO internal.
 
@@ -16,10 +18,10 @@ Membuat Orplyn muncul saat orang mencari jasa kaos polos dan sablon custom di ar
 
 1. Aktifkan domain publik dan verifikasi Search Console.
 2. Optimalkan Google Business Profile dan konsistensi NAP.
-3. Verifikasi indexing homepage serta service pages yang sudah dibuat.
-4. Tambahkan review/testimoni yang sah untuk trust dan local ranking.
-5. Perluas content berdasarkan search query dan pertanyaan customer nyata.
-6. Pertahankan image SEO pada asset produksi yang sudah dioptimalkan.
+3. Samakan nama, alamat, nomor, jam, Maps, dan domain di website/GBP/Instagram.
+4. Setelah launch, izinkan indexing dan verifikasi homepage, DTF satuan, event/community, serta kaos polos.
+5. Tambahkan review/testimoni yang sah dan foto produksi nyata.
+6. Perluas content hanya berdasarkan query Search Console, pertanyaan customer, dan case study nyata.
 
 ## Seed Keywords
 
@@ -72,6 +74,15 @@ Volume dan CPC belum tersedia; cluster berikut berasal dari query serta competit
 
 Research-intent content harus memberi jawaban nyata dan mengarah ke `Kirim desain untuk dicek`, bukan artikel generik yang hanya mengulang keyword.
 
+## Priority Route Map
+
+- `/` -> jasa sablon kaos custom Ciputat/Tangerang Selatan.
+- `/layanan/sablon-dtf-satuan` -> sablon DTF satuan dan kaos custom 1 pcs.
+- `/layanan/kaos-event-komunitas` -> vendor kaos event, panitia, komunitas, sekolah/kampus.
+- `/layanan/kaos-polos` -> kaos polos satuan dan grosir Ciputat/Tangsel.
+
+Halaman lain tetap indexable setelah launch, tetapi tidak mendapat bobot navigasi yang sama sampai data menunjukkan demand dan economics yang sehat.
+
 ## Google Business Profile Checklist
 
 Gunakan checklist Word di `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`. Launch gate utamanya adalah ownership owner, nama/alamat/pin/kategori yang akurat, nomor nyata, jam operasional, domain final, foto yang sudah lolos izin, review autentik, Search Console, sitemap, dan verifikasi indexing.
@@ -79,3 +90,7 @@ Gunakan checklist Word di `deliverables/launch-readiness/Orplyn - Checklist GBP 
 Dokumen yang sama mencakup Google tag, `generate_lead`, click-to-WhatsApp, UTM/GCLID, lead log sampai sale/revenue, Tag Assistant, Google Ads conversion, serta enhanced conversions for leads. Jangan menandai tracking selesai hanya karena tag terpasang; satu test lead harus bisa ditelusuri end-to-end.
 
 Google menyatakan local result terutama ditentukan oleh relevance, distance, dan prominence. Profile completeness, category relevance, website consistency, photos, links, dan authentic reviews menjadi prioritas; tidak ada cara membayar untuk ranking organik lokal. Source: `https://support.google.com/business/answer/7091`.
+
+## AI Discovery Priority
+
+`llms.txt` dipertahankan sebagai ringkasan mesin, tetapi bukan workstream acquisition utama. Jangan membuat schema atau file AI tambahan sebagai pengganti domain, indexing, internal link, media nyata, GBP, review, dan konten berbasis pengalaman produksi.

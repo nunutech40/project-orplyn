@@ -2,7 +2,7 @@
 
 ## Status
 
-Website sudah menghasilkan prefilled brief berisi nama, produk, jumlah, deadline, status desain, source, dan campaign. Nomor WhatsApp sales sudah dikonfirmasi: `6282317579311`. PIC/admin utama: Aulia. Jam admin Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
+Website menghasilkan brief dengan Lead ID, jalur satuan/batch, penggunaan, produk, jumlah yang sesuai MOQ, bahan, deadline, desain, lokasi, source, campaign, landing page, dan click identifier. Nomor WhatsApp sales sudah dikonfirmasi: `6282317579311`. PIC/admin utama: Aulia. Jam admin Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
 
 Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari semua CTA, target first response, format lead log, dan template follow-up final.
 
@@ -11,6 +11,14 @@ Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari 
 Mengubah chat masuk menjadi inquiry yang jelas dan bisa di-quote cepat.
 
 ## First Reply Template
+
+Untuk lead dari website:
+
+`Halo kak, terima kasih sudah kirim brief ke Orplyn. Lead ID [ID] sudah kami terima. Kami cek dulu MOQ, bahan/teknik, dan target waktunya ya. Untuk hitung final, boleh kirim desain serta rincian ukuran bila sudah ada?`
+
+Jangan meminta ulang produk, jumlah, deadline, lokasi, atau status desain bila sudah ada di brief.
+
+Untuk chat tanpa brief:
 
 Halo kak, terima kasih sudah menghubungi Orplyn. Boleh info kebutuhan kakak?
 
@@ -56,6 +64,25 @@ Catatan publikasi: lead time tergantung antrean, jumlah, deadline, kesulitan des
 - Follow-up lead 1-2 kali.
 - Lead dianggap tidak aktif setelah 7 hari tanpa respons.
 - Saat ini lead masih dicatat di WhatsApp; lead log/CRM sederhana perlu dibuat sebelum Ads jalan.
+
+## Lead Log Minimum
+
+Satu baris per Lead ID:
+
+- `lead_id`, `created_at`, `first_response_at`, `response_minutes`;
+- `source`, `medium`, `campaign`, `keyword`, `landing_page`;
+- `gclid`, `gbraid`, `wbraid` bila ada;
+- `lane`, `use_case`, `product`, `quantity`, `deadline`, `location`;
+- `qualified`, `qualification_reason`, `quotation_status`, `quotation_value`;
+- `status`, `won_at`, `lost_reason`, `revenue`, `gross_profit`;
+- `next_action`, `owner`, dan catatan singkat.
+
+Definisi minimum:
+
+- `Qualified`: produk, jumlah, deadline, lokasi, dan intent meminta estimasi cukup jelas serta order tidak langsung gugur karena MOQ/capacity.
+- `Quoted`: estimasi/quotation konkret sudah dikirim.
+- `Won`: customer menyetujui order dan melakukan komitmen pembayaran sesuai proses Orplyn.
+- `Lost`: kebutuhan tidak lanjut; alasan wajib dipilih agar marketing bisa belajar.
 
 ## Closing Angle
 

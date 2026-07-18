@@ -2,17 +2,17 @@ import type { Metadata, Viewport } from "next";
 import { MarketingScripts } from "./components/MarketingScripts";
 import { SiteFooter } from "./components/SiteFooter";
 import { SiteHeader } from "./components/SiteHeader";
-import { siteUrl } from "./lib/site-data";
+import { allowIndexing, siteUrl } from "./lib/site-data";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Orplyn | Apparel & Print Studio Ciputat",
+    default: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
     template: "%s | Orplyn",
   },
   description:
-    "Kaos polos, sablon custom, bordir, jersey, totebag, dan apparel custom dari Ciputat, Tangerang Selatan.",
+    "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat, Tangerang Selatan.",
   icons: {
     icon: [
       {
@@ -38,31 +38,31 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "/",
     siteName: "Orplyn",
-    title: "Orplyn | Apparel & Print Studio Ciputat",
+    title: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
     description:
-      "Kaos custom, sablon DTF & manual, bordir, jersey, totebag, dan apparel custom di Ciputat.",
+      "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat.",
     images: [
       {
         url: "/og.png",
         width: 1200,
         height: 630,
-        alt: "Orplyn Apparel & Print Studio di Ciputat",
+        alt: "Hasil produksi sablon kaos custom Orplyn di Ciputat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orplyn | Apparel & Print Studio Ciputat",
+    title: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
     description:
-      "Kaos custom, sablon, bordir, jersey, dan apparel produksi dari Ciputat.",
+      "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat.",
     images: ["/og.png"],
   },
   robots: {
-    index: true,
-    follow: true,
+    index: allowIndexing,
+    follow: allowIndexing,
     googleBot: {
-      index: true,
-      follow: true,
+      index: allowIndexing,
+      follow: allowIndexing,
       "max-image-preview": "large",
       "max-snippet": -1,
       "max-video-preview": -1,

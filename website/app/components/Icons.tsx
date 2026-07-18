@@ -5,6 +5,7 @@ export {
   ArrowRight,
   Camera,
   CheckCircle2,
+  Clock3,
   Layers3,
   MapPin,
   MessageCircle,

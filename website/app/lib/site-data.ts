@@ -4,18 +4,107 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3010"
 ).replace(/\/+$/, "");
 
+export const allowIndexing =
+  process.env.NEXT_PUBLIC_ALLOW_INDEXING === "true";
+
 export const business = {
   name: "Orplyn",
-  longName: "ORPLYN | Apparel & Print Studio",
+  longName: "Orplyn Apparel & Print Studio",
   descriptor: "Kaos Polos & Sablon Custom",
   whatsapp:
     process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/\D/g, "") ||
     WHATSAPP_PLACEHOLDER,
+  whatsappDisplay: "0823-1757-9311",
   instagram: "https://www.instagram.com/orplyn.id/",
   maps: "https://maps.app.goo.gl/CF2yTrHvkHe8d6cRA",
   address:
     "Jl. Legoso Sel. II No.43, Pisangan, Ciputat Timur, Tangerang Selatan, Banten 15419",
+  adminHours: "Senin-Sabtu, 08.00-19.00 WIB",
+  workshopHours: "08.00-17.00 WIB",
+  serviceArea: "Jabodetabek dan pengiriman ke seluruh Indonesia",
 };
+
+export type FunnelLane = "single" | "batch";
+
+export type QuoteProduct = {
+  id: string;
+  title: string;
+  canSingle: boolean;
+  minimumOrder: number;
+  wholesaleFrom: number;
+  normalLeadTime: string;
+};
+
+export const quoteProducts: QuoteProduct[] = [
+  {
+    id: "kaos-custom-dtf",
+    title: "Kaos custom + sablon DTF",
+    canSingle: true,
+    minimumOrder: 1,
+    wholesaleFrom: 12,
+    normalLeadTime: "sekitar 2 hari",
+  },
+  {
+    id: "kaos-polos",
+    title: "Kaos polos",
+    canSingle: true,
+    minimumOrder: 1,
+    wholesaleFrom: 6,
+    normalLeadTime: "sekitar 2 hari",
+  },
+  {
+    id: "sablon-manual-plastisol",
+    title: "Sablon manual / plastisol",
+    canSingle: false,
+    minimumOrder: 12,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+  {
+    id: "special-ink",
+    title: "Special ink / efek sablon",
+    canSingle: false,
+    minimumOrder: 12,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+  {
+    id: "bordir-seragam",
+    title: "Bordir / seragam",
+    canSingle: false,
+    minimumOrder: 6,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+  {
+    id: "jersey-custom",
+    title: "Jersey custom",
+    canSingle: false,
+    minimumOrder: 6,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+  {
+    id: "fullprint",
+    title: "Fullprint",
+    canSingle: false,
+    minimumOrder: 12,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+  {
+    id: "totebag-merchandise",
+    title: "Totebag / merchandise",
+    canSingle: false,
+    minimumOrder: 12,
+    wholesaleFrom: 100,
+    normalLeadTime: "sekitar 3-7 hari",
+  },
+];
+
+export function getQuoteProduct(productId: string) {
+  return quoteProducts.find((product) => product.id === productId);
+}
 
 export type Service = {
   slug: string;
@@ -29,17 +118,56 @@ export type Service = {
   capabilities: string[];
   methods: string[];
   gallery: string[];
+  quoteProductId: string;
+  defaultLane: FunnelLane;
+  orderFacts: string[];
 };
 
 export const services: Service[] = [
   {
+    slug: "sablon-dtf-satuan",
+    title: "Sablon DTF & Kaos Custom Satuan",
+    eyebrow: "Mulai 1 pcs untuk coba desain",
+    shortDescription:
+      "Kaos custom dan sablon DTF mulai 1 pcs untuk kebutuhan personal, sample, atau test print.",
+    description:
+      "Kirim desain dan kebutuhanmu. Orplyn membantu mengecek bahan, ukuran cetak, jumlah, serta estimasi produksi sebelum order dilanjutkan.",
+    image: "/images/sablon-pasta.jpg",
+    imageAlt: "Hasil sablon warna pada kaos produksi Orplyn",
+    idealFor: [
+      "Kaos custom personal",
+      "Sample atau test print",
+      "Desain full color",
+      "Order kecil sebelum produksi batch",
+    ],
+    capabilities: [
+      "Pesanan bisa dimulai dari 1 pcs",
+      "Konsultasi bahan 20s, 24s, atau 30s",
+      "Pengecekan desain dan ukuran cetak",
+      "Pickup di Ciputat atau pengiriman",
+    ],
+    methods: ["DTF", "Kaos custom", "20s", "24s", "30s"],
+    gallery: [
+      "/images/sablon-pasta.jpg",
+      "/images/hero-sablon.jpg",
+      "/images/kaos-polos-warna.jpg",
+    ],
+    quoteProductId: "kaos-custom-dtf",
+    defaultLane: "single",
+    orderFacts: [
+      "Minimum order 1 pcs",
+      "Harga grosir mulai 12 pcs",
+      "Estimasi normal sekitar 2 hari",
+    ],
+  },
+  {
     slug: "kaos-event-komunitas",
     title: "Kaos Event & Komunitas",
-    eyebrow: "Untuk acara yang harus kompak",
+    eyebrow: "Untuk kelompok dengan satu deadline",
     shortDescription:
       "Kaos panitia, reuni, komunitas, kampus, gathering, dan kebutuhan promosi.",
     description:
-      "Dari bahan kaos sampai teknik cetak, Orplyn membantu menyiapkan produksi yang sesuai desain, kebutuhan acara, dan jumlah pesanan.",
+      "Dari bahan kaos sampai teknik cetak, Orplyn membantu menyiapkan brief produksi sesuai desain, jumlah pesanan, dan tanggal penggunaan.",
     image: "/images/hero-sablon.jpg",
     imageAlt: "Hasil sablon full color pada kaos hitam produksi Orplyn",
     idealFor: [
@@ -50,9 +178,9 @@ export const services: Service[] = [
     ],
     capabilities: [
       "Kaos custom dengan desain sendiri",
-      "Pilihan warna dan bahan kaos",
+      "Pilihan bahan 20s, 24s, dan 30s",
       "Cetak depan, belakang, atau detail tambahan",
-      "Konsultasi teknik sesuai artwork",
+      "Konsultasi teknik sesuai artwork dan jumlah",
     ],
     methods: ["DTF", "Plastisol", "Discharge", "Rubber", "Fullprint"],
     gallery: [
@@ -60,15 +188,58 @@ export const services: Service[] = [
       "/images/sablon-pasta.jpg",
       "/images/sablon-discharge.jpg",
     ],
+    quoteProductId: "sablon-manual-plastisol",
+    defaultLane: "batch",
+    orderFacts: [
+      "Sablon manual / plastisol minimum 12 pcs",
+      "Harga grosir manual mulai 100 pcs",
+      "Estimasi normal sekitar 3-7 hari",
+    ],
+  },
+  {
+    slug: "kaos-polos",
+    title: "Kaos Polos Satuan & Grosir",
+    eyebrow: "Siap dipakai atau dilanjutkan ke sablon",
+    shortDescription:
+      "Kaos polos mulai 1 pcs, dengan harga grosir mulai 6 pcs dan pilihan bahan 20s, 24s, atau 30s.",
+    description:
+      "Pilih kaos polos berdasarkan bahan, warna, ukuran, dan jumlah. Ketersediaan stok tetap dikonfirmasi admin sebelum pembayaran.",
+    image: "/images/kaos-polos-warna.jpg",
+    imageAlt: "Pilihan warna kaos polos yang tersedia di Orplyn",
+    idealFor: [
+      "Kebutuhan personal",
+      "Event dan komunitas",
+      "Basis produksi sablon",
+      "Vendor atau reseller",
+    ],
+    capabilities: [
+      "Minimum order 1 pcs",
+      "Harga grosir mulai 6 pcs",
+      "Bahan 20s, 24s, dan 30s",
+      "Ukuran normal S-XL",
+    ],
+    methods: ["20s", "24s", "30s", "Sablon custom", "Pickup Ciputat"],
+    gallery: [
+      "/images/kaos-polos-warna.jpg",
+      "/images/hero-sablon.jpg",
+      "/images/sablon-pasta.jpg",
+    ],
+    quoteProductId: "kaos-polos",
+    defaultLane: "single",
+    orderFacts: [
+      "Minimum order 1 pcs",
+      "Harga grosir mulai 6 pcs",
+      "Estimasi normal sekitar 2 hari",
+    ],
   },
   {
     slug: "produksi-clothing-brand",
     title: "Produksi Clothing Brand",
-    eyebrow: "Detail yang membedakan koleksi",
+    eyebrow: "Teknik mengikuti karakter artwork",
     shortDescription:
       "Pilihan teknik sablon untuk rilisan brand, merchandise, dan produksi berulang.",
     description:
-      "Eksplorasi karakter desain dengan teknik manual maupun digital, dari warna solid sampai efek timbul dan tekstur khusus.",
+      "Bahas desain, bahan, jumlah, dan karakter hasil yang diinginkan sebelum memilih teknik digital, manual, atau efek khusus.",
     image: "/images/sablon-puff.jpg",
     imageAlt: "Detail sablon puff timbul produksi Orplyn",
     idealFor: [
@@ -81,7 +252,7 @@ export const services: Service[] = [
       "Pengecekan artwork sebelum produksi",
       "Pilihan efek dan karakter tinta",
       "Detail cetak untuk desain kompleks",
-      "Produksi pada beragam jenis bahan",
+      "Sample berbayar sebelum produksi massal",
     ],
     methods: [
       "Plastisol",
@@ -97,15 +268,22 @@ export const services: Service[] = [
       "/images/sablon-discharge.jpg",
       "/images/sablon-bludru.jpg",
     ],
+    quoteProductId: "sablon-manual-plastisol",
+    defaultLane: "batch",
+    orderFacts: [
+      "Sablon manual minimum 12 pcs",
+      "Special ink minimum 12 pcs",
+      "Estimasi normal sekitar 3-7 hari",
+    ],
   },
   {
     slug: "bordir-seragam",
     title: "Bordir & Seragam",
-    eyebrow: "Rapi untuk identitas tim",
+    eyebrow: "Identitas tim yang rapi",
     shortDescription:
       "Bordir nama, logo, emblem, kemeja kerja, seragam organisasi, dan apparel tim.",
     description:
-      "Bordir membantu identitas organisasi terlihat rapi dan tahan dipakai. Cocok untuk kebutuhan kerja, sekolah, komunitas, dan tim lapangan.",
+      "Bordir dan seragam untuk kebutuhan kantor, sekolah, komunitas, organisasi, dan tim lapangan.",
     image: "/images/bordir-seragam.jpg",
     imageAlt: "Kemeja seragam putih dengan bordir hijau produksi Orplyn",
     idealFor: [
@@ -126,6 +304,13 @@ export const services: Service[] = [
       "/images/bordir-kemeja.jpg",
       "/images/sablon-bludru.jpg",
     ],
+    quoteProductId: "bordir-seragam",
+    defaultLane: "batch",
+    orderFacts: [
+      "Minimum order 6 pcs",
+      "Harga grosir mulai 100 pcs",
+      "Estimasi normal sekitar 3-7 hari",
+    ],
   },
   {
     slug: "jersey-custom",
@@ -134,7 +319,7 @@ export const services: Service[] = [
     shortDescription:
       "Jersey komunitas dan olahraga dengan desain, warna, nama, dan nomor custom.",
     description:
-      "Produksi jersey untuk tim dan komunitas dengan visual yang bisa disesuaikan, termasuk detail nama, nomor, logo, dan pola kain.",
+      "Produksi jersey untuk tim dan komunitas dengan detail nama, nomor, logo, dan pola yang bisa disesuaikan.",
     image: "/images/jersey-custom.jpg",
     imageAlt: "Set jersey hijau putih custom produksi Orplyn",
     idealFor: [
@@ -149,21 +334,28 @@ export const services: Service[] = [
       "Warna dan pola sesuai identitas",
       "Atasan atau set jersey",
     ],
-    methods: ["Fullprint", "Sublimasi", "Emboss", "Aplikasi logo"],
+    methods: ["Fullprint", "Sublimasi", "Nama dan nomor", "Aplikasi logo"],
     gallery: [
       "/images/jersey-custom.jpg",
       "/images/sablon-ukuran-besar.jpg",
       "/images/hero-sablon.jpg",
     ],
+    quoteProductId: "jersey-custom",
+    defaultLane: "batch",
+    orderFacts: [
+      "Minimum order 6 pcs",
+      "Harga grosir mulai 100 pcs",
+      "Estimasi normal sekitar 3-7 hari",
+    ],
   },
   {
     slug: "totebag-merchandise",
     title: "Totebag & Merchandise",
-    eyebrow: "Bawa brand ke mana-mana",
+    eyebrow: "Merchandise untuk event dan promosi",
     shortDescription:
-      "Totebag dan goodiebag untuk promosi, seminar, event, hampers, dan merchandise.",
+      "Totebag dan merchandise untuk promosi, seminar, event, hampers, dan kebutuhan organisasi.",
     description:
-      "Totebag dapat disiapkan untuk kebutuhan merchandise, campaign, seminar, dan event dengan pilihan warna serta aplikasi desain.",
+      "Bahas bahan, warna, ukuran, artwork, dan jumlah untuk menyiapkan totebag atau merchandise sesuai kebutuhan acara.",
     image: "/images/totebag-custom.jpg",
     imageAlt: "Totebag oranye custom produksi Orplyn",
     idealFor: [
@@ -178,43 +370,35 @@ export const services: Service[] = [
       "Produksi untuk event",
       "Konsultasi ukuran dan teknik",
     ],
-    methods: ["Sablon", "DTF", "Emboss", "Bordir"],
+    methods: ["Sablon", "DTF", "Bordir", "Aplikasi artwork"],
     gallery: [
       "/images/totebag-custom.jpg",
       "/images/proses-sablon.jpg",
       "/images/bordir-seragam.jpg",
     ],
-  },
-  {
-    slug: "kaos-polos",
-    title: "Kaos Polos",
-    eyebrow: "Basis yang tepat untuk produksi",
-    shortDescription:
-      "Kaos polos beragam warna untuk dipakai langsung atau dilanjutkan ke proses sablon.",
-    description:
-      "Pilih kaos polos sesuai kebutuhan warna, ukuran, dan rencana produksi. Ketersediaan bahan dapat dikonsultasikan sebelum order.",
-    image: "/images/kaos-polos-warna.jpg",
-    imageAlt: "Pilihan warna kaos polos yang tersedia di Orplyn",
-    idealFor: [
-      "Kebutuhan event",
-      "Stok komunitas",
-      "Basis produksi sablon",
-      "Kebutuhan apparel harian",
-    ],
-    capabilities: [
-      "Pilihan warna beragam",
-      "Konsultasi ukuran",
-      "Bisa dilanjutkan ke sablon",
-      "Pickup dari lokasi Ciputat",
-    ],
-    methods: ["Kaos polos", "Sablon custom", "Bordir", "Packing"],
-    gallery: [
-      "/images/kaos-polos-warna.jpg",
-      "/images/hero-sablon.jpg",
-      "/images/sablon-pasta.jpg",
+    quoteProductId: "totebag-merchandise",
+    defaultLane: "batch",
+    orderFacts: [
+      "Minimum order 12 pcs",
+      "Harga grosir mulai 100 pcs",
+      "Estimasi normal sekitar 3-7 hari",
     ],
   },
 ];
+
+export const primaryServiceSlugs = [
+  "sablon-dtf-satuan",
+  "kaos-event-komunitas",
+  "kaos-polos",
+];
+
+export const primaryServices = services.filter((service) =>
+  primaryServiceSlugs.includes(service.slug),
+);
+
+export const secondaryServices = services.filter(
+  (service) => !primaryServiceSlugs.includes(service.slug),
+);
 
 export const portfolio = [
   {

@@ -48,7 +48,7 @@ export default function PortfolioPage() {
         </div>
         <Link className="button button-dark" href="/#quote">
           <MessageCircle size={20} aria-hidden="true" />
-          Minta estimasi
+          Cek estimasi
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>

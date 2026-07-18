@@ -3,74 +3,78 @@ import Link from "next/link";
 import {
   ArrowRight,
   CheckCircle2,
-  Layers3,
   MapPin,
   MessageCircle,
-  PackageCheck,
   Palette,
   Ruler,
   ScanLine,
   Shirt,
-  Sparkles,
 } from "./components/Icons";
 import { QuoteBuilder } from "./components/QuoteBuilder";
 import {
   business,
   portfolio,
+  primaryServices,
+  secondaryServices,
   services,
   siteUrl,
   WHATSAPP_PLACEHOLDER,
 } from "./lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Jasa Sablon Kaos & Apparel Custom di Ciputat",
+  title: "Jasa Sablon Kaos Custom Ciputat & Tangerang Selatan",
   description:
-    "Orplyn melayani kaos custom, sablon DTF dan manual, bordir, jersey, totebag, dan kaos polos di Ciputat, Tangerang Selatan.",
+    "Orplyn melayani sablon DTF dan kaos polos mulai 1 pcs, serta kaos event dan produksi batch di Ciputat, Tangerang Selatan.",
   alternates: {
     canonical: "/",
   },
 };
 
-const serviceIcons = [Shirt, Layers3, ScanLine, Sparkles, PackageCheck, Palette];
+const serviceIcons = [ScanLine, Shirt, Palette];
 
 const faqs = [
   {
-    question: "Orplyn bisa mengerjakan produk apa saja?",
+    question: "Apakah Orplyn menerima sablon kaos satuan?",
     answer:
-      "Kaos polos dan custom, sablon DTF maupun manual, bordir, jersey, kemeja, jaket, hoodie, totebag, serta kebutuhan apparel lainnya.",
+      "Ya. Kaos custom dengan sablon DTF dan kaos polos bisa dimulai dari 1 pcs. Sablon manual, plastisol, special ink, fullprint, dan totebag memiliki minimum order 12 pcs; bordir/seragam dan jersey minimum 6 pcs.",
+  },
+  {
+    question: "Berapa lama estimasi produksinya?",
+    answer:
+      "Estimasi normal kaos polos dan DTF sekitar 2 hari. Sablon manual, special ink, bordir, jersey, fullprint, dan merchandise sekitar 3-7 hari. Jadwal final tetap mengikuti jumlah, desain, antrean produksi, dan ketersediaan bahan.",
+  },
+  {
+    question: "Bagaimana cara mendapatkan estimasi harga?",
+    answer:
+      "Harga dihitung dari jenis produk, jumlah, bahan, ukuran, teknik sablon, dan desain. Isi brief WhatsApp agar admin bisa mengecek spesifikasi dan memberi estimasi yang sesuai, bukan harga yang menyesatkan.",
+  },
+  {
+    question: "Bahan kaos apa yang tersedia?",
+    answer:
+      "Pilihan utama adalah cotton combed 20s, 24s, dan 30s. Bahan lain dapat dikonsultasikan sesuai kebutuhan, stok, dan rencana penggunaan.",
   },
   {
     question: "Apakah bisa kirim desain sendiri?",
     answer:
-      "Bisa. Kirim desain yang tersedia saat konsultasi. Tim Orplyn akan membantu mengecek pilihan teknik yang sesuai dengan artwork dan bahan.",
+      "Bisa. Kirim desain saat percakapan WhatsApp. Orplyn akan membantu mengecek ukuran cetak, bahan, dan teknik yang sesuai sebelum produksi dimulai.",
   },
   {
-    question: "Berapa minimum order dan lama produksinya?",
+    question: "Bagaimana pembayaran dan pengirimannya?",
     answer:
-      "Minimum order dan waktu produksi bergantung pada produk, teknik, jumlah, serta detail desain. Isi brief singkat agar admin bisa mengecek kebutuhanmu.",
-  },
-  {
-    question: "Apakah pesanan bisa diambil langsung?",
-    answer:
-      "Bisa dikonsultasikan untuk pickup di lokasi Orplyn, Jl. Legoso Selatan II, Ciputat Timur, Tangerang Selatan.",
-  },
-  {
-    question: "Teknik sablon apa saja yang tersedia?",
-    answer:
-      "Tersedia DTF dan beragam teknik manual seperti plastisol, discharge, rubber, puff, high density, foil, glitter, bludru, dan lainnya sesuai kebutuhan desain.",
+      "Pesanan menggunakan DP 50 persen. Pelunasan dilakukan setelah produksi selesai dan sebelum barang dikirim. Pesanan dapat diambil di Ciputat atau dikirim ke Jabodetabek dan seluruh Indonesia.",
   },
 ];
 
 const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "ORPLYN KAOS POLOS DAN SABLON CUSTOM",
+  name: business.name,
   alternateName: business.longName,
   url: siteUrl,
   logo: `${siteUrl}/brand/orplyn-monogram-black.png`,
   image: `${siteUrl}/images/hero-sablon.jpg`,
   description:
-    "Penyedia kaos polos, sablon custom, bordir, jersey, dan apparel custom di Ciputat, Tangerang Selatan.",
+    "Jasa sablon kaos custom, kaos polos, DTF, produksi event, bordir, jersey, dan merchandise di Ciputat, Tangerang Selatan.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Legoso Sel. II No.43, Pisangan",
@@ -79,7 +83,22 @@ const localBusinessSchema = {
     postalCode: "15419",
     addressCountry: "ID",
   },
-  areaServed: ["Ciputat", "Tangerang Selatan", "Jakarta Selatan", "Depok"],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+      ],
+      opens: "08:00",
+      closes: "17:00",
+    },
+  ],
+  areaServed: ["Ciputat", "Tangerang Selatan", "Jabodetabek", "Indonesia"],
   sameAs: [business.instagram, business.maps],
   ...(business.whatsapp !== WHATSAPP_PLACEHOLDER
     ? {
@@ -89,6 +108,19 @@ const localBusinessSchema = {
           telephone: `+${business.whatsapp}`,
           contactType: "sales",
           availableLanguage: ["Indonesian"],
+          hoursAvailable: {
+            "@type": "OpeningHoursSpecification",
+            dayOfWeek: [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday",
+            ],
+            opens: "08:00",
+            closes: "19:00",
+          },
         },
       }
     : {}),
@@ -136,20 +168,20 @@ export default function Home() {
       >
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">APPAREL & PRINT STUDIO · CIPUTAT</p>
-          <h1>Kaos custom yang siap dipakai, dijual, dan dibanggakan.</h1>
+          <p className="eyebrow">SABLON KAOS CUSTOM · KAOS POLOS · CIPUTAT</p>
+          <h1>Jasa sablon kaos custom di Ciputat, dari satuan sampai produksi batch.</h1>
           <p className="hero-copy">
-            Dari kaos event sampai produksi clothing brand. Sablon DTF & manual,
-            bordir, jersey, totebag, dan apparel custom dikerjakan di Ciputat,
-            Tangerang Selatan.
+            DTF dan kaos polos bisa mulai 1 pcs. Untuk event, komunitas,
+            vendor, kantor, dan brand, pilih jalur produksi agar MOQ, teknik,
+            bahan, dan deadline bisa dicek sejak awal.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="#quote">
               <MessageCircle size={20} aria-hidden="true" />
-              Konsultasi & cek estimasi
+              Cek MOQ & estimasi
             </Link>
-            <Link className="button button-ghost-light" href="#hasil-produksi">
-              Lihat hasil produksi
+            <Link className="button button-ghost-light" href="#paket">
+              Pilih kebutuhan
               <ArrowRight size={19} aria-hidden="true" />
             </Link>
           </div>
@@ -160,27 +192,52 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="capability-strip" aria-label="Layanan utama Orplyn">
-        <span>DTF & SABLON MANUAL</span>
-        <span>BORDIR</span>
-        <span>JERSEY & APPAREL</span>
+      <section className="capability-strip" aria-label="Aturan order utama Orplyn">
+        <span>DTF MULAI 1 PCS</span>
+        <span>KAOS POLOS MULAI 1 PCS</span>
+        <span>MANUAL MULAI 12 PCS</span>
         <span>PICKUP DI CIPUTAT</span>
       </section>
 
-      <section className="section section-services" id="layanan">
+      <section className="funnel-lanes" aria-label="Pilih jalur order">
+        <div className="funnel-lane funnel-lane-single">
+          <p className="eyebrow eyebrow-dark">SATUAN / TEST PRINT</p>
+          <h2>Butuh 1-5 pcs?</h2>
+          <p>
+            Mulai dari kaos polos atau kaos custom dengan sablon DTF. Cocok untuk
+            kebutuhan personal, sample brand, dan coba desain.
+          </p>
+          <Link href="#quote">
+            Mulai brief satuan <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="funnel-lane funnel-lane-batch">
+          <p className="eyebrow">PRODUKSI / BATCH</p>
+          <h2>Butuh untuk kelompok atau dijual lagi?</h2>
+          <p>
+            Untuk event, komunitas, sekolah, kantor, clothing brand, vendor,
+            atau reseller. MOQ mengikuti produk dan teknik yang dipilih.
+          </p>
+          <Link href="#quote">
+            Mulai brief produksi <ArrowRight size={18} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      <section className="section section-services" id="paket">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">PILIH KEBUTUHAN</p>
-            <h2>Mau bikin apa?</h2>
+            <p className="eyebrow eyebrow-dark">TIGA KEBUTUHAN UTAMA</p>
+            <h2>Mulai dari jalur yang paling relevan.</h2>
           </div>
           <p>
-            Mulai dari kebutuhanmu. Teknik, bahan, dan detail produksi kita cek
-            setelah brief-nya jelas.
+            Minimum order dan estimasi di bawah adalah panduan normal. Admin
+            tetap mengecek desain, stok bahan, antrean, serta tanggal pakai.
           </p>
         </div>
 
-        <div className="service-grid">
-          {services.map((service, index) => {
+        <div className="service-grid service-grid-primary">
+          {primaryServices.map((service, index) => {
             const Icon = serviceIcons[index];
             return (
               <article className="service-card" key={service.slug}>
@@ -190,15 +247,20 @@ export default function Home() {
                     alt={service.imageAlt}
                     width="720"
                     height="540"
-                    loading={index > 1 ? "lazy" : "eager"}
+                    loading={index > 0 ? "lazy" : "eager"}
                   />
                 </div>
                 <div className="service-card-content">
                   <Icon size={24} aria-hidden="true" />
                   <h3>{service.title}</h3>
                   <p>{service.shortDescription}</p>
+                  <ul className="offer-facts">
+                    {service.orderFacts.map((fact) => (
+                      <li key={fact}>{fact}</li>
+                    ))}
+                  </ul>
                   <Link href={`/layanan/${service.slug}`}>
-                    Lihat layanan <ArrowRight size={17} aria-hidden="true" />
+                    Lihat detail <ArrowRight size={17} aria-hidden="true" />
                   </Link>
                 </div>
               </article>
@@ -207,16 +269,33 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="secondary-services-section">
+        <div className="secondary-services-inner">
+          <div>
+            <p className="eyebrow">LAYANAN PRODUKSI LAIN</p>
+            <h2>Bordir, jersey, clothing brand, dan merchandise.</h2>
+          </div>
+          <div className="secondary-service-list">
+            {secondaryServices.map((service) => (
+              <Link href={`/layanan/${service.slug}`} key={service.slug}>
+                <span>{service.title}</span>
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section proof-section" id="hasil-produksi">
         <div className="proof-intro">
           <p className="eyebrow">HASIL PRODUKSI NYATA</p>
-          <h2>Bukan mockup. Ini yang keluar dari workshop.</h2>
+          <h2>Lihat detail hasil sebelum memilih teknik.</h2>
           <p>
-            Lihat karakter warna, tekstur, dan detail pengerjaan untuk membantu
-            menentukan arah produksi yang cocok.
+            Foto hasil dan proses produksi membantu membandingkan karakter warna,
+            tekstur, serta penerapan teknik pada kebutuhan yang berbeda.
           </p>
           <Link className="button button-light" href="/portfolio">
-            Buka semua portfolio <ArrowRight size={18} aria-hidden="true" />
+            Buka portfolio <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
         <div className="portfolio-preview">
@@ -240,25 +319,25 @@ export default function Home() {
 
       <section className="section buyer-paths">
         <div className="buyer-path buyer-path-event">
-          <p className="eyebrow eyebrow-dark">EVENT & ORGANISASI</p>
-          <h2>Satu kebutuhan, banyak ukuran, satu deadline.</h2>
+          <p className="eyebrow eyebrow-dark">EVENT & KOMUNITAS</p>
+          <h2>Satu tanggal pakai, banyak ukuran, satu brief produksi.</h2>
           <p>
-            Cocok untuk kepanitiaan, komunitas, sekolah, kampus, gathering, dan
-            tim kantor.
+            Siapkan jumlah, desain, bahan yang diinginkan, dan target selesai agar
+            kebutuhan kelompok bisa dicek lebih cepat.
           </p>
           <Link href="/layanan/kaos-event-komunitas">
-            Siapkan order kelompok <ArrowRight size={18} aria-hidden="true" />
+            Bahas order kelompok <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
         <div className="buyer-path buyer-path-brand">
-          <p className="eyebrow">CLOTHING BRAND</p>
-          <h2>Artwork punya karakter. Teknik cetaknya harus mendukung.</h2>
+          <p className="eyebrow">VENDOR, RESELLER & BRAND</p>
+          <h2>Repeat order dimulai dari spesifikasi yang jelas.</h2>
           <p>
-            Eksplorasi plastisol, discharge, puff, high density, foil, fullprint,
-            dan teknik lainnya.
+            Bahas bahan, teknik, jumlah, artwork, sample, dan kebutuhan produksi
+            berulang bersama admin.
           </p>
           <Link href="/layanan/produksi-clothing-brand">
-            Bahas produksi brand <ArrowRight size={18} aria-hidden="true" />
+            Bahas produksi batch <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -274,29 +353,29 @@ export default function Home() {
           />
         </div>
         <div className="why-content">
-          <p className="eyebrow eyebrow-dark">KENAPA ORPLYN</p>
-          <h2>Mulai dari hasil yang kamu kejar.</h2>
+          <p className="eyebrow eyebrow-dark">CARA ORPLYN MEMBANTU</p>
+          <h2>Mulai dari kebutuhan, bukan sekadar nama teknik.</h2>
           <p className="lead-copy">
-            Desain yang sama bisa membutuhkan teknik berbeda. Orplyn membantu
-            mengarahkan pilihan berdasarkan artwork, bahan, jumlah, dan kebutuhan
-            akhirnya.
+            Desain yang sama bisa membutuhkan pendekatan berbeda. Brief awal
+            membantu admin mengarahkan bahan, teknik, jumlah, dan jadwal yang
+            lebih masuk akal.
           </p>
           <ul className="check-list">
             <li>
               <CheckCircle2 aria-hidden="true" />
-              Pilihan teknik digital dan manual dalam satu studio
+              Jalur satuan dan produksi dipisahkan sejak awal
             </li>
             <li>
               <Ruler aria-hidden="true" />
-              Brief jumlah, ukuran, desain, dan deadline diperiksa di awal
+              MOQ, jumlah, ukuran, desain, dan deadline diperiksa sebelum quote
             </li>
             <li>
               <Palette aria-hidden="true" />
-              Efek cetak bisa disesuaikan dengan karakter artwork
+              Bahan dan teknik dibahas mengikuti artwork serta penggunaan
             </li>
             <li>
               <MapPin aria-hidden="true" />
-              Lokasi workshop jelas di Ciputat Timur
+              Workshop jelas di Ciputat Timur dan melayani pengiriman nasional
             </li>
           </ul>
         </div>
@@ -306,17 +385,17 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">ALUR ORDER</p>
-            <h2>Dari brief sampai jadi.</h2>
+            <h2>Dari brief sampai produksi.</h2>
           </div>
-          <p>Supaya kebutuhan cepat dipahami dan estimasi tidak bolak-balik.</p>
+          <p>Supaya admin tidak mengulang pertanyaan dasar dari nol.</p>
         </div>
         <ol className="process-list">
           {[
-            ["01", "Kirim brief", "Pilih produk, jumlah, deadline, dan status desain."],
-            ["02", "Cek artwork", "Kami cocokkan desain dengan bahan dan teknik produksi."],
-            ["03", "Terima estimasi", "Detail kebutuhan dikonfirmasi sebelum produksi dimulai."],
-            ["04", "Produksi", "Pesanan masuk ke proses cetak, bordir, atau finishing."],
-            ["05", "Ambil atau kirim", "Koordinasikan pickup di Ciputat atau opsi pengiriman."],
+            ["01", "Pilih jalur", "Tentukan satuan/test print atau produksi/batch."],
+            ["02", "Kirim brief", "Isi produk, jumlah, penggunaan, deadline, dan lokasi."],
+            ["03", "Cek kebutuhan", "Admin mengecek MOQ, bahan, teknik, desain, dan jadwal."],
+            ["04", "Konfirmasi", "Setujui detail dan lakukan DP 50 persen sebelum produksi."],
+            ["05", "Ambil atau kirim", "Pelunasan dilakukan sebelum pickup atau pengiriman."],
           ].map(([number, title, description]) => (
             <li key={number}>
               <span>{number}</span>
@@ -329,24 +408,24 @@ export default function Home() {
 
       <section className="quote-section" id="quote">
         <div className="quote-copy">
-          <p className="eyebrow">MINTA ESTIMASI</p>
-          <h2>Ceritakan kebutuhanmu dalam satu menit.</h2>
+          <p className="eyebrow">CEK MOQ & ESTIMASI</p>
+          <h2>Kirim brief yang langsung bisa ditindaklanjuti.</h2>
           <p>
-            Brief ini langsung disusun menjadi pesan WhatsApp agar admin bisa
-            mengecek kebutuhan lebih cepat.
+            Form akan menyaring produk dan jumlah berdasarkan jalur satuan atau
+            produksi, lalu menyusun pesan lengkap ke WhatsApp Aulia.
           </p>
           <div className="quote-highlights">
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Produk
+              <CheckCircle2 size={18} aria-hidden="true" /> Jalur order
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Jumlah
+              <CheckCircle2 size={18} aria-hidden="true" /> Produk & jumlah
             </span>
             <span>
               <CheckCircle2 size={18} aria-hidden="true" /> Deadline
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Status desain
+              <CheckCircle2 size={18} aria-hidden="true" /> Lokasi
             </span>
           </div>
         </div>
@@ -355,8 +434,8 @@ export default function Home() {
 
       <section className="section faq-section">
         <div className="faq-heading">
-          <p className="eyebrow eyebrow-dark">FAQ</p>
-          <h2>Sebelum mulai order.</h2>
+          <p className="eyebrow eyebrow-dark">FAQ ORDER</p>
+          <h2>Jawaban sebelum masuk WhatsApp.</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (
@@ -370,9 +449,14 @@ export default function Home() {
 
       <section className="location-section">
         <div>
-          <p className="eyebrow eyebrow-dark">WORKSHOP ORPLYN</p>
-          <h2>Datang atau pickup di Ciputat.</h2>
+          <p className="eyebrow eyebrow-dark">WORKSHOP & ADMIN ORPLYN</p>
+          <h2>Pickup di Ciputat, kirim ke seluruh Indonesia.</h2>
           <p>{business.address}</p>
+          <div className="location-meta">
+            <span>WhatsApp {business.whatsappDisplay}</span>
+            <span>Admin {business.adminHours}</span>
+            <span>Workshop {business.workshopHours}</span>
+          </div>
         </div>
         <div className="location-actions">
           <a
@@ -384,14 +468,14 @@ export default function Home() {
             <MapPin size={19} aria-hidden="true" /> Buka Google Maps
           </a>
           <Link className="button button-outline" href="/kontak">
-            Lihat detail kontak <ArrowRight size={18} aria-hidden="true" />
+            Kontak lengkap <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
       </section>
 
       <Link className="mobile-quote-cta" href="#quote">
         <MessageCircle size={20} aria-hidden="true" />
-        Minta estimasi
+        Cek estimasi
       </Link>
     </>
   );

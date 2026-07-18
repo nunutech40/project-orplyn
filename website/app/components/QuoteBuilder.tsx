@@ -1,11 +1,13 @@
 "use client";
 
 import { MessageCircle, Send } from "lucide-react";
-import { FormEvent, useMemo, useState } from "react";
+import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
-  services,
+  getQuoteProduct,
+  quoteProducts,
   WHATSAPP_PLACEHOLDER,
 } from "../lib/site-data";
+import type { FunnelLane } from "../lib/site-data";
 
 declare global {
   interface Window {
@@ -16,25 +18,133 @@ declare global {
 
 type QuoteBuilderProps = {
   whatsappNumber: string;
-  initialProduct?: string;
+  initialProductId?: string;
+  initialLane?: FunnelLane;
   compact?: boolean;
 };
 
-const quantities = ["1-5 pcs", "6-12 pcs", "13-24 pcs", "25-50 pcs", "51-100 pcs", "100+ pcs"];
+type Attribution = {
+  source: string;
+  medium: string;
+  campaign: string;
+  term: string;
+  content: string;
+  gclid: string;
+  gbraid: string;
+  wbraid: string;
+  landingPage: string;
+};
+
+const attributionStorageKey = "orplyn_attribution";
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
-const googleAdsConversionLabel =
-  process.env.NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL;
+const googleAdsLeadStartedLabel =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL;
+
+const quantities = [
+  { label: "1 pcs", minimum: 1 },
+  { label: "2-5 pcs", minimum: 2 },
+  { label: "6-11 pcs", minimum: 6 },
+  { label: "12-23 pcs", minimum: 12 },
+  { label: "24-49 pcs", minimum: 24 },
+  { label: "50-99 pcs", minimum: 50 },
+  { label: "100+ pcs", minimum: 100 },
+];
+
+const useCases = [
+  "Personal / hadiah",
+  "Event / komunitas",
+  "Sekolah / kampus",
+  "Kantor / perusahaan",
+  "Clothing brand",
+  "Vendor / reseller",
+  "Tim olahraga",
+];
+
+function classifySource(params: URLSearchParams) {
+  if (params.get("utm_source")) {
+    return params.get("utm_source") || "website";
+  }
+
+  if (params.get("gclid") || params.get("gbraid") || params.get("wbraid")) {
+    return "google_ads";
+  }
+
+  const referrer = document.referrer.toLowerCase();
+  if (referrer.includes("google.")) return "google_organic";
+  if (referrer.includes("instagram.com")) return "instagram";
+  if (referrer) return "referral";
+  return "direct";
+}
+
+function readAttribution(): Attribution {
+  const params = new URLSearchParams(window.location.search);
+  let stored: Partial<Attribution> = {};
+
+  try {
+    stored = JSON.parse(sessionStorage.getItem(attributionStorageKey) || "{}");
+  } catch {
+    stored = {};
+  }
+
+  const attributionKeys = [
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "gclid",
+    "gbraid",
+    "wbraid",
+  ];
+  const hasNewAttribution = attributionKeys.some((key) => params.has(key));
+  const value = (key: string, storedValue = "") =>
+    hasNewAttribution ? params.get(key) || "" : storedValue;
+  const currentLandingPage = `${window.location.pathname}${window.location.search}`;
+
+  return {
+    source: hasNewAttribution
+      ? classifySource(params)
+      : stored.source || classifySource(params),
+    medium: value("utm_medium", stored.medium),
+    campaign: value("utm_campaign", stored.campaign),
+    term: value("utm_term", stored.term),
+    content: value("utm_content", stored.content),
+    gclid: value("gclid", stored.gclid),
+    gbraid: value("gbraid", stored.gbraid),
+    wbraid: value("wbraid", stored.wbraid),
+    landingPage: hasNewAttribution
+      ? currentLandingPage
+      : stored.landingPage || currentLandingPage,
+  };
+}
+
+function getJakartaDate() {
+  return new Intl.DateTimeFormat("en-CA", {
+    timeZone: "Asia/Jakarta",
+  }).format(new Date());
+}
+
+function createLeadId() {
+  const date = getJakartaDate().replaceAll("-", "");
+  const suffix = crypto.randomUUID().slice(0, 6).toUpperCase();
+  return `ORP-${date}-${suffix}`;
+}
 
 export function QuoteBuilder({
   whatsappNumber,
-  initialProduct = "",
+  initialProductId = "",
+  initialLane,
   compact = false,
 }: QuoteBuilderProps) {
-  const [product, setProduct] = useState(initialProduct);
+  const [lane, setLane] = useState<FunnelLane | "">(initialLane || "");
+  const [productId, setProductId] = useState(initialProductId);
   const [quantity, setQuantity] = useState("");
   const [deadline, setDeadline] = useState("");
   const [design, setDesign] = useState("Sudah ada desain");
   const [name, setName] = useState("");
+  const [useCase, setUseCase] = useState("");
+  const [material, setMaterial] = useState("");
+  const [deliveryLocation, setDeliveryLocation] = useState("");
   const [status, setStatus] = useState("");
 
   const isConfigured = useMemo(
@@ -42,30 +152,87 @@ export function QuoteBuilder({
     [whatsappNumber],
   );
 
+  const currentProduct = getQuoteProduct(productId);
+  const availableProducts = quoteProducts.filter(
+    (product) => lane !== "single" || product.canSingle,
+  );
+  const effectiveMinimumOrder = currentProduct
+    ? lane === "batch" && currentProduct.canSingle
+      ? currentProduct.wholesaleFrom
+      : currentProduct.minimumOrder
+    : 0;
+  const availableQuantities = currentProduct
+    ? quantities.filter((item) => item.minimum >= effectiveMinimumOrder)
+    : [];
+
+  const today = useMemo(() => getJakartaDate(), []);
+
+  useEffect(() => {
+    const attribution = readAttribution();
+    try {
+      sessionStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+    } catch {
+      // The brief still works when a browser blocks session storage.
+    }
+  }, []);
+
+  function changeLane(nextLane: FunnelLane) {
+    setLane(nextLane);
+    setQuantity("");
+    setStatus("");
+
+    const selected = getQuoteProduct(productId);
+    if (nextLane === "single" && selected && !selected.canSingle) {
+      setProductId("");
+    }
+  }
+
+  function changeProduct(nextProductId: string) {
+    setProductId(nextProductId);
+    setQuantity("");
+    setStatus("");
+  }
+
   function submitQuote(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!product || !quantity || !deadline) {
-      setStatus("Lengkapi produk, jumlah, dan target selesai dulu.");
+    const product = getQuoteProduct(productId);
+    if (!lane || !product || !quantity || !deadline || !useCase || !deliveryLocation) {
+      setStatus(
+        "Lengkapi jalur order, produk, jumlah, kebutuhan, target selesai, dan lokasi dulu.",
+      );
       return;
     }
 
-    const params = new URLSearchParams(window.location.search);
-    const gclid = params.get("gclid") || "";
-    const source = params.get("utm_source") || (gclid ? "google_ads" : "website");
-    const campaign = params.get("utm_campaign") || "";
+    const attribution = readAttribution();
+    const leadId = createLeadId();
+    const trackingLines = [
+      attribution.gclid ? `GCLID: ${attribution.gclid}` : "",
+      attribution.gbraid ? `GBRAID: ${attribution.gbraid}` : "",
+      attribution.wbraid ? `WBRAID: ${attribution.wbraid}` : "",
+    ].filter(Boolean);
+
     const message = [
-      "Halo Orplyn, saya mau konsultasi produksi.",
+      "Halo Orplyn, saya mau minta estimasi produksi.",
       "",
+      `Lead ID: ${leadId}`,
       `Nama: ${name || "Belum diisi"}`,
-      `Produk: ${product}`,
+      `Jalur order: ${lane === "single" ? "Satuan / test print" : "Produksi / batch"}`,
+      `Kebutuhan: ${useCase}`,
+      `Produk: ${product.title}`,
       `Jumlah: ${quantity}`,
+      `Bahan / produk: ${material || "Belum tahu, perlu rekomendasi"}`,
       `Target selesai: ${deadline}`,
       `Desain: ${design}`,
-      `Sumber: ${source}`,
-      campaign ? `Campaign: ${campaign}` : "",
+      `Kirim / pickup: ${deliveryLocation}`,
+      `Sumber: ${attribution.source}`,
+      attribution.medium ? `Medium: ${attribution.medium}` : "",
+      attribution.campaign ? `Campaign: ${attribution.campaign}` : "",
+      attribution.term ? `Keyword: ${attribution.term}` : "",
+      attribution.content ? `Konten: ${attribution.content}` : "",
+      ...trackingLines,
       "",
-      "Boleh dibantu cek teknik dan estimasi harganya?",
+      "Boleh dibantu cek MOQ, teknik, jadwal, dan estimasi harganya?",
     ]
       .filter(Boolean)
       .join("\n");
@@ -77,29 +244,37 @@ export function QuoteBuilder({
       return;
     }
 
-    window.dataLayer?.push({
-      event: "generate_lead",
+    const eventData = {
+      lead_id: leadId,
       lead_channel: "whatsapp",
-      product,
+      funnel_lane: lane,
+      product: product.title,
       quantity,
-      source,
-      campaign,
-      gclid,
-    });
-    window.gtag?.("event", "generate_lead", {
-      lead_channel: "whatsapp",
-      product,
-      quantity,
-      campaign,
-    });
+      use_case: useCase,
+      source: attribution.source,
+      medium: attribution.medium,
+      campaign: attribution.campaign,
+      landing_page: attribution.landingPage,
+      gclid: attribution.gclid,
+      gbraid: attribution.gbraid,
+      wbraid: attribution.wbraid,
+    };
 
-    if (googleAdsId && googleAdsConversionLabel) {
+    window.dataLayer?.push({
+      event: "whatsapp_brief_submit",
+      ...eventData,
+    });
+    window.gtag?.("event", "generate_lead", eventData);
+    window.gtag?.("event", "whatsapp_open", eventData);
+
+    if (googleAdsId && googleAdsLeadStartedLabel) {
       window.gtag?.("event", "conversion", {
-        send_to: `${googleAdsId}/${googleAdsConversionLabel}`,
+        send_to: `${googleAdsId}/${googleAdsLeadStartedLabel}`,
+        transaction_id: leadId,
       });
     }
 
-    setStatus("Membuka WhatsApp dengan brief pesanan...");
+    setStatus(`Membuka WhatsApp. Lead ID ${leadId} ikut dikirim untuk pencatatan.`);
     window.open(
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
       "_blank",
@@ -112,6 +287,32 @@ export function QuoteBuilder({
       className={compact ? "quote-form quote-form-compact" : "quote-form"}
       onSubmit={submitQuote}
     >
+      <fieldset className="order-lane">
+        <legend>Jenis kebutuhan</legend>
+        <div className="segmented-control">
+          <label>
+            <input
+              type="radio"
+              name={`order-lane-${compact ? "compact" : "full"}`}
+              value="single"
+              checked={lane === "single"}
+              onChange={() => changeLane("single")}
+            />
+            <span>Satuan / test print</span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name={`order-lane-${compact ? "compact" : "full"}`}
+              value="batch"
+              checked={lane === "batch"}
+              onChange={() => changeLane("batch")}
+            />
+            <span>Produksi / batch</span>
+          </label>
+        </div>
+      </fieldset>
+
       <div className="field-group">
         <label htmlFor={`quote-name-${compact ? "compact" : "full"}`}>Nama</label>
         <input
@@ -125,22 +326,41 @@ export function QuoteBuilder({
       </div>
 
       <div className="field-group">
+        <label htmlFor={`quote-use-case-${compact ? "compact" : "full"}`}>
+          Dipakai untuk apa?
+        </label>
+        <select
+          id={`quote-use-case-${compact ? "compact" : "full"}`}
+          value={useCase}
+          onChange={(event) => setUseCase(event.target.value)}
+          required
+        >
+          <option value="">Pilih kebutuhan</option>
+          {useCases.map((item) => (
+            <option key={item} value={item}>
+              {item}
+            </option>
+          ))}
+        </select>
+      </div>
+
+      <div className="field-group">
         <label htmlFor={`quote-product-${compact ? "compact" : "full"}`}>
           Mau bikin apa?
         </label>
         <select
           id={`quote-product-${compact ? "compact" : "full"}`}
-          value={product}
-          onChange={(event) => setProduct(event.target.value)}
+          value={productId}
+          onChange={(event) => changeProduct(event.target.value)}
           required
+          disabled={!lane}
         >
-          <option value="">Pilih produk</option>
-          {services.map((service) => (
-            <option key={service.slug} value={service.title}>
-              {service.title}
+          <option value="">{lane ? "Pilih produk" : "Pilih jenis kebutuhan dulu"}</option>
+          {availableProducts.map((product) => (
+            <option key={product.id} value={product.id}>
+              {product.title}
             </option>
           ))}
-          <option value="Lainnya">Lainnya</option>
         </select>
       </div>
 
@@ -153,14 +373,34 @@ export function QuoteBuilder({
           value={quantity}
           onChange={(event) => setQuantity(event.target.value)}
           required
+          disabled={!currentProduct}
         >
           <option value="">Pilih jumlah</option>
-          {quantities.map((item) => (
-            <option key={item} value={item}>
-              {item}
+          {availableQuantities.map((item) => (
+            <option key={item.label} value={item.label}>
+              {item.label}
             </option>
           ))}
         </select>
+      </div>
+
+      {currentProduct && (
+        <p className="order-rule">
+          Jalur ini mulai {effectiveMinimumOrder} pcs · harga grosir mulai {currentProduct.wholesaleFrom} pcs · estimasi normal {currentProduct.normalLeadTime}. Jadwal final mengikuti desain, antrean, dan stok bahan.
+        </p>
+      )}
+
+      <div className="field-group">
+        <label htmlFor={`quote-material-${compact ? "compact" : "full"}`}>
+          Bahan / produk
+        </label>
+        <input
+          id={`quote-material-${compact ? "compact" : "full"}`}
+          type="text"
+          value={material}
+          onChange={(event) => setMaterial(event.target.value)}
+          placeholder="Contoh: 24s atau belum tahu"
+        />
       </div>
 
       <div className="field-group">
@@ -170,8 +410,23 @@ export function QuoteBuilder({
         <input
           id={`quote-deadline-${compact ? "compact" : "full"}`}
           type="date"
+          min={today}
           value={deadline}
           onChange={(event) => setDeadline(event.target.value)}
+          required
+        />
+      </div>
+
+      <div className="field-group field-group-full">
+        <label htmlFor={`quote-location-${compact ? "compact" : "full"}`}>
+          Lokasi kirim / pickup
+        </label>
+        <input
+          id={`quote-location-${compact ? "compact" : "full"}`}
+          type="text"
+          value={deliveryLocation}
+          onChange={(event) => setDeliveryLocation(event.target.value)}
+          placeholder="Contoh: Ciputat, Jakarta Selatan, atau pickup"
           required
         />
       </div>
@@ -179,10 +434,7 @@ export function QuoteBuilder({
       <fieldset className="design-status">
         <legend>Status desain</legend>
         <div className="segmented-control">
-          {[
-            "Sudah ada desain",
-            "Perlu dibantu",
-          ].map((option) => (
+          {["Sudah ada desain", "Perlu dibantu"].map((option) => (
             <label key={option}>
               <input
                 type="radio"
@@ -202,6 +454,11 @@ export function QuoteBuilder({
         Kirim brief ke WhatsApp
         <Send size={17} aria-hidden="true" />
       </button>
+
+      <p className="privacy-note">
+        Dengan mengirim brief, kamu menyetujui data kebutuhan digunakan untuk
+        menanggapi permintaan estimasi. Baca <a href="/kebijakan-privasi">kebijakan privasi</a>.
+      </p>
 
       <p className="form-status" aria-live="polite">
         {status}

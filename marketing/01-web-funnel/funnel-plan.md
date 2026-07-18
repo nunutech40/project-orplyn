@@ -2,9 +2,9 @@
 
 ## Status
 
-Versi awal funnel sudah diimplementasikan di `website/` dan berjalan lokal melalui OrbStack. Nomor WhatsApp, PIC admin, jam admin, aturan minimum order, lead time awal, area layanan, pembayaran, dan model satuan/grosir sudah dikonfirmasi dari form owner 17 Juli 2026.
+Funnel fokus-konversi sudah diimplementasikan di `website/`. Homepage sekarang memakai dua jalur order, tiga offer utama, FAQ komersial, NAP yang terlihat, dan form WhatsApp yang mengikuti MOQ produk.
 
-Blocker public launch sekarang adalah domain final, tracking ID, Search Console/Google tag, approval copy publik, lead log, uji WhatsApp end-to-end, dan final manual QA.
+Nomor WhatsApp nyata dan aturan order owner sudah dipasang. Staging sengaja `noindex`. Blocker public launch adalah domain final, tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, dan final manual QA.
 
 ## Funnel Name
 
@@ -12,7 +12,7 @@ Lead-gen web funnel untuk Orplyn.
 
 ## Main Conversion
 
-Valid brief submission yang membuka percakapan WhatsApp. Pada level bisnis, conversion utama adalah qualified WhatsApp lead, bukan click mentah.
+Pada level website: valid brief yang membuka WhatsApp dan membawa Lead ID. Pada level bisnis: qualified WhatsApp lead, quotation, dan sale. Event teknis tidak boleh disamakan dengan hasil bisnis.
 
 ## Secondary Conversion
 
@@ -20,13 +20,14 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 
 ## Recommended Page Structure
 
-1. Hero: jasa utama + lokasi + CTA WhatsApp.
-2. Category selector: kaos polos, sablon custom, bordir, totebag, jersey, fullprint.
-3. Proof gallery: hasil produksi dari asset yang sudah ada.
-4. How to order: kirim desain, pilih bahan/teknik, hitung harga, produksi, kirim/ambil.
-5. Use cases: komunitas, event, kantor, brand clothing, sekolah/kampus.
-6. FAQ: minimum order, estimasi produksi, file desain, pembayaran, pengiriman.
-7. Final CTA: konsultasi via WhatsApp.
+1. Hero literal: jasa sablon kaos custom + Ciputat + satuan sampai batch.
+2. Dua jalur: satuan/test print dan produksi/batch.
+3. Tiga offer: DTF/custom satuan, event/community batch, kaos polos satuan/grosir.
+4. Capability sekunder: clothing brand, bordir, jersey, dan merchandise.
+5. Proof gallery dari produksi nyata.
+6. Segmen: event/community dan vendor/reseller/brand.
+7. Alur order dan FAQ harga/MOQ/bahan/teknik/lead time.
+8. Brief WhatsApp terstruktur dan NAP workshop.
 
 ## Confirmed Conversion Inputs
 
@@ -43,7 +44,7 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 
 Primary CTA:
 
-`Konsultasi & Hitung Harga via WhatsApp`
+`Cek MOQ & estimasi`
 
 Alternative CTA:
 
@@ -55,16 +56,16 @@ Alternative CTA:
 
 ## Page Variants To Consider
 
-- Main landing page semua layanan: implemented.
+- Main landing page fokus dua jalur/tiga offer: implemented.
 - Local SEO intent Ciputat/Tangerang Selatan: implemented pada homepage dan metadata.
+- High-intent DTF/satuan: implemented pada `/layanan/sablon-dtf-satuan`.
 - Use-case service pages: implemented untuk event, clothing brand, bordir/seragam, jersey, totebag, dan kaos polos.
-- Technique-specific pages seperti DTF atau plastisol: hanya dibuat jika search demand dan informasi owner cukup.
 
 ## Tracking Needed
 
-- Valid brief event `generate_lead`: implemented.
-- Source tracking dengan UTM dan `gclid`: implemented.
-- Google Ads conversion hook: implemented, belum dikonfigurasi.
+- Valid brief event `whatsapp_brief_submit`, `generate_lead`, dan `whatsapp_open`: implemented.
+- Lead ID unik dan source tracking dengan UTM, landing page, `gclid`, `gbraid`, dan `wbraid`: implemented.
+- Google Ads `lead started` conversion hook: implemented, belum dikonfigurasi dan harus secondary.
 - Qualified lead, quote, sale, dan revenue: belum ada lead log atau CRM.
 - Phone click/WhatsApp click: bisa digunakan sebagai secondary signal setelah nomor nyata diuji.
 - Scroll depth: belum diimplementasikan dan bukan prioritas sebelum sales tracking.

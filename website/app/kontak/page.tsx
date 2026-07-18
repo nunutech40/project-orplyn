@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { Camera, MapPin, Navigation } from "../components/Icons";
+import Link from "next/link";
+import {
+  Camera,
+  Clock3,
+  MapPin,
+  MessageCircle,
+  Navigation,
+} from "../components/Icons";
 import { QuoteBuilder } from "../components/QuoteBuilder";
 import { business } from "../lib/site-data";
 
@@ -27,9 +34,31 @@ export default function ContactPage() {
       <section className="contact-grid">
         <div className="contact-info">
           <div>
+            <MessageCircle size={25} aria-hidden="true" />
+            <h2>WhatsApp sales</h2>
+            <p>
+              {business.whatsappDisplay} · Aulia
+              <br />
+              Admin {business.adminHours}
+            </p>
+            <Link href="#quote">Kirim brief terarah</Link>
+          </div>
+          <div>
+            <Clock3 size={25} aria-hidden="true" />
+            <h2>Jam workshop</h2>
+            <p>
+              {business.workshopHours}. Konfirmasi ke admin sebelum datang untuk
+              memastikan kebutuhanmu bisa dilayani.
+            </p>
+          </div>
+          <div>
             <MapPin size={25} aria-hidden="true" />
             <h2>Workshop Ciputat</h2>
-            <p>{business.address}</p>
+            <p>
+              {business.address}
+              <br />
+              {business.serviceArea}
+            </p>
             <a href={business.maps} target="_blank" rel="noreferrer">
               <Navigation size={18} aria-hidden="true" /> Buka petunjuk arah
             </a>

@@ -12,23 +12,23 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web versi awal sudah dibangun dan berjalan secara lokal di OrbStack. Form owner/customer tahap awal sudah terisi, sehingga prioritas berikutnya adalah rebuild website dengan WhatsApp nyata, finalisasi domain, pemasangan measurement, penyusunan paket/range harga yang disetujui owner, lalu peluncuran channel acquisition secara bertahap.
+Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Staging sengaja `noindex`; prioritas berikutnya adalah lead log operasional, domain, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
 
 ### Current status board
 
 | Workstream | Status | Next gate |
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
-| Commercial facts and offer | Partially confirmed from owner/admin forms | Owner approval for public claims, tier pricing, capacity |
+| Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Complete locally | Rebuild with real WA, domain, and end-to-end lead test |
+| Web funnel source | Conversion-focused rebuild complete locally | Domain, manual QA, and end-to-end lead test |
 | Docker/OrbStack runtime | Healthy | Keep production checks passing |
-| Technical SEO foundation | Prepared | Public indexing and Search Console |
+| Technical SEO foundation | Prepared; staging intentionally noindex | Final domain, public indexing, and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
-| Analytics and Ads conversion | Code and operational checklist prepared | Add real IDs and verify an end-to-end lead |
+| Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
 | Organic content system | Initial Instagram batch curated | Confirm rights, prepare P0 variants, and set cadence |
-| External market intelligence | Initial snapshot complete | Validate keyword volume, Maps rank, and experiments |
+| External market intelligence | Initial snapshot and offer/SERP refresh complete | Validate keyword volume, Maps rank, and experiments |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
@@ -105,7 +105,7 @@ Data di atas boleh dipakai untuk strategi dan konfigurasi internal. Harga mulai,
 ### P0, wajib sebelum public launch
 
 - Domain final yang dimiliki owner.
-- WhatsApp nyata dipasang ke website dan diuji end-to-end sampai lead log.
+- WhatsApp nyata sudah dipasang; uji end-to-end sampai lead log masih wajib.
 - Target maksimal first response dan SOP admin disepakati.
 - Format quotation final dipilih: chat WhatsApp, PDF, spreadsheet, atau kombinasi.
 - Search Console, Google tag/Analytics, dan Ads conversion disiapkan.
@@ -135,9 +135,9 @@ Form owner/customer yang sudah terisi ada di `deliverables/owner-research/`. Fil
 
 ### Working positioning
 
-Orplyn adalah vendor apparel dan print studio lokal di Ciputat untuk kebutuhan event, komunitas, kantor, organisasi, clothing brand, jersey, bordir, totebag, dan kaos custom dengan pilihan teknik digital maupun manual.
+Orplyn adalah jasa sablon kaos custom dan kaos polos di Ciputat, dari 1 pcs sampai produksi batch, dengan brief awal untuk membantu mengecek MOQ, bahan, teknik, dan deadline.
 
-Model satuan dan grosir menjadi dua jalur intent di bawah positioning tersebut, bukan dua brand terpisah. Data owner/admin sudah memberi rule awal per produk, tetapi tier harga dan approval klaim publik masih perlu diselesaikan.
+Model satuan/test print dan produksi/batch menjadi dua jalur intent, bukan dua brand terpisah. Tiga offer utama adalah DTF/custom satuan, event/community batch, dan kaos polos satuan/grosir. Bordir, jersey, clothing brand, special ink, fullprint, serta merchandise tetap tersedia sebagai capability sekunder.
 
 ### Why this positioning
 
@@ -175,6 +175,8 @@ Jangan mengunci budget Ads besar berdasarkan urutan ini sebelum divalidasi denga
 Landing page harus membantu visitor menjawab:
 
 - Orplyn bisa membuat apa?
+- Apakah bisa satuan atau perlu batch?
+- Berapa MOQ dan estimasi waktu normalnya?
 - Apakah hasil produksinya nyata?
 - Teknik apa yang mungkin cocok?
 - Apakah lokasinya relevan?
@@ -184,13 +186,17 @@ Landing page harus membantu visitor menjawab:
 
 Visitor mengisi brief singkat berisi:
 
+- jalur satuan/test print atau produksi/batch;
 - nama;
+- kebutuhan/penggunaan;
 - produk;
 - perkiraan jumlah;
 - target selesai;
-- status desain.
+- status desain;
+- bahan/produk;
+- lokasi kirim atau pickup.
 
-Brief dibentuk menjadi pesan WhatsApp agar admin tidak memulai percakapan dari nol.
+Brief diberi Lead ID, source/campaign/click identifier, lalu dibentuk menjadi pesan WhatsApp agar admin tidak memulai percakapan dari nol.
 
 ### Sales follow-through
 
@@ -220,6 +226,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 ### Routes
 
 - `/` - main lead funnel dan local intent page.
+- `/layanan/sablon-dtf-satuan` - DTF dan kaos custom mulai 1 pcs.
 - `/layanan/kaos-event-komunitas` - kebutuhan kelompok dan event.
 - `/layanan/produksi-clothing-brand` - clothing brand dan special print.
 - `/layanan/bordir-seragam` - bordir dan seragam.
@@ -228,17 +235,19 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - `/layanan/kaos-polos` - kaos polos dan basis produksi.
 - `/portfolio` - bukti hasil produksi.
 - `/kontak` - Maps, Instagram, dan brief form.
+- `/kebijakan-privasi` - penggunaan data brief dan attribution.
 - `/robots.txt`, `/sitemap.xml`, `/llms.txt` - crawler discovery.
 
 ### Conversion behavior
 
 - Form utama ada di `website/app/components/QuoteBuilder.tsx`.
 - Nomor placeholder bawaan: `6280000000000`.
-- Nomor owner/admin yang perlu dipakai untuk build publik: `6282317579311`.
+- Nomor owner/admin yang dipakai pada build lokal: `6282317579311`.
 - Jika placeholder masih aktif, form menampilkan status dan tidak membuka nomor palsu.
-- Form membaca `utm_source`, `utm_campaign`, dan `gclid`.
-- Event utama: `generate_lead`.
-- Event Google Ads opsional: `conversion`.
+- Form membatasi produk/jumlah berdasarkan jalur dan MOQ owner.
+- Form membuat Lead ID dan membaca UTM, landing page, `gclid`, `gbraid`, serta `wbraid`.
+- Event teknis: `whatsapp_brief_submit`, `generate_lead`, dan `whatsapp_open`.
+- Event Google Ads opsional adalah secondary `lead started`, bukan qualified lead.
 
 ### SEO and AI discovery already implemented
 
@@ -251,19 +260,21 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Service pages with indexable copy.
 - Sitemap and robots.
 - `llms.txt` as a machine-readable business summary.
+- Staging/local `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
 
 Important: `llms.txt` tidak menjamin sebuah AI akan merekomendasikan Orplyn. Public indexing, consistent NAP, reviews, citations, and useful content tetap lebih penting.
 
 ### Quality status
 
-Verified on 16 Juli 2026:
+Verified on 18 Juli 2026 after the conversion/offer rebuild:
 
-- `npm run lint`: zero errors, image optimization warnings only.
+- `npm run lint`: zero errors, 9 image optimization warnings only.
 - `npm run build`: passed.
-- `node --test tests/rendered-html.test.mjs`: 3 tests passed.
+- `node --test tests/rendered-html.test.mjs`: 6 tests passed.
 - Docker image build: passed.
 - Container health: healthy.
-- Homepage, service route, images, OG image, sitemap, robots, and `llms.txt`: HTTP 200.
+- Homepage, DTF landing, privacy, sitemap, robots, and `llms.txt`: HTTP 200.
+- Runtime checks confirmed literal H1, real WhatsApp display, two order lanes, three primary offers, privacy link, and staging `noindex`.
 - Automated visual browser backend was unavailable. Desktop and mobile still need final manual visual QA before public launch.
 
 ## 8. Environment Configuration
@@ -273,13 +284,14 @@ Template: `website/.env.example`.
 Required:
 
 - `NEXT_PUBLIC_SITE_URL`
+- `NEXT_PUBLIC_ALLOW_INDEXING`
 - `NEXT_PUBLIC_WHATSAPP_NUMBER`
 
 Optional until tracking setup:
 
 - `NEXT_PUBLIC_GOOGLE_TAG_ID`
 - `NEXT_PUBLIC_GOOGLE_ADS_ID`
-- `NEXT_PUBLIC_GOOGLE_ADS_CONVERSION_LABEL`
+- `NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL`
 - `GOOGLE_SITE_VERIFICATION`
 
 `NEXT_PUBLIC_*` values are bundled at build time. Rebuild the Docker image after changing them.
@@ -332,7 +344,7 @@ node --test tests/rendered-html.test.mjs
 Deliverables:
 
 - Resolve remaining P0 gaps: domain, first-response target, quotation format, and owner approval for public claims.
-- Decide primary offer around event/komunitas, vendor/reseller, DTF satuan, and kaos polos.
+- Validate the implemented offer architecture: DTF satuan, event/community batch, and kaos polos.
 - Turn confirmed MOQ, lead time, payment, delivery, and pickup rules into website/WA-safe language.
 - Collect permissioned review/testimonial/case-study proof where permitted.
 - Create simple package/range-price options for customer qualification; publish only after owner approval.
@@ -345,7 +357,7 @@ No major public claim is based on guessing, and owner has approved pricing/proof
 
 Deliverables:
 
-- Configure real WhatsApp number `6282317579311`.
+- Keep real WhatsApp number `6282317579311` configured.
 - Connect owned domain and HTTPS.
 - Perform mobile and desktop QA.
 - Test every CTA and generated WhatsApp message.
@@ -392,16 +404,14 @@ Start only after Phase 1 exit gate.
 
 Recommended initial structure:
 
-- Campaign: Sablon Kaos Local High Intent.
-- Ad group or tightly themed group: event and community.
-- Ad group: clothing brand and plastisol/manual print.
-- Ad group: bordir and seragam.
-- Ad group: jersey custom.
-- Ad group: totebag and merchandise.
+- One campaign: `Search - DTF Satuan - Ciputat/Tangsel`; or
+- One campaign: `Search - Kaos Event/Komunitas - Tangsel/Jaksel`.
+- Choose one, based on gross profit, close rate, capacity, and deadline risk. Do not split the trial budget across both at launch.
 
 Landing mapping:
 
 - Event keywords -> `/layanan/kaos-event-komunitas`.
+- DTF/satuan keywords -> `/layanan/sablon-dtf-satuan`.
 - Clothing brand or special print -> `/layanan/produksi-clothing-brand`.
 - Bordir or seragam -> `/layanan/bordir-seragam`.
 - Jersey -> `/layanan/jersey-custom`.
@@ -565,20 +575,33 @@ Before using a raw asset:
 - Moved owner/admin answers into `business-data/owner-answers.md`: WhatsApp `082317579311`, PIC Aulia, product MOQ/lead time, payment rules, segment priorities, growth targets, and customer voice C001.
 - Kept price, proof, capacity, and QC language gated for owner approval because the filled forms did not mark the owner-approval checkbox.
 
+### 18 Juli 2026
+
+- Refreshed local competitor and official Google research in `marketing/07-market-research/offer-serp-refresh-2026-07-18.md`.
+- Narrowed homepage positioning to sablon kaos custom and kaos polos in Ciputat, from 1 pcs to batch production.
+- Reorganized acquisition into two order lanes and three primary offers: DTF/custom satuan, event/community batch, and kaos polos satuan/grosir.
+- Added a dedicated `/layanan/sablon-dtf-satuan` page and kept bordir, jersey, clothing brand, and merchandise secondary.
+- Published owner-confirmed MOQ and normal lead-time guidance on local staging without adding unapproved price ranges or quality claims.
+- Rebuilt the WhatsApp brief with Lead ID, use case, product-aware quantity rules, deadline, location, UTM, landing page, GCLID, GBRAID, and WBRAID.
+- Defined `whatsapp_brief_submit`, `generate_lead`, and `whatsapp_open` as technical events; Ads `lead started` remains secondary to qualified/converted lead.
+- Added visible NAP/hours, unified schema naming, a privacy notice, and `NEXT_PUBLIC_ALLOW_INDEXING=false` for localhost/staging.
+- Reduced the future Ads pilot to one Search campaign and one offer at launch because the owner trial budget is too small to split learning responsibly.
+- Rebuilt Docker successfully; lint had zero errors, production build passed, 6 smoke tests passed, container was healthy, and six core routes returned HTTP 200.
+
 ## 16. Immediate Next Actions
 
 The next agent should not start by redesigning the website. Start here:
 
-1. Configure `NEXT_PUBLIC_WHATSAPP_NUMBER=6282317579311`, rebuild Docker, and run one end-to-end CTA-to-WA test with lead logging.
-2. Get or choose the public domain, then set HTTPS, canonical URL, Search Console, and Google tag.
-3. Ask owner to approve public wording for MOQ, lead time, kaos polos mulai Rp33 ribu, rush order, QC/rework, and proof/testimonial usage.
-4. Build a simple package/range-price sheet for event/komunitas, DTF satuan, kaos polos, and tas custom; keep it internal until approved.
-5. Confirm capacity and overload thresholds before running ads or event/panitia pushes.
-6. Assign PIC and start the P0 rows in `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`.
-7. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
-8. Collect at least 30 anonymized leads/orders using `customer-data-template.md` and interview 7-11 more customers/lost leads beyond C001.
+1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
+2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
+3. Get or choose the public domain, then set HTTPS, canonical URL, Search Console, Google tag, and only then change `NEXT_PUBLIC_ALLOW_INDEXING=true`.
+4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
+5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
+6. Agree the first-response target and quotation format with Aulia.
+7. Assign PIC and start the P0 rows in `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`.
+8. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
 9. Complete GBP, authentic review outreach, public indexing, Search Console, and end-to-end lead measurement.
-10. Only then prepare the Search Ads pilot by lane, starting within the Rp100 ribu-Rp700 ribu/month trial range.
+10. Only then select one Search Ads offer and run the Rp100 ribu-Rp700 ribu/month pilot without splitting the initial budget.
 
 ## 17. Handoff Checklist For Every Future Session
 

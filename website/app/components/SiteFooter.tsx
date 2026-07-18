@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Camera, MapPin, MessageCircle } from "./Icons";
-import { business, services } from "../lib/site-data";
+import { business, primaryServices } from "../lib/site-data";
 
 export function SiteFooter() {
   return (
@@ -17,14 +17,14 @@ export function SiteFooter() {
             />
           </Link>
           <p>
-            Kaos polos, sablon custom, bordir, jersey, dan apparel produksi dari
-            Ciputat, Tangerang Selatan.
+            Sablon kaos custom dan kaos polos dari satuan sampai produksi batch
+            di Ciputat, Tangerang Selatan.
           </p>
         </div>
 
         <div>
           <h2>Layanan</h2>
-          {services.slice(0, 5).map((service) => (
+          {primaryServices.map((service) => (
             <Link key={service.slug} href={`/layanan/${service.slug}`}>
               {service.title}
             </Link>
@@ -40,12 +40,14 @@ export function SiteFooter() {
             <MapPin size={17} aria-hidden="true" /> Buka Google Maps
           </a>
           <Link href="/#quote">
-            <MessageCircle size={17} aria-hidden="true" /> Minta estimasi
+            <MessageCircle size={17} aria-hidden="true" /> WhatsApp {business.whatsappDisplay}
           </Link>
+          <span className="footer-contact-meta">Admin {business.adminHours}</span>
         </div>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Orplyn.</span>
+        <Link href="/kebijakan-privasi">Kebijakan privasi</Link>
         <span>Ciputat, Tangerang Selatan</span>
       </div>
     </footer>

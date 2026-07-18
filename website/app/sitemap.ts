@@ -18,6 +18,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
+    {
+      url: `${siteUrl}/kebijakan-privasi`,
+      changeFrequency: "yearly",
+      priority: 0.2,
+    },
     ...services.map((service) => ({
       url: `${siteUrl}/layanan/${service.slug}`,
       changeFrequency: "monthly" as const,

@@ -8,7 +8,13 @@ import {
 } from "../../components/Icons";
 import { notFound } from "next/navigation";
 import { QuoteBuilder } from "../../components/QuoteBuilder";
-import { business, getService, services, siteUrl } from "../../lib/site-data";
+import {
+  business,
+  getService,
+  services,
+  siteUrl,
+  WHATSAPP_PLACEHOLDER,
+} from "../../lib/site-data";
 
 type ServicePageProps = {
   params: Promise<{ slug: string }>;
@@ -59,11 +65,25 @@ export default async function ServicePage({ params }: ServicePageProps) {
     description: service.description,
     url: `${siteUrl}/layanan/${service.slug}`,
     image: `${siteUrl}${service.image}`,
-    areaServed: ["Ciputat", "Tangerang Selatan", "Jakarta Selatan", "Depok"],
+    areaServed: [
+      "Ciputat",
+      "Tangerang Selatan",
+      "Jabodetabek",
+      "Indonesia",
+    ],
     provider: {
       "@type": "LocalBusiness",
-      name: business.longName,
-      address: business.address,
+      name: business.name,
+      alternateName: business.longName,
+      url: siteUrl,
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: business.address,
+        addressCountry: "ID",
+      },
+      ...(business.whatsapp !== WHATSAPP_PLACEHOLDER
+        ? { telephone: `+${business.whatsapp}` }
+        : {}),
     },
   };
 
@@ -79,7 +99,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       >
         <div className="hero-overlay" aria-hidden="true" />
         <div className="subpage-hero-content">
-          <Link href="/#layanan" className="back-link">
+          <Link href="/#paket" className="back-link">
             <ArrowLeft size={18} aria-hidden="true" /> Semua layanan
           </Link>
           <p className="eyebrow">{service.eyebrow}</p>
@@ -90,6 +110,22 @@ export default async function ServicePage({ params }: ServicePageProps) {
             Bahas kebutuhan
           </Link>
         </div>
+      </section>
+
+      <section className="service-order-facts" aria-label="Aturan order">
+        <div>
+          <p className="eyebrow eyebrow-dark">PANDUAN ORDER</p>
+          <h2>MOQ dan waktu produksi normal.</h2>
+        </div>
+        <ul>
+          {service.orderFacts.map((fact) => (
+            <li key={fact}>{fact}</li>
+          ))}
+        </ul>
+        <p>
+          Harga dan jadwal final dikonfirmasi setelah desain, bahan, jumlah,
+          stok, serta target selesai diperiksa admin.
+        </p>
       </section>
 
       <section className="service-detail-section">
@@ -158,7 +194,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
         <QuoteBuilder
           whatsappNumber={business.whatsapp}
-          initialProduct={service.title}
+          initialProductId={service.quoteProductId}
+          initialLane={service.defaultLane}
           compact
         />
       </section>
