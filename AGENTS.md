@@ -123,6 +123,7 @@ docker compose --env-file .env.production -f compose.production.yml ps
 ```
 
 Hosting migration rules are in `ops/production/MIGRATION-SEO.md`. Keep the final domain and paths unchanged when moving hosts; test the new origin first, then change DNS only.
+The full domain and network map is in `ops/production/DOMAIN-AND-DNS-ARCHITECTURE.md`; update it whenever registrar, nameserver, DNS, origin IP, TLS, or canonical behavior changes.
 
 Instagram archive:
 

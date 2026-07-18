@@ -2,6 +2,8 @@
 
 Deployment ini sengaja terpisah dari source, Compose, database, dan lifecycle Kohnu. Artifact utamanya adalah image Docker versioned untuk `linux/amd64`.
 
+Domain, DNS, Cloudflare, apex/www, TLS, origin IP, dan migration contract didokumentasikan di `DOMAIN-AND-DNS-ARCHITECTURE.md`.
+
 ## Host Layout
 
 ```text

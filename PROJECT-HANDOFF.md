@@ -362,6 +362,7 @@ cd /opt/orplyn
 Full deployment and migration runbooks:
 
 - `ops/production/README.md`
+- `ops/production/DOMAIN-AND-DNS-ARCHITECTURE.md`
 - `ops/production/MIGRATION-SEO.md`
 
 ## 10. Public Launch Roadmap
@@ -620,6 +621,7 @@ Before using a raw asset:
 - Documented future hosting migration around a stable final domain and unchanged URL paths. A hosting-only move changes DNS after the new origin is tested; a domain change requires one-to-one permanent redirects and a separate SEO migration process.
 - Owner purchased `orplyn.id` through DomaiNesia. Public WHOIS showed the new registration, current `NSX1/NSX2.DOMAINESIA.COM` nameservers, and unsigned DNSSEC before Cloudflare onboarding.
 - Cloudflare imported the intended proxied apex/www records and assigned `cleo.ns.cloudflare.com` plus `stella.ns.cloudflare.com`. Prepared and deployed a final-domain noindex image and Caddy apex/www routes before delegating nameservers.
+- DomaiNesia saved the Cloudflare nameserver pair successfully. Added `ops/production/DOMAIN-AND-DNS-ARCHITECTURE.md` as the durable record for registrar, DNS, apex/www, Cloudflare proxy, origin IP, Caddy/Docker routing, TLS, noindex, and future hosting migration.
 
 ## 16. Immediate Next Actions
 
