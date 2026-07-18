@@ -32,7 +32,13 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.match(html, /Jasa Sablon Kaos Custom Ciputat/i);
   assert.match(
     html,
-    /Jasa sablon kaos custom di Ciputat, dari satuan sampai produksi batch/i,
+    /<h1>Jasa sablon kaos custom di Ciputat\.<\/h1>/i,
+  );
+  assert.match(html, /Mulai 1 pcs untuk DTF dan kaos polos/i);
+  assert.match(html, /Minta estimasi/i);
+  assert.doesNotMatch(
+    html,
+    /<h1>Jasa sablon kaos custom di Ciputat, dari satuan sampai produksi batch\.<\/h1>/i,
   );
   assert.match(html, /DTF MULAI 1 PCS/i);
   assert.match(html, /TIGA KEBUTUHAN UTAMA/i);

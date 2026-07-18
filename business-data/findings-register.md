@@ -128,6 +128,13 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: ini tidak membuktikan jumlah review pasti nol; dashboard owner/PIC GBP tetap menjadi source of truth untuk inventory review.
 - Marketing implication: audit review dari dashboard harus dilakukan sebelum memilih review untuk website atau menjalankan outreach.
 
+### O-009 - Hero homepage terlalu padat pada ponsel
+
+- Observed: feedback eksternal yang dikirim user pada 18 Juli 2026 menyatakan first screen homepage berisi terlalu banyak kata pada ponsel dan belum cepat menjelaskan Orplyn itu apa. Informasi pada service card dinilai lebih nyaman karena lebih ringkas dan terstruktur.
+- Source: dua screenshot percakapan dan tampilan mobile yang diberikan user.
+- Limit: baru satu reviewer eksternal dan belum merupakan usability study terukur.
+- Marketing implication: first viewport harus menjawab kategori bisnis dalam satu H1 literal, memakai supporting copy pendek, dan memberi CTA yang dipahami tanpa istilah internal seperti MOQ.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -233,6 +240,10 @@ WhatsApp dipakai untuk meminta feedback setelah order selesai. Customer diarahka
 ### D-007 - Pilihan foto mengikuti commercial priority
 
 Hero, landing, dan case study memprioritaskan order/use case yang paling relevan dengan target sales, memiliki proof kuat, serta mendapat izin. Likes dan visual appeal tetap dipertimbangkan, tetapi tidak menggantikan data order, repeat, margin, intent, dan hak publikasi. Event/community batch menjadi prioritas awal; exact bestseller tetap harus dikonfirmasi dari data owner/order.
+
+### D-008 - Mobile hero mengutamakan category clarity
+
+Homepage first viewport memakai H1 literal `Jasa sablon kaos custom di Ciputat`, satu supporting message tentang order 1 pcs dan batch, serta CTA `Minta estimasi` dan `Lihat layanan`. Detail segmen, MOQ, teknik, bahan, dan deadline tetap tersedia setelah hero dan pada service/form sections agar mobile visitor tidak harus memproses semuanya sekaligus.
 
 ## Documentation Protocol
 

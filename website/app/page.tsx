@@ -168,20 +168,19 @@ export default function Home() {
       >
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">SABLON KAOS CUSTOM · KAOS POLOS · CIPUTAT</p>
-          <h1>Jasa sablon kaos custom di Ciputat, dari satuan sampai produksi batch.</h1>
+          <p className="eyebrow">ORPLYN · SABLON &amp; KAOS CUSTOM</p>
+          <h1>Jasa sablon kaos custom di Ciputat.</h1>
           <p className="hero-copy">
-            DTF dan kaos polos bisa mulai 1 pcs. Untuk event, komunitas,
-            vendor, kantor, dan brand, pilih jalur produksi agar MOQ, teknik,
-            bahan, dan deadline bisa dicek sejak awal.
+            Mulai 1 pcs untuk DTF dan kaos polos. Tersedia juga produksi batch
+            untuk event dan bisnis.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="#quote">
               <MessageCircle size={20} aria-hidden="true" />
-              Cek MOQ & estimasi
+              Minta estimasi
             </Link>
             <Link className="button button-ghost-light" href="#paket">
-              Pilih kebutuhan
+              Lihat layanan
               <ArrowRight size={19} aria-hidden="true" />
             </Link>
           </div>
