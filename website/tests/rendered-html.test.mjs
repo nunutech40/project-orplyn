@@ -42,6 +42,18 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.match(html, /PILIH SESUAI KEBUTUHAN/i);
   assert.match(html, /Kirim detail &amp; minta estimasi/i);
   assert.doesNotMatch(html, /Mulai brief|Cek estimasi/i);
+  const productSelect = html.match(
+    /<select[^>]*id="quote-product-full"[^>]*>[\s\S]*?<\/select>/i,
+  )?.[0];
+  const quantitySelect = html.match(
+    /<select[^>]*id="quote-quantity-full"[^>]*>[\s\S]*?<\/select>/i,
+  )?.[0];
+  assert.ok(productSelect, "homepage product select should render");
+  assert.ok(quantitySelect, "homepage quantity select should render");
+  assert.doesNotMatch(productSelect, /\bdisabled\b/i);
+  assert.doesNotMatch(quantitySelect, /\bdisabled\b/i);
+  assert.match(productSelect, /Pilih produk/i);
+  assert.match(quantitySelect, /value="1 pcs"/i);
   const primaryServicesStart = html.indexOf("service-grid service-grid-primary");
   const primaryServicesEnd = html.indexOf("</section>", primaryServicesStart);
   const primaryServicesHtml = html.slice(primaryServicesStart, primaryServicesEnd);

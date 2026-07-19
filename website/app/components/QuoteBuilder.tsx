@@ -136,7 +136,7 @@ export function QuoteBuilder({
   initialLane,
   compact = false,
 }: QuoteBuilderProps) {
-  const [lane, setLane] = useState<FunnelLane | "">(initialLane || "");
+  const [lane, setLane] = useState<FunnelLane>(initialLane || "batch");
   const [productId, setProductId] = useState(initialProductId);
   const [quantity, setQuantity] = useState("");
   const [deadline, setDeadline] = useState("");
@@ -163,7 +163,7 @@ export function QuoteBuilder({
     : 0;
   const availableQuantities = currentProduct
     ? quantities.filter((item) => item.minimum >= effectiveMinimumOrder)
-    : [];
+    : quantities;
 
   const today = useMemo(() => getJakartaDate(), []);
 
@@ -188,16 +188,36 @@ export function QuoteBuilder({
   }
 
   function changeProduct(nextProductId: string) {
+    const nextProduct = getQuoteProduct(nextProductId);
+    const nextLane = lane === "single" && nextProduct && !nextProduct.canSingle
+      ? "batch"
+      : lane;
+    const nextMinimumOrder = nextProduct
+      ? nextLane === "batch" && nextProduct.canSingle
+        ? nextProduct.wholesaleFrom
+        : nextProduct.minimumOrder
+      : 0;
+    const selectedQuantity = quantities.find((item) => item.label === quantity);
+
+    if (nextLane !== lane) {
+      setLane(nextLane);
+    }
     setProductId(nextProductId);
-    setQuantity("");
-    setStatus("");
+    if (selectedQuantity && selectedQuantity.minimum < nextMinimumOrder) {
+      setQuantity("");
+      setStatus(
+        `Pilih ulang jumlah. Minimum untuk produk dan skala ini ${nextMinimumOrder} pcs.`,
+      );
+    } else {
+      setStatus("");
+    }
   }
 
   function submitQuote(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const product = getQuoteProduct(productId);
-    if (!lane || !product || !quantity || !deadline || !useCase || !deliveryLocation) {
+    if (!product || !quantity || !deadline || !useCase || !deliveryLocation) {
       setStatus(
         "Lengkapi skala pesanan, produk, jumlah, kebutuhan, target selesai, dan lokasi dulu.",
       );
@@ -353,9 +373,8 @@ export function QuoteBuilder({
           value={productId}
           onChange={(event) => changeProduct(event.target.value)}
           required
-          disabled={!lane}
         >
-          <option value="">{lane ? "Pilih produk" : "Pilih jenis kebutuhan dulu"}</option>
+          <option value="">Pilih produk</option>
           {availableProducts.map((product) => (
             <option key={product.id} value={product.id}>
               {product.title}
@@ -373,7 +392,6 @@ export function QuoteBuilder({
           value={quantity}
           onChange={(event) => setQuantity(event.target.value)}
           required
-          disabled={!currentProduct}
         >
           <option value="">Pilih jumlah</option>
           {availableQuantities.map((item) => (
