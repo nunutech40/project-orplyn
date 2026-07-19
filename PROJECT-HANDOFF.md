@@ -12,7 +12,7 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Final domain, Cloudflare DNS, edge HTTPS, dan origin HTTPS sudah aktif; website tetap sengaja `noindex`. Prioritas berikutnya adalah lead log operasional, measurement, GBP, approval range harga/proof, lalu peluncuran acquisition bertahap.
+Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Final domain, Cloudflare DNS, edge HTTPS, dan origin HTTPS sudah aktif; website tetap sengaja `noindex`. Owner evolution lens 19 Juli 2026 memindahkan prioritas ke volume top-of-funnel event/komunitas: measurement minimum, GBP/review, permissioned event proof, referral, dan focused event demand generation didahulukan dari funnel polishing.
 
 ### Current status board
 
@@ -20,7 +20,7 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
 | Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
-| Product differentiation | Research and MVP workflow design complete; D-011 selected | M-06/M-07/M-08, 11 interviews, and five-order E-11 pilot |
+| Product differentiation | Owner evolution recorded as D-012: H-009 acquisition and H-008 retention are separated | Five event orders for E-12; repeat opportunities for E-11; no public claim before gate |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
 | Web funnel source | Live at `https://orplyn.id` with intentional noindex | Manual QA and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
@@ -29,8 +29,8 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
-| Organic content system | Initial Instagram batch curated | Confirm rights, prepare P0 variants, and set cadence |
-| External market intelligence | Competitor, offer/SERP, and differentiation/product refresh complete | Validate H-008 through interviews and five-order concierge pilot |
+| Organic content system | Initial Instagram batch curated | Confirm rights and build event/community proof content first |
+| External market intelligence | Competitor refresh and owner evolution response complete | Validate H-009/E-12 for acquisition and H-008/E-11 for retention separately |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
@@ -150,11 +150,11 @@ Model satuan/test print dan produksi/batch menjadi dua jalur intent, bukan dua b
 
 ### Differentiation thesis, not yet a public claim
 
-Live competitor research on 19 Juli 2026 confirmed that price, quality, speed, consultation, one-piece-to-batch range, workshop location, and technique breadth are category parity. Orplyn's product direction is therefore `spec-first, repeat-ready production`: convert an incomplete need into an approved production specification, record milestones and closeout, then reuse the final reference for repeat orders.
+Live competitor research on 19 Juli 2026 confirmed that price, quality, speed, consultation, one-piece-to-batch range, workshop location, and technique breadth are category parity. The owner's evolution lens then narrowed the strategy: first-order acquisition concentrates on event/community and tests whether Orplyn can take on more of the buyer's deadline risk; `spec-first, repeat-ready production` is retained as a repeat-order mechanism, not the acquisition headline.
 
-This direction is documented in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`. Do not rewrite the public hero around it yet. Validate H-008 with customer/lost-lead interviews and a five-order concierge pilot before publishing claims such as predictable, consistent, on-time, or easier/faster repeat orders.
+The rank-1 owner source is `marketing/07-market-research/owner-feedback-evolution-lens-2026-07-19.md`; the operational mapping is `owner-feedback-response-plan-2026-07-19.md`. Do not rewrite public channels around either direction yet. Validate H-009 with E-12 on five event orders before any deadline/H-1 claim, and validate H-008 with E-11 on actual repeat opportunities before any repeat-ease claim.
 
-AI status contract: the research task is complete, but differentiation validation is pending. `Spec-first, repeat-ready production` is D-011/H-008, not a confirmed customer fact or current public capability. The strategy document's front matter, `AI Reading Contract`, completion table, and public-claim gate are authoritative for interpreting this workstream.
+AI status contract: the research and owner-feedback response are complete, but differentiation validation is pending. H-009/E-12 and H-008/E-11 are hypotheses/experiments, not confirmed customer facts, current public capabilities, or permission to change website, GBP, WhatsApp, quotation, content, or Ads. D-012 is the active role split; the strategy document's front matter, `AI Reading Contract`, and Public-Claim Gate remain authoritative.
 
 ### Initial buyer segments
 
@@ -166,7 +166,9 @@ Urutan ini diperbarui dari form owner/admin dan satu survey customer awal. Tetap
 4. Pembeli satuan lokal: bisa menjadi entry offer, tetapi sering sensitif harga dan belum punya spesifikasi/desain jelas.
 5. Clothing brand, tim olahraga, dan merchandise: layak diuji sebagai channel/offer spesifik.
 
-External market snapshot mendukung pengujian outbound UMKM/corporate lokal dan partner channel selain inbound Search. Signal ini belum membuktikan profitability atau urutan segment.
+This ranking describes known opportunity, not parallel campaign scope. Under D-012, active acquisition remains concentrated on event/community; other segments are deferred or served inbound until the event baseline is measured.
+
+External market snapshot untuk outbound UMKM/corporate lokal dan partner channel tetap disimpan sebagai peluang tahap berikutnya. Signal ini belum membuktikan profitability atau urutan segment dan tidak mengubah konsentrasi event/community saat ini.
 
 Jangan mengunci budget Ads besar berdasarkan urutan ini sebelum divalidasi dengan data lead, quote, order, margin, dan kapasitas.
 
@@ -656,24 +658,27 @@ Before using a raw asset:
 - Refreshed product and differentiation research against customer C001, owner segment data, the current funnel, and live public offers from TKS Factory, Teespace, Rumah Sablon Cepat, Seragam Bangsa, Ciptaloka, Sablon Indonesia, and Merch Madness. Confirmed that Orplyn's current generic benefits are category parity rather than a defensible reason to buy.
 - Chose `spec-first, repeat-ready production` as an internal product thesis for event/community PICs and repeat partners. Documented the JTBD, need map, parity table, claim ladder, minimum data model, concierge workflow, proof requirements, and validation plan in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`; recorded O-013/O-014, H-008, and D-011. No aspirational claim was added to the live website.
 - Hardened the differentiation handoff for future AI agents with parseable metadata, an interpretation contract, an explicit completion matrix, and a seven-part public-claim gate. The canonical status is `research_complete_validation_pending`: research/design are finished, while customer validation, operating proof, and permission to change public positioning are not.
+- Received and responded to the rank-1 owner feedback `owner-feedback-evolution-lens-2026-07-19.md`. Its seven points now govern priority: top-of-funnel volume before funnel polish, one event/community segment, separate acquisition/retention mechanisms, pilot the buyer's deadline risk, and translate future copy into event status/H-1-risk language only after evidence.
+- Recorded D-012 and evolved the previous D-011 interpretation. H-009/E-12 now test event deadline-risk handling as a possible first-order acquisition wedge; H-008/E-11 now test saved specifications only as a retention mechanism. Evidence from one experiment cannot validate the other.
+- Added `owner-feedback-response-plan-2026-07-19.md` with role mapping, concrete execution order, deferred work, measurement fields, and claim gates; synchronized the market-research reading order, findings register, experiment backlog, and this handoff.
+- Did not change or deploy website, GBP, WhatsApp, quotation, content, or Ads copy. `Aman dari drama H-1`, `tepat waktu`, `no drama`, `slot aman`, repeat-ease, and similar outcomes remain prohibited hypotheses until the relevant pilot, proof, permission, owner approval, and Public-Claim Gate pass.
 
 ## 16. Immediate Next Actions
 
-The next agent should not start by redesigning the website. Start here:
+The next agent should not start by redesigning the website or polishing the funnel. Start here:
 
 Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. Keep exactly one item marked `NEXT`; current item is M-01, confirmation of GBP phone, hours, ownership, and real-world business name.
 
-1. Run one manual CTA-to-WhatsApp test on a phone, confirm the prefilled Lead ID/brief reaches Aulia, and record the result.
-2. Create the operational lead log/CRM using the schema in `marketing/06-whatsapp-sales/wa-sales-flow.md`; test one lead through qualified, quoted, won/lost, revenue, and gross profit.
-3. Confirm Cloudflare uses `Full (strict)`. Nameserver delegation, Universal SSL, public edge HTTPS, origin TLS, and the `www` redirect are complete. Keep both application and Caddy `noindex` controls until Search Console, tracking, QA, and lead-flow gates pass.
-4. Ask owner to approve public price anchors, rush-order rules, capacity, QC/rework, and proof/testimonial usage.
-5. Build the approved package/range-price sheet for DTF satuan, event/community, and kaos polos.
-6. Agree the first-response target and quotation format with Aulia.
-7. Assign PIC and start the P0 rows in `deliverables/launch-readiness/Orplyn - Checklist GBP SEO Tracking.docx`.
-8. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
-9. Complete GBP, authentic review outreach, public indexing, Search Console, and end-to-end lead measurement.
-10. Only then select one Search Ads offer and run the Rp100 ribu-Rp700 ribu/month pilot without splitting the initial budget.
-11. After M-06 through M-08 provide proof, commercial rules, and sales ownership, interview 5 event/community PICs, 3 repeat partners, and 3 lost leads; then run the production-record workflow manually on 5 real orders before building custom software or changing the public positioning.
+1. Run one manual CTA-to-WhatsApp test and create the minimum operational lead log. Capture source, segment, event date, qualified, quote, sale, revenue, gross profit, response time, and lost reason; verify the owner baseline of 2-5 chats/week from actual records.
+2. Complete M-01 through M-05 in sequence and run E-01: correct GBP/NAP, obtain the official review link, and request authentic reviews from real customers without gating or incentives.
+3. Complete M-06 publication rights/context, then run E-05 with real event/community production proof. Do not attach deadline, bestseller, customer, quantity, or outcome claims without evidence and permission.
+4. Approve capacity, cut-off, rush-order, QC/rework, quotation, and admin/production ownership through M-07/M-08. These rules are required to accept event orders responsibly, not permission to advertise a deadline promise.
+5. Finish launch plumbing that enables acquisition: Cloudflare `Full (strict)`, Search Console, Google tag, end-to-end conversion verification, manual QA, and indexing decision.
+6. Run E-08 for referrals from verified event/repeat customers and E-03 as focused event/community demand generation. Keep DTF single as a secondary entry lane and do not split focus across unrelated segments.
+7. Route five eligible event orders into E-12. Record date-to-event, feasibility, cut-off, approval timing, revisions, target/actual completion, issues, sale, revenue, gross profit, and PIC feedback; then decide `continue`, `iterate`, or `stop` for H-009.
+8. Run E-11 only when a real repeat opportunity exists. Measure retrieval, changed fields, repeat requote time, repeat sale, revenue, and gross profit; decide H-008 separately.
+9. Keep public deadline/H-1 and repeat-ease copy, broad multi-segment campaigns, custom portal/CRM, and additional funnel polish deferred until their relevant evidence and gates pass.
+10. Only after launch, economics, admin, and Public-Claim Gates pass, test one approved event Search Ads offer without splitting the initial Rp100 ribu-Rp700 ribu/month budget.
 
 ## 17. Handoff Checklist For Every Future Session
 

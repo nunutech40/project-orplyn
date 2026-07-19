@@ -215,13 +215,21 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Validation: data order 3-6 bulan, izin publikasi, landing-to-qualified-lead rate, dan pertanyaan customer terhadap proof yang ditampilkan.
 - Guardrail: jangan melabeli foto sebagai bestseller, order besar, atau repeat tanpa data dan izin.
 
-### H-008 - Spec-first dan repeat-ready dapat menjadi wedge Orplyn
+### H-008 - Spec-first dan repeat-ready dapat meningkatkan retensi
 
-- Hypothesis: event/community PIC dan partner repeat lebih memilih Orplyn ketika bahan, teknik, artwork, quantity, deadline, approval, dan hasil akhir dicatat dalam satu production record yang dapat dipakai kembali.
-- Validation: interview 5 PIC event/community, 3 repeat partner, 3 lost lead, lalu concierge pilot pada 5 order nyata.
-- Primary outcome: qualified-lead-to-sale rate, repeat order, revenue, dan gross profit.
-- Process measures: clarification rounds, quote turnaround, missing fields at approval, changes after approval, production issue, on-time outcome, dan time-to-requote repeat order.
-- Guardrail: jangan menjual `predictable`, `consistent`, `repeat lebih cepat`, atau outcome process lain sebelum workflow dijalankan dan dibuktikan.
+- Hypothesis: customer repeat dan partner mengeluarkan effort lebih kecil serta lebih mungkin reorder ketika final specification order lama dapat diambil kembali dan hanya perubahan yang perlu dikonfirmasi.
+- Validation: E-11 pada order yang menghasilkan repeat opportunity; ukur retrieval, changed fields, clarification rounds, repeat requote time, repeat sale, revenue, gross profit, dan feedback customer.
+- Primary outcome: repeat order, repeat revenue, dan repeat gross profit.
+- Limit: production record pada first order tidak membuktikan acquisition value atau repeat convenience sebelum reorder benar-benar terjadi.
+- Guardrail: jangan menjual `repeat lebih cepat`, `tidak perlu jelaskan ulang`, `consistent`, atau outcome retensi lain sebelum E-11 membuktikannya.
+
+### H-009 - Pengambilalihan risiko deadline dapat menjadi wedge akuisisi event
+
+- Hypothesis: PIC event/community lebih mungkin memilih Orplyn ketika proses dimulai dari tanggal acara dan Orplyn mampu membuat feasibility, cut-off, approval, risiko, serta status pesanan lebih jelas.
+- Source direction: owner feedback `owner-feedback-evolution-lens-2026-07-19.md`; ini framing prioritas dan bukan bukti capability atau izin klaim publik.
+- Validation: E-12 pada lima order event nyata setelah capacity, cut-off, rush-order, approval, QC/rework, dan PIC operasional disetujui.
+- Primary outcome: qualified-event-lead-to-sale, revenue, gross profit, actual completion, on-time outcome, dan feedback PIC.
+- Guardrail: jangan mengklaim `aman dari drama H-1`, `tepat waktu`, `no drama`, `slot aman`, atau padanan outcome sebelum pilot, proof, permission, dan owner approval lulus.
 
 ## Critical Unknowns
 
@@ -298,7 +306,11 @@ Homepage dan halaman kontak memakai `Produksi batch` sebagai skala awal agar ses
 
 ### D-011 - Diferensiasi dibangun dari production clarity dan repeatability
 
-Orplyn tidak mengklaim keunikan dari harga kompetitif, kualitas, kecepatan, konsultasi, banyak teknik, atau jangkauan satuan-batch karena seluruhnya umum di kategori. Product direction internal adalah `spec-first, repeat-ready production`: kebutuhan diterjemahkan menjadi rekomendasi terbatas, production specification disetujui sebelum produksi, milestone dicatat, dan final spec dapat dipakai sebagai referensi repeat order. Arah ini dimulai sebagai concierge workflow dan eksperimen H-008; belum menjadi klaim publik sampai owner approval, pilot, dan proof tersedia.
+Orplyn tidak mengklaim keunikan dari harga kompetitif, kualitas, kecepatan, konsultasi, banyak teknik, atau jangkauan satuan-batch karena seluruhnya umum di kategori. Product direction internal awal adalah `spec-first, repeat-ready production`: kebutuhan diterjemahkan menjadi rekomendasi terbatas, production specification disetujui sebelum produksi, milestone dicatat, dan final spec dapat dipakai sebagai referensi repeat order. Arah ini belum menjadi klaim publik. Pada 19 Juli 2026, D-012 mempersempit perannya menjadi retention mechanism, bukan acquisition wedge.
+
+### D-012 - Akuisisi dan retensi dipisahkan berdasarkan owner evolution lens
+
+Akuisisi dikonsentrasikan pada satu segmen, event/komunitas, dengan demand generation sebagai prioritas karena pipa owner hanya sekitar 2-5 chat baru per minggu. H-009/E-12 menguji apakah date-first intake dan pengendalian risiko deadline layak menjadi reason to buy pertama. Retensi memakai H-008/E-11 untuk menguji saved specification dan repeat-ready workflow. Semua calon outcome copy tetap hipotesis dan dilarang masuk ke website, GBP, WhatsApp, quotation, content, atau Ads sebelum gate terkait lulus.
 
 ## Documentation Protocol
 

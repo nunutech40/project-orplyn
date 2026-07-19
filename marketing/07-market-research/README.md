@@ -1,12 +1,14 @@
 # Market Research
 
-Folder ini menyimpan market intelligence eksternal Orplyn. Data pasar tidak menggantikan jawaban owner; keduanya dipakai bersama data lead/order dan customer interview.
+Folder ini menyimpan market intelligence, product strategy, owner priority direction, dan validation backlog Orplyn. Data pasar tidak menggantikan jawaban owner; keduanya dipakai bersama data lead/order dan customer interview.
 
 ## Files
 
 - `market-landscape-2026-07-16.md`: market signals, discoverability, competitor and price benchmark, customer problems, segment opportunity, search intent, and strategic implications.
 - `offer-serp-refresh-2026-07-18.md`: owner-informed offer and local SERP refresh used for the current web funnel.
-- `differentiation-product-strategy-2026-07-19.md`: customer jobs, live competitor parity map, chosen product wedge, operating requirements, proof ladder, and validation plan.
+- `owner-feedback-evolution-lens-2026-07-19.md`: rank-1 owner priority direction that separates acquisition from retention and moves focus to top-of-funnel event/community demand.
+- `owner-feedback-response-plan-2026-07-19.md`: role mapping, concrete execution order, deferred work, and claim guardrails responding to the owner direction.
+- `differentiation-product-strategy-2026-07-19.md`: customer jobs, live competitor parity map, evolved acquisition/retention thesis, operating requirements, proof ladder, and validation plan.
 - `growth-experiment-backlog.md`: prioritized tests with hypotheses, metrics, gates, and stop rules.
 
 ## Evidence Rules
@@ -23,9 +25,11 @@ Folder ini menyimpan market intelligence eksternal Orplyn. Data pasar tidak meng
 For product differentiation work:
 
 1. Read root `PROJECT-HANDOFF.md` for current status and blockers.
-2. Read `differentiation-product-strategy-2026-07-19.md` as the canonical strategy snapshot and obey its `AI Reading Contract`.
-3. Verify confirmed facts in `business-data/owner-answers.md`.
-4. Verify evidence status and decision IDs O-013, O-014, H-008, and D-011 in `business-data/findings-register.md`.
-5. Use E-11 in `growth-experiment-backlog.md` for validation execution.
+2. Read `owner-feedback-evolution-lens-2026-07-19.md` as rank-1 owner direction and obey its `AI Reading Contract`.
+3. Read `owner-feedback-response-plan-2026-07-19.md` for the active role mapping, work order, and deferred work.
+4. Read `differentiation-product-strategy-2026-07-19.md` as the canonical strategy snapshot and obey its `AI Reading Contract`.
+5. Verify confirmed facts in `business-data/owner-answers.md`.
+6. Verify evidence status and IDs O-013, O-014, H-008, H-009, D-011, and D-012 in `business-data/findings-register.md`.
+7. Use E-12 for event acquisition/deadline-risk validation and E-11 separately for repeat-order validation in `growth-experiment-backlog.md`.
 
-Never interpret `research_complete_validation_pending` as a proven market differentiator or permission to change public claims.
+Never interpret owner priority, `research_complete_validation_pending`, or an experiment design as a proven market differentiator or permission to change public claims.
