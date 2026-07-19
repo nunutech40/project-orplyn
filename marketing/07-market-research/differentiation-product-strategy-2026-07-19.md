@@ -1,8 +1,68 @@
+---
+document_id: ORPLYN-PRODUCT-STRATEGY-001
+document_type: internal_product_strategy
+canonical_for: differentiation_thesis_and_validation_plan
+status: research_complete_validation_pending
+public_claim_status: prohibited_until_owner_approval_and_pilot_evidence
+primary_segments: event_community_and_repeat_partner
+decision_ids: [D-011]
+finding_ids: [O-013, O-014]
+hypothesis_ids: [H-008]
+experiment_ids: [E-11]
+manual_dependencies: [M-06, M-07, M-08]
+snapshot_date: 2026-07-19
+last_updated: 2026-07-19
+---
+
 # Orplyn Differentiation And Product Strategy
 
 Snapshot date: 19 Juli 2026  
 Decision status: internal product direction, not yet a public claim  
 Primary objective: qualified WhatsApp lead, sale, repeat order, and gross profit
+
+## AI Reading Contract
+
+This is the canonical internal document for Orplyn's differentiation thesis and its validation plan. Future agents must interpret it with these rules:
+
+1. `Research complete` means the internal evidence and sampled competitor offers have been reviewed. It does not mean the differentiation has been validated by customers.
+2. `Spec-first, repeat-ready production` is a selected product thesis and experiment direction. It is not a confirmed customer fact, current operating capability, or approved public claim.
+3. Confirmed business facts remain in `business-data/owner-answers.md`. Observations, hypotheses, and decisions remain in `business-data/findings-register.md`.
+4. `PROJECT-HANDOFF.md` remains the current status and execution source of truth. If this dated snapshot conflicts with a newer owner answer or handoff decision, use the newer source and record the change.
+5. Do not rewrite the public website, Ads, GBP, quotation, or sales promise around this thesis until the public-claim gate below passes.
+6. Do not infer price, SLA, capacity, QC, guarantee, review, case study, production ownership, or repeat-order performance from this strategy.
+7. Continue, iterate, or stop the thesis based on sale, repeat order, revenue, gross profit, and process evidence, not click or WhatsApp-open volume alone.
+
+## Completion Status
+
+| Layer | Status | Meaning |
+| --- | --- | --- |
+| Internal customer evidence audit | Complete | Owner/admin data and customer C001 were reviewed |
+| Live competitor sample refresh | Complete | Seven public competitor/benchmark offers were compared |
+| Parity and gap diagnosis | Complete | Generic category claims were separated from potential differentiation |
+| Product thesis selection | Complete as decision D-011 | `Spec-first, repeat-ready production` is the direction to test |
+| Product workflow design | Complete as MVP design | Data model, workflow, proof ladder, and experiment are documented |
+| Owner commercial approval | Pending M-06/M-07/M-08 | Proof, offer, process ownership, SLA, and operating rules are incomplete |
+| Customer discovery validation | Not started | 11 planned interviews have not been completed |
+| Five-order concierge pilot | Not started | E-11 has not produced operating evidence |
+| Public positioning approval | Blocked | Website must keep the current factual positioning |
+| Custom software build | Not justified | Start with spreadsheet, document, and WhatsApp workflow |
+
+Answer to `is this finished?`:
+
+- Research, diagnosis, product direction, documentation, and experiment design: **yes, complete**.
+- Proven differentiation, operating rollout, public claim, and software product: **no, not complete**.
+
+## Public-Claim Gate
+
+The differentiation may become a public promise only after all of the following are true:
+
+1. M-06, M-07, and M-08 are completed with owner-approved evidence and operating rules.
+2. Five event/community PICs, three repeat partners, and three lost leads have been interviewed and findings recorded.
+3. Five real orders complete the E-11 production-record workflow.
+4. Baselines exist for clarification rounds, quote turnaround, approval completeness, post-approval changes, production issues, on-time outcome, and repeat requote time.
+5. At least one relevant order and one customer statement have explicit publication permission.
+6. D-011 is reviewed with an explicit `continue`, `iterate`, or `stop` decision.
+7. Only approved wording is synchronized to website, WhatsApp SOP, quotation, GBP, content, and Ads.
 
 ## Executive Answer
 
@@ -359,4 +419,3 @@ Primary outcome: qualified lead to sale and gross profit, not click-through rate
 4. Build differentiation through production clarity and repeatability.
 5. Start with a spreadsheet/document concierge workflow before custom software.
 6. Promote the positioning publicly only after owner approval and pilot evidence.
-

@@ -20,6 +20,7 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
 | Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
+| Product differentiation | Research and MVP workflow design complete; D-011 selected | M-06/M-07/M-08, 11 interviews, and five-order E-11 pilot |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
 | Web funnel source | Live at `https://orplyn.id` with intentional noindex | Manual QA and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
@@ -152,6 +153,8 @@ Model satuan/test print dan produksi/batch menjadi dua jalur intent, bukan dua b
 Live competitor research on 19 Juli 2026 confirmed that price, quality, speed, consultation, one-piece-to-batch range, workshop location, and technique breadth are category parity. Orplyn's product direction is therefore `spec-first, repeat-ready production`: convert an incomplete need into an approved production specification, record milestones and closeout, then reuse the final reference for repeat orders.
 
 This direction is documented in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`. Do not rewrite the public hero around it yet. Validate H-008 with customer/lost-lead interviews and a five-order concierge pilot before publishing claims such as predictable, consistent, on-time, or easier/faster repeat orders.
+
+AI status contract: the research task is complete, but differentiation validation is pending. `Spec-first, repeat-ready production` is D-011/H-008, not a confirmed customer fact or current public capability. The strategy document's front matter, `AI Reading Contract`, completion table, and public-claim gate are authoritative for interpreting this workstream.
 
 ### Initial buyer segments
 
@@ -652,6 +655,7 @@ Before using a raw asset:
 - Fixed the user-reported form dead end: product and quantity dropdowns were explicitly disabled behind hidden selection dependencies. Homepage/contact now start at `Produksi batch`, both dropdowns remain interactive, and invalid quantity/MOQ combinations are reset with an explanation. Added rendered regression assertions, recorded O-012/D-010, and deployed healthy release `orplyn-web:20260719T013245Z-774f8fe`; public verification passed with indexing still disabled.
 - Refreshed product and differentiation research against customer C001, owner segment data, the current funnel, and live public offers from TKS Factory, Teespace, Rumah Sablon Cepat, Seragam Bangsa, Ciptaloka, Sablon Indonesia, and Merch Madness. Confirmed that Orplyn's current generic benefits are category parity rather than a defensible reason to buy.
 - Chose `spec-first, repeat-ready production` as an internal product thesis for event/community PICs and repeat partners. Documented the JTBD, need map, parity table, claim ladder, minimum data model, concierge workflow, proof requirements, and validation plan in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`; recorded O-013/O-014, H-008, and D-011. No aspirational claim was added to the live website.
+- Hardened the differentiation handoff for future AI agents with parseable metadata, an interpretation contract, an explicit completion matrix, and a seven-part public-claim gate. The canonical status is `research_complete_validation_pending`: research/design are finished, while customer validation, operating proof, and permission to change public positioning are not.
 
 ## 16. Immediate Next Actions
 
