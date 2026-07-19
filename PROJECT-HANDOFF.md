@@ -29,7 +29,7 @@ Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor W
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
 | Organic content system | Initial Instagram batch curated | Confirm rights, prepare P0 variants, and set cadence |
-| External market intelligence | Initial snapshot and offer/SERP refresh complete | Validate keyword volume, Maps rank, and experiments |
+| External market intelligence | Competitor, offer/SERP, and differentiation/product refresh complete | Validate H-008 through interviews and five-order concierge pilot |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
@@ -146,6 +146,12 @@ Model satuan/test print dan produksi/batch menjadi dua jalur intent, bukan dua b
 - Asset menunjukkan variasi teknik produksi yang nyata.
 - Calon pembeli biasanya mulai dari kebutuhan, jumlah, desain, dan deadline, bukan nama mesin atau proses teknis saja.
 - Konsultasi teknik bisa menjadi pembeda ketika desain atau bahan belum final.
+
+### Differentiation thesis, not yet a public claim
+
+Live competitor research on 19 Juli 2026 confirmed that price, quality, speed, consultation, one-piece-to-batch range, workshop location, and technique breadth are category parity. Orplyn's product direction is therefore `spec-first, repeat-ready production`: convert an incomplete need into an approved production specification, record milestones and closeout, then reuse the final reference for repeat orders.
+
+This direction is documented in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`. Do not rewrite the public hero around it yet. Validate H-008 with customer/lost-lead interviews and a five-order concierge pilot before publishing claims such as predictable, consistent, on-time, or easier/faster repeat orders.
 
 ### Initial buyer segments
 
@@ -644,6 +650,8 @@ Before using a raw asset:
 - Added an intersection-aware mobile CTA that appears only after the hero, added regression coverage for the new H1, CTA language, and event-first offer order, and recorded O-010/O-011 plus D-009 in `business-data/findings-register.md`.
 - Lint passed with zero errors and nine existing image warnings; production build and six rendered smoke tests passed. Responsive screenshots and the event landing/form passed visual QA. Deployed `orplyn-web:20260719T010341Z-a9d3528` to `https://orplyn.id`; full public verification passed with indexing intentionally disabled.
 - Fixed the user-reported form dead end: product and quantity dropdowns were explicitly disabled behind hidden selection dependencies. Homepage/contact now start at `Produksi batch`, both dropdowns remain interactive, and invalid quantity/MOQ combinations are reset with an explanation. Added rendered regression assertions, recorded O-012/D-010, and deployed healthy release `orplyn-web:20260719T013245Z-774f8fe`; public verification passed with indexing still disabled.
+- Refreshed product and differentiation research against customer C001, owner segment data, the current funnel, and live public offers from TKS Factory, Teespace, Rumah Sablon Cepat, Seragam Bangsa, Ciptaloka, Sablon Indonesia, and Merch Madness. Confirmed that Orplyn's current generic benefits are category parity rather than a defensible reason to buy.
+- Chose `spec-first, repeat-ready production` as an internal product thesis for event/community PICs and repeat partners. Documented the JTBD, need map, parity table, claim ladder, minimum data model, concierge workflow, proof requirements, and validation plan in `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md`; recorded O-013/O-014, H-008, and D-011. No aspirational claim was added to the live website.
 
 ## 16. Immediate Next Actions
 
@@ -661,6 +669,7 @@ Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orpl
 8. Confirm publication rights and technique labels for the 8 selected Instagram posts; prioritize the four P0 assets in the visual catalog.
 9. Complete GBP, authentic review outreach, public indexing, Search Console, and end-to-end lead measurement.
 10. Only then select one Search Ads offer and run the Rp100 ribu-Rp700 ribu/month pilot without splitting the initial budget.
+11. After M-06 through M-08 provide proof, commercial rules, and sales ownership, interview 5 event/community PICs, 3 repeat partners, and 3 lost leads; then run the production-record workflow manually on 5 real orders before building custom software or changing the public positioning.
 
 ## 17. Handoff Checklist For Every Future Session
 

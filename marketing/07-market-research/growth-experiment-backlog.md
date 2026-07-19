@@ -1,6 +1,6 @@
 # Growth Experiment Backlog
 
-Last updated: 16 Juli 2026
+Last updated: 19 Juli 2026
 
 Backlog ini mengubah riset menjadi tes yang dapat dihentikan, diteruskan, atau diperbesar berdasarkan qualified lead, sale, revenue, dan gross profit. Score adalah prioritas kerja awal, bukan forecast hasil.
 
@@ -17,6 +17,7 @@ Backlog ini mengubah riset menjadi tes yang dapat dihentikan, diteruskan, atau d
 | --- | --- | ---: | ---: | ---: | ---: | --- |
 | E-01 | Google Business Profile completion + review engine | 9 | 9 | 8 | 8.7 | Akses GBP, NAP, review permission |
 | E-02 | Dua lane funnel: satuan vs grosir/produksi | 9 | 8 | 7 | 8.0 | Rule produk, MOQ, harga/range, lead time |
+| E-11 | Spec-first production record pilot | 9 | 8 | 7 | 8.0 | Owner rules, admin ownership, 5 real orders |
 | E-03 | July-August event/panitia sprint | 8 | 7 | 8 | 7.7 | Capacity dan deadline cut-off |
 | E-04 | Local UMKM/corporate outbound | 8 | 7 | 7 | 7.3 | Offer, sample, invoice, PIC sales |
 | E-05 | Video proof series | 8 | 8 | 6 | 7.3 | Asset classification dan izin publikasi |
@@ -173,6 +174,20 @@ Backlog ini mengubah riset menjadi tes yang dapat dihentikan, diteruskan, atau d
 **Primary metric:** contribution margin setelah platform fee, ads, reject, dan fulfillment.  
 **Guardrail:** jangan memaksa produk custom kompleks menjadi SKU bila harga dan deadline tetap membutuhkan konsultasi.
 
+## E-11 - Spec-First Production Record Pilot
+
+**Hypothesis:** event/community PIC dan repeat partner akan lebih mudah approve, membeli, dan reorder ketika detail production disatukan dalam satu record yang disetujui dan dapat digunakan kembali.
+
+**Pilot:** lima order nyata dengan spreadsheet/document workflow sebelum membuat aplikasi.
+
+**Required record:** Order ID, quotation version, product, material, artwork version, method, placement, dimensions, sizes/colors, quantity, target date, delivery, commercial terms, approval evidence, milestone, QC/closeout, and repeat reference.
+
+**Primary outcome:** sale, repeat order, revenue, dan gross profit.
+
+**Process measures:** clarification rounds, quote turnaround, missing fields at approval, changes after approval, production issue, on-time outcome, customer confidence feedback, dan repeat requote time.
+
+**Guardrail:** jangan mengklaim process lebih predictable, consistent, on-time, atau repeat lebih cepat sebelum pilot membuktikannya.
+
 ## Weekly Experiment Review
 
 Gunakan satu baris per experiment:
@@ -185,7 +200,8 @@ Gunakan satu baris per experiment:
 
 1. Lengkapi owner P0, WA SOP, offer rules, dan capacity.
 2. Jalankan E-01, E-02, dan E-05 sebagai foundation.
-3. Jalankan E-03 segera bila kapasitas Agustus masih aman.
-4. Jalankan E-04 dengan 50 prospek untuk menemukan vertical terbaik.
-5. Mulai E-06 setelah tracking qualified/converted lead siap.
-6. Naikkan E-07 sampai E-10 hanya berdasarkan economics dan repeat evidence.
+3. Jalankan E-11 secara concierge setelah commercial rules dan PIC jelas.
+4. Jalankan E-03 segera bila kapasitas Agustus masih aman.
+5. Jalankan E-04 dengan 50 prospek untuk menemukan vertical terbaik.
+6. Mulai E-06 setelah tracking qualified/converted lead siap.
+7. Naikkan E-07 sampai E-10 hanya berdasarkan economics dan repeat evidence.

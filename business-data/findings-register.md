@@ -1,6 +1,6 @@
 # Orplyn Findings Register
 
-Last updated: 18 Juli 2026
+Last updated: 19 Juli 2026
 
 Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. Tujuannya agar strategi tidak berubah menjadi klaim tanpa bukti.
 
@@ -156,6 +156,20 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: laporan berasal dari satu pengguna, tetapi atribut `disabled` mengonfirmasi adanya hambatan fungsional yang deterministik.
 - Marketing implication: input utama tidak boleh menjadi dead end. Gunakan produksi batch sebagai default komersial, biarkan dropdown produk dan jumlah selalu dapat dibuka, lalu terapkan MOQ secara reaktif dan jelaskan bila jumlah perlu dipilih ulang.
 
+### O-013 - Klaim dasar Orplyn adalah category parity
+
+- Observed: sampel live TKS Factory, Teespace, Rumah Sablon Cepat, Seragam Bangsa, Ciptaloka, Sablon Indonesia, dan Merch Madness sudah menonjolkan kombinasi harga/MOQ, satuan hingga massal, konsultasi, workshop, sampel, QC/garansi, tracking, proses transparan, serta corporate proof.
+- Source: `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md` dan official competitor pages yang dicatat di dalamnya.
+- Limit: klaim kompetitor belum diverifikasi independen dan sampel tidak mencakup seluruh pasar.
+- Marketing implication: `harga kompetitif`, `berkualitas`, `tepat waktu`, `bisa satuan sampai banyak`, dan `banyak teknik` tetap harus didukung, tetapi tidak boleh diperlakukan sebagai unique reason to buy.
+
+### O-014 - Nilai customer terletak pada pengurangan ketidakpastian
+
+- Observed: customer Orplyn paling sering bertanya harga, MOQ, bahan, teknik, dan waktu; C001 takut bahan/sablon tidak sesuai, merasa konsultasi paling membantu, tetapi bingung karena banyak pilihan dan meminta katalog/pricelist yang lebih mudah dibandingkan. Event/community dan vendor juga merupakan segmen repeat.
+- Source: `business-data/owner-answers.md`, customer C001, dan competitor pattern 19 Juli 2026.
+- Limit: voice of customer baru bergantung pada satu survey terisi dan input owner/admin; emotional job serta repeat-workflow value masih hipotesis.
+- Marketing implication: Orplyn perlu memproduksikan consultation menjadi rekomendasi terbatas, spesifikasi yang disetujui, update status, dan referensi repeat order, bukan hanya chat bebas.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -200,6 +214,14 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Evidence direction: owner sudah menempatkan event/komunitas sebagai segmen paling sering order, repeat, omzet besar, dan margin baik; exact bestseller product/technique belum tersedia.
 - Validation: data order 3-6 bulan, izin publikasi, landing-to-qualified-lead rate, dan pertanyaan customer terhadap proof yang ditampilkan.
 - Guardrail: jangan melabeli foto sebagai bestseller, order besar, atau repeat tanpa data dan izin.
+
+### H-008 - Spec-first dan repeat-ready dapat menjadi wedge Orplyn
+
+- Hypothesis: event/community PIC dan partner repeat lebih memilih Orplyn ketika bahan, teknik, artwork, quantity, deadline, approval, dan hasil akhir dicatat dalam satu production record yang dapat dipakai kembali.
+- Validation: interview 5 PIC event/community, 3 repeat partner, 3 lost lead, lalu concierge pilot pada 5 order nyata.
+- Primary outcome: qualified-lead-to-sale rate, repeat order, revenue, dan gross profit.
+- Process measures: clarification rounds, quote turnaround, missing fields at approval, changes after approval, production issue, on-time outcome, dan time-to-requote repeat order.
+- Guardrail: jangan menjual `predictable`, `consistent`, `repeat lebih cepat`, atau outcome process lain sebelum workflow dijalankan dan dibuktikan.
 
 ## Critical Unknowns
 
@@ -273,6 +295,10 @@ Homepage memperkenalkan Orplyn sebagai tempat sablon dan kaos custom, menempatka
 ### D-010 - Form tidak memakai dropdown yang terkunci
 
 Homepage dan halaman kontak memakai `Produksi batch` sebagai skala awal agar sesuai dengan prioritas komersial dan produk dapat langsung dipilih. Dropdown produk serta jumlah tetap aktif; pilihan jumlah disaring setelah produk diketahui, dan kombinasi di bawah MOQ dikosongkan dengan pesan yang menjelaskan minimum terkait. Landing page layanan tetap memakai skala dan produk bawaan masing-masing.
+
+### D-011 - Diferensiasi dibangun dari production clarity dan repeatability
+
+Orplyn tidak mengklaim keunikan dari harga kompetitif, kualitas, kecepatan, konsultasi, banyak teknik, atau jangkauan satuan-batch karena seluruhnya umum di kategori. Product direction internal adalah `spec-first, repeat-ready production`: kebutuhan diterjemahkan menjadi rekomendasi terbatas, production specification disetujui sebelum produksi, milestone dicatat, dan final spec dapat dipakai sebagai referensi repeat order. Arah ini dimulai sebagai concierge workflow dan eksperimen H-008; belum menjadi klaim publik sampai owner approval, pilot, dan proof tersedia.
 
 ## Documentation Protocol
 

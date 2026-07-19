@@ -1,6 +1,6 @@
 # Project Brief
 
-Status 18 Juli 2026: hipotesis funnel sudah diimplementasikan di `website/`, dan formulir owner/customer tahap awal sudah terisi. Gunakan `PROJECT-HANDOFF.md` untuk status terbaru, launch blocker, dan roadmap.
+Status 19 Juli 2026: funnel sudah live dan sengaja `noindex`; customer/owner evidence, competitor parity, dan product differentiation direction sudah dirangkum. Gunakan `PROJECT-HANDOFF.md` untuk status terbaru, launch blocker, dan roadmap.
 
 ## Objective
 
@@ -29,6 +29,12 @@ Codex bertindak sebagai senior digital marketing untuk:
 
 Vendor kaos polos dan sablon custom area Tangerang Selatan/Ciputat untuk kebutuhan event, komunitas, vendor, sekolah/kampus, kantor, brand, dan produksi custom, dengan pilihan pesanan satuan maupun produksi batch.
 
+## Product Differentiation Direction
+
+Live competitor refresh on 19 Juli 2026 showed that price, quality, speed, consultation, nationwide shipping, and one-piece-to-batch service are category parity. The internal product thesis is `spec-first, repeat-ready production`: Orplyn helps turn product, material, artwork, quantity, and deadline into an approved production specification, then retains the final reference for repeat orders.
+
+This is a direction to validate, not a public claim. See `marketing/07-market-research/differentiation-product-strategy-2026-07-19.md` and H-008 in `business-data/findings-register.md`.
+
 ## Funnel Hypothesis
 
 Traffic dari Google, Instagram, AI search, dan iklan diarahkan ke landing page yang menjelaskan layanan, bukti hasil produksi, area layanan, FAQ, dan CTA WhatsApp.
@@ -46,7 +52,7 @@ Goal halaman bukan branding doang, tapi membuat calon customer cepat:
 - WhatsApp sales: `082317579311`, PIC Aulia.
 - Admin aktif: Senin-Sabtu, 08:00-19:00.
 - Workshop: 08:00-17:00.
-- Domain final: `orplyn.id`, dibeli melalui DomaiNesia; aktivasi Cloudflare dan production origin sedang disiapkan.
+- Domain final: `orplyn.id`; Cloudflare, public edge HTTPS, origin HTTPS, dan redirect `www` sudah aktif. Website masih sengaja `noindex` sampai launch gate selesai.
 - Area layanan: seluruh Indonesia.
 - DP: 50%; pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Target 3 bulan: Jabodetabek, 30-50 qualified lead/bulan, 10-20 customer baru/bulan.

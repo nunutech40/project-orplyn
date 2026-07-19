@@ -2,9 +2,9 @@
 
 ## Status
 
-Funnel fokus-konversi sudah diimplementasikan di `website/`. Homepage sekarang memakai dua jalur order, tiga offer utama, FAQ komersial, NAP yang terlihat, dan form WhatsApp yang mengikuti MOQ produk.
+Funnel fokus-konversi sudah diimplementasikan di `website/`. Homepage sekarang memakai tiga offer utama, FAQ komersial, NAP yang terlihat, dan form WhatsApp yang membedakan skala satuan/batch serta mengikuti MOQ produk. Section jalur order yang repetitif sudah dihapus dari homepage; pilihan skala tetap tersedia di form.
 
-Nomor WhatsApp nyata dan aturan order owner sudah dipasang. Staging sengaja `noindex`. Blocker public launch adalah domain final, tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, dan final manual QA.
+Nomor WhatsApp nyata, aturan order owner, domain final, Cloudflare, dan HTTPS sudah aktif. Website sengaja `noindex`. Blocker acquisition launch adalah tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, GBP/NAP, dan final manual QA.
 
 ## Funnel Name
 
@@ -20,14 +20,14 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 
 ## Recommended Page Structure
 
-1. Hero literal: jasa sablon kaos custom + Ciputat + satuan sampai batch.
-2. Dua jalur: satuan/test print dan produksi/batch.
-3. Tiga offer: DTF/custom satuan, event/community batch, kaos polos satuan/grosir.
-4. Capability sekunder: clothing brand, bordir, jersey, dan merchandise.
-5. Proof gallery dari produksi nyata.
-6. Segmen: event/community dan vendor/reseller/brand.
-7. Alur order dan FAQ harga/MOQ/bahan/teknik/lead time.
-8. Brief WhatsApp terstruktur dan NAP workshop.
+1. Hero literal: sablon dan kaos custom oleh Orplyn + Ciputat + satuan sampai batch.
+2. Tiga offer: event/community batch, DTF/custom satuan, dan kaos polos satuan/grosir.
+3. Proof hasil produksi langsung setelah offer utama.
+4. Alasan memilih Orplyn dalam bahasa customer.
+5. Alur order dan FAQ harga/MOQ/bahan/teknik/lead time.
+6. Capability sekunder: clothing brand, bordir, jersey, dan merchandise.
+7. Brief WhatsApp terstruktur.
+8. NAP, Maps, jam, dan pickup workshop.
 
 ## Confirmed Conversion Inputs
 
@@ -44,19 +44,15 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 
 Primary CTA:
 
-`Cek MOQ & estimasi`
+`Minta estimasi`
 
-Alternative CTA:
+Secondary actions:
 
-`Tanya Sablon Custom`
-
-`Cek Harga Kaos Polos`
-
-`Kirim Desain untuk Dicek`
+`Lihat hasil produksi` atau link detail layanan yang relevan.
 
 ## Page Variants To Consider
 
-- Main landing page fokus dua jalur/tiga offer: implemented.
+- Main landing page fokus tiga offer dengan pilihan skala satuan/batch di form: implemented.
 - Local SEO intent Ciputat/Tangerang Selatan: implemented pada homepage dan metadata.
 - High-intent DTF/satuan: implemented pada `/layanan/sablon-dtf-satuan`.
 - Use-case service pages: implemented untuk event, clothing brand, bordir/seragam, jersey, totebag, dan kaos polos.
