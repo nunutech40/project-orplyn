@@ -40,7 +40,7 @@ Dokumen ini bukan strategi tambahan. Fungsinya menentukan dokumen mana yang akti
 Per arahan user 19 Juli 2026:
 
 1. Dokumentasi aktif sudah dikonsolidasikan ke D-012; snapshot lama tetap historical evidence.
-2. Source homepage, landing event, metadata, schema, navigation, form date-first, dan proof gate sudah event-first serta factual.
+2. Homepage, landing event, metadata, schema, navigation, form date-first, dan proof gate sudah event-first, factual, dan live pada release `20260719T082000Z-3890f1b` dengan noindex tetap aktif.
 3. M-06 menjadi satu-satunya manual `NEXT`: tunggu dan verifikasi lima order event/community dari owner.
 4. Jalankan final responsive visual QA dan end-to-end WhatsApp test saat akses/perangkat tersedia.
 5. Setup GBP, Search Console, Google tag, indexing, dan Google Ads dilakukan kemudian.

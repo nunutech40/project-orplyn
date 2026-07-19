@@ -24,14 +24,14 @@ Per 19 Juli 2026:
 - Staging publik terisolasi berjalan di VPS bersama pada `https://orplyn.103-59-94-121.nip.io`, sengaja `noindex`, dengan deployment portabel di `ops/production/`.
 - Domain final `orplyn.id` aktif melalui Cloudflare. Delegasi `cleo.ns.cloudflare.com`/`stella.ns.cloudflare.com`, proxied apex/www, edge HTTPS, origin HTTPS, dan redirect permanen `www` ke apex sudah terverifikasi.
 - Owner evolution lens 19 Juli 2026 menetapkan event/komunitas sebagai satu fokus acquisition. H-009/E-12 adalah hypothesis deadline-risk untuk first order; H-008/E-11 adalah retention hypothesis untuk repeat order. Keduanya belum menjadi public claim.
-- Homepage, dedicated event/komunitas dan DTF/satuan, enam landing layanan, portfolio, kontak, privasi, schema, sitemap, robots, dan `llms.txt` sudah tersedia. Source website sudah event-first; DTF/kaos polos tetap entry offer sekunder.
+- Homepage, dedicated event/komunitas dan DTF/satuan, enam landing layanan, portfolio, kontak, privasi, schema, sitemap, robots, dan `llms.txt` sudah tersedia. Event-first release `20260719T082000Z-3890f1b` aktif di `https://orplyn.id`; DTF/kaos polos tetap entry offer sekunder.
 - Form WhatsApp memakai nomor nyata, Lead ID, MOQ-aware quantity, event-first use case, tanggal pakai/target, lokasi, UTM, landing page, GCLID/GBRAID/WBRAID, `days_to_target`, dan event teknis terpisah dari qualified lead.
 - Commercial-proof component sudah tersedia dan tidak merender apa pun selama `commercial-proofs.ts` kosong. Owner sedang diminta mengirim lima order event/community melalui M-06.
 - Local/staging sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
 - External market snapshot, offer/SERP refresh, dan growth experiment backlog tersedia di `marketing/07-market-research/`.
 - Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
 - Checklist Word Google Business Profile, SEO, dan tracking tersedia di `deliverables/launch-readiness/`.
-- Lint tidak punya error, production build berhasil, enam rendered smoke test lulus, local container sehat, homepage/event route HTTP 200, dan hero WebP aktif.
+- Lint tidak punya error, production build berhasil, enam rendered smoke test lulus, local/public container sehat, seluruh deployment route lulus, dan hero WebP aktif melalui cache Cloudflare.
 - Source implementation memenuhi factual event-first dan proof-gating contract. Final responsive visual QA masih perlu dijalankan ketika browser tooling tersedia. Public acquisition tetap ditahan oleh intentional `noindex`, lead log, tracking IDs, approval harga/proof, admin readiness, dan end-to-end WhatsApp test.
 - Per arahan user terbaru, setup eksternal GBP, Search Console, Google tag, indexing, dan Google Ads dikerjakan kemudian. Pekerjaan aktif sekarang adalah konsistensi dokumentasi dan kesiapan website.
 

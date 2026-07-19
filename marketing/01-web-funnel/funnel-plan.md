@@ -11,7 +11,7 @@ last_updated: 2026-07-19
 
 ## Status
 
-Funnel fokus-konversi sudah diimplementasikan dan diselaraskan ke D-012. Homepage serta landing event/community memimpin acquisition; DTF satuan dan kaos polos tetap findable sebagai entry offer sekunder. Form WhatsApp membedakan satuan/batch, mengikuti MOQ produk, memulai konteks dari use case serta tanggal pakai/target, dan mengirim `days_to_target` pada event tracking tanpa menjadikannya deadline promise.
+Funnel fokus-konversi sudah diimplementasikan, diselaraskan ke D-012, dan live pada release `20260719T082000Z-3890f1b`. Homepage serta landing event/community memimpin acquisition; DTF satuan dan kaos polos tetap findable sebagai entry offer sekunder. Form WhatsApp membedakan satuan/batch, mengikuti MOQ produk, memulai konteks dari use case serta tanggal pakai/target, dan mengirim `days_to_target` pada event tracking tanpa menjadikannya deadline promise.
 
 Nomor WhatsApp nyata, aturan order owner, domain final, Cloudflare, dan HTTPS sudah aktif. Website sengaja `noindex`. External setup ditunda oleh user sampai source website selesai dirapikan. Launch blocker tetap tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, GBP/NAP, indexing, dan final manual QA.
 

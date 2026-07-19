@@ -22,7 +22,7 @@ Funnel web memiliki dua jalur order, tetapi acquisition aktif hanya berfokus pad
 | Commercial facts and offer | MOQ/lead time confirmed; event-first acquisition with DTF/kaos polos as secondary entry offers | M-06 verified proof, then owner approval for event price anchor and capacity |
 | Product differentiation | Owner evolution recorded as D-012: H-009 acquisition and H-008 retention are separated | Five event orders for E-12; repeat opportunities for E-11; no public claim before gate |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Event-first source complete locally; current public release still intentional noindex | Deploy revision, then responsive manual QA and end-to-end lead test |
+| Web funnel source | Event-first release `20260719T082000Z-3890f1b` live at `https://orplyn.id` with intentional noindex | Responsive manual QA and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
 | Shared VPS staging | Healthy; final-domain routes, edge TLS, and origin TLS active | Confirm Cloudflare Full (strict) mode |
 | Technical SEO foundation | Prepared; final domain intentionally noindex | Indexing decision and Search Console |
@@ -294,6 +294,8 @@ Latest local verification on 19 Juli 2026 after D-013:
 - `npm run build`: passed.
 - `node --test tests/rendered-html.test.mjs`: 6/6 passed.
 - Local Docker rebuild passed; `orplyn-web` is healthy at `http://localhost:3010`. Homepage and event landing returned HTTP 200, event use case is selected, canonical/noindex are intact, and the commercial-proof section is absent while data is empty.
+- Release `orplyn-web:20260719T082000Z-3890f1b` deployed successfully to `/opt/orplyn`. All deployment routes returned HTTP 200, canonical matched `https://orplyn.id/`, intentional noindex remained active, and live HTML contained the event-first H1, selected event use case, date field, WebP hero, and no empty commercial-proof section.
+- Public WebP returned 200 as `image/webp`, 212,134 bytes, and `CF-Cache-Status: HIT`. Orplyn, Kohnu API/web/Postgres, personal-brand containers, and 9Router remained up; `kohnu.com`, redirected `app.kohnu.com`, and the 9Router dashboard resolved to HTTP 200.
 - In-app browser runtime was unavailable for this session, so responsive screenshot QA remains a manual gate and is not claimed complete.
 
 Earlier verification history on 19 Juli 2026:
@@ -678,7 +680,8 @@ This section is chronological history, not a flat list of simultaneous instructi
 - Rebuilt the homepage around one featured event/community offer, moved DTF single and kaos polos into supporting roles, updated the event landing and SEO/entity copy, and reordered intake around use case plus date.
 - Added a commercial-proof publication contract, typed website data model, and reusable hidden-until-publishable section. No fake review, transaction, customer, quantity, or outcome was added.
 - Updated the owner-facing proof request and manual queue. M-06 is now the only `NEXT`; M-01 through M-05 and M-11 through M-13 are `LATER` while setup is deferred.
-- Added and visually inspected a 1600px WebP hero derived from the existing Orplyn production image. Local lint/build/render tests and Docker health passed; public deployment and responsive screenshot QA were still pending at this point.
+- Added and visually inspected a 1600px WebP hero derived from the existing Orplyn production image. Local lint/build/render tests and Docker health passed.
+- Deployed release `20260719T082000Z-3890f1b` to the existing isolated Orplyn stack. Public route/canonical/noindex verification passed, live event-first HTML and proof gating were confirmed, Cloudflare served the WebP from cache, and neighboring VPS services stayed healthy. Responsive screenshot QA remains pending because the in-app browser runtime was unavailable.
 
 ## 16. Immediate Next Actions
 
