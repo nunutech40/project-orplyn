@@ -107,7 +107,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <p>{service.description}</p>
           <Link className="button button-primary" href="#service-quote">
             <MessageCircle size={20} aria-hidden="true" />
-            Bahas kebutuhan
+            Minta estimasi
           </Link>
         </div>
       </section>
@@ -115,7 +115,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="service-order-facts" aria-label="Aturan order">
         <div>
           <p className="eyebrow eyebrow-dark">PANDUAN ORDER</p>
-          <h2>MOQ dan waktu produksi normal.</h2>
+          <h2>Minimum order dan estimasi produksi.</h2>
         </div>
         <ul>
           {service.orderFacts.map((fact) => (
@@ -131,7 +131,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="service-detail-section">
         <div className="service-detail-block">
           <p className="eyebrow eyebrow-dark">COCOK UNTUK</p>
-          <h2>Kebutuhan yang bisa dimulai dari sini.</h2>
+          <h2>Layanan ini cocok untuk kebutuhan berikut.</h2>
           <ul className="detail-list">
             {service.idealFor.map((item) => (
               <li key={item}>
@@ -142,8 +142,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
 
         <div className="service-detail-block service-detail-accent">
-          <p className="eyebrow">YANG BISA DIBAHAS</p>
-          <h2>Sesuaikan brief sebelum masuk produksi.</h2>
+          <p className="eyebrow">PILIHAN PRODUKSI</p>
+          <h2>Detail yang dapat disesuaikan.</h2>
           <ul className="detail-list">
             {service.capabilities.map((item) => (
               <li key={item}>
@@ -166,7 +166,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
             <h2>Lihat hasil dan prosesnya.</h2>
           </div>
           <Link href="/portfolio">
-            Semua portfolio <ArrowRight size={18} aria-hidden="true" />
+            Lihat semua hasil <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
         <div className="service-gallery">
@@ -185,11 +185,11 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <section className="service-quote-section" id="service-quote">
         <div>
-          <p className="eyebrow">MULAI DARI BRIEF</p>
-          <h2>Butuh {service.title.toLowerCase()}?</h2>
+          <p className="eyebrow">MINTA ESTIMASI</p>
+          <h2>Minta estimasi untuk {service.title.toLowerCase()}.</h2>
           <p>
-            Isi detail awal agar percakapan WhatsApp langsung masuk ke kebutuhan
-            produksi.
+            Kirim produk, jumlah, desain, dan target selesai agar admin dapat
+            memeriksa harga serta waktu produksi.
           </p>
         </div>
         <QuoteBuilder
@@ -204,7 +204,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">LAYANAN LAIN</p>
-            <h2>Mungkin masih satu kebutuhan.</h2>
+            <h2>Lihat layanan Orplyn lainnya.</h2>
           </div>
         </div>
         <div className="related-grid">

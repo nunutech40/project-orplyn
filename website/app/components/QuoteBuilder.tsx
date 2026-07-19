@@ -199,7 +199,7 @@ export function QuoteBuilder({
     const product = getQuoteProduct(productId);
     if (!lane || !product || !quantity || !deadline || !useCase || !deliveryLocation) {
       setStatus(
-        "Lengkapi jalur order, produk, jumlah, kebutuhan, target selesai, dan lokasi dulu.",
+        "Lengkapi skala pesanan, produk, jumlah, kebutuhan, target selesai, dan lokasi dulu.",
       );
       return;
     }
@@ -288,7 +288,7 @@ export function QuoteBuilder({
       onSubmit={submitQuote}
     >
       <fieldset className="order-lane">
-        <legend>Jenis kebutuhan</legend>
+        <legend>Skala pesanan</legend>
         <div className="segmented-control">
           <label>
             <input
@@ -298,7 +298,7 @@ export function QuoteBuilder({
               checked={lane === "single"}
               onChange={() => changeLane("single")}
             />
-            <span>Satuan / test print</span>
+            <span>Pesanan satuan</span>
           </label>
           <label>
             <input
@@ -308,7 +308,7 @@ export function QuoteBuilder({
               checked={lane === "batch"}
               onChange={() => changeLane("batch")}
             />
-            <span>Produksi / batch</span>
+            <span>Produksi batch</span>
           </label>
         </div>
       </fieldset>
@@ -386,20 +386,20 @@ export function QuoteBuilder({
 
       {currentProduct && (
         <p className="order-rule">
-          Jalur ini mulai {effectiveMinimumOrder} pcs · harga grosir mulai {currentProduct.wholesaleFrom} pcs · estimasi normal {currentProduct.normalLeadTime}. Jadwal final mengikuti desain, antrean, dan stok bahan.
+          Minimum {effectiveMinimumOrder} pcs · perhitungan grosir mulai {currentProduct.wholesaleFrom} pcs · estimasi produksi {currentProduct.normalLeadTime}. Jadwal final mengikuti desain, antrean, dan stok bahan.
         </p>
       )}
 
       <div className="field-group">
         <label htmlFor={`quote-material-${compact ? "compact" : "full"}`}>
-          Bahan / produk
+          Bahan yang diinginkan (opsional)
         </label>
         <input
           id={`quote-material-${compact ? "compact" : "full"}`}
           type="text"
           value={material}
           onChange={(event) => setMaterial(event.target.value)}
-          placeholder="Contoh: 24s atau belum tahu"
+          placeholder="Contoh: cotton combed 24s atau minta rekomendasi"
         />
       </div>
 
@@ -451,13 +451,13 @@ export function QuoteBuilder({
 
       <button className="button button-whatsapp quote-submit" type="submit">
         <MessageCircle size={20} aria-hidden="true" />
-        Kirim brief ke WhatsApp
+        Kirim detail &amp; minta estimasi
         <Send size={17} aria-hidden="true" />
       </button>
 
       <p className="privacy-note">
-        Dengan mengirim brief, kamu menyetujui data kebutuhan digunakan untuk
-        menanggapi permintaan estimasi. Baca <a href="/kebijakan-privasi">kebijakan privasi</a>.
+        Dengan mengirim detail pesanan, kamu menyetujui data kebutuhan digunakan
+        untuk menanggapi permintaan estimasi. Baca <a href="/kebijakan-privasi">kebijakan privasi</a>.
       </p>
 
       <p className="form-status" aria-live="polite">

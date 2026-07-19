@@ -32,17 +32,24 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.match(html, /Jasa Sablon Kaos Custom Ciputat/i);
   assert.match(
     html,
-    /<h1>Jasa sablon kaos custom di Ciputat\.<\/h1>/i,
+    /<h1>Sablon &amp; kaos custom di Orplyn\.<\/h1>/i,
   );
-  assert.match(html, /Mulai 1 pcs untuk DTF dan kaos polos/i);
+  assert.match(html, /Mulai 1 pcs hingga produksi batch/i);
   assert.match(html, /Minta estimasi/i);
-  assert.doesNotMatch(
-    html,
-    /<h1>Jasa sablon kaos custom di Ciputat, dari satuan sampai produksi batch\.<\/h1>/i,
-  );
+  assert.match(html, /Lihat hasil produksi/i);
+  assert.doesNotMatch(html, /<h1>Jasa sablon kaos custom di Ciputat/i);
   assert.match(html, /DTF MULAI 1 PCS/i);
-  assert.match(html, /TIGA KEBUTUHAN UTAMA/i);
-  assert.match(html, /Kirim brief ke WhatsApp/i);
+  assert.match(html, /PILIH SESUAI KEBUTUHAN/i);
+  assert.match(html, /Kirim detail &amp; minta estimasi/i);
+  assert.doesNotMatch(html, /Mulai brief|Cek estimasi/i);
+  const primaryServicesStart = html.indexOf("service-grid service-grid-primary");
+  const primaryServicesEnd = html.indexOf("</section>", primaryServicesStart);
+  const primaryServicesHtml = html.slice(primaryServicesStart, primaryServicesEnd);
+  assert.ok(
+    primaryServicesHtml.indexOf("Kaos Event &amp; Komunitas") <
+      primaryServicesHtml.indexOf("Sablon DTF &amp; Kaos Custom Satuan"),
+    "event/community should be the first primary offer",
+  );
   assert.match(html, /0823-1757-9311/i);
   assert.match(html, /\/brand\/orplyn-horizontal-white\.png/i);
   assert.match(html, /"logo":"http:\/\/localhost:3010\/brand\/orplyn-monogram-black\.png"/i);
@@ -62,7 +69,7 @@ test("server-renders a high-intent DTF service landing page", async () => {
   assert.match(html, /"@type":"Service"/i);
   assert.match(html, /Minimum order 1 pcs/i);
   assert.match(html, /PANDUAN ORDER/i);
-  assert.match(html, /MULAI DARI BRIEF/i);
+  assert.match(html, /MINTA ESTIMASI/i);
   assert.match(
     html,
     /rel="canonical" href="http:\/\/localhost:3010\/layanan\/sablon-dtf-satuan"/i,
@@ -93,7 +100,7 @@ test("server-renders the privacy notice used by the brief form", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Data brief dipakai untuk menanggapi kebutuhan order/i);
+  assert.match(html, /Data pesanan dipakai untuk menanggapi permintaan estimasi/i);
   assert.match(html, /GCLID, GBRAID, atau WBRAID/i);
   assert.match(
     html,

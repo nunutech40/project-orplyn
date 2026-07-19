@@ -135,6 +135,20 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: baru satu reviewer eksternal dan belum merupakan usability study terukur.
 - Marketing implication: first viewport harus menjawab kategori bisnis dalam satu H1 literal, memakai supporting copy pendek, dan memberi CTA yang dipahami tanpa istilah internal seperti MOQ.
 
+### O-010 - Urutan pesan belum mengikuti nilai segmen
+
+- Observed: data owner menempatkan event/komunitas sebagai segmen dengan frekuensi, omzet, margin, dan repeat paling kuat, sedangkan customer satuan lebih sering membandingkan harga dan batal. Versi homepage 18 Juli menempatkan pesan `mulai 1 pcs` dan kartu DTF satuan lebih dahulu.
+- Source: `business-data/owner-answers.md`, source homepage, dan screenshot mobile live 19 Juli 2026.
+- Limit: belum ada AOV, close rate, margin, dan qualified-lead rate per landing page untuk mengukur dampak urutan pesan secara langsung.
+- Marketing implication: homepage tetap melayani satuan dan batch, tetapi event/komunitas harus menjadi offer pertama; traffic iklan satuan dan batch tetap diarahkan ke landing page masing-masing.
+
+### O-011 - CTA dan copy proses terlalu terfragmentasi
+
+- Observed: website memakai `Cek estimasi`, `Minta estimasi`, `Bahas kebutuhan`, `Mulai brief`, dan `Kirim brief`, sementara konsep jalur/brief/teknik/jumlah diulang pada beberapa section homepage. Sticky CTA juga tampil bersamaan dengan CTA hero pada ponsel.
+- Source: source website, HTML production, dan screenshot full-page mobile 19 Juli 2026.
+- Limit: belum ada event-level CTA click rate atau usability test lima responden untuk mengukur setiap friction point.
+- Marketing implication: gunakan satu CTA utama, ganti istilah internal dengan bahasa customer, tampilkan sticky CTA setelah hero, dan potong section yang mengulang keputusan yang sama.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -243,7 +257,11 @@ Hero, landing, dan case study memprioritaskan order/use case yang paling relevan
 
 ### D-008 - Mobile hero mengutamakan category clarity
 
-Homepage first viewport memakai H1 literal `Jasa sablon kaos custom di Ciputat`, satu supporting message tentang order 1 pcs dan batch, serta CTA `Minta estimasi` dan `Lihat layanan`. Detail segmen, MOQ, teknik, bahan, dan deadline tetap tersedia setelah hero dan pada service/form sections agar mobile visitor tidak harus memproses semuanya sekaligus.
+Keputusan awal 18 Juli memakai H1 literal `Jasa sablon kaos custom di Ciputat`, satu supporting message tentang order 1 pcs dan batch, serta CTA `Minta estimasi` dan `Lihat layanan`. Keputusan ini menyelesaikan kepadatan awal, lalu disempurnakan oleh D-009 setelah review brand, audience priority, dan keseluruhan alur copy.
+
+### D-009 - Brand, offer priority, dan CTA memakai satu sistem copy
+
+Homepage memperkenalkan Orplyn sebagai tempat sablon dan kaos custom, menempatkan event/komunitas sebagai offer pertama, serta mempertahankan satuan sebagai pilihan yang tetap terlihat. CTA utama di seluruh funnel memakai `Minta estimasi`; sticky CTA baru muncul setelah hero. Istilah internal seperti `brief`, `jalur`, dan `ditindaklanjuti` diganti dengan bahasa customer. Funnel lanes dan buyer paths di homepage dihapus karena mengulang service cards; proof ditempatkan langsung setelah tiga offer utama. Range harga, review, dan case study tetap menunggu M-06/M-07 karena tidak boleh dikarang.
 
 ## Documentation Protocol
 

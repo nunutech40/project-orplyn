@@ -17,10 +17,10 @@ export default function PortfolioPage() {
     <>
       <section className="page-intro page-intro-portfolio">
         <p className="eyebrow">PORTFOLIO ORPLYN</p>
-        <h1>Detail yang sudah pernah kami kerjakan.</h1>
+        <h1>Hasil produksi nyata dari workshop Orplyn.</h1>
         <p>
-          Dokumentasi hasil dan proses produksi nyata dari beragam teknik sablon,
-          bordir, jersey, totebag, dan apparel custom.
+          Lihat contoh sablon, bordir, jersey, totebag, dan apparel custom sebelum
+          menentukan arah produksimu.
         </p>
       </section>
 
@@ -44,11 +44,11 @@ export default function PortfolioPage() {
       <section className="portfolio-cta">
         <div>
           <p className="eyebrow eyebrow-dark">PUNYA REFERENSI SENDIRI?</p>
-          <h2>Kirim desainmu. Kita cek arah produksinya.</h2>
+          <h2>Kirim desainmu untuk cek bahan, teknik, harga, dan waktu produksi.</h2>
         </div>
         <Link className="button button-dark" href="/#quote">
           <MessageCircle size={20} aria-hidden="true" />
-          Cek estimasi
+          Minta estimasi
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </section>

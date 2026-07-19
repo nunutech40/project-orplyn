@@ -17,8 +17,8 @@ export function SiteFooter() {
             />
           </Link>
           <p>
-            Sablon kaos custom dan kaos polos dari satuan sampai produksi batch
-            di Ciputat, Tangerang Selatan.
+            Orplyn melayani sablon kaos custom dan kaos polos dari satuan sampai
+            produksi batch di Ciputat, Tangerang Selatan.
           </p>
         </div>
 

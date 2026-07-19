@@ -11,6 +11,7 @@ import {
   Shirt,
 } from "./components/Icons";
 import { QuoteBuilder } from "./components/QuoteBuilder";
+import { MobileQuoteCta } from "./components/MobileQuoteCta";
 import {
   business,
   portfolio,
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-const serviceIcons = [ScanLine, Shirt, Palette];
+const serviceIcons = [Shirt, ScanLine, Palette];
 
 const faqs = [
   {
@@ -46,7 +47,7 @@ const faqs = [
   {
     question: "Bagaimana cara mendapatkan estimasi harga?",
     answer:
-      "Harga dihitung dari jenis produk, jumlah, bahan, ukuran, teknik sablon, dan desain. Isi brief WhatsApp agar admin bisa mengecek spesifikasi dan memberi estimasi yang sesuai, bukan harga yang menyesatkan.",
+      "Harga dihitung dari jenis produk, jumlah, bahan, ukuran, teknik sablon, dan desain. Isi detail pesanan agar admin dapat memberi estimasi sesuai spesifikasi kebutuhanmu.",
   },
   {
     question: "Bahan kaos apa yang tersedia?",
@@ -168,19 +169,19 @@ export default function Home() {
       >
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">ORPLYN · SABLON &amp; KAOS CUSTOM</p>
-          <h1>Jasa sablon kaos custom di Ciputat.</h1>
+          <p className="eyebrow">APPAREL &amp; PRINT STUDIO · CIPUTAT</p>
+          <h1>Sablon &amp; kaos custom di Orplyn.</h1>
           <p className="hero-copy">
-            Mulai 1 pcs untuk DTF dan kaos polos. Tersedia juga produksi batch
-            untuk event dan bisnis.
+            Mulai 1 pcs hingga produksi batch untuk event, komunitas, bisnis,
+            dan kebutuhan personal.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="#quote">
               <MessageCircle size={20} aria-hidden="true" />
               Minta estimasi
             </Link>
-            <Link className="button button-ghost-light" href="#paket">
-              Lihat layanan
+            <Link className="button button-ghost-light" href="#hasil-produksi">
+              Lihat hasil produksi
               <ArrowRight size={19} aria-hidden="true" />
             </Link>
           </div>
@@ -198,40 +199,15 @@ export default function Home() {
         <span>PICKUP DI CIPUTAT</span>
       </section>
 
-      <section className="funnel-lanes" aria-label="Pilih jalur order">
-        <div className="funnel-lane funnel-lane-single">
-          <p className="eyebrow eyebrow-dark">SATUAN / TEST PRINT</p>
-          <h2>Butuh 1-5 pcs?</h2>
-          <p>
-            Mulai dari kaos polos atau kaos custom dengan sablon DTF. Cocok untuk
-            kebutuhan personal, sample brand, dan coba desain.
-          </p>
-          <Link href="#quote">
-            Mulai brief satuan <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="funnel-lane funnel-lane-batch">
-          <p className="eyebrow">PRODUKSI / BATCH</p>
-          <h2>Butuh untuk kelompok atau dijual lagi?</h2>
-          <p>
-            Untuk event, komunitas, sekolah, kantor, clothing brand, vendor,
-            atau reseller. MOQ mengikuti produk dan teknik yang dipilih.
-          </p>
-          <Link href="#quote">
-            Mulai brief produksi <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
       <section className="section section-services" id="paket">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">TIGA KEBUTUHAN UTAMA</p>
-            <h2>Mulai dari jalur yang paling relevan.</h2>
+            <p className="eyebrow eyebrow-dark">PILIH SESUAI KEBUTUHAN</p>
+            <h2>Tiga layanan utama Orplyn.</h2>
           </div>
           <p>
-            Minimum order dan estimasi di bawah adalah panduan normal. Admin
-            tetap mengecek desain, stok bahan, antrean, serta tanggal pakai.
+            Lihat minimum order dan estimasi produksi sebelum meminta harga.
+            Jadwal final tetap mengikuti desain, stok bahan, dan tanggal pakai.
           </p>
         </div>
 
@@ -268,33 +244,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="secondary-services-section">
-        <div className="secondary-services-inner">
-          <div>
-            <p className="eyebrow">LAYANAN PRODUKSI LAIN</p>
-            <h2>Bordir, jersey, clothing brand, dan merchandise.</h2>
-          </div>
-          <div className="secondary-service-list">
-            {secondaryServices.map((service) => (
-              <Link href={`/layanan/${service.slug}`} key={service.slug}>
-                <span>{service.title}</span>
-                <ArrowRight size={18} aria-hidden="true" />
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section className="section proof-section" id="hasil-produksi">
         <div className="proof-intro">
           <p className="eyebrow">HASIL PRODUKSI NYATA</p>
-          <h2>Lihat detail hasil sebelum memilih teknik.</h2>
+          <h2>Lihat hasil Orplyn sebelum menentukan pilihan.</h2>
           <p>
-            Foto hasil dan proses produksi membantu membandingkan karakter warna,
-            tekstur, serta penerapan teknik pada kebutuhan yang berbeda.
+            Foto hasil dan proses produksi membantu melihat warna, tekstur, dan
+            penerapan teknik pada kebutuhan yang berbeda.
           </p>
           <Link className="button button-light" href="/portfolio">
-            Buka portfolio <ArrowRight size={18} aria-hidden="true" />
+            Lihat semua hasil <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
         <div className="portfolio-preview">
@@ -316,31 +275,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section buyer-paths">
-        <div className="buyer-path buyer-path-event">
-          <p className="eyebrow eyebrow-dark">EVENT & KOMUNITAS</p>
-          <h2>Satu tanggal pakai, banyak ukuran, satu brief produksi.</h2>
-          <p>
-            Siapkan jumlah, desain, bahan yang diinginkan, dan target selesai agar
-            kebutuhan kelompok bisa dicek lebih cepat.
-          </p>
-          <Link href="/layanan/kaos-event-komunitas">
-            Bahas order kelompok <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
-        <div className="buyer-path buyer-path-brand">
-          <p className="eyebrow">VENDOR, RESELLER & BRAND</p>
-          <h2>Repeat order dimulai dari spesifikasi yang jelas.</h2>
-          <p>
-            Bahas bahan, teknik, jumlah, artwork, sample, dan kebutuhan produksi
-            berulang bersama admin.
-          </p>
-          <Link href="/layanan/produksi-clothing-brand">
-            Bahas produksi batch <ArrowRight size={18} aria-hidden="true" />
-          </Link>
-        </div>
-      </section>
-
       <section className="section why-section">
         <div className="why-image">
           <img
@@ -352,25 +286,24 @@ export default function Home() {
           />
         </div>
         <div className="why-content">
-          <p className="eyebrow eyebrow-dark">CARA ORPLYN MEMBANTU</p>
-          <h2>Mulai dari kebutuhan, bukan sekadar nama teknik.</h2>
+          <p className="eyebrow eyebrow-dark">KENAPA ORPLYN</p>
+          <h2>Lebih mudah memilih sebelum produksi dimulai.</h2>
           <p className="lead-copy">
-            Desain yang sama bisa membutuhkan pendekatan berbeda. Brief awal
-            membantu admin mengarahkan bahan, teknik, jumlah, dan jadwal yang
-            lebih masuk akal.
+            Belum yakin soal bahan atau teknik? Orplyn membantu menyesuaikan
+            pilihan dengan desain, jumlah, penggunaan, dan target selesai.
           </p>
           <ul className="check-list">
             <li>
               <CheckCircle2 aria-hidden="true" />
-              Jalur satuan dan produksi dipisahkan sejak awal
+              Pesanan satuan dan produksi batch tersedia dalam satu tempat
             </li>
             <li>
               <Ruler aria-hidden="true" />
-              MOQ, jumlah, ukuran, desain, dan deadline diperiksa sebelum quote
+              Jumlah, ukuran, desain, dan target selesai diperiksa sebelum harga
             </li>
             <li>
               <Palette aria-hidden="true" />
-              Bahan dan teknik dibahas mengikuti artwork serta penggunaan
+              Konsultasi bahan dan teknik mengikuti desain serta penggunaan
             </li>
             <li>
               <MapPin aria-hidden="true" />
@@ -383,18 +316,17 @@ export default function Home() {
       <section className="section process-section" id="cara-order">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">ALUR ORDER</p>
-            <h2>Dari brief sampai produksi.</h2>
+            <p className="eyebrow eyebrow-dark">CARA ORDER</p>
+            <h2>Empat langkah menuju produksi.</h2>
           </div>
-          <p>Supaya admin tidak mengulang pertanyaan dasar dari nol.</p>
+          <p>Detail yang lengkap membantu admin memberi estimasi lebih sesuai.</p>
         </div>
         <ol className="process-list">
           {[
-            ["01", "Pilih jalur", "Tentukan satuan/test print atau produksi/batch."],
-            ["02", "Kirim brief", "Isi produk, jumlah, penggunaan, deadline, dan lokasi."],
-            ["03", "Cek kebutuhan", "Admin mengecek MOQ, bahan, teknik, desain, dan jadwal."],
-            ["04", "Konfirmasi", "Setujui detail dan lakukan DP 50 persen sebelum produksi."],
-            ["05", "Ambil atau kirim", "Pelunasan dilakukan sebelum pickup atau pengiriman."],
+            ["01", "Pilih layanan", "Tentukan produk dan kisaran jumlah pesanan."],
+            ["02", "Isi detail", "Kirim penggunaan, desain, target selesai, dan lokasi."],
+            ["03", "Terima estimasi", "Admin memeriksa bahan, teknik, jadwal, dan harga."],
+            ["04", "Konfirmasi produksi", "Setujui detail, lakukan DP, lalu pilih pickup atau pengiriman."],
           ].map(([number, title, description]) => (
             <li key={number}>
               <span>{number}</span>
@@ -407,24 +339,24 @@ export default function Home() {
 
       <section className="quote-section" id="quote">
         <div className="quote-copy">
-          <p className="eyebrow">CEK MOQ & ESTIMASI</p>
-          <h2>Kirim brief yang langsung bisa ditindaklanjuti.</h2>
+          <p className="eyebrow">MINTA ESTIMASI</p>
+          <h2>Ceritakan pesananmu untuk cek harga dan waktu produksi.</h2>
           <p>
-            Form akan menyaring produk dan jumlah berdasarkan jalur satuan atau
-            produksi, lalu menyusun pesan lengkap ke WhatsApp Aulia.
+            Pilih produk, jumlah, dan target selesai. Detailnya langsung dikirim
+            ke WhatsApp Aulia untuk diperiksa.
           </p>
           <div className="quote-highlights">
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Jalur order
+              <CheckCircle2 size={18} aria-hidden="true" /> Produk
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Produk & jumlah
+              <CheckCircle2 size={18} aria-hidden="true" /> Jumlah
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Deadline
+              <CheckCircle2 size={18} aria-hidden="true" /> Target selesai
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Lokasi
+              <CheckCircle2 size={18} aria-hidden="true" /> Pengiriman
             </span>
           </div>
         </div>
@@ -443,6 +375,23 @@ export default function Home() {
               <p>{faq.answer}</p>
             </details>
           ))}
+        </div>
+      </section>
+
+      <section className="secondary-services-section">
+        <div className="secondary-services-inner">
+          <div>
+            <p className="eyebrow">LAYANAN PRODUKSI LAIN</p>
+            <h2>Bordir, jersey, clothing brand, dan merchandise.</h2>
+          </div>
+          <div className="secondary-service-list">
+            {secondaryServices.map((service) => (
+              <Link href={`/layanan/${service.slug}`} key={service.slug}>
+                <span>{service.title}</span>
+                <ArrowRight size={18} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -472,10 +421,7 @@ export default function Home() {
         </div>
       </section>
 
-      <Link className="mobile-quote-cta" href="#quote">
-        <MessageCircle size={20} aria-hidden="true" />
-        Cek estimasi
-      </Link>
+      <MobileQuoteCta />
     </>
   );
 }

@@ -24,9 +24,10 @@ export default function ContactPage() {
     <>
       <section className="page-intro contact-intro">
         <p className="eyebrow">KONTAK & LOKASI</p>
-        <h1>Mulai dari brief. Lanjutkan di WhatsApp.</h1>
+        <h1>Hubungi Orplyn untuk cek harga dan waktu produksi.</h1>
         <p>
-          Ceritakan produk, jumlah, deadline, dan kesiapan desain. Untuk pickup atau
+          Isi detail produk, jumlah, target selesai, dan kesiapan desain, lalu
+          lanjutkan pembahasan dengan Aulia di WhatsApp. Untuk pickup atau
           kunjungan, gunakan titik Google Maps resmi Orplyn.
         </p>
       </section>
@@ -41,7 +42,7 @@ export default function ContactPage() {
               <br />
               Admin {business.adminHours}
             </p>
-            <Link href="#quote">Kirim brief terarah</Link>
+            <Link href="#quote">Minta estimasi</Link>
           </div>
           <div>
             <Clock3 size={25} aria-hidden="true" />
@@ -83,7 +84,7 @@ export default function ContactPage() {
 
         <div className="contact-quote" id="quote">
           <p className="eyebrow eyebrow-dark">MINTA ESTIMASI</p>
-          <h2>Siapkan brief pesanan.</h2>
+          <h2>Ceritakan detail pesananmu.</h2>
           <QuoteBuilder whatsappNumber={business.whatsapp} compact />
         </div>
       </section>

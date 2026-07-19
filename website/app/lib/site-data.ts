@@ -129,22 +129,22 @@ export const services: Service[] = [
     title: "Sablon DTF & Kaos Custom Satuan",
     eyebrow: "Mulai 1 pcs untuk coba desain",
     shortDescription:
-      "Kaos custom dan sablon DTF mulai 1 pcs untuk kebutuhan personal, sample, atau test print.",
+      "Kaos custom dan sablon DTF mulai 1 pcs untuk kebutuhan personal, sampel, atau uji cetak.",
     description:
-      "Kirim desain dan kebutuhanmu. Orplyn membantu mengecek bahan, ukuran cetak, jumlah, serta estimasi produksi sebelum order dilanjutkan.",
+      "Kirim desain dan kebutuhanmu. Orplyn membantu mengecek bahan, ukuran cetak, jumlah, serta estimasi produksi sebelum pesanan dilanjutkan.",
     image: "/images/sablon-pasta.jpg",
     imageAlt: "Hasil sablon warna pada kaos produksi Orplyn",
     idealFor: [
       "Kaos custom personal",
-      "Sample atau test print",
-      "Desain full color",
-      "Order kecil sebelum produksi batch",
+      "Sampel atau uji cetak",
+      "Desain penuh warna",
+      "Pesanan kecil sebelum produksi batch",
     ],
     capabilities: [
       "Pesanan bisa dimulai dari 1 pcs",
       "Konsultasi bahan 20s, 24s, atau 30s",
       "Pengecekan desain dan ukuran cetak",
-      "Pickup di Ciputat atau pengiriman",
+      "Ambil di Ciputat atau pengiriman",
     ],
     methods: ["DTF", "Kaos custom", "20s", "24s", "30s"],
     gallery: [
@@ -156,31 +156,31 @@ export const services: Service[] = [
     defaultLane: "single",
     orderFacts: [
       "Minimum order 1 pcs",
-      "Harga grosir mulai 12 pcs",
-      "Estimasi normal sekitar 2 hari",
+      "Perhitungan grosir mulai 12 pcs",
+      "Estimasi produksi sekitar 2 hari",
     ],
   },
   {
     slug: "kaos-event-komunitas",
     title: "Kaos Event & Komunitas",
-    eyebrow: "Untuk kelompok dengan satu deadline",
+    eyebrow: "Untuk kelompok dengan satu tanggal pakai",
     shortDescription:
-      "Kaos panitia, reuni, komunitas, kampus, gathering, dan kebutuhan promosi.",
+      "Kaos panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
     description:
-      "Dari bahan kaos sampai teknik cetak, Orplyn membantu menyiapkan brief produksi sesuai desain, jumlah pesanan, dan tanggal penggunaan.",
+      "Dari bahan kaos sampai teknik cetak, Orplyn membantu menyiapkan detail produksi sesuai desain, jumlah pesanan, dan tanggal penggunaan.",
     image: "/images/hero-sablon.jpg",
-    imageAlt: "Hasil sablon full color pada kaos hitam produksi Orplyn",
+    imageAlt: "Hasil sablon penuh warna pada kaos hitam produksi Orplyn",
     idealFor: [
       "Event dan kepanitiaan",
       "Komunitas dan klub",
       "Kampus, sekolah, dan organisasi",
-      "Gathering kantor dan promosi",
+      "Acara kantor dan promosi",
     ],
     capabilities: [
       "Kaos custom dengan desain sendiri",
       "Pilihan bahan 20s, 24s, dan 30s",
       "Cetak depan, belakang, atau detail tambahan",
-      "Konsultasi teknik sesuai artwork dan jumlah",
+      "Konsultasi teknik sesuai desain dan jumlah",
     ],
     methods: ["DTF", "Plastisol", "Discharge", "Rubber", "Fullprint"],
     gallery: [
@@ -192,8 +192,8 @@ export const services: Service[] = [
     defaultLane: "batch",
     orderFacts: [
       "Sablon manual / plastisol minimum 12 pcs",
-      "Harga grosir manual mulai 100 pcs",
-      "Estimasi normal sekitar 3-7 hari",
+      "Perhitungan grosir manual mulai 100 pcs",
+      "Estimasi produksi sekitar 3-7 hari",
     ],
   },
   {
@@ -201,7 +201,7 @@ export const services: Service[] = [
     title: "Kaos Polos Satuan & Grosir",
     eyebrow: "Siap dipakai atau dilanjutkan ke sablon",
     shortDescription:
-      "Kaos polos mulai 1 pcs, dengan harga grosir mulai 6 pcs dan pilihan bahan 20s, 24s, atau 30s.",
+      "Kaos polos mulai 1 pcs, dengan perhitungan grosir mulai 6 pcs dan pilihan bahan 20s, 24s, atau 30s.",
     description:
       "Pilih kaos polos berdasarkan bahan, warna, ukuran, dan jumlah. Ketersediaan stok tetap dikonfirmasi admin sebelum pembayaran.",
     image: "/images/kaos-polos-warna.jpg",
@@ -214,7 +214,7 @@ export const services: Service[] = [
     ],
     capabilities: [
       "Minimum order 1 pcs",
-      "Harga grosir mulai 6 pcs",
+      "Perhitungan grosir mulai 6 pcs",
       "Bahan 20s, 24s, dan 30s",
       "Ukuran normal S-XL",
     ],
@@ -228,14 +228,14 @@ export const services: Service[] = [
     defaultLane: "single",
     orderFacts: [
       "Minimum order 1 pcs",
-      "Harga grosir mulai 6 pcs",
-      "Estimasi normal sekitar 2 hari",
+      "Perhitungan grosir mulai 6 pcs",
+      "Estimasi produksi sekitar 2 hari",
     ],
   },
   {
     slug: "produksi-clothing-brand",
     title: "Produksi Clothing Brand",
-    eyebrow: "Teknik mengikuti karakter artwork",
+    eyebrow: "Teknik mengikuti karakter desain",
     shortDescription:
       "Pilihan teknik sablon untuk rilisan brand, merchandise, dan produksi berulang.",
     description:
@@ -249,10 +249,10 @@ export const services: Service[] = [
       "Produksi desain berulang",
     ],
     capabilities: [
-      "Pengecekan artwork sebelum produksi",
+      "Pengecekan desain sebelum produksi",
       "Pilihan efek dan karakter tinta",
       "Detail cetak untuk desain kompleks",
-      "Sample berbayar sebelum produksi massal",
+      "Sampel berbayar sebelum produksi massal",
     ],
     methods: [
       "Plastisol",
@@ -273,7 +273,7 @@ export const services: Service[] = [
     orderFacts: [
       "Sablon manual minimum 12 pcs",
       "Special ink minimum 12 pcs",
-      "Estimasi normal sekitar 3-7 hari",
+      "Estimasi produksi sekitar 3-7 hari",
     ],
   },
   {
@@ -308,8 +308,8 @@ export const services: Service[] = [
     defaultLane: "batch",
     orderFacts: [
       "Minimum order 6 pcs",
-      "Harga grosir mulai 100 pcs",
-      "Estimasi normal sekitar 3-7 hari",
+      "Perhitungan grosir mulai 100 pcs",
+      "Estimasi produksi sekitar 3-7 hari",
     ],
   },
   {
@@ -344,8 +344,8 @@ export const services: Service[] = [
     defaultLane: "batch",
     orderFacts: [
       "Minimum order 6 pcs",
-      "Harga grosir mulai 100 pcs",
-      "Estimasi normal sekitar 3-7 hari",
+      "Perhitungan grosir mulai 100 pcs",
+      "Estimasi produksi sekitar 3-7 hari",
     ],
   },
   {
@@ -355,22 +355,22 @@ export const services: Service[] = [
     shortDescription:
       "Totebag dan merchandise untuk promosi, seminar, event, hampers, dan kebutuhan organisasi.",
     description:
-      "Bahas bahan, warna, ukuran, artwork, dan jumlah untuk menyiapkan totebag atau merchandise sesuai kebutuhan acara.",
+      "Bahas bahan, warna, ukuran, desain, dan jumlah untuk menyiapkan totebag atau merchandise sesuai kebutuhan acara.",
     image: "/images/totebag-custom.jpg",
     imageAlt: "Totebag oranye custom produksi Orplyn",
     idealFor: [
       "Seminar dan workshop",
       "Goodiebag perusahaan",
       "Merchandise brand",
-      "Hampers dan campaign",
+      "Hampers dan kampanye",
     ],
     capabilities: [
       "Pilihan warna totebag",
-      "Aplikasi logo atau artwork",
+      "Aplikasi logo atau desain",
       "Produksi untuk event",
       "Konsultasi ukuran dan teknik",
     ],
-    methods: ["Sablon", "DTF", "Bordir", "Aplikasi artwork"],
+    methods: ["Sablon", "DTF", "Bordir", "Aplikasi desain"],
     gallery: [
       "/images/totebag-custom.jpg",
       "/images/proses-sablon.jpg",
@@ -380,21 +380,21 @@ export const services: Service[] = [
     defaultLane: "batch",
     orderFacts: [
       "Minimum order 12 pcs",
-      "Harga grosir mulai 100 pcs",
-      "Estimasi normal sekitar 3-7 hari",
+      "Perhitungan grosir mulai 100 pcs",
+      "Estimasi produksi sekitar 3-7 hari",
     ],
   },
 ];
 
 export const primaryServiceSlugs = [
-  "sablon-dtf-satuan",
   "kaos-event-komunitas",
+  "sablon-dtf-satuan",
   "kaos-polos",
 ];
 
-export const primaryServices = services.filter((service) =>
-  primaryServiceSlugs.includes(service.slug),
-);
+export const primaryServices = primaryServiceSlugs
+  .map((slug) => services.find((service) => service.slug === slug))
+  .filter((service): service is Service => Boolean(service));
 
 export const secondaryServices = services.filter(
   (service) => !primaryServiceSlugs.includes(service.slug),
@@ -403,7 +403,7 @@ export const secondaryServices = services.filter(
 export const portfolio = [
   {
     image: "/images/hero-sablon.jpg",
-    title: "Full color screen print",
+    title: "Sablon warna penuh",
     category: "Kaos custom",
   },
   {
@@ -413,8 +413,8 @@ export const portfolio = [
   },
   {
     image: "/images/sablon-puff.jpg",
-    title: "Detail puff timbul",
-    category: "Special ink",
+    title: "Detail sablon puff timbul",
+    category: "Efek sablon",
   },
   {
     image: "/images/jersey-custom.jpg",
@@ -423,13 +423,13 @@ export const portfolio = [
   },
   {
     image: "/images/sablon-discharge.jpg",
-    title: "Discharge print",
-    category: "Manual print",
+    title: "Sablon discharge",
+    category: "Sablon manual",
   },
   {
     image: "/images/proses-sablon.jpg",
     title: "Proses produksi di workshop",
-    category: "Behind the print",
+    category: "Proses produksi",
   },
   {
     image: "/images/bordir-kemeja.jpg",
@@ -443,7 +443,7 @@ export const portfolio = [
   },
   {
     image: "/images/sablon-pasta.jpg",
-    title: "Multi-color print",
+    title: "Sablon multiwarna",
     category: "Kaos custom",
   },
 ];

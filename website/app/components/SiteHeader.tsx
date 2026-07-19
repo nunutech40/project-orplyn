@@ -5,7 +5,7 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
 const navigation = [
-  { href: "/#paket", label: "Paket & MOQ" },
+  { href: "/#paket", label: "Layanan" },
   { href: "/portfolio", label: "Hasil produksi" },
   { href: "/#cara-order", label: "Cara order" },
   { href: "/kontak", label: "Lokasi" },
@@ -37,7 +37,7 @@ export function SiteHeader() {
 
         <Link className="header-cta" href="/#quote">
           <MessageCircle size={18} aria-hidden="true" />
-          Cek estimasi
+          Minta estimasi
         </Link>
 
         <button
@@ -61,7 +61,7 @@ export function SiteHeader() {
           ))}
           <Link href="/#quote" onClick={() => setOpen(false)}>
             <MessageCircle size={18} aria-hidden="true" />
-            Cek estimasi
+            Minta estimasi
           </Link>
         </nav>
       )}

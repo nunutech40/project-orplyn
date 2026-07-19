@@ -702,7 +702,7 @@ main {
   padding: 0;
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   border-top: 1px solid var(--ink);
 }
 
@@ -1419,10 +1419,14 @@ main {
   }
 
   .process-list {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .process-list li:nth-child(3) {
+    border-right: 1px solid var(--line);
+  }
+
+  .process-list li:nth-child(even) {
     border-right: 0;
   }
 
@@ -1848,12 +1852,6 @@ main {
 
   .contact-image {
     grid-column: auto;
-  }
-}
-
-@media (max-width: 600px) and (max-height: 720px) {
-  .hero-location {
-    bottom: 82px;
   }
 }
 
