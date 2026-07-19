@@ -1,6 +1,6 @@
 # Orplyn Project Handoff
 
-Last updated: 18 Juli 2026
+Last updated: 19 Juli 2026
 
 Dokumen ini adalah single source of truth untuk melanjutkan project Orplyn dari chat, model, atau agent lain. Baca dokumen ini sebelum mengusulkan strategi baru atau mengubah website.
 
@@ -222,7 +222,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
 - Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
 - VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
-- Deployed image: `orplyn-web:20260718T163017Z-d510d86` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
+- Deployed image: `orplyn-web:20260719T010341Z-a9d3528` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
 - Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
 - Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
 - Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
@@ -270,7 +270,7 @@ Important: `llms.txt` tidak menjamin sebuah AI akan merekomendasikan Orplyn. Pub
 
 ### Quality status
 
-Verified on 18 Juli 2026 after the conversion/offer rebuild and mobile hero simplification:
+Verified on 19 Juli 2026 after the end-to-end conversion copy rewrite:
 
 - `npm run lint`: zero errors, 9 image optimization warnings only.
 - `npm run build`: passed.
@@ -287,6 +287,10 @@ Verified on 18 Juli 2026 after the conversion/offer rebuild and mobile hero simp
 - Final-domain prelaunch image passed canonical, WhatsApp, robots, and noindex checks. Caddy routes for `orplyn.id` plus permanent `www` redirect validated successfully before nameserver activation; Kohnu remained HTTP 200.
 - Automated Playwright screenshots passed at `375x667`, `390x844`, and `1440x900`: hero copy and CTAs fit, the short-screen location no longer sits behind the fixed WhatsApp CTA, and the next section remains visible.
 - Public release `orplyn-web:20260718T163017Z-d510d86` passed all route, canonical, HTTPS, robots, and intentional-noindex checks. Live HTML contains the revised H1, supporting copy, and CTA; the VPS container is healthy.
+- Copy V2 introduces Orplyn in the dominant H1, makes event/community the first primary offer, keeps single-unit ordering visible, standardizes the primary CTA as `Minta estimasi`, and replaces internal `brief/jalur` language with customer-facing wording.
+- Homepage repetition was reduced by removing the funnel-lanes and buyer-path blocks, moving production proof directly after the primary offers, and shortening ordering from five to four steps. Price ranges, reviews, and case studies remain gated by owner approval in M-06/M-07.
+- Final visual QA passed at `375x667`, `390x844`, full-page mobile, and `1440x900`, plus the event landing hero and its form. The sticky mobile CTA is absent while the hero is visible and appears after the hero exits the viewport.
+- Public release `orplyn-web:20260719T010341Z-a9d3528` passed all route, canonical, HTTPS, robots, and intentional-noindex checks. Live HTML contains the new brand H1, event-first offer order, and final form CTA; the VPS container is healthy.
 
 ## 8. Environment Configuration
 
@@ -629,6 +633,15 @@ Before using a raw asset:
 - Defined the review acquisition workstream in `marketing/02-seo-google/review-acquisition-plan-2026-07-18.md`: WhatsApp requests honest feedback and Google Business Profile is the primary public review destination. A live Maps snapshot also exposed P0 inconsistencies: GBP still shows phone `0811-9719-953`, `lynk.id/orplyn.id`, and Saturday hours `07.00-23.00`, while the current funnel uses phone `0823-1757-9311`, `orplyn.id`, and different admin/workshop hours. Added a policy-safe WhatsApp review template under `deliverables/launch-readiness/`, an owner-ready request for five representative orders under `deliverables/owner-research/`, and recorded that commercial photos should follow verified order/use-case priority, not likes alone.
 - Consolidated every remaining human-only dependency into `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. The queue uses one active `NEXT` item at a time, separates owner/user/admin responsibilities, defines required evidence and done conditions, and sequences GBP/reviews, proof/offers, WhatsApp/lead log, Cloudflare/Search Console/GA4, QA/indexing, weekly operations, and the later Ads pilot. Current manual next action is M-01: confirm the conflicting GBP phone, website, hours, ownership, and real-world business name.
 - Recorded external mobile feedback that the homepage first screen was too wordy and slower to explain the business than the structured service cards. Simplified the hero to the literal H1 `Jasa sablon kaos custom di Ciputat`, a two-sentence single/batch message, and the CTAs `Minta estimasi` plus `Lihat layanan`; detailed MOQ and production guidance remains below the hero. Fixed the short-screen location/WhatsApp overlap, verified three responsive viewports, and deployed the health-checked release `orplyn-web:20260718T163017Z-d510d86` to `https://orplyn.id` with indexing still disabled.
+
+### 19 Juli 2026
+
+- Completed a senior copy review against the sales and qualified-WhatsApp-lead objective. The audit found that the category was clear, but Orplyn was not dominant in the promise, single-unit demand appeared before the owner-confirmed higher-value event/community segment, process language repeated across sections, CTA labels were fragmented, and proof/price remained the main owner-dependent gaps.
+- Rewrote the homepage hero to `Sablon & kaos custom di Orplyn`, retained the one-piece-to-batch range, placed event/community first, and changed the secondary action from generic service browsing to production proof.
+- Removed duplicate funnel-lanes and buyer-path sections, moved proof directly after the three offers, rewrote `Kenapa Orplyn`, reduced ordering to four customer-facing steps, and kept secondary services available later in the page.
+- Standardized CTA language as `Minta estimasi` across header, hero, service pages, portfolio, contact, and mobile sticky CTA. Reworked the form, privacy, service facts, headings, and portfolio labels to reduce internal jargon and clarify price/time expectations without publishing unapproved numbers.
+- Added an intersection-aware mobile CTA that appears only after the hero, added regression coverage for the new H1, CTA language, and event-first offer order, and recorded O-010/O-011 plus D-009 in `business-data/findings-register.md`.
+- Lint passed with zero errors and nine existing image warnings; production build and six rendered smoke tests passed. Responsive screenshots and the event landing/form passed visual QA. Deployed `orplyn-web:20260719T010341Z-a9d3528` to `https://orplyn.id`; full public verification passed with indexing intentionally disabled.
 
 ## 16. Immediate Next Actions
 
