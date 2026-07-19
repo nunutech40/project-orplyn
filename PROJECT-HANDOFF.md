@@ -222,7 +222,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
 - Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
 - VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
-- Deployed image: `orplyn-web:20260719T010341Z-a9d3528` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
+- Deployed image: `orplyn-web:20260719T013245Z-774f8fe` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
 - Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
 - Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
 - Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
@@ -291,6 +291,7 @@ Verified on 19 Juli 2026 after the end-to-end conversion copy rewrite:
 - Homepage repetition was reduced by removing the funnel-lanes and buyer-path blocks, moving production proof directly after the primary offers, and shortening ordering from five to four steps. Price ranges, reviews, and case studies remain gated by owner approval in M-06/M-07.
 - Final visual QA passed at `375x667`, `390x844`, full-page mobile, and `1440x900`, plus the event landing hero and its form. The sticky mobile CTA is absent while the hero is visible and appears after the hero exits the viewport.
 - Public release `orplyn-web:20260719T010341Z-a9d3528` passed all route, canonical, HTTPS, robots, and intentional-noindex checks. Live HTML contains the new brand H1, event-first offer order, and final form CTA; the VPS container is healthy.
+- User-reported quote-form friction was reproduced from the deterministic `disabled` chain. Product and quantity selects now render without `disabled`, homepage/contact default to batch, and MOQ filtering still applies after product selection. Release `orplyn-web:20260719T013245Z-774f8fe` passed lint, build, six smoke tests, public deployment verification, and live HTML checks; the VPS container is healthy.
 
 ## 8. Environment Configuration
 
@@ -642,6 +643,7 @@ Before using a raw asset:
 - Standardized CTA language as `Minta estimasi` across header, hero, service pages, portfolio, contact, and mobile sticky CTA. Reworked the form, privacy, service facts, headings, and portfolio labels to reduce internal jargon and clarify price/time expectations without publishing unapproved numbers.
 - Added an intersection-aware mobile CTA that appears only after the hero, added regression coverage for the new H1, CTA language, and event-first offer order, and recorded O-010/O-011 plus D-009 in `business-data/findings-register.md`.
 - Lint passed with zero errors and nine existing image warnings; production build and six rendered smoke tests passed. Responsive screenshots and the event landing/form passed visual QA. Deployed `orplyn-web:20260719T010341Z-a9d3528` to `https://orplyn.id`; full public verification passed with indexing intentionally disabled.
+- Fixed the user-reported form dead end: product and quantity dropdowns were explicitly disabled behind hidden selection dependencies. Homepage/contact now start at `Produksi batch`, both dropdowns remain interactive, and invalid quantity/MOQ combinations are reset with an explanation. Added rendered regression assertions, recorded O-012/D-010, and deployed healthy release `orplyn-web:20260719T013245Z-774f8fe`; public verification passed with indexing still disabled.
 
 ## 16. Immediate Next Actions
 

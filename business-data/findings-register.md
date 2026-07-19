@@ -149,6 +149,13 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: belum ada event-level CTA click rate atau usability test lima responden untuk mengukur setiap friction point.
 - Marketing implication: gunakan satu CTA utama, ganti istilah internal dengan bahasa customer, tampilkan sticky CTA setelah hero, dan potong section yang mengulang keputusan yang sama.
 
+### O-012 - Dropdown form terlihat rusak karena dependency tersembunyi
+
+- Observed: user tidak dapat membuka dropdown produk dan jumlah pada form homepage. Source menunjukkan produk diberi atribut `disabled` sebelum skala pesanan dipilih, sedangkan jumlah diberi `disabled` sebelum produk dipilih; urutan wajib ini tidak terlihat pada potongan layar sehingga kedua input tampak tidak berfungsi.
+- Source: screenshot dan laporan langsung user pada 19 Juli 2026, source `QuoteBuilder`, serta HTML production sebelum perbaikan.
+- Limit: laporan berasal dari satu pengguna, tetapi atribut `disabled` mengonfirmasi adanya hambatan fungsional yang deterministik.
+- Marketing implication: input utama tidak boleh menjadi dead end. Gunakan produksi batch sebagai default komersial, biarkan dropdown produk dan jumlah selalu dapat dibuka, lalu terapkan MOQ secara reaktif dan jelaskan bila jumlah perlu dipilih ulang.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -262,6 +269,10 @@ Keputusan awal 18 Juli memakai H1 literal `Jasa sablon kaos custom di Ciputat`, 
 ### D-009 - Brand, offer priority, dan CTA memakai satu sistem copy
 
 Homepage memperkenalkan Orplyn sebagai tempat sablon dan kaos custom, menempatkan event/komunitas sebagai offer pertama, serta mempertahankan satuan sebagai pilihan yang tetap terlihat. CTA utama di seluruh funnel memakai `Minta estimasi`; sticky CTA baru muncul setelah hero. Istilah internal seperti `brief`, `jalur`, dan `ditindaklanjuti` diganti dengan bahasa customer. Funnel lanes dan buyer paths di homepage dihapus karena mengulang service cards; proof ditempatkan langsung setelah tiga offer utama. Range harga, review, dan case study tetap menunggu M-06/M-07 karena tidak boleh dikarang.
+
+### D-010 - Form tidak memakai dropdown yang terkunci
+
+Homepage dan halaman kontak memakai `Produksi batch` sebagai skala awal agar sesuai dengan prioritas komersial dan produk dapat langsung dipilih. Dropdown produk serta jumlah tetap aktif; pilihan jumlah disaring setelah produk diketahui, dan kombinasi di bawah MOQ dikosongkan dengan pesan yang menjelaskan minimum terkait. Landing page layanan tetap memakai skala dan produk bawaan masing-masing.
 
 ## Documentation Protocol
 
