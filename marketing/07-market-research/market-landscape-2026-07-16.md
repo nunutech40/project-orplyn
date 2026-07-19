@@ -1,5 +1,7 @@
 # Market Landscape Orplyn
 
+> **Document role: historical evidence snapshot.** Observations remain useful, but acquisition recommendations that spread focus across many segments are superseded by owner decision D-012 on 19 Juli 2026. Use `marketing/README.md` for active direction.
+
 Snapshot date: 16 Juli 2026  
 Market: custom apparel, kaos polos, sablon, bordir, jersey, dan merchandise  
 Primary geography: Ciputat, Tangerang Selatan, Jakarta Selatan, dan Jabodetabek

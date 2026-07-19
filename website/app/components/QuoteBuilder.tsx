@@ -20,6 +20,7 @@ type QuoteBuilderProps = {
   whatsappNumber: string;
   initialProductId?: string;
   initialLane?: FunnelLane;
+  initialUseCase?: string;
   compact?: boolean;
 };
 
@@ -51,10 +52,10 @@ const quantities = [
 ];
 
 const useCases = [
-  "Personal / hadiah",
   "Event / komunitas",
   "Sekolah / kampus",
   "Kantor / perusahaan",
+  "Personal / hadiah",
   "Clothing brand",
   "Vendor / reseller",
   "Tim olahraga",
@@ -130,10 +131,20 @@ function createLeadId() {
   return `ORP-${date}-${suffix}`;
 }
 
+function getDaysToTarget(targetDate: string) {
+  const target = Date.parse(`${targetDate}T00:00:00Z`);
+  const today = Date.parse(`${getJakartaDate()}T00:00:00Z`);
+
+  if (Number.isNaN(target) || Number.isNaN(today)) return undefined;
+
+  return Math.max(0, Math.ceil((target - today) / 86_400_000));
+}
+
 export function QuoteBuilder({
   whatsappNumber,
   initialProductId = "",
   initialLane,
+  initialUseCase = "",
   compact = false,
 }: QuoteBuilderProps) {
   const [lane, setLane] = useState<FunnelLane>(initialLane || "batch");
@@ -142,7 +153,7 @@ export function QuoteBuilder({
   const [deadline, setDeadline] = useState("");
   const [design, setDesign] = useState("Sudah ada desain");
   const [name, setName] = useState("");
-  const [useCase, setUseCase] = useState("");
+  const [useCase, setUseCase] = useState(initialUseCase);
   const [material, setMaterial] = useState("");
   const [deliveryLocation, setDeliveryLocation] = useState("");
   const [status, setStatus] = useState("");
@@ -219,7 +230,7 @@ export function QuoteBuilder({
     const product = getQuoteProduct(productId);
     if (!product || !quantity || !deadline || !useCase || !deliveryLocation) {
       setStatus(
-        "Lengkapi skala pesanan, produk, jumlah, kebutuhan, target selesai, dan lokasi dulu.",
+        "Lengkapi skala pesanan, produk, jumlah, kebutuhan, tanggal dipakai atau target selesai, dan lokasi dulu.",
       );
       return;
     }
@@ -239,10 +250,10 @@ export function QuoteBuilder({
       `Nama: ${name || "Belum diisi"}`,
       `Jalur order: ${lane === "single" ? "Satuan / test print" : "Produksi / batch"}`,
       `Kebutuhan: ${useCase}`,
+      `Tanggal dipakai / target selesai: ${deadline}`,
       `Produk: ${product.title}`,
       `Jumlah: ${quantity}`,
       `Bahan / produk: ${material || "Belum tahu, perlu rekomendasi"}`,
-      `Target selesai: ${deadline}`,
       `Desain: ${design}`,
       `Kirim / pickup: ${deliveryLocation}`,
       `Sumber: ${attribution.source}`,
@@ -252,7 +263,7 @@ export function QuoteBuilder({
       attribution.content ? `Konten: ${attribution.content}` : "",
       ...trackingLines,
       "",
-      "Boleh dibantu cek MOQ, teknik, jadwal, dan estimasi harganya?",
+      "Boleh dibantu cek pilihan produksi, MOQ, jadwal, dan estimasi harganya?",
     ]
       .filter(Boolean)
       .join("\n");
@@ -271,6 +282,7 @@ export function QuoteBuilder({
       product: product.title,
       quantity,
       use_case: useCase,
+      days_to_target: getDaysToTarget(deadline),
       source: attribution.source,
       medium: attribution.medium,
       campaign: attribution.campaign,
@@ -365,6 +377,20 @@ export function QuoteBuilder({
       </div>
 
       <div className="field-group">
+        <label htmlFor={`quote-deadline-${compact ? "compact" : "full"}`}>
+          Tanggal dipakai / target selesai
+        </label>
+        <input
+          id={`quote-deadline-${compact ? "compact" : "full"}`}
+          type="date"
+          min={today}
+          value={deadline}
+          onChange={(event) => setDeadline(event.target.value)}
+          required
+        />
+      </div>
+
+      <div className="field-group">
         <label htmlFor={`quote-product-${compact ? "compact" : "full"}`}>
           Mau bikin apa?
         </label>
@@ -402,12 +428,6 @@ export function QuoteBuilder({
         </select>
       </div>
 
-      {currentProduct && (
-        <p className="order-rule">
-          Minimum {effectiveMinimumOrder} pcs · perhitungan grosir mulai {currentProduct.wholesaleFrom} pcs · estimasi produksi {currentProduct.normalLeadTime}. Jadwal final mengikuti desain, antrean, dan stok bahan.
-        </p>
-      )}
-
       <div className="field-group">
         <label htmlFor={`quote-material-${compact ? "compact" : "full"}`}>
           Bahan yang diinginkan (opsional)
@@ -421,19 +441,11 @@ export function QuoteBuilder({
         />
       </div>
 
-      <div className="field-group">
-        <label htmlFor={`quote-deadline-${compact ? "compact" : "full"}`}>
-          Target selesai
-        </label>
-        <input
-          id={`quote-deadline-${compact ? "compact" : "full"}`}
-          type="date"
-          min={today}
-          value={deadline}
-          onChange={(event) => setDeadline(event.target.value)}
-          required
-        />
-      </div>
+      {currentProduct && (
+        <p className="order-rule">
+          Minimum {effectiveMinimumOrder} pcs · perhitungan grosir mulai {currentProduct.wholesaleFrom} pcs · estimasi produksi {currentProduct.normalLeadTime}. Jadwal final mengikuti desain, antrean, dan stok bahan.
+        </p>
+      )}
 
       <div className="field-group field-group-full">
         <label htmlFor={`quote-location-${compact ? "compact" : "full"}`}>

@@ -1,3 +1,10 @@
+---
+document_type: operational_review_acquisition_plan
+status: active_but_external_setup_deferred
+primary_segment: event_and_community
+last_updated: 2026-07-19
+---
+
 # Review Acquisition Plan - 18 Juli 2026
 
 ## Decision
@@ -57,9 +64,9 @@ Tidak ditemukannya review pada snapshot publik belum cukup untuk menyatakan revi
 
 ### Initial target
 
-- Mulai dari 10-15 completed orders yang dapat diverifikasi.
-- Campurkan event/komunitas, vendor/repeat, kantor/sekolah, dan order satuan.
-- Jangan hanya memilih order paling besar atau customer paling dekat dengan owner.
+- Mulai dari 10-15 completed orders yang dapat diverifikasi. Bila datanya cukup, ambil satu cohort event/komunitas yang utuh dan berurutan agar sesuai fokus akuisisi tanpa memilih berdasarkan dugaan rating.
+- Bila order event/komunitas belum cukup, gunakan seluruh completed orders terbaru yang memenuhi rule dan tandai segment-nya; jangan menunda baseline review hanya demi komposisi sempurna.
+- Jangan hanya memilih order paling besar, customer paling dekat dengan owner, atau customer yang diduga akan memberi review positif.
 - Ukur request sent, link opened bila tersedia, review received, response rate, dan themes yang berulang.
 
 ## What Makes A Commercially Useful Review

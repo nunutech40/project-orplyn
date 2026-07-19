@@ -8,11 +8,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
+    default: "Orplyn | Jasa Sablon Kaos Event Ciputat",
     template: "%s | Orplyn",
   },
   description:
-    "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat, Tangerang Selatan.",
+    "Kaos custom untuk event dan komunitas di Orplyn, Ciputat. DTF satuan dan kaos polos juga tersedia.",
   icons: {
     icon: [
       {
@@ -28,6 +28,8 @@ export const metadata: Metadata = {
   },
   keywords: [
     "jasa sablon kaos Ciputat",
+    "sablon kaos event Ciputat",
+    "kaos komunitas Tangerang Selatan",
     "sablon custom Tangerang Selatan",
     "bordir custom Ciputat",
     "jersey custom Tangerang Selatan",
@@ -38,9 +40,9 @@ export const metadata: Metadata = {
     locale: "id_ID",
     url: "/",
     siteName: "Orplyn",
-    title: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
+    title: "Orplyn | Jasa Sablon Kaos Event Ciputat",
     description:
-      "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat.",
+      "Kaos custom untuk event dan komunitas di Orplyn, Ciputat. DTF satuan dan kaos polos juga tersedia.",
     images: [
       {
         url: "/og.png",
@@ -52,9 +54,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orplyn | Jasa Sablon Kaos Custom Ciputat",
+    title: "Orplyn | Jasa Sablon Kaos Event Ciputat",
     description:
-      "Sablon DTF dan kaos polos mulai 1 pcs, serta produksi kaos event dan komunitas di Ciputat.",
+      "Kaos custom untuk event dan komunitas di Orplyn, Ciputat. DTF satuan dan kaos polos juga tersedia.",
     images: ["/og.png"],
   },
   robots: {

@@ -12,32 +12,41 @@ import {
 } from "./components/Icons";
 import { QuoteBuilder } from "./components/QuoteBuilder";
 import { MobileQuoteCta } from "./components/MobileQuoteCta";
+import { CommercialProofSection } from "./components/CommercialProofSection";
+import { commercialProofs } from "./lib/commercial-proofs";
 import {
   business,
   portfolio,
   primaryServices,
   secondaryServices,
-  services,
   siteUrl,
   WHATSAPP_PLACEHOLDER,
 } from "./lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Jasa Sablon Kaos Custom Ciputat & Tangerang Selatan",
+  title: "Jasa Sablon Kaos Event & Komunitas Ciputat",
   description:
-    "Orplyn melayani sablon DTF dan kaos polos mulai 1 pcs, serta kaos event dan produksi batch di Ciputat, Tangerang Selatan.",
+    "Kaos custom untuk event dan komunitas di Orplyn, Ciputat. Kirim jumlah, desain, dan tanggal pakai untuk mengecek MOQ serta estimasi produksi.",
   alternates: {
     canonical: "/",
   },
 };
 
 const serviceIcons = [Shirt, ScanLine, Palette];
+const featuredService = primaryServices[0]!;
+const supportingServices = primaryServices.slice(1);
+const homepageProofs = commercialProofs.slice(0, 3);
 
 const faqs = [
   {
-    question: "Apakah Orplyn menerima sablon kaos satuan?",
+    question: "Apa yang perlu disiapkan untuk minta estimasi kaos event?",
     answer:
-      "Ya. Kaos custom dengan sablon DTF dan kaos polos bisa dimulai dari 1 pcs. Sablon manual, plastisol, special ink, fullprint, dan totebag memiliki minimum order 12 pcs; bordir/seragam dan jersey minimum 6 pcs.",
+      "Siapkan perkiraan jumlah, tanggal dipakai, lokasi kirim atau pickup, status desain, dan pilihan bahan bila sudah ada. Admin akan memakai detail itu untuk mengecek pilihan produksi, MOQ, jadwal, dan harga.",
+  },
+  {
+    question: "Berapa minimum order kaos event atau komunitas?",
+    answer:
+      "Sablon manual atau plastisol memiliki minimum order 12 pcs. DTF dapat dimulai dari 1 pcs bila teknik tersebut lebih sesuai. Pilihan final mengikuti desain, bahan, jumlah, dan hasil pengecekan admin.",
   },
   {
     question: "Berapa lama estimasi produksinya?",
@@ -50,9 +59,9 @@ const faqs = [
       "Harga dihitung dari jenis produk, jumlah, bahan, ukuran, teknik sablon, dan desain. Isi detail pesanan agar admin dapat memberi estimasi sesuai spesifikasi kebutuhanmu.",
   },
   {
-    question: "Bahan kaos apa yang tersedia?",
+    question: "Apakah Orplyn menerima sablon kaos satuan?",
     answer:
-      "Pilihan utama adalah cotton combed 20s, 24s, dan 30s. Bahan lain dapat dikonsultasikan sesuai kebutuhan, stok, dan rencana penggunaan.",
+      "Ya. Kaos custom dengan sablon DTF dan kaos polos bisa dimulai dari 1 pcs. Sablon manual, plastisol, special ink, fullprint, dan totebag memiliki minimum order 12 pcs; bordir/seragam dan jersey minimum 6 pcs.",
   },
   {
     question: "Apakah bisa kirim desain sendiri?",
@@ -73,9 +82,9 @@ const localBusinessSchema = {
   alternateName: business.longName,
   url: siteUrl,
   logo: `${siteUrl}/brand/orplyn-monogram-black.png`,
-  image: `${siteUrl}/images/hero-sablon.jpg`,
+  image: `${siteUrl}/images/hero-sablon.webp`,
   description:
-    "Jasa sablon kaos custom, kaos polos, DTF, produksi event, bordir, jersey, dan merchandise di Ciputat, Tangerang Selatan.",
+    "Jasa sablon kaos custom untuk event dan komunitas di Ciputat, Tangerang Selatan. DTF satuan, kaos polos, bordir, jersey, dan merchandise juga tersedia.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Legoso Sel. II No.43, Pisangan",
@@ -128,7 +137,7 @@ const localBusinessSchema = {
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Layanan Orplyn",
-    itemListElement: services.map((service) => ({
+    itemListElement: [...primaryServices, ...secondaryServices].map((service) => ({
       "@type": "Offer",
       itemOffered: {
         "@type": "Service",
@@ -163,17 +172,24 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <section
-        className="hero"
-        style={{ backgroundImage: "url('/images/hero-sablon.jpg')" }}
-      >
+      <section className="hero">
+        <img
+          className="hero-media"
+          src="/images/hero-sablon.webp"
+          alt="Kaos custom hasil produksi Orplyn untuk kebutuhan kelompok"
+          width="1600"
+          height="900"
+          loading="eager"
+          fetchPriority="high"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">APPAREL &amp; PRINT STUDIO · CIPUTAT</p>
-          <h1>Sablon &amp; kaos custom di Orplyn.</h1>
+          <p className="eyebrow">ORPLYN · SABLON KAOS CUSTOM · CIPUTAT</p>
+          <h1>Kaos custom untuk event &amp; komunitas.</h1>
           <p className="hero-copy">
-            Mulai 1 pcs hingga produksi batch untuk event, komunitas, bisnis,
-            dan kebutuhan personal.
+            Sampaikan jumlah, desain, dan tanggal pakai. Admin Orplyn mengecek
+            pilihan bahan, minimum order, serta estimasi produksi sebelum
+            pesanan dilanjutkan.
           </p>
           <div className="hero-actions">
             <Link className="button button-primary" href="#quote">
@@ -193,8 +209,8 @@ export default function Home() {
       </section>
 
       <section className="capability-strip" aria-label="Aturan order utama Orplyn">
-        <span>DTF MULAI 1 PCS</span>
-        <span>KAOS POLOS MULAI 1 PCS</span>
+        <span>FOKUS EVENT &amp; KOMUNITAS</span>
+        <span>TANGGAL PAKAI DICATAT</span>
         <span>MANUAL MULAI 12 PCS</span>
         <span>PICKUP DI CIPUTAT</span>
       </section>
@@ -202,18 +218,49 @@ export default function Home() {
       <section className="section section-services" id="paket">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">PILIH SESUAI KEBUTUHAN</p>
-            <h2>Tiga layanan utama Orplyn.</h2>
+            <p className="eyebrow eyebrow-dark">FOKUS EVENT &amp; KOMUNITAS</p>
+            <h2>Mulai dari kebutuhan acaramu.</h2>
           </div>
           <p>
-            Lihat minimum order dan estimasi produksi sebelum meminta harga.
-            Jadwal final tetap mengikuti desain, stok bahan, dan tanggal pakai.
+            Tanggal pakai, jumlah, desain, dan lokasi membantu admin mengecek
+            jalur produksi yang relevan sebelum memberi estimasi.
           </p>
         </div>
 
-        <div className="service-grid service-grid-primary">
-          {primaryServices.map((service, index) => {
-            const Icon = serviceIcons[index];
+        <article className="service-feature">
+          <div className="service-feature-image">
+            <img
+              src={featuredService.image}
+              alt={featuredService.imageAlt}
+              width="960"
+              height="720"
+              loading="lazy"
+            />
+          </div>
+          <div className="service-feature-content">
+            <Shirt size={28} aria-hidden="true" />
+            <p className="service-kicker">{featuredService.eyebrow}</p>
+            <h3>{featuredService.title}</h3>
+            <p>{featuredService.shortDescription}</p>
+            <ul className="offer-facts">
+              {featuredService.orderFacts.map((fact) => (
+                <li key={fact}>{fact}</li>
+              ))}
+            </ul>
+            <Link href={`/layanan/${featuredService.slug}`}>
+              Lihat kaos event <ArrowRight size={17} aria-hidden="true" />
+            </Link>
+          </div>
+        </article>
+
+        <div className="supporting-services-heading">
+          <h3>Butuh satuan atau kaos polos?</h3>
+          <p>Kedua layanan ini tetap tersedia sebagai pilihan order langsung.</p>
+        </div>
+
+        <div className="service-grid service-grid-supporting">
+          {supportingServices.map((service, index) => {
+            const Icon = serviceIcons[index + 1];
             return (
               <article className="service-card" key={service.slug}>
                 <div className="service-image-wrap">
@@ -222,7 +269,7 @@ export default function Home() {
                     alt={service.imageAlt}
                     width="720"
                     height="540"
-                    loading={index > 0 ? "lazy" : "eager"}
+                    loading="lazy"
                   />
                 </div>
                 <div className="service-card-content">
@@ -275,6 +322,8 @@ export default function Home() {
         </div>
       </section>
 
+      <CommercialProofSection proofs={homepageProofs} />
+
       <section className="section why-section">
         <div className="why-image">
           <img
@@ -286,20 +335,20 @@ export default function Home() {
           />
         </div>
         <div className="why-content">
-          <p className="eyebrow eyebrow-dark">KENAPA ORPLYN</p>
-          <h2>Lebih mudah memilih sebelum produksi dimulai.</h2>
+          <p className="eyebrow eyebrow-dark">UNTUK PIC EVENT</p>
+          <h2>Mulai dari tanggal pakai, bukan istilah sablon.</h2>
           <p className="lead-copy">
-            Belum yakin soal bahan atau teknik? Orplyn membantu menyesuaikan
-            pilihan dengan desain, jumlah, penggunaan, dan target selesai.
+            Sampaikan kebutuhan acara lebih dulu. Bahan dan teknik dibahas
+            setelah jumlah, desain, tanggal pakai, dan lokasi diketahui.
           </p>
           <ul className="check-list">
             <li>
               <CheckCircle2 aria-hidden="true" />
-              Pesanan satuan dan produksi batch tersedia dalam satu tempat
+              Tanggal pakai, jumlah, dan lokasi masuk sejak permintaan awal
             </li>
             <li>
               <Ruler aria-hidden="true" />
-              Jumlah, ukuran, desain, dan target selesai diperiksa sebelum harga
+              Minimum order dan estimasi normal terlihat sebelum masuk WhatsApp
             </li>
             <li>
               <Palette aria-hidden="true" />
@@ -317,15 +366,15 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">CARA ORDER</p>
-            <h2>Empat langkah menuju produksi.</h2>
+            <h2>Empat langkah menyiapkan pesanan event.</h2>
           </div>
           <p>Detail yang lengkap membantu admin memberi estimasi lebih sesuai.</p>
         </div>
         <ol className="process-list">
           {[
-            ["01", "Pilih layanan", "Tentukan produk dan kisaran jumlah pesanan."],
-            ["02", "Isi detail", "Kirim penggunaan, desain, target selesai, dan lokasi."],
-            ["03", "Terima estimasi", "Admin memeriksa bahan, teknik, jadwal, dan harga."],
+            ["01", "Tentukan acara", "Masukkan kebutuhan dan tanggal kaos akan dipakai."],
+            ["02", "Kirim detail", "Pilih produk, jumlah, status desain, dan lokasi."],
+            ["03", "Terima estimasi", "Admin memeriksa bahan, teknik, MOQ, jadwal, dan harga."],
             ["04", "Konfirmasi produksi", "Setujui detail, lakukan DP, lalu pilih pickup atau pengiriman."],
           ].map(([number, title, description]) => (
             <li key={number}>
@@ -340,33 +389,36 @@ export default function Home() {
       <section className="quote-section" id="quote">
         <div className="quote-copy">
           <p className="eyebrow">MINTA ESTIMASI</p>
-          <h2>Ceritakan pesananmu untuk cek harga dan waktu produksi.</h2>
+          <h2>Cek kebutuhan kaos untuk acaramu.</h2>
           <p>
-            Pilih produk, jumlah, dan target selesai. Detailnya langsung dikirim
-            ke WhatsApp Aulia untuk diperiksa.
+            Masukkan jumlah, tanggal pakai, dan detail awal. Informasinya
+            langsung dikirim ke WhatsApp Aulia untuk diperiksa.
           </p>
           <div className="quote-highlights">
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Produk
+              <CheckCircle2 size={18} aria-hidden="true" /> Tanggal pakai
             </span>
             <span>
               <CheckCircle2 size={18} aria-hidden="true" /> Jumlah
             </span>
             <span>
-              <CheckCircle2 size={18} aria-hidden="true" /> Target selesai
+              <CheckCircle2 size={18} aria-hidden="true" /> Status desain
             </span>
             <span>
               <CheckCircle2 size={18} aria-hidden="true" /> Pengiriman
             </span>
           </div>
         </div>
-        <QuoteBuilder whatsappNumber={business.whatsapp} />
+        <QuoteBuilder
+          whatsappNumber={business.whatsapp}
+          initialUseCase="Event / komunitas"
+        />
       </section>
 
       <section className="section faq-section">
         <div className="faq-heading">
           <p className="eyebrow eyebrow-dark">FAQ ORDER</p>
-          <h2>Jawaban sebelum masuk WhatsApp.</h2>
+          <h2>Pertanyaan sebelum minta estimasi.</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (

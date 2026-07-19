@@ -1,5 +1,5 @@
 ORPLYN - DAFTAR TUGAS MANUAL
-Terakhir diperbarui: 18 Juli 2026
+Terakhir diperbarui: 19 Juli 2026
 
 TUJUAN
 
@@ -18,11 +18,17 @@ STATUS
 - NEXT: dikerjakan sekarang.
 - TODO: belum dikerjakan dan belum terhalang.
 - WAITING: menunggu hasil item sebelumnya.
-- LATER: dikerjakan setelah website mulai menerima traffic.
+- LATER: sengaja ditunda sampai instruksi atau gate terkait aktif; bukan izin melewati tugas tersebut saat launch.
 - DONE: selesai dengan bukti.
 
+ARAHAN AKTIF 19 JULI 2026
+
+- Setup akun eksternal ditunda atas instruksi user: GBP, Search Console, GA4/Google tag, indexing, dan Ads.
+- Satu-satunya item NEXT sekarang adalah M-06 karena owner sedang diminta mengirim bukti order event/komunitas.
+- Penundaan setup tidak menghapus launch gate. Item tersebut kembali aktif hanya setelah user meminta setup dilanjutkan.
+
 ============================================================
-M-01 [NEXT] KONFIRMASI DATA GOOGLE BUSINESS PROFILE
+M-01 [LATER - SETUP DITUNDA] KONFIRMASI DATA GOOGLE BUSINESS PROFILE
 ============================================================
 
 PIC: User + owner/Aulia
@@ -53,7 +59,7 @@ Jawaban owner/PIC:
 Bukti/screenshot:
 
 ============================================================
-M-02 [WAITING M-01] PERBAIKI PROFIL GOOGLE BUSINESS
+M-02 [LATER - SETUP DITUNDA] PERBAIKI PROFIL GOOGLE BUSINESS
 ============================================================
 
 PIC: User atau PIC GBP
@@ -67,7 +73,7 @@ Tindakan manual:
 - Pastikan alamat serta pin tetap benar.
 - Konfirmasi nama bisnis sesuai real-world name.
 - Periksa primary category dan secondary categories.
-- Tambahkan tiga layanan utama: sablon/kaos custom satuan, kaos event/community, dan kaos polos satuan/grosir.
+- Tambahkan kaos event/community sebagai fokus; DTF satuan dan kaos polos tetap tercatat sebagai layanan pendukung.
 - Simpan screenshot sebelum dan sesudah.
 
 DONE WHEN:
@@ -80,7 +86,7 @@ Tanggal selesai:
 Bukti/screenshot:
 
 ============================================================
-M-03 [WAITING M-02] AUDIT DAN AMBIL LINK REVIEW RESMI
+M-03 [LATER - SETUP DITUNDA] AUDIT DAN AMBIL LINK REVIEW RESMI
 ============================================================
 
 PIC: User atau PIC GBP
@@ -106,16 +112,16 @@ Link review resmi:
 Bukti/screenshot:
 
 ============================================================
-M-04 [WAITING M-03] SIAPKAN CUSTOMER UNTUK REVIEW
+M-04 [LATER - SETUP DITUNDA] SIAPKAN CUSTOMER UNTUK REVIEW
 ============================================================
 
 PIC: Aulia/admin
 
 Tindakan manual:
 
-- Pilih 10-15 order selesai yang dapat diverifikasi.
-- Campurkan event/community, vendor/repeat, kantor/sekolah, dan satuan.
-- Jangan hanya memilih customer yang diperkirakan akan memberi lima bintang.
+- Pilih 10-15 order selesai yang dapat diverifikasi. Bila cukup, gunakan satu cohort event/community yang utuh dan berurutan.
+- Bila order event/community belum cukup, gunakan seluruh order terbaru yang memenuhi rule dan tandai segment-nya.
+- Jangan memilih berdasarkan dugaan rating, kedekatan dengan owner, atau besarnya order.
 - Pastikan tidak ada masalah order yang belum ditangani.
 - Isi Customer ID, tanggal order selesai, produk/use case, dan status request.
 - Setujui template pada `deliverables/launch-readiness/Orplyn - Template Permintaan Review WhatsApp.txt`.
@@ -131,7 +137,7 @@ PIC pengirim:
 Tanggal mulai:
 
 ============================================================
-M-05 [WAITING M-04] KIRIM BATCH REVIEW PERTAMA
+M-05 [LATER - SETUP DITUNDA] KIRIM BATCH REVIEW PERTAMA
 ============================================================
 
 PIC: Aulia/admin
@@ -157,7 +163,7 @@ Response rate:
 Catatan tema review:
 
 ============================================================
-M-06 [TODO] MINTA LIMA ORDER DAN FOTO PALING REPRESENTATIF
+M-06 [NEXT] MINTA LIMA ORDER DAN FOTO PALING REPRESENTATIF
 ============================================================
 
 PIC: Owner
@@ -167,14 +173,15 @@ Gunakan pesan pada:
 
 Data yang wajib didapat:
 
-- use case dan produk;
+- event/use case dan produk;
 - quantity/range;
 - bahan dan teknik;
 - customer baru/repeat;
-- ketepatan deadline;
-- alasan laris/repeat/menguntungkan;
+- tanggal pakai/target dan tanggal selesai aktual;
+- kendala, revisi, komplain, serta hasil akhir bila ada;
+- feedback customer yang benar-benar pernah diberikan;
 - link foto/video;
-- izin desain, logo, wajah, nama, dan kutipan.
+- izin terpisah untuk desain, logo, wajah, nama, jumlah, timeline/outcome, dan kutipan.
 
 DONE WHEN:
 
@@ -187,16 +194,16 @@ Jumlah order lengkap:
 Folder/link aset:
 
 ============================================================
-M-07 [TODO] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
+M-07 [WAITING M-06] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
 ============================================================
 
 PIC: Owner
 
 Yang perlu diputuskan:
 
-- starting price/range DTF atau kaos custom satuan;
-- paket/range event/community;
-- harga satuan dan tier grosir kaos polos;
+- paket/range event/community sebagai offer pertama;
+- starting price/range DTF atau kaos custom satuan sebagai offer sekunder;
+- harga satuan dan tier grosir kaos polos sebagai offer sekunder;
 - faktor yang mengubah harga;
 - kapasitas aman per minggu/bulan;
 - rush order, cut-off, dan surcharge bila ada;
@@ -206,7 +213,7 @@ Yang perlu diputuskan:
 
 DONE WHEN:
 
-Tiga offer dapat dibandingkan tanpa mengarang harga, kapasitas, atau garansi.
+Offer event/community dapat dijelaskan tanpa mengarang harga, kapasitas, atau garansi. Offer sekunder boleh dilengkapi setelahnya.
 
 HASIL:
 
@@ -291,7 +298,7 @@ PIC review:
 Link/file:
 
 ============================================================
-M-11 [TODO] KONFIRMASI CLOUDFLARE FULL STRICT
+M-11 [LATER - SETUP DITUNDA] KONFIRMASI CLOUDFLARE FULL STRICT
 ============================================================
 
 PIC: User
@@ -314,7 +321,7 @@ Tanggal:
 Bukti/screenshot:
 
 ============================================================
-M-12 [TODO] BUAT DAN VERIFIKASI SEARCH CONSOLE
+M-12 [LATER - SETUP DITUNDA] BUAT DAN VERIFIKASI SEARCH CONSOLE
 ============================================================
 
 PIC: User
@@ -338,7 +345,7 @@ Akun owner:
 Bukti/screenshot:
 
 ============================================================
-M-13 [TODO] BUAT GA4/GOOGLE TAG
+M-13 [LATER - SETUP DITUNDA] BUAT GA4/GOOGLE TAG
 ============================================================
 
 PIC: User
@@ -454,7 +461,7 @@ PIC: User + owner + agent
 
 Keputusan manual:
 
-- Pilih satu offer saja untuk pilot pertama.
+- Pilot pertama hanya memakai offer event/community selama D-012 aktif.
 - Setujui budget Rp100 ribu-Rp700 ribu per bulan.
 - Pastikan billing dan akses Google Ads aktif.
 - Pastikan qualified lead/converted lead dapat dicatat.
@@ -468,9 +475,9 @@ Satu campaign high-intent berjalan dengan landing page relevan dan hasil sampai 
 RINGKASAN URUTAN
 ============================================================
 
-1. M-01 sampai M-05: rapikan GBP dan mulai review asli.
-2. M-06 sampai M-10: lengkapi proof, offer, sales process, dan lead log.
-3. M-11 sampai M-13: selesaikan Cloudflare, Search Console, dan Analytics.
-4. M-14 sampai M-16: QA, buka indexing, dan submit ke Google.
+1. Sekarang: M-06, lengkapi proof event/community dan izin publikasinya.
+2. Berikutnya: M-07 sampai M-10 untuk offer event, sales process, uji WhatsApp, dan lead log.
+3. Setelah user melanjutkan setup: M-01 sampai M-05 dan M-11 sampai M-13.
+4. M-14 sampai M-16: QA final, buka indexing, dan submit ke Google.
 5. M-17: jalankan operasi mingguan.
-6. M-18: Google Ads hanya setelah conversion siap.
+6. M-18: satu pilot Google Ads event/community hanya setelah conversion siap.

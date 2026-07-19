@@ -16,9 +16,13 @@ last_updated: 2026-07-19
 
 # Respons Strategi Atas Owner Feedback
 
-Status: arahan owner sudah diterima dan dipetakan; eksekusi serta validasi belum selesai.
+Status: arahan owner sudah diterima dan dipetakan; factual event-first implementation berjalan, sedangkan validasi outcome tetap belum selesai.
 
 Tujuan: memperbesar qualified lead dan sales dari segmen event/komunitas tanpa mengubah hipotesis menjadi klaim publik.
+
+## Latest Implementation Clarification - 19 Juli 2026
+
+Instruksi user terbaru mengizinkan konsolidasi dokumentasi dan perapihan website menjadi event-first selama copy tetap faktual. Ini tidak mengubah Public-Claim Gate: website boleh meminta tanggal pakai, jumlah, desain, dan lokasi, tetapi belum boleh menjanjikan hasil deadline, slot, bebas masalah H-1, atau kemudahan repeat. Setup eksternal seperti GBP, Search Console, Google tag, indexing, dan Ads tetap ditunda sampai user mengaktifkannya kembali.
 
 ## AI Reading Contract
 
@@ -121,7 +125,7 @@ Keduanya boleh memakai data order yang sama bila relevan, tetapi hasilnya tidak 
 
 ## Yang Ditunda
 
-- Rewrite hero, landing page, GBP description, WhatsApp script, quotation, content caption, atau Ads memakai klaim deadline-risk.
+- Rewrite hero, landing page, GBP description, WhatsApp script, quotation, content caption, atau Ads yang memakai klaim outcome deadline-risk. Factual event-first alignment tanpa outcome claim diperbolehkan oleh instruksi user terbaru.
 - Klaim `aman dari drama H-1`, `tepat waktu`, `no drama`, `slot aman`, `predictable`, atau `repeat lebih cepat`.
 - Optimasi funnel lanjutan yang tidak memperbaiki blocker nyata atau measurement minimum.
 - Campaign lintas banyak segmen dan ad group sekaligus.
@@ -148,4 +152,4 @@ Sebuah outcome hanya boleh diusulkan ke channel publik bila:
 - H-009 dan E-12 tersedia untuk acquisition/deadline-risk validation.
 - D-012 memisahkan acquisition dan retention.
 - Backlog mendahulukan top-of-funnel event/komunitas.
-- Website dan channel publik tetap tidak berubah sampai gate lulus.
+- Website boleh diselaraskan secara faktual ke event/komunitas; seluruh outcome claim dan channel setup tetap menunggu gate yang relevan.

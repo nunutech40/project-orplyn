@@ -1,10 +1,19 @@
+---
+document_id: ORPLYN-WEB-FUNNEL-001
+document_type: active_operational_plan
+status: source_implementation_complete_manual_qa_pending
+primary_segment: event_and_community
+active_decision_id: D-012
+last_updated: 2026-07-19
+---
+
 # Web Funnel Plan
 
 ## Status
 
-Funnel fokus-konversi sudah diimplementasikan di `website/`. Homepage sekarang memakai tiga offer utama, FAQ komersial, NAP yang terlihat, dan form WhatsApp yang membedakan skala satuan/batch serta mengikuti MOQ produk. Section jalur order yang repetitif sudah dihapus dari homepage; pilihan skala tetap tersedia di form.
+Funnel fokus-konversi sudah diimplementasikan dan diselaraskan ke D-012. Homepage serta landing event/community memimpin acquisition; DTF satuan dan kaos polos tetap findable sebagai entry offer sekunder. Form WhatsApp membedakan satuan/batch, mengikuti MOQ produk, memulai konteks dari use case serta tanggal pakai/target, dan mengirim `days_to_target` pada event tracking tanpa menjadikannya deadline promise.
 
-Nomor WhatsApp nyata, aturan order owner, domain final, Cloudflare, dan HTTPS sudah aktif. Website sengaja `noindex`. Blocker acquisition launch adalah tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, GBP/NAP, dan final manual QA.
+Nomor WhatsApp nyata, aturan order owner, domain final, Cloudflare, dan HTTPS sudah aktif. Website sengaja `noindex`. External setup ditunda oleh user sampai source website selesai dirapikan. Launch blocker tetap tracking ID, Search Console/Google tag, lead log operasional, approval range harga/proof, uji WhatsApp nyata, GBP/NAP, indexing, dan final manual QA.
 
 ## Funnel Name
 
@@ -20,14 +29,15 @@ View service page atau portfolio, buka Google Maps, dan interaksi lain yang menu
 
 ## Recommended Page Structure
 
-1. Hero literal: sablon dan kaos custom oleh Orplyn + Ciputat + satuan sampai batch.
-2. Tiga offer: event/community batch, DTF/custom satuan, dan kaos polos satuan/grosir.
-3. Proof hasil produksi langsung setelah offer utama.
-4. Alasan memilih Orplyn dalam bahasa customer.
-5. Alur order dan FAQ harga/MOQ/bahan/teknik/lead time.
-6. Capability sekunder: clothing brand, bordir, jersey, dan merchandise.
-7. Brief WhatsApp terstruktur.
-8. NAP, Maps, jam, dan pickup workshop.
+1. Hero literal: Orplyn + kaos custom event/community + Ciputat, tanpa outcome deadline yang belum terbukti.
+2. Event/community sebagai featured acquisition offer.
+3. DTF/custom satuan dan kaos polos sebagai supporting entry offers, bukan tiga kartu yang sama dominan.
+4. Proof hasil produksi nyata langsung setelah offer.
+5. Commercial proof terverifikasi hanya bila evidence, permission, dan public wording sudah approved.
+6. Alasan memilih dan alur order dimulai dari jumlah, desain, tanggal pakai, serta lokasi; bukan daftar teknik.
+7. Brief WhatsApp terstruktur dengan tanggal pakai/target selesai.
+8. FAQ harga/MOQ/bahan/teknik/lead time dan capability sekunder.
+9. NAP, Maps, jam, pickup workshop, privasi, dan CTA yang konsisten.
 
 ## Confirmed Conversion Inputs
 
@@ -52,10 +62,11 @@ Secondary actions:
 
 ## Page Variants To Consider
 
-- Main landing page fokus tiga offer dengan pilihan skala satuan/batch di form: implemented.
+- Main landing page event-first dengan DTF/kaos polos sebagai entry offer sekunder: implemented.
 - Local SEO intent Ciputat/Tangerang Selatan: implemented pada homepage dan metadata.
 - High-intent DTF/satuan: implemented pada `/layanan/sablon-dtf-satuan`.
-- Use-case service pages: implemented untuk event, clothing brand, bordir/seragam, jersey, totebag, dan kaos polos.
+- High-intent event/community: implemented pada `/layanan/kaos-event-komunitas` sebagai future Ads destination.
+- Use-case service pages: implemented untuk clothing brand, bordir/seragam, jersey, totebag, dan kaos polos sebagai secondary routes.
 
 ## Tracking Needed
 
@@ -65,3 +76,16 @@ Secondary actions:
 - Qualified lead, quote, sale, dan revenue: belum ada lead log atau CRM.
 - Phone click/WhatsApp click: bisa digunakan sebagai secondary signal setelah nomor nyata diuji.
 - Scroll depth: belum diimplementasikan dan bukan prioritas sebelum sales tracking.
+
+## Commercial Proof Contract
+
+- Website source menyediakan model data dan reusable section untuk case study/review transaksi.
+- Hanya record `publishable` yang boleh dirender.
+- Satu record publishable minimal memiliki use case, fakta order yang diizinkan, outcome yang dapat dibuktikan, media berizin, wording approved, dan source evidence internal.
+- Quote customer bersifat opsional dan membutuhkan izin kutip terpisah.
+- Ketika belum ada record publishable, section tidak dirender. Website tidak boleh menampilkan dummy review, skeleton testimoni, atau angka placeholder.
+- Visual portfolio yang sudah ada tetap menjadi production proof, tetapi tidak boleh dilabeli bestseller, repeat, on-time, atau jumlah besar tanpa evidence dan izin.
+
+## Pre-Ads Website Definition
+
+Source website dianggap siap untuk tahap setup berikutnya bila event message match, navigation, form, proof gating, factual order rules, mobile layout, privacy, NAP, attribution hooks, lint, build, smoke tests, dan route checks lulus. Ini tidak mengizinkan Ads berjalan sebelum setup dan launch gate selesai.

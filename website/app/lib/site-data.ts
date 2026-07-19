@@ -120,6 +120,7 @@ export type Service = {
   gallery: string[];
   quoteProductId: string;
   defaultLane: FunnelLane;
+  defaultUseCase?: string;
   orderFacts: string[];
 };
 
@@ -149,11 +150,12 @@ export const services: Service[] = [
     methods: ["DTF", "Kaos custom", "20s", "24s", "30s"],
     gallery: [
       "/images/sablon-pasta.jpg",
-      "/images/hero-sablon.jpg",
+      "/images/hero-sablon.webp",
       "/images/kaos-polos-warna.jpg",
     ],
     quoteProductId: "kaos-custom-dtf",
     defaultLane: "single",
+    defaultUseCase: "Personal / hadiah",
     orderFacts: [
       "Minimum order 1 pcs",
       "Perhitungan grosir mulai 12 pcs",
@@ -162,13 +164,13 @@ export const services: Service[] = [
   },
   {
     slug: "kaos-event-komunitas",
-    title: "Kaos Event & Komunitas",
-    eyebrow: "Untuk kelompok dengan satu tanggal pakai",
+    title: "Kaos Custom Event & Komunitas",
+    eyebrow: "Untuk panitia, komunitas, kampus, dan acara",
     shortDescription:
-      "Kaos panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
+      "Kaos custom untuk panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
     description:
-      "Dari bahan kaos sampai teknik cetak, Orplyn membantu menyiapkan detail produksi sesuai desain, jumlah pesanan, dan tanggal penggunaan.",
-    image: "/images/hero-sablon.jpg",
+      "Sampaikan jumlah, desain, tanggal pakai, dan lokasi. Admin Orplyn mengecek bahan, teknik, minimum order, serta estimasi produksi sebelum harga dan jadwal dikonfirmasi.",
+    image: "/images/hero-sablon.webp",
     imageAlt: "Hasil sablon penuh warna pada kaos hitam produksi Orplyn",
     idealFor: [
       "Event dan kepanitiaan",
@@ -177,19 +179,20 @@ export const services: Service[] = [
       "Acara kantor dan promosi",
     ],
     capabilities: [
+      "Tanggal pakai dicatat saat meminta estimasi",
       "Kaos custom dengan desain sendiri",
       "Pilihan bahan 20s, 24s, dan 30s",
-      "Cetak depan, belakang, atau detail tambahan",
       "Konsultasi teknik sesuai desain dan jumlah",
     ],
     methods: ["DTF", "Plastisol", "Discharge", "Rubber", "Fullprint"],
     gallery: [
-      "/images/hero-sablon.jpg",
+      "/images/hero-sablon.webp",
       "/images/sablon-pasta.jpg",
       "/images/sablon-discharge.jpg",
     ],
     quoteProductId: "sablon-manual-plastisol",
     defaultLane: "batch",
+    defaultUseCase: "Event / komunitas",
     orderFacts: [
       "Sablon manual / plastisol minimum 12 pcs",
       "Perhitungan grosir manual mulai 100 pcs",
@@ -221,7 +224,7 @@ export const services: Service[] = [
     methods: ["20s", "24s", "30s", "Sablon custom", "Pickup Ciputat"],
     gallery: [
       "/images/kaos-polos-warna.jpg",
-      "/images/hero-sablon.jpg",
+      "/images/hero-sablon.webp",
       "/images/sablon-pasta.jpg",
     ],
     quoteProductId: "kaos-polos",
@@ -270,6 +273,7 @@ export const services: Service[] = [
     ],
     quoteProductId: "sablon-manual-plastisol",
     defaultLane: "batch",
+    defaultUseCase: "Clothing brand",
     orderFacts: [
       "Sablon manual minimum 12 pcs",
       "Special ink minimum 12 pcs",
@@ -338,10 +342,11 @@ export const services: Service[] = [
     gallery: [
       "/images/jersey-custom.jpg",
       "/images/sablon-ukuran-besar.jpg",
-      "/images/hero-sablon.jpg",
+      "/images/hero-sablon.webp",
     ],
     quoteProductId: "jersey-custom",
     defaultLane: "batch",
+    defaultUseCase: "Tim olahraga",
     orderFacts: [
       "Minimum order 6 pcs",
       "Perhitungan grosir mulai 100 pcs",
@@ -378,6 +383,7 @@ export const services: Service[] = [
     ],
     quoteProductId: "totebag-merchandise",
     defaultLane: "batch",
+    defaultUseCase: "Event / komunitas",
     orderFacts: [
       "Minimum order 12 pcs",
       "Perhitungan grosir mulai 100 pcs",
@@ -402,7 +408,7 @@ export const secondaryServices = services.filter(
 
 export const portfolio = [
   {
-    image: "/images/hero-sablon.jpg",
+    image: "/images/hero-sablon.webp",
     title: "Sablon warna penuh",
     category: "Kaos custom",
   },

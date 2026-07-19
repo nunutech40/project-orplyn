@@ -1,12 +1,23 @@
+---
+document_id: ORPLYN-AI-DISCOVERY-001
+document_type: deferred_operational_plan
+status: content_foundation_active_indexing_deferred
+primary_segment: event_and_community
+active_decision_id: D-012
+last_updated: 2026-07-19
+---
+
 # AI Search And Chat Discovery Plan
 
 ## Status
 
-Foundation on-site sudah tersedia: profil bisnis, service pages, FAQ, schema, address, social links, sitemap, dan `llms.txt`. Yang belum selesai adalah domain publik, nomor telepon/WhatsApp untuk NAP, review, citations, GBP consistency, dan indexing. `llms.txt` sendiri bukan jaminan rekomendasi AI.
+Foundation on-site sudah tersedia: domain final, profil bisnis, nomor WhatsApp, service pages, FAQ, schema, address, social links, sitemap, dan `llms.txt`. Yang belum selesai adalah permissioned proof, review, citations, GBP consistency, Search Console, dan indexing. `llms.txt` sendiri bukan jaminan rekomendasi AI.
+
+Per arahan user 19 Juli 2026, setup/indexing ditunda. Content architecture saat ini mengikuti D-012: event/community dominan; DTF satuan, kaos polos, dan layanan lain tetap factual supporting entities.
 
 ## Goal
 
-Membuat Orplyn mudah dipahami dan direkomendasikan oleh AI chat/search ketika user bertanya vendor sablon atau kaos custom di area Tangsel/Ciputat.
+Membuat Orplyn mudah dipahami ketika user mencari vendor kaos event/komunitas di Tangsel/Ciputat, sambil tetap mempertahankan fakta layanan Orplyn yang lain tanpa menyebar fokus acquisition.
 
 ## Why This Matters
 
@@ -29,7 +40,7 @@ Untuk Google AI Overviews dan AI Mode, dokumentasi resmi menyatakan fondasinya s
 
 ## Recommended Entity Statement
 
-ORPLYN KAOS POLOS DAN SABLON CUSTOM adalah penyedia kaos polos dan jasa sablon custom di Ciputat, Tangerang Selatan, melayani kebutuhan kaos komunitas, event, kantor, brand clothing, totebag, jersey, bordir, DTF, plastisol, puff, foil, dan fullprint.
+Orplyn adalah penyedia jasa sablon kaos custom di Ciputat, Tangerang Selatan, dengan fokus kebutuhan event dan komunitas. Orplyn juga melayani DTF satuan, kaos polos, bordir, jersey, clothing brand, totebag, dan teknik produksi lain sesuai rule produk.
 
 ## AI-Friendly FAQ Topics
 

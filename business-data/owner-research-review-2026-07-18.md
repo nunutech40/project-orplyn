@@ -1,5 +1,7 @@
 # Owner Research Review - 18 Juli 2026
 
+> **Document role: pre-evolution evidence review.** Owner/customer inputs remain evidence, but strategy conclusions must be interpreted through the later owner evolution lens and D-012. Use `marketing/README.md` for active direction.
+
 Review ini merangkum dokumen owner/customer yang sudah diisi pada 17 Juli 2026 dan tindakan pembersihan data lama.
 
 ## Files Reviewed

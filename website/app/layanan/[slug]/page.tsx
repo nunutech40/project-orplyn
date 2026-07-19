@@ -7,7 +7,9 @@ import {
   MessageCircle,
 } from "../../components/Icons";
 import { notFound } from "next/navigation";
+import { CommercialProofSection } from "../../components/CommercialProofSection";
 import { QuoteBuilder } from "../../components/QuoteBuilder";
+import { getCommercialProofs } from "../../lib/commercial-proofs";
 import {
   business,
   getService,
@@ -58,6 +60,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
   }
 
   const related = services.filter((item) => item.slug !== service.slug).slice(0, 3);
+  const commercialProofs = getCommercialProofs(service.slug);
   const serviceSchema = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -93,10 +96,16 @@ export default async function ServicePage({ params }: ServicePageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
-      <section
-        className="subpage-hero"
-        style={{ backgroundImage: `url('${service.image}')` }}
-      >
+      <section className="subpage-hero">
+        <img
+          className="subpage-hero-media"
+          src={service.image}
+          alt={service.imageAlt}
+          width="1440"
+          height="1080"
+          loading="eager"
+          fetchPriority="high"
+        />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="subpage-hero-content">
           <Link href="/#paket" className="back-link">
@@ -183,6 +192,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
+      <CommercialProofSection proofs={commercialProofs} />
+
       <section className="service-quote-section" id="service-quote">
         <div>
           <p className="eyebrow">MINTA ESTIMASI</p>
@@ -196,6 +207,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           whatsappNumber={business.whatsapp}
           initialProductId={service.quoteProductId}
           initialLane={service.defaultLane}
+          initialUseCase={service.defaultUseCase}
           compact
         />
       </section>

@@ -1,5 +1,7 @@
 # Offer And SERP Refresh - 18 Juli 2026
 
+> **Document role: historical pre-D-012 snapshot.** Facts and SERP observations remain evidence. The equal three-offer priority and DTF-vs-event campaign choice are superseded by the event/community acquisition focus in D-012. Use `marketing/README.md` for active direction.
+
 ## Tujuan
 
 Menentukan fokus website dan offer Orplyn berdasarkan data owner, pertanyaan customer, target market, serta pola yang terlihat pada website bisnis sablon/kaos di Ciputat dan Tangerang Selatan.

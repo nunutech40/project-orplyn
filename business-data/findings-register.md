@@ -52,18 +52,18 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Source: brief user dan `marketing/00-brief/project-brief.md`.
 - Marketing implication: optimasi harus sampai quotation, order, revenue, dan gross profit, bukan berhenti pada traffic atau WhatsApp click.
 
-### F-007 - Funnel web lokal
+### F-007 - Funnel web dan domain final
 
-- Finding: website lead-generation sudah berjalan lokal di OrbStack pada `http://localhost:3010` dengan landing page layanan, portfolio, form brief, SEO/schema, dan tracking hook.
-- Source: `PROJECT-HANDOFF.md` dan test/runtime tanggal 16 Juli 2026.
-- Limit: belum siap traffic publik karena domain, tracking ID, final owner approval untuk beberapa klaim komersial, dan end-to-end lead test belum selesai.
+- Finding: website lead-generation berjalan lokal di OrbStack pada `http://localhost:3010` dan publik di `https://orplyn.id` dengan landing page layanan, portfolio, form brief, SEO/schema, serta tracking hook. Domain, Cloudflare DNS, edge HTTPS, origin HTTPS, dan redirect `www` sudah aktif.
+- Source: `PROJECT-HANDOFF.md` dan verification 18-19 Juli 2026.
+- Limit: website publik tetap sengaja `noindex`; tracking ID, lead log, owner approval untuk beberapa klaim komersial/proof, admin readiness, dan end-to-end lead test belum selesai.
 
 ### F-008 - Kontak, order rule, dan operasional sales
 
 - Finding: WhatsApp sales yang diberikan adalah `082317579311` dengan PIC Aulia, admin aktif Senin-Sabtu 08:00-19:00, workshop 08:00-17:00, DP 50%, area layanan seluruh Indonesia, dan pencatatan lead saat ini masih di WhatsApp.
 - Source: `deliverables/owner-research/Orplyn - Form Owner Tahap 1.docx`, diisi 17 Juli 2026 oleh Aulia/Admin.
-- Limit: checkbox owner approval belum ditandai; target maksimal first response dan format quotation belum dipilih; domain belum ada.
-- Marketing implication: website lokal bisa dikonfigurasi untuk uji CTA WhatsApp nyata, tetapi public launch tetap menunggu domain, tracking, SOP follow-up, dan approval final.
+- Limit: checkbox owner approval belum ditandai; target maksimal first response dan format quotation belum dipilih. Domain sudah aktif, tetapi indexing, tracking, SOP follow-up, proof, dan approval final masih pending.
+- Marketing implication: website dapat diuji dengan WhatsApp nyata, tetapi acquisition launch tetap menunggu lead log, tracking, SOP follow-up, proof, dan approval final.
 
 ### F-009 - Segmen dan customer voice awal
 
@@ -170,6 +170,13 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Limit: voice of customer baru bergantung pada satu survey terisi dan input owner/admin; emotional job serta repeat-workflow value masih hipotesis.
 - Marketing implication: Orplyn perlu memproduksikan consultation menjadi rekomendasi terbatas, spesifikasi yang disetujui, update status, dan referensi repeat order, bukan hanya chat bebas.
 
+### O-015 - Dokumen lama masih membawa prioritas yang sudah superseded
+
+- Observed: brief awal, Ads plan lama, manual queue, handoff, dan beberapa audit historis masih dapat dibaca seolah DTF, event, serta kaos polos adalah tiga fokus acquisition setara; manual queue juga masih menandai setup GBP sebagai pekerjaan pertama setelah user menundanya.
+- Source: audit repository 19 Juli 2026 terhadap `AGENTS.md`, `PROJECT-HANDOFF.md`, `business-data/`, `marketing/`, `deliverables/`, dan source website.
+- Limit: evidence pasar dan decision log lama tetap dipertahankan sebagai sejarah; tidak semua penyebutan tiga offer berarti instruksi aktif.
+- Marketing implication: AI membutuhkan router kanonik, document status, supersession rule, dan satu manual `NEXT`. Active direction sekarang adalah event/community; M-06 menjadi manual `NEXT`, sedangkan setup eksternal berstatus `LATER` sampai user melanjutkannya.
+
 ## Working Hypotheses
 
 ### H-001 - Dua jalur intent lebih efektif
@@ -233,6 +240,8 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 
 ## Critical Unknowns
 
+Item account setup di bawah tetap launch gate, tetapi sengaja ditunda oleh instruksi user 19 Juli 2026.
+
 1. Konfirmasi dan perbaiki perbedaan telepon, website, serta jam Google Business Profile terhadap website/data owner.
 2. Target maksimal first response dan SOP follow-up detail.
 3. Format quotation final.
@@ -250,13 +259,13 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 
 ## Strategic Implications Of Satuan + Grosir
 
-1. **Positioning:** Orplyn tidak perlu memilih salah satu secara prematur. Gunakan payung `Apparel & Print Studio`, lalu pisahkan kebutuhan satuan dan produksi/grosir pada offer.
-2. **Website:** quantity sudah membantu kualifikasi, tetapi label mode beli dan copy satuan/grosir baru boleh diperjelas setelah rule per produk terisi.
+1. **Positioning:** satuan dan grosir tetap dua lane operasional, tetapi D-012 sudah memilih event/community sebagai satu fokus acquisition. `Apparel & Print Studio` tetap payung brand, bukan alasan membagi campaign.
+2. **Website:** quantity dan mode order membantu qualification; homepage memimpin dengan event/community, sedangkan DTF satuan dan kaos polos tetap route inbound sekunder.
 3. **SEO:** pisahkan intent seperti `sablon kaos satuan Ciputat` dari `vendor/grosir sablon kaos Tangerang Selatan`.
-4. **Ads:** campaign/ad group satuan dan grosir harus punya keyword, landing copy, dan target CPA berbeda karena nilai order berbeda.
+4. **Ads:** selama D-012 aktif, pilot hanya event/community. Pemisahan campaign satuan/grosir baru relevan setelah baseline event sehat dan owner membuat decision baru.
 5. **WhatsApp:** setiap lead perlu tag `Satuan`, `Grosir`, atau `Belum Jelas`.
 6. **Measurement:** laporkan volume dan revenue per mode; jangan menyimpulkan grosir lebih baik hanya karena order value besar tanpa melihat margin, cycle, dan kapasitas.
-7. **Content:** satuan membutuhkan contoh praktis dan cepat; grosir membutuhkan batch proof, QC, konsistensi, packing, dan repeat production.
+7. **Content:** proof event/community menjadi prioritas aktif. Konten satuan tetap dapat melayani inbound, tetapi tidak mengambil cadence utama sampai fokus berubah.
 
 ## Current Decisions
 
@@ -298,6 +307,8 @@ Keputusan awal 18 Juli memakai H1 literal `Jasa sablon kaos custom di Ciputat`, 
 
 ### D-009 - Brand, offer priority, dan CTA memakai satu sistem copy
 
+Status: historical implementation step; equal three-offer presentation was superseded by D-013, while the standardized CTA and plain-language rules remain active.
+
 Homepage memperkenalkan Orplyn sebagai tempat sablon dan kaos custom, menempatkan event/komunitas sebagai offer pertama, serta mempertahankan satuan sebagai pilihan yang tetap terlihat. CTA utama di seluruh funnel memakai `Minta estimasi`; sticky CTA baru muncul setelah hero. Istilah internal seperti `brief`, `jalur`, dan `ditindaklanjuti` diganti dengan bahasa customer. Funnel lanes dan buyer paths di homepage dihapus karena mengulang service cards; proof ditempatkan langsung setelah tiga offer utama. Range harga, review, dan case study tetap menunggu M-06/M-07 karena tidak boleh dikarang.
 
 ### D-010 - Form tidak memakai dropdown yang terkunci
@@ -311,6 +322,10 @@ Orplyn tidak mengklaim keunikan dari harga kompetitif, kualitas, kecepatan, kons
 ### D-012 - Akuisisi dan retensi dipisahkan berdasarkan owner evolution lens
 
 Akuisisi dikonsentrasikan pada satu segmen, event/komunitas, dengan demand generation sebagai prioritas karena pipa owner hanya sekitar 2-5 chat baru per minggu. H-009/E-12 menguji apakah date-first intake dan pengendalian risiko deadline layak menjadi reason to buy pertama. Retensi memakai H-008/E-11 untuk menguji saved specification dan repeat-ready workflow. Semua calon outcome copy tetap hipotesis dan dilarang masuk ke website, GBP, WhatsApp, quotation, content, atau Ads sebelum gate terkait lulus.
+
+### D-013 - Website factual event-first dan proof memakai publication gate
+
+Instruksi user 19 Juli 2026 mengizinkan homepage, landing event, metadata, schema, navigation, dan WhatsApp intake diselaraskan ke event/community tanpa outcome claim. Date/use-case dapat diminta lebih awal karena itu input factual. DTF satuan dan kaos polos tetap route pendukung. Commercial proof hanya dirender dari `website/app/lib/commercial-proofs.ts` setelah record lolos evidence, redaction, permission, wording, serta owner approval; array kosong tidak menampilkan placeholder publik. Setup GBP, Search Console, tag, indexing, dan Ads tetap ditunda tanpa menghapus launch gate.
 
 ## Documentation Protocol
 

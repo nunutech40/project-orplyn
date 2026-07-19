@@ -21,7 +21,7 @@ Catatan penting: checkbox "jawaban sudah diperiksa/disetujui owner" belum ditand
 - Area layanan: seluruh Indonesia.
 - Customer boleh datang dan pickup; janji disarankan tetapi tidak wajib.
 - Google Business Profile: ada, PIC/email `orplyn.id@gmail.com`, akses tersedia.
-- Registrar domain: DomaiNesia. Cloudflare zone sudah dibuat dengan nameserver `cleo.ns.cloudflare.com` dan `stella.ns.cloudflare.com`; delegasi nameserver masih pending. Search Console, Analytics/Tag Manager, Google Ads, dan CRM belum selesai.
+- Infrastructure status terbaru: domain `orplyn.id` melalui DomaiNesia sudah terdelegasi ke `cleo.ns.cloudflare.com` dan `stella.ns.cloudflare.com`; Cloudflare apex/www, edge HTTPS, origin HTTPS, dan redirect `www` sudah aktif. Search Console, Analytics/Tag Manager, Google Ads, dan CRM/lead log belum selesai.
 - Instagram/Meta dan TikTok/marketplace: ada, PIC/email `orplyn.id@gmail.com`, akses tersedia.
 
 ## Product Rules

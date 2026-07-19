@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, MessageCircle } from "../components/Icons";
+import { CommercialProofSection } from "../components/CommercialProofSection";
+import { commercialProofs } from "../lib/commercial-proofs";
 import { portfolio } from "../lib/site-data";
 
 export const metadata: Metadata = {
@@ -40,6 +42,8 @@ export default function PortfolioPage() {
           </figure>
         ))}
       </section>
+
+      <CommercialProofSection proofs={commercialProofs} />
 
       <section className="portfolio-cta">
         <div>

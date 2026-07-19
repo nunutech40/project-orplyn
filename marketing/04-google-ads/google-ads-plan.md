@@ -1,10 +1,19 @@
+---
+document_id: ORPLYN-GOOGLE-ADS-001
+document_type: deferred_operational_plan
+status: deferred_until_launch_gate
+primary_segment: event_and_community
+active_decision_id: D-012
+last_updated: 2026-07-19
+---
+
 # Google Ads Plan
 
 ## Status
 
-Belum diluncurkan dan sengaja ditunda. Landing pages per intent, form terqualifikasi, Lead ID, attribution, dan secondary conversion hook sudah disiapkan.
+Belum diluncurkan dan sengaja ditunda. Domain final serta HTTPS sudah aktif; landing pages, form terqualifikasi, Lead ID, attribution, dan secondary conversion hook sudah disiapkan. Source website sedang diselaraskan ke event/community-first.
 
-Launch gate belum lulus karena domain, Google tag/conversion, Search Console, approval copy publik, capacity/economics, lead log, dan uji WhatsApp end-to-end belum selesai.
+Launch gate belum lulus karena Google tag/conversion, Search Console/indexing, approval copy/proof publik, capacity/economics, lead log, admin readiness, dan uji WhatsApp end-to-end belum selesai. Per arahan user 19 Juli 2026, seluruh setup eksternal dikerjakan setelah dokumentasi dan website source selesai.
 
 ## When To Start
 
@@ -33,34 +42,35 @@ Owner inputs for pilot:
 2. Local campaign/Performance Max nanti setelah asset dan conversion data cukup.
 3. Remarketing setelah traffic website cukup.
 
-Budget trial Rp100 ribu-Rp700 ribu per bulan tidak layak dibagi ke empat campaign sejak hari pertama. Mulai dengan satu Search campaign dan satu offer yang telah dipilih berdasarkan gross profit, close rate, capacity, dan deadline risk. Kandidatnya:
+Budget trial Rp100 ribu-Rp700 ribu per bulan tidak layak dibagi ke banyak campaign. Selama D-012 aktif, pilot pertama hanya:
 
-1. `Search - DTF Satuan - Ciputat/Tangsel`; atau
-2. `Search - Kaos Event/Komunitas - Tangsel/Jaksel`.
+`Search - Kaos Event/Komunitas - Tangsel/Jaksel`
 
-Jangan menjalankan keduanya sekaligus pada budget bawah. Setelah volume qualified lead cukup, baru pisahkan lane, search terms, landing copy, target CPA, dan conversion value.
+DTF satuan, kaos polos, corporate, bordir, jersey, dan merchandise tidak menjadi parallel campaign. Setelah event/community mempunyai baseline qualified lead, quote, sale, gross profit, dan capacity yang sehat, owner dapat membuat decision baru untuk membuka segment berikutnya.
 
 ## Search Ad Themes
 
-- Jasa sablon kaos Ciputat/Tangsel.
-- Kaos polos custom.
-- Bordir kaos/topi.
-- Vendor kaos event/komunitas/kantor.
-- Totebag custom.
+- vendor kaos event Tangerang Selatan;
+- jasa sablon kaos event Ciputat;
+- kaos panitia custom;
+- kaos komunitas custom;
+- produksi kaos acara Tangsel/Jaksel.
 
-Initial budget owner masih kecil untuk banyak campaign. Saat launch pertama, pilih satu theme paling jelas antara `kaos custom/sablon DTF satuan` atau `kaos event/komunitas grosir`, lalu scale setelah ada data qualified lead.
+Keyword final harus divalidasi melalui Keyword Planner dan search-term data saat setup. Jangan menambahkan keyword DTF/satuan ke campaign event hanya untuk mengejar volume.
 
 ## Landing Page Requirement
 
-Setiap ad group idealnya mengarah ke halaman yang paling relevan, bukan homepage umum.
+Pilot pertama mengarah ke `/layanan/kaos-event-komunitas`, bukan homepage umum. Ad, keyword, H1, order facts, proof, dan form harus memiliki message match yang sama.
 
 - Event/komunitas -> `/layanan/kaos-event-komunitas`.
-- DTF/kaos custom satuan -> `/layanan/sablon-dtf-satuan`.
-- Clothing brand/sablon manual -> `/layanan/produksi-clothing-brand`.
-- Bordir/seragam -> `/layanan/bordir-seragam`.
-- Jersey -> `/layanan/jersey-custom`.
-- Totebag/merchandise -> `/layanan/totebag-merchandise`.
-- Kaos polos -> `/layanan/kaos-polos`.
+
+Route DTF, clothing brand, bordir, jersey, totebag, dan kaos polos tetap tersedia untuk SEO/inbound tetapi tidak menjadi Ads destination selama fokus event belum selesai.
+
+Google requires destinations to be functional, useful, crawlable, accessible, and easy to navigate. Source website readiness must therefore include working common-device routes, original Orplyn content, clear navigation, no forced redirect/download, mobile usability, and a final URL on `orplyn.id`. Official references:
+
+- `https://support.google.com/adspolicy/answer/6368661`
+- `https://support.google.com/google-ads/answer/7543502`
+- `https://support.google.com/google-ads/answer/6167118`
 
 ## Conversion
 

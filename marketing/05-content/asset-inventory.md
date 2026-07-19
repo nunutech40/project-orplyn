@@ -2,6 +2,8 @@
 
 Asset mentah ada di `assets/raw/google-drive/` dan `assets/raw/instagram/`.
 
+Arahan aktif 19 Juli 2026: prioritaskan aset hasil produksi untuk event/komunitas. Foto produk tetap berfungsi sebagai proof of work, sedangkan testimoni, nilai transaksi, jumlah pesanan, deadline, dan outcome komersial hanya boleh dipublikasikan setelah melewati `commercial-proof-publication-contract.md`.
+
 Status 16 Juli 2026: 156 file sekitar 606 MB sudah tersimpan dari Google Drive dalam 20 kategori. Dua belas image terpilih sudah dioptimalkan untuk website di `website/public/images/`, dan dua file logo transparan tersedia. Batch Instagram terbaru menambah 12 post, 28 media file, dan sekitar 89 MB; kurasi awal menghasilkan 8 selected, 2 reserve, dan 2 hold.
 
 ## Categories
@@ -64,7 +66,8 @@ P1 yang terpilih:
 
 ## Next Asset Work
 
-- Audit ulang image website setelah owner memberi prioritas layanan.
+- Audit ulang image website dengan event/komunitas sebagai prioritas akuisisi.
+- Minta dan verifikasi bukti transaksi event/komunitas; jangan membuat placeholder testimoni publik.
 - Konfirmasi teknik, desain customer, wajah, dan izin publikasi untuk 8 post terpilih.
 - Optimalkan empat aset P0 untuk ukuran website; jangan memasukkan MP4 raw langsung ke bundle.
 - Arsipkan 17 post lama dengan cookie browser bila histori tersebut masih relevan untuk proof.

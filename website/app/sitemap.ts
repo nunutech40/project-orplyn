@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { services, siteUrl } from "./lib/site-data";
+import { primaryServices, secondaryServices, siteUrl } from "./lib/site-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -23,10 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "yearly",
       priority: 0.2,
     },
-    ...services.map((service) => ({
+    ...[...primaryServices, ...secondaryServices].map((service) => ({
       url: `${siteUrl}/layanan/${service.slug}`,
       changeFrequency: "monthly" as const,
-      priority: 0.8,
+      priority:
+        service.slug === "kaos-event-komunitas"
+          ? 0.9
+          : primaryServices.includes(service)
+            ? 0.8
+            : 0.7,
     })),
   ];
 }

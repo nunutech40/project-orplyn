@@ -2,28 +2,30 @@ ORPLYN - PERMINTAAN DATA PRODUK DAN FOTO PRIORITAS
 
 PESAN YANG BISA LANGSUNG DIKIRIM KE OWNER
 
-Halo Kak, untuk memilih foto dan hasil produksi yang paling efektif dipasang di website, kami perlu melihat order yang paling kuat secara bisnis, bukan hanya foto yang paling bagus secara visual.
+Halo Kak, untuk menyiapkan website Orplyn bagi calon customer event dan komunitas, kami perlu melihat order nyata yang paling mewakili pekerjaan Orplyn, bukan hanya foto yang paling bagus secara visual.
 
-Mohon pilih 5 order paling representatif dalam 3-6 bulan terakhir. Tidak perlu menyebut nama atau nomor customer jika belum ada izin.
+Mohon pilih 5 order event atau komunitas paling representatif dalam 3-6 bulan terakhir. Kalau belum ada lima, kirim semua yang tersedia lalu tambahkan order batch yang paling mirip. Tidak perlu menyebut nama atau nomor customer jika belum ada izin.
 
 Untuk setiap order, mohon isi singkat:
 
-1. Tipe customer/use case, misalnya event, komunitas, vendor, sekolah, kantor, clothing brand, atau satuan.
+1. Tipe acara/customer, misalnya panitia event, komunitas, reuni, kampus, sekolah, atau acara kantor.
 2. Produk yang dipesan.
 3. Jumlah atau range jumlah pesanan.
 4. Bahan dan teknik sablon/bordir yang dipakai.
 5. Customer baru atau repeat order.
-6. Apakah selesai sesuai deadline.
-7. Alasan order ini dianggap paling laris, paling sering repeat, paling menguntungkan, atau paling membanggakan.
+6. Tanggal dipakai/target selesai dan tanggal selesai sebenarnya.
+7. Apakah ada kendala, revisi, atau komplain; kalau ada, bagaimana hasil akhirnya.
 8. Link/folder foto dan video yang tersedia.
-9. Apakah desain, nama/logo customer, wajah, dan hasil produksinya boleh dipublikasikan.
-10. Apakah ada review atau chat customer yang boleh dikutip setelah data pribadi disensor.
+9. Feedback customer yang benar-benar pernah disampaikan, bila ada. Jangan menebak customer puas bila belum pernah memberi feedback.
+10. Apakah foto hasil, desain, nama/logo customer, dan wajah boleh dipublikasikan.
+11. Apakah jumlah, tanggal, kendala, dan hasil order boleh disebut secara publik.
+12. Apakah ada review atau chat customer yang boleh dikutip setelah data pribadi disensor, serta nama tampilan yang diizinkan.
 
 Selain lima order tersebut, mohon jawab:
 
-- Tiga produk/use case yang paling sering dipesan.
-- Tiga produk/use case yang paling sering repeat.
-- Tiga produk/use case dengan omzet atau margin terbaik.
-- Produk yang saat ini tidak ingin dipromosikan karena kapasitas, risiko deadline, atau alasan lain.
+- Jenis event/komunitas yang paling sering memesan.
+- Produk event/komunitas yang paling sering repeat.
+- Produk event/komunitas dengan omzet atau margin terbaik.
+- Pesanan event yang saat ini tidak ingin dipromosikan karena kapasitas, waktu produksi, atau alasan lain.
 
-Data ini akan dipakai untuk menentukan hero website, portfolio, landing page, Google Business Profile, dan konten. Tidak ada nama customer, klaim bestseller, jumlah besar, atau testimoni yang akan dipublikasikan tanpa persetujuan.
+Data ini akan dipakai untuk menentukan portfolio, bukti pesanan, landing page event, dan konten. Tidak ada nama customer, klaim bestseller, jumlah, hasil deadline, kendala, atau testimoni yang akan dipublikasikan tanpa verifikasi dan persetujuan.

@@ -2,6 +2,8 @@
 
 Folder ini berisi data dasar brand yang dipakai untuk strategi marketing, website, SEO, AI search, dan ads.
 
+Untuk interpretasi prioritas, baca `../marketing/README.md`. Fakta owner di folder ini tidak otomatis menjadi izin klaim publik; perhatikan limit dan approval status pada setiap file.
+
 ## Files
 
 - `location.json`: lokasi Google Maps Orplyn.
@@ -12,12 +14,11 @@ Folder ini berisi data dasar brand yang dipakai untuk strategi marketing, websit
 
 ## Data Yang Masih Perlu Dari Owner
 
-- Nomor WhatsApp utama untuk lead.
-- Jam operasional.
-- Area layanan.
-- Harga mulai, MOQ per produk, batas grosir, dan tier harga.
-- Lama produksi rata-rata.
-- Produk yang bisa satuan dan aturan untuk corporate order/reseller.
-- Keunggulan utama dibanding vendor lain.
+- Harga/package anchor yang benar-benar boleh dipublikasikan.
+- Capacity, cut-off, rush-order, QC/rework, dan first-response rules.
+- Data order event yang representatif: use case, produk, jumlah/range, tanggal, challenge, dan outcome.
+- Review/testimoni, customer attribution, logo, foto/video, serta izin publikasi per item.
+- Economics: AOV, margin/gross profit, close rate, CAC sehat, dan data order 90 hari.
+- Evidence pilot E-12 untuk deadline-risk dan repeat opportunity E-11 untuk saved specification.
 
 Jangan mengisi data yang belum dikonfirmasi. Gunakan `owner-answers.md` sebagai catatan interview dan sinkronkan fakta yang sudah final ke website serta `PROJECT-HANDOFF.md`.

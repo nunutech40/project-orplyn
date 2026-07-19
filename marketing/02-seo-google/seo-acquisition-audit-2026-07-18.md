@@ -1,5 +1,7 @@
 # SEO Acquisition Audit - 18 Juli 2026
 
+> **Document role: dated audit evidence.** Technical findings remain a snapshot of 18 Juli 2026. Strategy priority and current status must be read from `marketing/README.md` and `PROJECT-HANDOFF.md`; D-012 supersedes equal weighting of three offers.
+
 ## Tujuan Audit
 
 Audit ini menilai website Orplyn sebagai mesin acquisition dengan tujuan bisnis:

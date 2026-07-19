@@ -5,7 +5,7 @@ import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 
 const navigation = [
-  { href: "/#paket", label: "Layanan" },
+  { href: "/layanan/kaos-event-komunitas", label: "Kaos event" },
   { href: "/portfolio", label: "Hasil produksi" },
   { href: "/#cara-order", label: "Cara order" },
   { href: "/kontak", label: "Lokasi" },

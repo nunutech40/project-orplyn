@@ -12,24 +12,24 @@ Website bukan tujuan akhir. Website adalah bagian tengah funnel:
 
 `Google / Maps / Instagram / AI search / Ads -> landing page -> proof -> brief -> WhatsApp -> qualification -> quotation -> sale`
 
-Funnel web sudah direfokuskan pada dua jalur order dan tiga offer utama. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Final domain, Cloudflare DNS, edge HTTPS, dan origin HTTPS sudah aktif; website tetap sengaja `noindex`. Owner evolution lens 19 Juli 2026 memindahkan prioritas ke volume top-of-funnel event/komunitas: measurement minimum, GBP/review, permissioned event proof, referral, dan focused event demand generation didahulukan dari funnel polishing.
+Funnel web memiliki dua jalur order, tetapi acquisition aktif hanya berfokus pada event/komunitas; DTF satuan dan kaos polos tetap tersedia sebagai entry/inbound offer sekunder. Nomor WhatsApp nyata, MOQ, lead time normal, NAP, Lead ID, dan attribution sudah masuk ke website. Final domain, Cloudflare DNS, edge HTTPS, dan origin HTTPS sudah aktif; website tetap sengaja `noindex`. Owner evolution lens 19 Juli 2026 memindahkan prioritas ke volume top-of-funnel event/komunitas, dan instruksi terbaru mengizinkan factual event-first website alignment tanpa membuka izin untuk klaim deadline-risk.
 
 ### Current status board
 
 | Workstream | Status | Next gate |
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
-| Commercial facts and offer | MOQ/lead time confirmed; two lanes and three offers implemented | Owner approval for price anchors, proof, and capacity |
+| Commercial facts and offer | MOQ/lead time confirmed; event-first acquisition with DTF/kaos polos as secondary entry offers | M-06 verified proof, then owner approval for event price anchor and capacity |
 | Product differentiation | Owner evolution recorded as D-012: H-009 acquisition and H-008 retention are separated | Five event orders for E-12; repeat opportunities for E-11; no public claim before gate |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Live at `https://orplyn.id` with intentional noindex | Manual QA and end-to-end lead test |
+| Web funnel source | Event-first source complete locally; current public release still intentional noindex | Deploy revision, then responsive manual QA and end-to-end lead test |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
 | Shared VPS staging | Healthy; final-domain routes, edge TLS, and origin TLS active | Confirm Cloudflare Full (strict) mode |
 | Technical SEO foundation | Prepared; final domain intentionally noindex | Indexing decision and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
 | Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
-| Organic content system | Initial Instagram batch curated | Confirm rights and build event/community proof content first |
+| Organic content system | Initial Instagram batch curated; commercial-proof publication contract and hidden-until-publishable component ready | Complete M-06 rights/context and build event/community proof first |
 | External market intelligence | Competitor refresh and owner evolution response complete | Validate H-009/E-12 for acquisition and H-008/E-11 for retention separately |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
@@ -104,7 +104,9 @@ Data di atas boleh dipakai untuk strategi dan konfigurasi internal. Harga mulai,
 
 ## 4. Unknowns And Launch Blockers
 
-### P0, wajib sebelum public launch
+### P0, wajib sebelum traffic acquisition
+
+Instruksi user 19 Juli 2026 menunda pekerjaan setup eksternal. Item di bawah tetap merupakan launch gate, tetapi bukan urutan kerja aktif sampai user mengaktifkannya kembali.
 
 - Konfirmasi mode Cloudflare `Full (strict)` di dashboard. Nameserver, DNS apex/www, canonical final, Universal SSL, public edge HTTPS, dan HTTPS origin sudah selesai.
 - WhatsApp nyata sudah dipasang; uji end-to-end sampai lead log masih wajib.
@@ -137,9 +139,9 @@ Form owner/customer yang sudah terisi ada di `deliverables/owner-research/`. Fil
 
 ### Working positioning
 
-Orplyn adalah jasa sablon kaos custom dan kaos polos di Ciputat, dari 1 pcs sampai produksi batch, dengan brief awal untuk membantu mengecek MOQ, bahan, teknik, dan deadline.
+Orplyn adalah jasa sablon kaos custom di Ciputat dengan fokus akuisisi pada kebutuhan event dan komunitas. Calon pembeli menyampaikan jumlah, desain, tanggal pakai, dan lokasi agar admin dapat mengecek pilihan produksi, MOQ, serta estimasi secara faktual.
 
-Model satuan/test print dan produksi/batch menjadi dua jalur intent, bukan dua brand terpisah. Tiga offer utama adalah DTF/custom satuan, event/community batch, dan kaos polos satuan/grosir. Bordir, jersey, clothing brand, special ink, fullprint, serta merchandise tetap tersedia sebagai capability sekunder.
+Model satuan/test print dan produksi/batch tetap menjadi dua jalur intent, bukan dua brand terpisah. Event/community memimpin homepage, funnel, proof, content, dan campaign aktif. DTF/custom satuan serta kaos polos satuan/grosir tetap tersedia sebagai entry/inbound offer; bordir, jersey, clothing brand, special ink, fullprint, dan merchandise tetap capability sekunder.
 
 ### Why this positioning
 
@@ -281,7 +283,20 @@ Important: `llms.txt` tidak menjamin sebuah AI akan merekomendasikan Orplyn. Pub
 
 ### Quality status
 
-Verified on 19 Juli 2026 after the end-to-end conversion copy rewrite:
+Latest local verification on 19 Juli 2026 after D-013:
+
+- Documentation audit consolidated active direction in `marketing/README.md`; old SERP/audit/research recommendations are explicitly historical when they conflict with D-012.
+- Homepage, event landing, header navigation, metadata, schema, `llms.txt`, and WhatsApp intake are factual event-first; DTF/kaos polos remain secondary routes.
+- Commercial-proof data model and reusable section are implemented on homepage, service pages, and portfolio. With zero publishable records, no proof placeholder renders publicly.
+- The form puts use case and use date before production details, preselects event/community on relevant pages, includes `days_to_target` in technical event data, and keeps exact date in the WhatsApp message.
+- Hero delivery uses the real Orplyn production image as a 1600px WebP (about 207 KB, down from the 442 KB JPEG source).
+- `npm run lint`: zero errors, 13 existing/pattern image-element warnings.
+- `npm run build`: passed.
+- `node --test tests/rendered-html.test.mjs`: 6/6 passed.
+- Local Docker rebuild passed; `orplyn-web` is healthy at `http://localhost:3010`. Homepage and event landing returned HTTP 200, event use case is selected, canonical/noindex are intact, and the commercial-proof section is absent while data is empty.
+- In-app browser runtime was unavailable for this session, so responsive screenshot QA remains a manual gate and is not claimed complete.
+
+Earlier verification history on 19 Juli 2026:
 
 - `npm run lint`: zero errors, 9 image optimization warnings only.
 - `npm run build`: passed.
@@ -384,14 +399,14 @@ Full deployment and migration runbooks:
 
 ## 10. Public Launch Roadmap
 
-### Phase 0: Owner data and commercial truth
+### Phase 0: Source website and commercial truth
 
 Deliverables:
 
-- Resolve remaining P0 gaps: domain, first-response target, quotation format, and owner approval for public claims.
-- Validate the implemented offer architecture: DTF satuan, event/community batch, and kaos polos.
+- Align active documentation and source website to event/community acquisition without publishing unverified outcome claims.
+- Keep DTF satuan and kaos polos accessible as secondary entry/inbound offers rather than equal campaign priorities.
 - Turn confirmed MOQ, lead time, payment, delivery, and pickup rules into website/WA-safe language.
-- Collect permissioned review/testimonial/case-study proof where permitted.
+- Prepare a data-driven commercial-proof area that renders only permissioned, verified records; collect the records separately from the owner.
 - Create simple package/range-price options for customer qualification; publish only after owner approval.
 
 Exit gate:
@@ -447,21 +462,15 @@ There is a repeatable publishing cadence and source tracking for profile or webs
 
 Start only after Phase 1 exit gate.
 
-Recommended initial structure:
+Recommended initial structure under D-012:
 
-- One campaign: `Search - DTF Satuan - Ciputat/Tangsel`; or
-- One campaign: `Search - Kaos Event/Komunitas - Tangsel/Jaksel`.
-- Choose one, based on gross profit, close rate, capacity, and deadline risk. Do not split the trial budget across both at launch.
+- One campaign only: `Search - Kaos Event/Komunitas - Tangsel/Jaksel`.
+- DTF satuan, kaos polos, dan layanan lain remain inbound routes and must not become parallel campaigns until a later owner decision.
 
 Landing mapping:
 
 - Event keywords -> `/layanan/kaos-event-komunitas`.
-- DTF/satuan keywords -> `/layanan/sablon-dtf-satuan`.
-- Clothing brand or special print -> `/layanan/produksi-clothing-brand`.
-- Bordir or seragam -> `/layanan/bordir-seragam`.
-- Jersey -> `/layanan/jersey-custom`.
-- Totebag -> `/layanan/totebag-merchandise`.
-- Kaos polos -> `/layanan/kaos-polos`.
+- Route lain tetap tersedia untuk organic/inbound traffic, bukan initial Ads destination.
 
 Initial operating rules:
 
@@ -587,6 +596,8 @@ Before using a raw asset:
 
 ## 15. Decision Log
 
+This section is chronological history, not a flat list of simultaneous instructions. Later decisions supersede earlier ones when they conflict; use `marketing/README.md`, the current status board, and Section 16 for active direction.
+
 ### 16 Juli 2026
 
 - Chose a lead-generation funnel, not ecommerce checkout, because pricing depends on product, quantity, artwork, material, and deadline.
@@ -661,23 +672,29 @@ Before using a raw asset:
 - Received and responded to the rank-1 owner feedback `owner-feedback-evolution-lens-2026-07-19.md`. Its seven points now govern priority: top-of-funnel volume before funnel polish, one event/community segment, separate acquisition/retention mechanisms, pilot the buyer's deadline risk, and translate future copy into event status/H-1-risk language only after evidence.
 - Recorded D-012 and evolved the previous D-011 interpretation. H-009/E-12 now test event deadline-risk handling as a possible first-order acquisition wedge; H-008/E-11 now test saved specifications only as a retention mechanism. Evidence from one experiment cannot validate the other.
 - Added `owner-feedback-response-plan-2026-07-19.md` with role mapping, concrete execution order, deferred work, measurement fields, and claim gates; synchronized the market-research reading order, findings register, experiment backlog, and this handoff.
-- Did not change or deploy website, GBP, WhatsApp, quotation, content, or Ads copy. `Aman dari drama H-1`, `tepat waktu`, `no drama`, `slot aman`, repeat-ease, and similar outcomes remain prohibited hypotheses until the relevant pilot, proof, permission, owner approval, and Public-Claim Gate pass.
+- At the owner-feedback response-plan checkpoint, no public channel was changed. The later D-013 implementation changed only factual website hierarchy/intake; `aman dari drama H-1`, `tepat waktu`, `no drama`, `slot aman`, repeat-ease, and similar outcomes remain prohibited hypotheses until the relevant pilot, proof, permission, owner approval, and Public-Claim Gate pass.
+- Consolidated active strategy across `AGENTS.md`, the marketing router, project brief, funnel, SEO, AI-search, Ads, WhatsApp, content, manual queue, findings register, and this handoff. Historical research was retained but marked superseded where needed.
+- Recorded D-013: factual event-first public architecture is allowed, while deadline-risk and repeat-ease outcomes remain gated. External account setup stays deferred.
+- Rebuilt the homepage around one featured event/community offer, moved DTF single and kaos polos into supporting roles, updated the event landing and SEO/entity copy, and reordered intake around use case plus date.
+- Added a commercial-proof publication contract, typed website data model, and reusable hidden-until-publishable section. No fake review, transaction, customer, quantity, or outcome was added.
+- Updated the owner-facing proof request and manual queue. M-06 is now the only `NEXT`; M-01 through M-05 and M-11 through M-13 are `LATER` while setup is deferred.
+- Added and visually inspected a 1600px WebP hero derived from the existing Orplyn production image. Local lint/build/render tests and Docker health passed; public deployment and responsive screenshot QA were still pending at this point.
 
 ## 16. Immediate Next Actions
 
-The next agent should not start by redesigning the website or polishing the funnel. Start here:
+Latest user direction on 19 Juli 2026 supersedes the previous sequencing note that deferred all website work. Active sequence is: consolidate conflicting documentation, finish a factual event-first source website, verify it, and prepare a gated commercial-proof surface. External account setup remains paused.
 
-Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. Keep exactly one item marked `NEXT`; current item is M-01, confirmation of GBP phone, hours, ownership, and real-world business name.
+Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. Keep exactly one item marked `NEXT`; current item is M-06, five representative event/community orders plus publication context and permission. M-01 through M-05 are intentionally `LATER` while external setup is deferred.
 
-1. Run one manual CTA-to-WhatsApp test and create the minimum operational lead log. Capture source, segment, event date, qualified, quote, sale, revenue, gross profit, response time, and lost reason; verify the owner baseline of 2-5 chats/week from actual records.
-2. Complete M-01 through M-05 in sequence and run E-01: correct GBP/NAP, obtain the official review link, and request authentic reviews from real customers without gating or incentives.
-3. Complete M-06 publication rights/context, then run E-05 with real event/community production proof. Do not attach deadline, bestseller, customer, quantity, or outcome claims without evidence and permission.
-4. Approve capacity, cut-off, rush-order, QC/rework, quotation, and admin/production ownership through M-07/M-08. These rules are required to accept event orders responsibly, not permission to advertise a deadline promise.
-5. Finish launch plumbing that enables acquisition: Cloudflare `Full (strict)`, Search Console, Google tag, end-to-end conversion verification, manual QA, and indexing decision.
-6. Run E-08 for referrals from verified event/repeat customers and E-03 as focused event/community demand generation. Keep DTF single as a secondary entry lane and do not split focus across unrelated segments.
-7. Route five eligible event orders into E-12. Record date-to-event, feasibility, cut-off, approval timing, revisions, target/actual completion, issues, sale, revenue, gross profit, and PIC feedback; then decide `continue`, `iterate`, or `stop` for H-009.
-8. Run E-11 only when a real repeat opportunity exists. Measure retrieval, changed fields, repeat requote time, repeat sale, revenue, and gross profit; decide H-008 separately.
-9. Keep public deadline/H-1 and repeat-ease copy, broad multi-segment campaigns, custom portal/CRM, and additional funnel polish deferred until their relevant evidence and gates pass.
+1. Finish the factual event-first homepage, event landing, WhatsApp intake, and gated commercial-proof component; keep DTF single and kaos polos accessible as secondary routes.
+2. Run lint, production build, rendered smoke tests, local container health, core-route checks, and responsive manual QA when browser tooling is available.
+3. Complete M-06 publication rights/context, then publish only verified event/community proof records. Do not attach deadline, bestseller, customer, quantity, or outcome claims without evidence and permission.
+4. Run one manual CTA-to-WhatsApp test and create the minimum operational lead log. Capture source, segment, event date, qualified, quote, sale, revenue, gross profit, response time, and lost reason; verify the owner baseline of 2-5 chats/week from actual records.
+5. Approve capacity, cut-off, rush-order, QC/rework, quotation, and admin/production ownership through M-07/M-08. These rules are required to accept event orders responsibly, not permission to advertise a deadline promise.
+6. When the user resumes external setup, complete M-01 through M-05, Cloudflare `Full (strict)`, GBP/NAP, Search Console, Google tag, conversion verification, indexing, and review acquisition.
+7. Run E-08 for referrals from verified event/repeat customers and E-03 as focused event/community demand generation. Do not split focus across unrelated segments.
+8. Route five eligible event orders into E-12 and decide `continue`, `iterate`, or `stop` for H-009; run E-11 only on a real repeat opportunity and decide H-008 separately.
+9. Keep public deadline/H-1 and repeat-ease copy, broad multi-segment campaigns, custom portal/CRM, and unsupported funnel polish deferred until their relevant evidence and gates pass.
 10. Only after launch, economics, admin, and Public-Claim Gates pass, test one approved event Search Ads offer without splitting the initial Rp100 ribu-Rp700 ribu/month budget.
 
 ## 17. Handoff Checklist For Every Future Session
