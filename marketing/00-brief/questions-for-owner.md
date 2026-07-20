@@ -12,6 +12,7 @@ Status 18 Juli 2026: Form Owner Tahap 1, Form Owner Tahap 2, dan Survey Customer
 - Apakah owner menyetujui wording publik untuk rush order, revisi desain, DP, refund, dan QC/rework?
 - Review, testimoni chat, nama/logo customer, dan case study mana yang sudah punya izin publikasi?
 - Foto workshop, proses produksi, packing, hasil jadi, tim, atau owner video mana yang boleh dipakai?
+- Untuk LP Google Ads event, apakah owner menyetujui atau ingin mengubah kandidat H1: `Bikin kaos event tanpa bingung bahan, teknik, dan minimum order.`?
 
 ## P1 - Sebelum Ads Diperbesar
 

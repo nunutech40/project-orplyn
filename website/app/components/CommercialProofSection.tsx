@@ -3,11 +3,17 @@ import type { CommercialProof } from "../lib/commercial-proofs";
 type CommercialProofSectionProps = {
   proofs: CommercialProof[];
   id?: string;
+  eyebrow?: string;
+  title?: string;
+  description?: string;
 };
 
 export function CommercialProofSection({
   proofs,
   id = "bukti-pesanan",
+  eyebrow = "BUKTI PESANAN TERVERIFIKASI",
+  title = "Detail pesanan nyata, bukan sekadar galeri.",
+  description = "Bukti dipilih dari sumber yang ditinjau dan disetujui pemilik untuk ditampilkan. Detail yang tidak tersedia tidak kami tambahkan.",
 }: CommercialProofSectionProps) {
   if (proofs.length === 0) return null;
 
@@ -16,13 +22,10 @@ export function CommercialProofSection({
       <div className="commercial-proof-inner">
         <div className="commercial-proof-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">BUKTI PESANAN TERVERIFIKASI</p>
-            <h2>Detail pesanan nyata, bukan sekadar galeri.</h2>
+            <p className="eyebrow eyebrow-dark">{eyebrow}</p>
+            <h2>{title}</h2>
           </div>
-          <p>
-            Bukti dipilih dari sumber yang ditinjau dan disetujui pemilik untuk
-            ditampilkan. Detail yang tidak tersedia tidak kami tambahkan.
-          </p>
+          <p>{description}</p>
         </div>
 
         <div className="commercial-proof-grid">

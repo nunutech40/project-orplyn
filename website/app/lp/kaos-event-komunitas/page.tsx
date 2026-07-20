@@ -60,8 +60,33 @@ const checkItems = [
   },
 ];
 
+const landingFaqs = [
+  {
+    question: "Minimum ordernya berapa?",
+    answer:
+      "Sablon manual mulai 12 pcs untuk 1 warna, dan 24 pcs untuk desain lebih dari 1 warna. Untuk kebutuhan satuan atau full-color, ada opsi DTF.",
+  },
+  {
+    question: "Berapa lama pengerjaannya?",
+    answer:
+      "Estimasi normal sablon manual 3-7 hari kerja, tergantung jumlah dan antrean. Tanggal acara dicek dulu bersama admin sebelum order dilanjutkan.",
+  },
+  {
+    question: "Belum tahu bahan atau teknik yang cocok, bagaimana?",
+    answer:
+      "Tidak masalah. Kirim jumlah, desain, dan tanggal acara. Aulia membantu mengecek bahan, teknik, serta MOQ sebelum kamu memutuskan.",
+  },
+  {
+    question: "Bisa datang ke workshop?",
+    answer:
+      "Bisa. Workshop ada di Ciputat, Tangerang Selatan. Kamu bisa datang atau pickup; janji datang disarankan agar kebutuhanmu langsung dicek admin.",
+  },
+];
+
 export default function EventCommunityAdsLandingPage() {
-  const commercialProofs = getCommercialProofs("kaos-event-komunitas");
+  const commercialProofs = getCommercialProofs("kaos-event-komunitas").filter(
+    (proof) => proof.id === "customer-feedback-plastisol-colour",
+  );
 
   return (
     <div className="ads-landing">
@@ -77,12 +102,11 @@ export default function EventCommunityAdsLandingPage() {
         />
         <div className="ads-hero-overlay" aria-hidden="true" />
         <div className="ads-hero-content">
-          <p className="eyebrow">ORPLYN · KAOS EVENT & KOMUNITAS · CIPUTAT</p>
-          <h1>Kaos event & komunitas dengan sablon manual.</h1>
+          <p className="eyebrow">SABLON MANUAL KAOS EVENT & KOMUNITAS · CIPUTAT</p>
+          <h1>Bikin Kaos Event Tanpa Bingung Bahan, Teknik, dan Minimum Order.</h1>
           <p className="ads-hero-copy">
-            Kirim jumlah, desain, tanggal acara, dan lokasi. Aulia membantu
-            mengecek bahan, teknik manual, minimum order, serta estimasi
-            produksi sesuai detail pesanan dan antrean.
+            Kirim desain, jumlah, dan tanggal acara. Aulia bantu cek pilihan
+            manual atau DTF, MOQ, serta estimasi sebelum produksi dilanjutkan.
           </p>
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
@@ -144,34 +168,40 @@ export default function EventCommunityAdsLandingPage() {
 
       <section className="ads-brief-section">
         <div className="ads-brief-copy">
-          <p className="eyebrow">CUKUP MULAI DARI EMPAT DETAIL</p>
-          <h2>Lebih cepat masuk ke pembahasan yang bisa dihitung.</h2>
+          <p className="eyebrow">SEBELUM MINTA ESTIMASI</p>
+          <h2>Supaya estimasi bisa dicek, siapkan 4 hal ini.</h2>
           <p>
-            Template WhatsApp langsung menanyakan jumlah, tanggal acara,
-            status desain, dan lokasi. Aulia lalu mengecek pilihan produksi
-            yang sesuai dengan brief tersebut.
+            Empat informasi ini cukup untuk membantu Aulia mulai mengecek
+            teknik, MOQ, dan estimasi yang sesuai kebutuhan acaramu.
           </p>
         </div>
         <ol className="ads-process-list">
           <li>
             <span>01</span>
             <div>
-              <h3>Buka template WhatsApp</h3>
-              <p>Lead ID dan sumber kunjungan ikut tercatat otomatis.</p>
+              <h3>Jumlah kaos</h3>
+              <p>Perkiraan jumlah membantu mengecek minimum order dan jalur produksi.</p>
             </div>
           </li>
           <li>
             <span>02</span>
             <div>
-              <h3>Lengkapi kebutuhan acara</h3>
-              <p>Tulis jumlah, tanggal pakai, desain, dan lokasi.</p>
+              <h3>Tanggal acara</h3>
+              <p>Tanggal dipakai dicatat sebelum admin mengecek jadwal.</p>
             </div>
           </li>
           <li>
             <span>03</span>
             <div>
-              <h3>Terima hasil pengecekan</h3>
-              <p>Admin mengonfirmasi opsi, MOQ, jadwal, dan estimasi harga.</p>
+              <h3>Status desain</h3>
+              <p>Sudah ada desain atau masih konsep, keduanya bisa dibahas.</p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h3>Lokasi atau pickup</h3>
+              <p>Pilih kebutuhan kirim atau pickup di workshop Ciputat.</p>
             </div>
           </li>
         </ol>
@@ -181,7 +211,10 @@ export default function EventCommunityAdsLandingPage() {
 
       <CommercialProofSection
         proofs={commercialProofs}
-        id="bukti-pesanan-event"
+        id="feedback-plastisol"
+        eyebrow="TANGGAPAN PELANGGAN"
+        title="Feedback Pelanggan tentang Hasil Plastisol."
+        description="Ditampilkan terpisah dari hasil order event agar konteks tekniknya tetap jelas."
       />
 
       <section className="local-presence-proof" aria-label="Lokasi workshop Orplyn">
@@ -208,6 +241,21 @@ export default function EventCommunityAdsLandingPage() {
           <a className="local-presence-map" href={business.maps} target="_blank" rel="noreferrer">
             <MapPin size={19} aria-hidden="true" /> Lihat lokasi di Google Maps
           </a>
+        </div>
+      </section>
+
+      <section className="section faq-section ads-faq-section" aria-label="Pertanyaan sebelum chat">
+        <div className="faq-heading">
+          <p className="eyebrow eyebrow-dark">PERTANYAAN SEBELUM CHAT</p>
+          <h2>Yang sering ditanyakan sebelum minta estimasi.</h2>
+        </div>
+        <div className="faq-list">
+          {landingFaqs.map((faq) => (
+            <details key={faq.question}>
+              <summary>{faq.question}</summary>
+              <p>{faq.answer}</p>
+            </details>
+          ))}
         </div>
       </section>
 

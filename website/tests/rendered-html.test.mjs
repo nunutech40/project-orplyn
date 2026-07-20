@@ -149,16 +149,19 @@ test("server-renders the focused event Ads landing with approved contextual proo
   const html = await response.text();
   assert.match(
     html,
-    /<h1>Kaos event &amp; komunitas dengan sablon manual\.<\/h1>/i,
+    /<h1>Bikin kaos event tanpa bingung bahan, teknik, dan minimum order\.<\/h1>/i,
   );
   assert.match(
     html,
-    /Aulia membantu\s+mengecek bahan, teknik manual, minimum order, serta estimasi\s+produksi sesuai detail pesanan dan antrean/i,
+    /Aulia bantu cek pilihan\s+manual atau DTF, MOQ, serta estimasi sebelum produksi dilanjutkan/i,
   );
   assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
   assert.match(html, /Minimum sablon manual untuk 1 warna/i);
   assert.match(html, /Estimasi produksi normal/i);
-  assert.match(html, /Lead ID dan sumber kunjungan ikut tercatat otomatis/i);
+  assert.match(
+    html,
+    /Empat informasi ini cukup untuk membantu Aulia mulai mengecek/i,
+  );
   assert.match(
     html,
     /rel="canonical" href="http:\/\/localhost:3010\/lp\/kaos-event-komunitas"/i,
@@ -185,13 +188,21 @@ test("server-renders the focused event Ads landing with approved contextual proo
   assert.doesNotMatch(html, /aria-label="Navigasi seluler"/i);
   assert.doesNotMatch(html, /Chat order satuan|Isi brief lengkap|Layanan lain/i);
   assert.match(html, /data-testid="ads-trust-bridge"/i);
+  assert.match(html, /Hasil order event yang bisa dilihat konteksnya/i);
   assert.match(html, /Kaos perpisahan BKB PAUD Kartini/i);
   assert.match(html, /Kaos peserta Hari Kartini/i);
   assert.match(html, /Kaos panitia BAGANA/i);
   assert.match(html, /order-event-panitia-bagana-dtf\.jpeg/i);
-  assert.match(html, /id="bukti-pesanan-event"/i);
-  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+  assert.match(html, /id="feedback-plastisol"/i);
+  assert.match(html, /Feedback pelanggan tentang hasil plastisol/i);
+  assert.doesNotMatch(html, /Pesanan kaos Hari Kartini di Ciputat/i);
   assert.doesNotMatch(html, /id="arsip-bukti-event"/i);
+  assert.match(html, /Supaya estimasi bisa dicek, siapkan 4 hal ini/i);
+  assert.match(html, /Jumlah kaos/i);
+  assert.doesNotMatch(html, /Lanjutkan Brief ke WhatsApp/i);
+  assert.match(html, /Yang sering ditanyakan sebelum minta estimasi/i);
+  assert.match(html, /Minimum ordernya berapa\?/i);
+  assert.doesNotMatch(html, /"@type":"FAQPage"/i);
   assert.match(html, /Sablon manual dikerjakan lewat screen/i);
   assert.match(html, /process-manual-squeegee\.jpeg/i);
   assert.match(html, /Boleh datang atau pickup di workshop/i);

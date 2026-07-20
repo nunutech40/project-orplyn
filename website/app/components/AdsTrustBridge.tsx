@@ -14,8 +14,8 @@ export function AdsTrustBridge() {
   return (
     <section className="ads-trust-bridge" data-testid="ads-trust-bridge">
       <div className="ads-section-heading">
-        <p className="eyebrow eyebrow-dark">BUKTI ORDER TERVERIFIKASI</p>
-        <h2>Lihat konteks ordernya, bukan hanya fotonya.</h2>
+        <p className="eyebrow eyebrow-dark">BUKTI PESANAN EVENT</p>
+        <h2>Hasil order event yang bisa dilihat konteksnya.</h2>
       </div>
 
       {evidence.eventCount.length > 0 && (
@@ -68,7 +68,9 @@ export function AdsTrustBridge() {
                 loading="lazy"
               />
               <div>
-                <p className="eyebrow eyebrow-dark">{proof.eventType}</p>
+                <p className="ads-proof-label">
+                  {proof.eventType} · {proof.materialAndTechnique} · {proof.quantityLabel} · {proof.locationLabel}
+                </p>
                 <h3>{proof.title}</h3>
                 <p>{proof.context}</p>
                 <dl>

@@ -62,6 +62,7 @@ Per arahan owner/user 20 Juli 2026:
 | `07-market-research/owner-feedback-evolution-lens-2026-07-19.md` | Latest owner priority direction, source-of-truth rank 1 |
 | `07-market-research/owner-direction-manual-printing-2026-07-20.md` | Latest owner offer-angle direction: foreground manual printing within event/community |
 | `07-market-research/hermes-feedback-006-009-response-2026-07-20.md` | Advisory feedback reconciliation, accepted gate-safe changes, disagreements, and owner gates |
+| `07-market-research/hermes-feedback-012-response-2026-07-20.md` | LP Ads conversion rewrite response: local gate-safe implementation and form/H1 owner gates |
 | `07-market-research/owner-feedback-response-plan-2026-07-19.md` | Active role mapping, sequence, deferrals, and claim gates |
 | `07-market-research/differentiation-product-strategy-2026-07-19.md` | Evolved acquisition/retention hypotheses and validation design |
 | `../business-data/findings-register.md` | Evidence status, hypotheses H-008/H-009, and decisions D-011/D-012 |

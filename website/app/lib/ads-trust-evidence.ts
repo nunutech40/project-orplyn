@@ -27,6 +27,7 @@ export type ContextualPortfolioEvidence = PublicationGate & {
   eventType: string;
   quantityLabel: string;
   materialAndTechnique: string;
+  locationLabel: string;
   context: string;
   image: string;
   imageAlt: string;
@@ -63,6 +64,7 @@ export const adsTrustEvidence: AdsTrustEvidence = {
       eventType: "EVENT SEKOLAH",
       quantityLabel: "Sekitar 15 pcs",
       materialAndTechnique: "Cotton combed 24s · DTF",
+      locationLabel: "Tangerang",
       context: "Kaos custom lengan panjang anak untuk perpisahan tahun pelajaran 2025/2026 di Tangerang.",
       image: "/proof/order-event-perpisahan-bkb-paud-kartini-dtf.jpeg",
       imageAlt: "Kaos custom anak untuk acara perpisahan BKB PAUD Kartini",
@@ -77,6 +79,7 @@ export const adsTrustEvidence: AdsTrustEvidence = {
       eventType: "EVENT SEKOLAH",
       quantityLabel: "Sekitar 15 pcs",
       materialAndTechnique: "Kaos PE · DTF",
+      locationLabel: "Tangerang",
       context: "Kaos custom peserta peringatan Hari Kartini PAUD/MI Bustanul Aulad di Tangerang.",
       image: "/proof/order-event-hari-kartini-bustanul-aulad-dtf.jpeg",
       imageAlt: "Kaos custom peserta acara Hari Kartini PAUD atau MI Bustanul Aulad",
@@ -91,6 +94,7 @@ export const adsTrustEvidence: AdsTrustEvidence = {
       eventType: "KAOS PANITIA",
       quantityLabel: "1.000 pcs",
       materialAndTechnique: "Cotton combed 24s · DTF",
+      locationLabel: "Jakarta",
       context: "Kaos panitia BAGANA untuk kebutuhan acara di Jakarta.",
       image: "/proof/order-event-panitia-bagana-dtf.jpeg",
       imageAlt: "Kaos panitia BAGANA hasil produksi Orplyn",
