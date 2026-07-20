@@ -164,12 +164,12 @@ export const services: Service[] = [
   },
   {
     slug: "kaos-event-komunitas",
-    title: "Kaos Custom Event & Komunitas",
+    title: "Sablon Manual untuk Kaos Event & Komunitas",
     eyebrow: "Untuk panitia, komunitas, kampus, dan acara",
     shortDescription:
-      "Kaos custom untuk panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
+      "Sablon manual untuk kaos panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
     description:
-      "Sampaikan jumlah, desain, tanggal pakai, dan lokasi. Admin Orplyn mengecek bahan, teknik, minimum order, serta estimasi produksi sebelum harga dan jadwal dikonfirmasi.",
+      "Sampaikan jumlah, desain, tanggal pakai, dan lokasi. Admin Orplyn mengecek bahan, teknik manual, minimum order, serta estimasi produksi sebelum harga dan jadwal dikonfirmasi.",
     image: "/images/hero-sablon.webp",
     imageAlt: "Hasil sablon penuh warna pada kaos hitam produksi Orplyn",
     idealFor: [
@@ -184,7 +184,7 @@ export const services: Service[] = [
       "Pilihan bahan 20s, 24s, dan 30s",
       "Konsultasi teknik sesuai desain dan jumlah",
     ],
-    methods: ["DTF", "Plastisol", "Discharge", "Rubber", "Fullprint"],
+    methods: ["Plastisol", "Rubber / pasta", "Discharge", "High density", "Efek khusus"],
     gallery: [
       "/images/hero-sablon.webp",
       "/images/sablon-pasta.jpg",
@@ -194,9 +194,10 @@ export const services: Service[] = [
     defaultLane: "batch",
     defaultUseCase: "Event / komunitas",
     orderFacts: [
-      "Sablon manual / plastisol minimum 12 pcs",
+      "Sablon manual 1 warna minimum 12 pcs",
+      "Desain lebih dari 1 warna minimum 24 pcs",
       "Perhitungan grosir manual mulai 100 pcs",
-      "Estimasi produksi sekitar 3-7 hari",
+      "Estimasi produksi normal sekitar 3-7 hari kerja",
     ],
   },
   {

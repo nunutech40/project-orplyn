@@ -26,6 +26,24 @@ ARAHAN AKTIF 19 JULI 2026
 - Setup akun eksternal ditunda atas instruksi user: GBP, Search Console, GA4/Google tag, indexing, dan Ads.
 - Satu-satunya item NEXT sekarang adalah M-06 karena owner sedang diminta mengirim bukti order event/komunitas.
 - Penundaan setup tidak menghapus launch gate. Item tersebut kembali aktif hanya setelah user meminta setup dilanjutkan.
+- Google Ads tetap OFF. Tidak ada perubahan account, tag ID, billing, campaign, push, atau deployment dari pekerjaan lokal ini.
+
+YANG SUDAH DISELESAIKAN AGENT SECARA LOKAL
+
+- Landing Ads event/community: `/lp/kaos-event-komunitas`.
+- Halaman SEO event/community tetap: `/layanan/kaos-event-komunitas`.
+- Empat slot proof sudah tersedia dan tersembunyi sampai publishable: bukti on-time, jumlah event, portfolio berkonteks, dan testimoni.
+- Skeleton lead log kosong: `Orplyn - Lead Log.csv`.
+- Definisi field lead log: `marketing/06-whatsapp-sales/lead-log-schema.md`.
+- Draft campaign, keyword, negative, bidding, dan geo: `marketing/04-google-ads/search-event-campaign-draft-2026-07-19.md`.
+
+INPUT YANG HANYA BISA DISELESAIKAN OWNER/USER
+
+1. Akses dan ownership akun Google serta billing Ads saat setup diaktifkan.
+2. ID Google tag/GA4/Ads yang nyata; jangan mengirim password.
+3. Lima bukti order event/community lengkap dengan konteks faktual.
+4. Izin publikasi terpisah untuk foto, desain/logo/wajah, nama, jumlah, timeline/outcome, dan kutipan.
+5. Approval offer event, harga/range, faktor harga, kapasitas/cut-off, serta wording komersial.
 
 ============================================================
 M-01 [LATER - SETUP DITUNDA] KONFIRMASI DATA GOOGLE BUSINESS PROFILE
@@ -163,7 +181,7 @@ Response rate:
 Catatan tema review:
 
 ============================================================
-M-06 [NEXT] MINTA LIMA ORDER DAN FOTO PALING REPRESENTATIF
+M-06 [NEXT - SEBAGIAN SELESAI] KURASI BUKTI ORDER DAN FOTO REPRESENTATIF
 ============================================================
 
 PIC: Owner
@@ -189,9 +207,12 @@ Lima order mempunyai konteks bisnis dan status hak publikasi yang jelas.
 
 HASIL:
 
-Tanggal diterima:
-Jumlah order lengkap:
-Folder/link aset:
+Tanggal diterima: 20 Juli 2026
+Jumlah order dengan konteks event/panitia eksplisit: 3
+Foto proses sablon manual: 8
+Izin penggunaan website dan iklan: dikonfirmasi owner
+Folder/link aset: `assets/fotoproduksi/` dan manifest internalnya
+Catatan: tiga order event saat ini adalah DTF; jangan dilabeli sebagai sablon manual. Bukti yang menghubungkan event dengan teknik manual dapat ditambahkan kemudian dan bukan penghalang untuk memakai portfolio yang sudah ada.
 
 ============================================================
 M-07 [WAITING M-06] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
@@ -200,6 +221,12 @@ M-07 [WAITING M-06] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
 PIC: Owner
 
 Yang perlu diputuskan:
+
+- Arah owner terbaru 20 Juli 2026: sablon manual menjadi sudut offer utama untuk event/komunitas.
+- Teknik dan aturan dasar sudah dikonfirmasi: manual mencakup plastisol, rubber/pasta, discharge, high density, glow, glitter/foil, flocking, dan superwhite. DTF tetap dipisahkan sebagai digital.
+- MOQ manual sudah dikonfirmasi: 12 pcs untuk 1 warna, 24 pcs untuk lebih dari 1 warna; estimasi normal 3-7 hari kerja tergantung jumlah dan antrean.
+- Aturan urgent sudah dikonfirmasi: cek jadwal, kapasitas, dan jenis pengerjaan terlebih dahulu; prioritasi hanya bila kondisi memungkinkan.
+- Masih perlu approval wording harga publik Rp50.000-Rp90.000/pcs, kapasitas angka aman/cutoff, dan klaim komersial/proof.
 
 - paket/range event/community sebagai offer pertama;
 - starting price/range DTF atau kaos custom satuan sebagai offer sekunder;
@@ -273,18 +300,22 @@ Lead ID batch:
 Bukti/screenshot:
 
 ============================================================
-M-10 [TODO] PILIH TEMPAT LEAD LOG
+M-10 [TODO] AKTIFKAN LEAD LOG DAN TENTUKAN PIC
 ============================================================
 
 PIC: User + Aulia
 
-Keputusan manual:
+Template teknis sudah selesai:
+
+`deliverables/launch-readiness/Orplyn - Lead Log.csv`
+
+Keputusan/tindakan manual:
 
 - Pilih Google Sheets, spreadsheet lokal, Notion, atau CRM lain.
 - Tentukan siapa yang mengisi dan siapa yang memeriksa mingguan.
-- Setujui field: Lead ID, source, campaign, produk, jumlah, qualified, quote, nilai quote, won/lost, revenue, gross profit, lost reason, dan response time.
-
-Setelah platform dipilih, agent dapat membuat templatenya.
+- Import template kosong bila memakai Google Sheets.
+- Setujui PIC dan jalankan satu test lead sampai won/lost.
+- Jangan menghapus field source, segment, tanggal event, qualified, quote, sale, revenue, gross profit, response time, dan lost reason.
 
 DONE WHEN:
 
@@ -377,6 +408,7 @@ PIC: User + Aulia + agent
 Tindakan manual:
 
 - Periksa homepage dan money pages pada ponsel serta desktop.
+- Periksa landing Ads lokal `/lp/kaos-event-komunitas` dan pastikan hanya ada satu aksi utama `Minta estimasi`.
 - Periksa telepon, alamat, jam, Maps, harga/offer, MOQ, lead time, dan proof.
 - Uji semua CTA WhatsApp.
 - Pastikan tidak ada klaim atau foto tanpa izin.
@@ -462,6 +494,8 @@ PIC: User + owner + agent
 Keputusan manual:
 
 - Pilot pertama hanya memakai offer event/community selama D-012 aktif.
+- Final URL tunggal: `https://orplyn.id/lp/kaos-event-komunitas`.
+- Review draft lokal: `marketing/04-google-ads/search-event-campaign-draft-2026-07-19.md`.
 - Setujui budget Rp100 ribu-Rp700 ribu per bulan.
 - Pastikan billing dan akses Google Ads aktif.
 - Pastikan qualified lead/converted lead dapat dicatat.
@@ -476,7 +510,7 @@ RINGKASAN URUTAN
 ============================================================
 
 1. Sekarang: M-06, lengkapi proof event/community dan izin publikasinya.
-2. Berikutnya: M-07 sampai M-10 untuk offer event, sales process, uji WhatsApp, dan lead log.
+2. Berikutnya: M-07 sampai M-10 untuk approval offer/harga, sales process, uji WhatsApp, dan mengoperasikan template lead log yang sudah siap.
 3. Setelah user melanjutkan setup: M-01 sampai M-05 dan M-11 sampai M-13.
 4. M-14 sampai M-16: QA final, buka indexing, dan submit ke Google.
 5. M-17: jalankan operasi mingguan.

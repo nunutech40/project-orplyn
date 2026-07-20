@@ -11,7 +11,7 @@ last_updated: 2026-07-19
 
 ## Status
 
-Belum diluncurkan dan sengaja ditunda. Domain final serta HTTPS sudah aktif; landing pages, form terqualifikasi, Lead ID, attribution, dan secondary conversion hook sudah disiapkan. Source website sedang diselaraskan ke event/community-first.
+Belum diluncurkan dan sengaja ditunda. Domain final serta HTTPS sudah aktif; local-only Ads landing, Lead ID, attribution, lead-log skeleton, dan secondary conversion hook sudah disiapkan. Source candidate belum dipush atau dideploy.
 
 Launch gate belum lulus karena Google tag/conversion, Search Console/indexing, approval copy/proof publik, capacity/economics, lead log, admin readiness, dan uji WhatsApp end-to-end belum selesai. Per arahan user 19 Juli 2026, seluruh setup eksternal dikerjakan setelah dokumentasi dan website source selesai.
 
@@ -44,7 +44,7 @@ Owner inputs for pilot:
 
 Budget trial Rp100 ribu-Rp700 ribu per bulan tidak layak dibagi ke banyak campaign. Selama D-012 aktif, pilot pertama hanya:
 
-`Search - Kaos Event/Komunitas - Tangsel/Jaksel`
+`Search - Kaos Event/Komunitas - Ciputat/Tangsel`
 
 DTF satuan, kaos polos, corporate, bordir, jersey, dan merchandise tidak menjadi parallel campaign. Setelah event/community mempunyai baseline qualified lead, quote, sale, gross profit, dan capacity yang sehat, owner dapat membuat decision baru untuk membuka segment berikutnya.
 
@@ -54,17 +54,23 @@ DTF satuan, kaos polos, corporate, bordir, jersey, dan merchandise tidak menjadi
 - jasa sablon kaos event Ciputat;
 - kaos panitia custom;
 - kaos komunitas custom;
-- produksi kaos acara Tangsel/Jaksel.
+- produksi kaos acara Ciputat/Tangerang Selatan.
 
 Keyword final harus divalidasi melalui Keyword Planner dan search-term data saat setup. Jangan menambahkan keyword DTF/satuan ke campaign event hanya untuk mengejar volume.
 
 ## Landing Page Requirement
 
-Pilot pertama mengarah ke `/layanan/kaos-event-komunitas`, bukan homepage umum. Ad, keyword, H1, order facts, proof, dan form harus memiliki message match yang sama.
+Pilot pertama mengarah ke campaign landing `/lp/kaos-event-komunitas`, bukan homepage umum atau halaman SEO. Ad, keyword, H1, order facts, proof, dan CTA WhatsApp harus memiliki message match yang sama.
 
-- Event/komunitas -> `/layanan/kaos-event-komunitas`.
+- Event/komunitas Ads -> `/lp/kaos-event-komunitas`.
+- Organic/local SEO event intent -> `/layanan/kaos-event-komunitas`.
 
 Route DTF, clothing brand, bordir, jersey, totebag, dan kaos polos tetap tersedia untuk SEO/inbound tetapi tidak menjadi Ads destination selama fokus event belum selesai.
+
+Campaign draft lokal, keyword exact/phrase, negative seed, bidding direction,
+geo gate, dan pre-activation checklist berada di
+`search-event-campaign-draft-2026-07-19.md`. Dokumen tersebut tidak memberi
+izin membuat account atau menyalakan Ads.
 
 Google requires destinations to be functional, useful, crawlable, accessible, and easy to navigate. Source website readiness must therefore include working common-device routes, original Orplyn content, clear navigation, no forced redirect/download, mobile usability, and a final URL on `orplyn.id`. Official references:
 

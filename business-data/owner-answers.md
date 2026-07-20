@@ -1,6 +1,6 @@
 # Owner Answers
 
-Last updated: 18 Juli 2026
+Last updated: 20 Juli 2026
 
 Dokumen ini hanya untuk jawaban owner/admin yang sudah diterima. Jangan mengisi asumsi marketing sebagai fakta. Sumber awal berasal dari formulir Word yang diisi pada 17 Juli 2026 oleh Aulia/Admin. Status domain diperbarui dari jawaban langsung user pada 18 Juli 2026:
 
@@ -8,7 +8,7 @@ Dokumen ini hanya untuk jawaban owner/admin yang sudah diterima. Jangan mengisi 
 - `deliverables/owner-research/Orplyn - Form Owner Tahap 2.docx`
 - `deliverables/owner-research/Orplyn - Survey Customer.docx`
 
-Catatan penting: checkbox "jawaban sudah diperiksa/disetujui owner" belum ditandai pada formulir. Data di bawah boleh dipakai untuk konfigurasi internal, kualifikasi lead, dan rencana kerja. Klaim publik seperti harga mulai, garansi, kapasitas, dan testimoni tetap perlu persetujuan eksplisit sebelum dipasang di website, GBP, atau iklan.
+Catatan penting: checkbox "jawaban sudah diperiksa/disetujui owner" belum ditandai pada formulir awal. Pembaruan teknik, MOQ, estimasi, harga indikatif, dan aturan urgent pada 20 Juli berasal dari jawaban langsung owner. Data boleh dipakai untuk konfigurasi internal, kualifikasi lead, dan local copy review. Harga publik, garansi, kapasitas, dan testimoni tetap memerlukan wording serta persetujuan publik yang eksplisit sebelum dipasang di website, GBP, atau iklan.
 
 ## P0 Public Launch
 
@@ -32,7 +32,7 @@ Order grosir secara umum disebut mulai 2 lusin atau 24 pcs, tetapi aturan per pr
 | --- | --- | ---: | ---: | --- |
 | Kaos polos | Bisa | 1 pcs | 6 pcs | 2 hari |
 | Sablon DTF | Bisa | 1 pcs | 12 pcs | 2 hari |
-| Manual/plastisol | Tidak | 12 pcs | 100 pcs | 3-7 hari |
+| Sablon manual | Tidak | 12 pcs untuk 1 warna; 24 pcs untuk desain lebih dari 1 warna | 100 pcs | 3-7 hari kerja, tergantung jumlah dan antrean |
 | Special ink | Tidak | 12 pcs | 100 pcs | 3-7 hari |
 | Bordir/seragam | Tidak | 6 pcs | 100 pcs | 3-7 hari |
 | Jersey custom | Tidak | 6 pcs | 100 pcs | 3-7 hari |
@@ -65,14 +65,32 @@ Paket yang ingin diuji:
 ## Pricing, Capacity, And Production
 
 - Harga mulai yang disebut admin: kaos polos mulai dari Rp33.000/pcs.
-- Harga sablon custom: menyesuaikan jenis sablon, ukuran desain, dan jumlah pesanan.
-- Harga boleh dipakai internal untuk qualification, tetapi belum boleh dipublikasikan sebagai klaim karena approval owner dan checkbox harga publik belum jelas.
-- Kapasitas produksi aman per minggu: belum tahu; menyesuaikan jumlah dan jenis pesanan.
-- Rush order: tergantung jumlah pesanan, tingkat kesulitan, deadline, antrean, dan ketersediaan.
+- Harga kaos sablon manual yang diberikan owner sebagai gambaran: sekitar Rp50.000-Rp90.000/pcs. Harga final menyesuaikan teknik, bahan, jumlah warna desain, posisi sablon, dan jumlah pesanan.
+- Harga indikatif tersebut dipakai untuk qualification dan draft offer; wording/range publik tetap menunggu persetujuan eksplisit owner.
+- Kapasitas produksi menyesuaikan antrean dan dapat menangani pesanan kecil maupun besar; angka kapasitas aman per minggu/bulan belum diberikan.
+- Pesanan urgent: customer harus menyampaikan kebutuhan dan deadline lebih dahulu. Admin mengecek jadwal, kapasitas, dan jenis pengerjaan; prioritas hanya diberikan bila kondisi memungkinkan.
 - Bahan kaos: 30s, 24s, 20s; bahan lain sesuai permintaan.
 - Ukuran normal: S-XL.
 - Biaya tambah size: +Rp5.000 untuk XXL, 3XL, 4XL, dan seterusnya.
 - Sample/proof sebelum produksi besar: tersedia dengan biaya setup awal seperti pecah warna, print film, jasa sablon, dan biaya proses lain. Jika lanjut produksi massal, biaya sample hangus karena sudah dipakai untuk setup awal.
+
+## Sablon Manual: Scope And Technique Notes
+
+Arahan langsung owner pada 20 Juli 2026: sablon manual menjadi sudut offer utama untuk acquisition event/komunitas. DTF tetap dipisahkan sebagai teknik digital untuk order satuan atau desain full color.
+
+| Teknik | Cocok untuk | Catatan owner |
+| --- | --- | --- |
+| Plastisol | Katun combed 20s-30s, full cotton; warna solid, detail kecil, logo brand | Perlu proses oven/heat curing |
+| Rubber / pasta | Katun combed dan carded; tulisan besar atau desain sederhana 1-2 warna | Elastis, menutup serat kain, permukaan agak tebal |
+| Discharge | Katun 100% warna gelap; vintage atau faded look | Tinta menyerap ke kain dan tidak terasa timbul |
+| High density | Katun tebal 20s-24s; logo timbul atau efek 3D | Efek timbul |
+| Glow in the dark | Katun dan polyester campuran; tulisan/gambar khusus | Efek menyala dalam gelap |
+| Glitter / foil | Katun dan polyester; desain glam, party, atau fashion | Efek mengkilap/metalik |
+| Flocking / beludru | Katun dan polyester; logo kecil atau desain elegan | Tekstur beludru; kurang cocok untuk detail kecil |
+| Superwhite | Katun warna gelap; warna terang di atas bahan gelap | Tinta agak menyerap |
+| DTF (digital, bukan headline manual) | Semua bahan; full color, gradasi, foto, atau desain ramai | Cocok untuk order satuan maupun custom |
+
+Harga dapat berubah mengikuti jumlah warna, ukuran desain, jenis bahan, dan jumlah pesanan.
 
 ## Payment, Delivery, And Policy
 
@@ -226,5 +244,5 @@ Sumber: `deliverables/owner-research/Orplyn - Survey Customer.docx`.
 - Omzet, order rata-rata, AOV, komposisi satuan vs grosir, margin, dan CAC sehat.
 - Tier harga grosir detail.
 - Produk yang sedang penuh kapasitas atau tidak ingin diiklankan.
-- Teknik yang dikerjakan sendiri vs melalui partner.
+- Teknik yang dikerjakan sendiri vs melalui partner, serta batas ketersediaan tiap teknik.
 - Checklist persetujuan owner untuk publikasi harga, proof, material produksi, foto workshop/tim, dan owner video.

@@ -4,15 +4,15 @@ import {
   ArrowRight,
   CheckCircle2,
   MapPin,
-  MessageCircle,
   Palette,
   Ruler,
   ScanLine,
   Shirt,
 } from "./components/Icons";
-import { QuoteBuilder } from "./components/QuoteBuilder";
 import { MobileQuoteCta } from "./components/MobileQuoteCta";
 import { CommercialProofSection } from "./components/CommercialProofSection";
+import { ProofSlider } from "./components/ProofSlider";
+import { WhatsAppQuickStart } from "./components/WhatsAppQuickStart";
 import { commercialProofs } from "./lib/commercial-proofs";
 import {
   business,
@@ -24,9 +24,9 @@ import {
 } from "./lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Jasa Sablon Kaos Event & Komunitas Ciputat",
+  title: "Sablon Manual Kaos Event & Komunitas Ciputat",
   description:
-    "Kaos custom untuk event dan komunitas di Orplyn, Ciputat. Kirim jumlah, desain, dan tanggal pakai untuk mengecek MOQ serta estimasi produksi.",
+    "Sablon manual untuk kaos event dan komunitas di Orplyn, Ciputat. Kirim jumlah, desain, dan tanggal pakai untuk mengecek MOQ serta estimasi produksi.",
   alternates: {
     canonical: "/",
   },
@@ -46,7 +46,7 @@ const faqs = [
   {
     question: "Berapa minimum order kaos event atau komunitas?",
     answer:
-      "Sablon manual atau plastisol memiliki minimum order 12 pcs. DTF dapat dimulai dari 1 pcs bila teknik tersebut lebih sesuai. Pilihan final mengikuti desain, bahan, jumlah, dan hasil pengecekan admin.",
+      "Sablon manual memiliki minimum order 12 pcs untuk 1 warna. Untuk desain lebih dari 1 warna, minimum pemesanan menjadi 24 pcs. DTF dapat dimulai dari 1 pcs bila teknik tersebut lebih sesuai. Pilihan final mengikuti desain, bahan, jumlah, dan hasil pengecekan admin.",
   },
   {
     question: "Berapa lama estimasi produksinya?",
@@ -184,23 +184,35 @@ export default function Home() {
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">ORPLYN · SABLON KAOS CUSTOM · CIPUTAT</p>
-          <h1>Kaos custom untuk event &amp; komunitas.</h1>
+          <p className="eyebrow">KAOS EVENT &amp; KOMUNITAS · WORKSHOP CIPUTAT</p>
+          <h1>Sablon manual untuk kaos event &amp; komunitas.</h1>
           <p className="hero-copy">
-            Sampaikan jumlah, desain, dan tanggal pakai. Admin Orplyn mengecek
-            pilihan bahan, minimum order, serta estimasi produksi sebelum
-            pesanan dilanjutkan.
+            Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia. Orplyn
+            bantu mengecek bahan, teknik manual, minimum order, dan estimasi
+            sesuai detail pesanan serta antrean produksi.
           </p>
           <div className="hero-actions">
-            <Link className="button button-primary" href="#quote">
-              <MessageCircle size={20} aria-hidden="true" />
-              Minta estimasi
-            </Link>
-            <Link className="button button-ghost-light" href="#hasil-produksi">
-              Lihat hasil produksi
-              <ArrowRight size={19} aria-hidden="true" />
-            </Link>
+            <WhatsAppQuickStart
+              whatsappNumber={business.whatsapp}
+              lane="batch"
+              label="Minta estimasi sablon manual"
+              className="button button-primary"
+              product="Sablon manual kaos event / komunitas"
+              useCase="Event / komunitas"
+              placement="homepage_hero_batch"
+            />
+            <WhatsAppQuickStart
+              whatsappNumber={business.whatsapp}
+              lane="single"
+              label="Chat order satuan"
+              className="button button-ghost-light"
+              placement="homepage_hero_single"
+            />
           </div>
+          <Link className="hero-proof-link" href="#hasil-produksi">
+            Lihat hasil produksi Orplyn
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </div>
         <div className="hero-location">
           <MapPin size={18} aria-hidden="true" />
@@ -209,9 +221,9 @@ export default function Home() {
       </section>
 
       <section className="capability-strip" aria-label="Aturan order utama Orplyn">
-        <span>FOKUS EVENT &amp; KOMUNITAS</span>
-        <span>TANGGAL PAKAI DICATAT</span>
-        <span>MANUAL MULAI 12 PCS</span>
+        <span>LANGSUNG CHAT AULIA</span>
+        <span>DTF MULAI 1 PCS</span>
+        <span>MANUAL 1 WARNA MULAI 12 PCS</span>
         <span>PICKUP DI CIPUTAT</span>
       </section>
 
@@ -324,6 +336,8 @@ export default function Home() {
 
       <CommercialProofSection proofs={homepageProofs} />
 
+      <ProofSlider />
+
       <section className="section why-section">
         <div className="why-image">
           <img
@@ -335,24 +349,25 @@ export default function Home() {
           />
         </div>
         <div className="why-content">
-          <p className="eyebrow eyebrow-dark">UNTUK PIC EVENT</p>
-          <h2>Mulai dari tanggal pakai, bukan istilah sablon.</h2>
+          <p className="eyebrow eyebrow-dark">KENAPA MULAI DI ORPLYN</p>
+          <h2>Nggak perlu menebak bahan dan teknik sendiri.</h2>
           <p className="lead-copy">
-            Sampaikan kebutuhan acara lebih dulu. Bahan dan teknik dibahas
-            setelah jumlah, desain, tanggal pakai, dan lokasi diketahui.
+            Ceritakan kebutuhan acaramu ke Aulia. Pilihan bahan, teknik,
+            minimum order, dan estimasi dibahas setelah jumlah, desain, tanggal
+            pakai, serta lokasi diketahui.
           </p>
           <ul className="check-list">
             <li>
               <CheckCircle2 aria-hidden="true" />
-              Tanggal pakai, jumlah, dan lokasi masuk sejak permintaan awal
+              Langsung masuk WhatsApp dengan template event atau satuan
             </li>
             <li>
               <Ruler aria-hidden="true" />
-              Minimum order dan estimasi normal terlihat sebelum masuk WhatsApp
+              DTF bisa mulai 1 pcs, sablon manual atau plastisol mulai 12 pcs
             </li>
             <li>
               <Palette aria-hidden="true" />
-              Konsultasi bahan dan teknik mengikuti desain serta penggunaan
+              Bahan dan teknik dibahas mengikuti desain serta penggunaan
             </li>
             <li>
               <MapPin aria-hidden="true" />
@@ -372,9 +387,9 @@ export default function Home() {
         </div>
         <ol className="process-list">
           {[
-            ["01", "Tentukan acara", "Masukkan kebutuhan dan tanggal kaos akan dipakai."],
-            ["02", "Kirim detail", "Pilih produk, jumlah, status desain, dan lokasi."],
-            ["03", "Terima estimasi", "Admin memeriksa bahan, teknik, MOQ, jadwal, dan harga."],
+            ["01", "Pilih jalur chat", "Pilih event / batch atau pesanan satuan."],
+            ["02", "Lengkapi template", "Tambahkan jumlah, tanggal pakai, desain, dan lokasi di WhatsApp."],
+            ["03", "Tunggu pengecekan", "Aulia memeriksa bahan, teknik, MOQ, jadwal, dan harga."],
             ["04", "Konfirmasi produksi", "Setujui detail, lakukan DP, lalu pilih pickup atau pengiriman."],
           ].map(([number, title, description]) => (
             <li key={number}>
@@ -388,11 +403,11 @@ export default function Home() {
 
       <section className="quote-section" id="quote">
         <div className="quote-copy">
-          <p className="eyebrow">MINTA ESTIMASI</p>
-          <h2>Cek kebutuhan kaos untuk acaramu.</h2>
+          <p className="eyebrow">LANGSUNG KE WHATSAPP</p>
+          <h2>Pilih skala pesananmu. Template chat sudah disiapkan.</h2>
           <p>
-            Masukkan jumlah, tanggal pakai, dan detail awal. Informasinya
-            langsung dikirim ke WhatsApp Aulia untuk diperiksa.
+            Tidak perlu mengisi form di website. Buka WhatsApp, lengkapi bagian
+            yang masih kosong, lalu kirim ke Aulia.
           </p>
           <div className="quote-highlights">
             <span>
@@ -409,10 +424,44 @@ export default function Home() {
             </span>
           </div>
         </div>
-        <QuoteBuilder
-          whatsappNumber={business.whatsapp}
-          initialUseCase="Event / komunitas"
-        />
+        <div className="quick-order-panel">
+          <article className="quick-order-option quick-order-option-primary">
+            <span className="quick-order-tag">JALUR UTAMA</span>
+            <h3>Event / produksi batch</h3>
+            <p>
+              Untuk panitia, komunitas, kampus, kantor, atau kebutuhan kelompok.
+              Sablon manual 1 warna mulai 12 pcs; desain lebih dari 1 warna
+              mulai 24 pcs.
+            </p>
+            <WhatsAppQuickStart
+              whatsappNumber={business.whatsapp}
+              lane="batch"
+              label="Minta estimasi sablon manual"
+              className="button button-dark"
+              product="Sablon manual kaos event / komunitas"
+              useCase="Event / komunitas"
+              placement="homepage_quick_order_batch"
+            />
+          </article>
+          <article className="quick-order-option">
+            <span className="quick-order-tag">SATUAN / COBA DULU</span>
+            <h3>Pesanan satuan</h3>
+            <p>
+              Untuk kaos personal, sampel, atau test print. DTF dan kaos polos
+              bisa dimulai dari 1 pcs.
+            </p>
+            <WhatsAppQuickStart
+              whatsappNumber={business.whatsapp}
+              lane="single"
+              label="Chat order satuan"
+              className="button button-outline"
+              placement="homepage_quick_order_single"
+            />
+          </article>
+          <p className="quick-order-note">
+            Sudah punya detail lengkap? <Link href="/kontak#quote">Isi brief lengkap</Link>.
+          </p>
+        </div>
       </section>
 
       <section className="section faq-section">

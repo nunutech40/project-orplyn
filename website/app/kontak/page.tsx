@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import {
   Camera,
   Clock3,
@@ -8,6 +7,7 @@ import {
   Navigation,
 } from "../components/Icons";
 import { QuoteBuilder } from "../components/QuoteBuilder";
+import { WhatsAppQuickStart } from "../components/WhatsAppQuickStart";
 import { business } from "../lib/site-data";
 
 export const metadata: Metadata = {
@@ -26,9 +26,9 @@ export default function ContactPage() {
         <p className="eyebrow">KONTAK & LOKASI</p>
         <h1>Hubungi Orplyn untuk cek harga dan waktu produksi.</h1>
         <p>
-          Isi detail produk, jumlah, target selesai, dan kesiapan desain, lalu
-          lanjutkan pembahasan dengan Aulia di WhatsApp. Untuk pickup atau
-          kunjungan, gunakan titik Google Maps resmi Orplyn.
+          Pilih template event/batch atau satuan untuk langsung chat Aulia.
+          Form lengkap tetap tersedia bila kamu ingin menyiapkan semua detail
+          sebelum membuka WhatsApp.
         </p>
       </section>
 
@@ -42,7 +42,22 @@ export default function ContactPage() {
               <br />
               Admin {business.adminHours}
             </p>
-            <Link href="#quote">Minta estimasi</Link>
+            <div className="contact-wa-links">
+              <WhatsAppQuickStart
+                whatsappNumber={business.whatsapp}
+                lane="batch"
+                label="Chat event / batch"
+                product="Kaos custom event / komunitas"
+                useCase="Event / komunitas"
+                placement="contact_card_batch"
+              />
+              <WhatsAppQuickStart
+                whatsappNumber={business.whatsapp}
+                lane="single"
+                label="Chat order satuan"
+                placement="contact_card_single"
+              />
+            </div>
           </div>
           <div>
             <Clock3 size={25} aria-hidden="true" />
@@ -83,8 +98,8 @@ export default function ContactPage() {
         </div>
 
         <div className="contact-quote" id="quote">
-          <p className="eyebrow eyebrow-dark">MINTA ESTIMASI</p>
-          <h2>Ceritakan detail pesananmu.</h2>
+          <p className="eyebrow eyebrow-dark">OPSIONAL · BRIEF LENGKAP</p>
+          <h2>Siapkan semua detail sebelum masuk WhatsApp.</h2>
           <QuoteBuilder whatsappNumber={business.whatsapp} compact />
         </div>
       </section>

@@ -1,7 +1,7 @@
 ---
 document_id: ORPLYN-COMMERCIAL-PROOF-001
 document_type: internal_publication_contract
-status: active_waiting_owner_evidence
+status: active_selected_proof_pending_local_review
 public_claim_status: prohibited_per_record_until_publishable
 last_updated: 2026-07-19
 ---
@@ -76,4 +76,6 @@ Tidak semua field harus ditampilkan. Gunakan data minimum yang cukup meyakinkan 
 
 ## Current Status
 
-Owner sedang diminta mengirim bukti transaksi/order memuaskan. Belum ada record yang boleh dirender sebagai commercial proof. Website harus tetap terlihat selesai dengan production portfolio yang ada; section commercial proof tidak muncul sampai minimal satu record `publishable` tersedia.
+Pada 20 Juli 2026 owner/user memberi arahan langsung untuk memakai dan memaksimalkan aset di `assets/proof/`. Audit `proof-asset-audit-2026-07-20.md` memilih dua record untuk kandidat lokal dengan wording factual dan minimisasi data pribadi: ulasan Google pesanan Hari Kartini untuk proof use case event/community, serta tanggapan pelanggan atas hasil plastisol untuk proof teknik manual. Kedua record ditinjau ulang oleh owner sebelum deployment publik dan dapat dicabut kapan saja.
+
+Record deadline, jumlah pesanan, nilai transaksi, repeat order, customer identity, dan outcome lain tetap tidak boleh dirender sampai memiliki redaction, context, permission, dan wording yang spesifik.

@@ -1,6 +1,6 @@
 # Orplyn Findings Register
 
-Last updated: 19 Juli 2026
+Last updated: 20 Juli 2026
 
 Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. Tujuannya agar strategi tidak berubah menjadi klaim tanpa bukti.
 
@@ -72,6 +72,15 @@ Dokumen ini memisahkan fakta, observasi publik, hipotesis, gap, dan keputusan. T
 - Customer voice: pelanggan butuh kualitas baik, harga sesuai budget, pilihan bahan/teknik yang jelas, dan katalog/pricelist/paket yang memudahkan estimasi.
 - Limit: baru satu interview customer/lost lead; belum ada data order 90 hari, AOV, margin, atau close rate.
 - Marketing implication: prioritas offer berikutnya adalah paket/range harga untuk event/komunitas dan DTF satuan, plus katalog bahan/jenis sablon yang membantu qualification tanpa menjanjikan harga palsu.
+
+### F-010 - Owner direction: foreground sablon manual
+
+- Finding: pada 20 Juli 2026 owner meminta kata-kata offer Orplyn menonjolkan sablon manual.
+- Source: arahan langsung owner, dicatat di `marketing/07-market-research/owner-direction-manual-printing-2026-07-20.md`.
+- Interpretation: sablon manual menjadi sudut offer utama di dalam fokus acquisition event/komunitas; DTF satuan dan kaos polos tetap inbound sekunder.
+- Detail confirmed: manual mencakup plastisol, rubber/pasta, discharge, high density, glow in the dark, glitter/foil, flocking/beludru, dan superwhite. MOQ 12 pcs untuk 1 warna atau 24 pcs untuk desain lebih dari 1 warna; estimasi normal 3-7 hari kerja bergantung jumlah dan antrean. DTF tetap dipisahkan sebagai teknik digital.
+- Limit: arahan ini belum membuktikan manual lebih unggul, lebih awet, lebih cepat, lebih aman deadline, atau bergaransi. Kapasitas angka aman, cutoff, QC/rework, izin proof, dan wording harga publik masih perlu dikonfirmasi.
+- Marketing implication: kandidat lokal memakai intent `sablon manual untuk event/komunitas`, dengan Public-Claim Gate tetap aktif dan harga indikatif Rp50.000-Rp90.000/pcs tidak dipublikasikan dahulu.
 
 ## Public Observations
 

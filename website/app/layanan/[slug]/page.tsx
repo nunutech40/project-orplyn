@@ -4,11 +4,11 @@ import {
   ArrowLeft,
   ArrowRight,
   CheckCircle2,
-  MessageCircle,
 } from "../../components/Icons";
 import { notFound } from "next/navigation";
 import { CommercialProofSection } from "../../components/CommercialProofSection";
-import { QuoteBuilder } from "../../components/QuoteBuilder";
+import { ManualPrintProcess } from "../../components/ManualPrintProcess";
+import { WhatsAppQuickStart } from "../../components/WhatsAppQuickStart";
 import { getCommercialProofs } from "../../lib/commercial-proofs";
 import {
   business,
@@ -114,10 +114,15 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <p className="eyebrow">{service.eyebrow}</p>
           <h1>{service.title}</h1>
           <p>{service.description}</p>
-          <Link className="button button-primary" href="#service-quote">
-            <MessageCircle size={20} aria-hidden="true" />
-            Minta estimasi
-          </Link>
+          <WhatsAppQuickStart
+            whatsappNumber={business.whatsapp}
+            lane={service.defaultLane}
+            label={service.defaultLane === "batch" ? "Chat order batch" : "Chat order satuan"}
+            className="button button-primary"
+            product={service.title}
+            useCase={service.defaultUseCase}
+            placement={`service_hero_${service.slug}`}
+          />
         </div>
       </section>
 
@@ -168,6 +173,8 @@ export default async function ServicePage({ params }: ServicePageProps) {
         </div>
       </section>
 
+      {service.slug === "kaos-event-komunitas" && <ManualPrintProcess />}
+
       <section className="section service-gallery-section">
         <div className="section-heading">
           <div>
@@ -196,20 +203,32 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
       <section className="service-quote-section" id="service-quote">
         <div>
-          <p className="eyebrow">MINTA ESTIMASI</p>
-          <h2>Minta estimasi untuk {service.title.toLowerCase()}.</h2>
+          <p className="eyebrow">LANJUT KE WHATSAPP</p>
+          <h2>Tanyakan {service.title.toLowerCase()} langsung ke Aulia.</h2>
           <p>
-            Kirim produk, jumlah, desain, dan target selesai agar admin dapat
-            memeriksa harga serta waktu produksi.
+            Template chat sudah memuat layanan yang sedang kamu lihat. Tinggal
+            lengkapi jumlah, desain, target selesai, dan lokasi.
           </p>
         </div>
-        <QuoteBuilder
-          whatsappNumber={business.whatsapp}
-          initialProductId={service.quoteProductId}
-          initialLane={service.defaultLane}
-          initialUseCase={service.defaultUseCase}
-          compact
-        />
+        <div className="service-quick-start">
+          <p>
+            {service.defaultLane === "batch"
+              ? "Cocok untuk kebutuhan kelompok atau produksi batch."
+              : "Cocok untuk pesanan satuan, sampel, atau test print."}
+          </p>
+          <WhatsAppQuickStart
+            whatsappNumber={business.whatsapp}
+            lane={service.defaultLane}
+            label={service.defaultLane === "batch" ? "Chat event / batch" : "Chat order satuan"}
+            className="button button-whatsapp"
+            product={service.title}
+            useCase={service.defaultUseCase}
+            placement={`service_quick_start_${service.slug}`}
+          />
+          <Link className="service-full-brief-link" href="/kontak#quote">
+            Isi brief lengkap <ArrowRight size={17} aria-hidden="true" />
+          </Link>
+        </div>
       </section>
 
       <section className="section related-section">

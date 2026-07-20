@@ -20,8 +20,8 @@ export function CommercialProofSection({
             <h2>Detail pesanan nyata, bukan sekadar galeri.</h2>
           </div>
           <p>
-            Konteks, jumlah, dan kutipan hanya ditampilkan setelah sumbernya
-            diperiksa dan customer mengizinkan publikasi.
+            Bukti dipilih dari sumber yang ditinjau dan disetujui pemilik untuk
+            ditampilkan. Detail yang tidak tersedia tidak kami tambahkan.
           </p>
         </div>
 

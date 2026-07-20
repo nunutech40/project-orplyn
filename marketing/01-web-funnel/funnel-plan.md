@@ -65,7 +65,8 @@ Secondary actions:
 - Main landing page event-first dengan DTF/kaos polos sebagai entry offer sekunder: implemented.
 - Local SEO intent Ciputat/Tangerang Selatan: implemented pada homepage dan metadata.
 - High-intent DTF/satuan: implemented pada `/layanan/sablon-dtf-satuan`.
-- High-intent event/community: implemented pada `/layanan/kaos-event-komunitas` sebagai future Ads destination.
+- High-intent event/community SEO: implemented pada `/layanan/kaos-event-komunitas` dengan navigasi dan konten mendalam.
+- Event/community Ads: implemented secara lokal pada `/lp/kaos-event-komunitas` dengan navigasi minim, satu CTA primer `Minta estimasi`, dan trust bridge yang tidak merender tanpa bukti publishable.
 - Use-case service pages: implemented untuk clothing brand, bordir/seragam, jersey, totebag, dan kaos polos sebagai secondary routes.
 
 ## Tracking Needed
@@ -80,6 +81,7 @@ Secondary actions:
 ## Commercial Proof Contract
 
 - Website source menyediakan model data dan reusable section untuk case study/review transaksi.
+- Ads landing menyediakan empat gate terpisah untuk bukti on-time, jumlah event, portfolio berkonteks, dan testimoni. Seluruh collection masih kosong.
 - Hanya record `publishable` yang boleh dirender.
 - Satu record publishable minimal memiliki use case, fakta order yang diizinkan, outcome yang dapat dibuktikan, media berizin, wording approved, dan source evidence internal.
 - Quote customer bersifat opsional dan membutuhkan izin kutip terpisah.

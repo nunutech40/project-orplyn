@@ -3,18 +3,19 @@
 import { MessageCircle, Send } from "lucide-react";
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import {
+  createLeadId,
+  createWhatsAppUrl,
+  getDaysToTarget,
+  getJakartaDate,
+  readAttribution,
+  rememberAttribution,
+} from "../lib/lead-attribution";
+import {
   getQuoteProduct,
   quoteProducts,
   WHATSAPP_PLACEHOLDER,
 } from "../lib/site-data";
 import type { FunnelLane } from "../lib/site-data";
-
-declare global {
-  interface Window {
-    dataLayer?: Array<Record<string, unknown>>;
-    gtag?: (...args: unknown[]) => void;
-  }
-}
 
 type QuoteBuilderProps = {
   whatsappNumber: string;
@@ -24,19 +25,6 @@ type QuoteBuilderProps = {
   compact?: boolean;
 };
 
-type Attribution = {
-  source: string;
-  medium: string;
-  campaign: string;
-  term: string;
-  content: string;
-  gclid: string;
-  gbraid: string;
-  wbraid: string;
-  landingPage: string;
-};
-
-const attributionStorageKey = "orplyn_attribution";
 const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
 const googleAdsLeadStartedLabel =
   process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL;
@@ -60,85 +48,6 @@ const useCases = [
   "Vendor / reseller",
   "Tim olahraga",
 ];
-
-function classifySource(params: URLSearchParams) {
-  if (params.get("utm_source")) {
-    return params.get("utm_source") || "website";
-  }
-
-  if (params.get("gclid") || params.get("gbraid") || params.get("wbraid")) {
-    return "google_ads";
-  }
-
-  const referrer = document.referrer.toLowerCase();
-  if (referrer.includes("google.")) return "google_organic";
-  if (referrer.includes("instagram.com")) return "instagram";
-  if (referrer) return "referral";
-  return "direct";
-}
-
-function readAttribution(): Attribution {
-  const params = new URLSearchParams(window.location.search);
-  let stored: Partial<Attribution> = {};
-
-  try {
-    stored = JSON.parse(sessionStorage.getItem(attributionStorageKey) || "{}");
-  } catch {
-    stored = {};
-  }
-
-  const attributionKeys = [
-    "utm_source",
-    "utm_medium",
-    "utm_campaign",
-    "utm_term",
-    "utm_content",
-    "gclid",
-    "gbraid",
-    "wbraid",
-  ];
-  const hasNewAttribution = attributionKeys.some((key) => params.has(key));
-  const value = (key: string, storedValue = "") =>
-    hasNewAttribution ? params.get(key) || "" : storedValue;
-  const currentLandingPage = `${window.location.pathname}${window.location.search}`;
-
-  return {
-    source: hasNewAttribution
-      ? classifySource(params)
-      : stored.source || classifySource(params),
-    medium: value("utm_medium", stored.medium),
-    campaign: value("utm_campaign", stored.campaign),
-    term: value("utm_term", stored.term),
-    content: value("utm_content", stored.content),
-    gclid: value("gclid", stored.gclid),
-    gbraid: value("gbraid", stored.gbraid),
-    wbraid: value("wbraid", stored.wbraid),
-    landingPage: hasNewAttribution
-      ? currentLandingPage
-      : stored.landingPage || currentLandingPage,
-  };
-}
-
-function getJakartaDate() {
-  return new Intl.DateTimeFormat("en-CA", {
-    timeZone: "Asia/Jakarta",
-  }).format(new Date());
-}
-
-function createLeadId() {
-  const date = getJakartaDate().replaceAll("-", "");
-  const suffix = crypto.randomUUID().slice(0, 6).toUpperCase();
-  return `ORP-${date}-${suffix}`;
-}
-
-function getDaysToTarget(targetDate: string) {
-  const target = Date.parse(`${targetDate}T00:00:00Z`);
-  const today = Date.parse(`${getJakartaDate()}T00:00:00Z`);
-
-  if (Number.isNaN(target) || Number.isNaN(today)) return undefined;
-
-  return Math.max(0, Math.ceil((target - today) / 86_400_000));
-}
 
 export function QuoteBuilder({
   whatsappNumber,
@@ -179,12 +88,7 @@ export function QuoteBuilder({
   const today = useMemo(() => getJakartaDate(), []);
 
   useEffect(() => {
-    const attribution = readAttribution();
-    try {
-      sessionStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
-    } catch {
-      // The brief still works when a browser blocks session storage.
-    }
+    rememberAttribution();
   }, []);
 
   function changeLane(nextLane: FunnelLane) {
@@ -308,7 +212,7 @@ export function QuoteBuilder({
 
     setStatus(`Membuka WhatsApp. Lead ID ${leadId} ikut dikirim untuk pencatatan.`);
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      createWhatsAppUrl(whatsappNumber, message),
       "_blank",
       "noopener,noreferrer",
     );

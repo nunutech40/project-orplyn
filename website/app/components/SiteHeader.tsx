@@ -1,8 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, MessageCircle, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { business } from "../lib/site-data";
+import { WhatsAppQuickStart } from "./WhatsAppQuickStart";
 
 const navigation = [
   { href: "/layanan/kaos-event-komunitas", label: "Kaos event" },
@@ -13,6 +16,35 @@ const navigation = [
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isAdsLanding = pathname.startsWith("/lp/");
+
+  if (isAdsLanding) {
+    return (
+      <header className="site-header campaign-header">
+        <div className="header-inner campaign-header-inner">
+          <span className="brand" aria-label="Orplyn">
+            <img
+              className="brand-logo brand-logo-header"
+              src="/brand/orplyn-horizontal-white.png"
+              alt="Orplyn"
+              width="1757"
+              height="428"
+            />
+          </span>
+          <WhatsAppQuickStart
+            whatsappNumber={business.whatsapp}
+            lane="batch"
+            label="Minta estimasi"
+            className="header-cta campaign-header-cta"
+            product="Kaos custom event / komunitas"
+            useCase="Event / komunitas"
+            placement="ads_lp_header"
+          />
+        </div>
+      </header>
+    );
+  }
 
   return (
     <header className="site-header">
@@ -35,10 +67,15 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link className="header-cta" href="/#quote">
-          <MessageCircle size={18} aria-hidden="true" />
-          Minta estimasi
-        </Link>
+        <WhatsAppQuickStart
+          whatsappNumber={business.whatsapp}
+          lane="batch"
+          label="Chat WhatsApp"
+          className="header-cta"
+          product="Kaos custom event / komunitas"
+          useCase="Event / komunitas"
+          placement="header_batch"
+        />
 
         <button
           className="menu-button"
@@ -59,10 +96,15 @@ export function SiteHeader() {
               {item.label}
             </Link>
           ))}
-          <Link href="/#quote" onClick={() => setOpen(false)}>
-            <MessageCircle size={18} aria-hidden="true" />
-            Minta estimasi
-          </Link>
+          <WhatsAppQuickStart
+            whatsappNumber={business.whatsapp}
+            lane="batch"
+            label="Chat event / batch"
+            product="Kaos custom event / komunitas"
+            useCase="Event / komunitas"
+            placement="mobile_menu_batch"
+            onStart={() => setOpen(false)}
+          />
         </nav>
       )}
     </header>

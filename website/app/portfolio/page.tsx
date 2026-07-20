@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, MessageCircle } from "../components/Icons";
 import { CommercialProofSection } from "../components/CommercialProofSection";
+import { WhatsAppQuickStart } from "../components/WhatsAppQuickStart";
 import { commercialProofs } from "../lib/commercial-proofs";
-import { portfolio } from "../lib/site-data";
+import { business, portfolio } from "../lib/site-data";
 
 export const metadata: Metadata = {
   title: "Portfolio Sablon, Bordir & Apparel Custom",
@@ -50,11 +49,14 @@ export default function PortfolioPage() {
           <p className="eyebrow eyebrow-dark">PUNYA REFERENSI SENDIRI?</p>
           <h2>Kirim desainmu untuk cek bahan, teknik, harga, dan waktu produksi.</h2>
         </div>
-        <Link className="button button-dark" href="/#quote">
-          <MessageCircle size={20} aria-hidden="true" />
-          Minta estimasi
-          <ArrowRight size={18} aria-hidden="true" />
-        </Link>
+        <WhatsAppQuickStart
+          whatsappNumber={business.whatsapp}
+          lane="batch"
+          label="Chat desain ini ke Aulia"
+          className="button button-dark"
+          useCase="Referensi dari portfolio"
+          placement="portfolio_cta_batch"
+        />
       </section>
     </>
   );

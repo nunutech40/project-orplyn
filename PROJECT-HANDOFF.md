@@ -1,6 +1,6 @@
 # Orplyn Project Handoff
 
-Last updated: 19 Juli 2026
+Last updated: 20 Juli 2026
 
 Dokumen ini adalah single source of truth untuk melanjutkan project Orplyn dari chat, model, atau agent lain. Baca dokumen ini sebelum mengusulkan strategi baru atau mengubah website.
 
@@ -19,22 +19,22 @@ Funnel web memiliki dua jalur order, tetapi acquisition aktif hanya berfokus pad
 | Workstream | Status | Next gate |
 | --- | --- | --- |
 | Business identity and location | Verified | Keep NAP consistent |
-| Commercial facts and offer | MOQ/lead time confirmed; event-first acquisition with DTF/kaos polos as secondary entry offers | M-06 verified proof, then owner approval for event price anchor and capacity |
+| Commercial facts and offer | Event-first acquisition; sablon manual is the primary offer angle, with confirmed technique scope, MOQ, and normal estimate; DTF/kaos polos are secondary inbound offers | M-06 verified proof, then owner approval for public event price anchor and capacity |
 | Product differentiation | Owner evolution recorded as D-012: H-009 acquisition and H-008 retention are separated | Five event orders for E-12; repeat opportunities for E-11; no public claim before gate |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Event-first release `20260719T082000Z-3890f1b` live at `https://orplyn.id` with intentional noindex | Responsive manual QA and end-to-end lead test |
+| Web funnel source | Event-first release `20260719T082000Z-3890f1b` remains live; local-only candidate adds direct WhatsApp and dedicated Ads landing `/lp/kaos-event-komunitas` | Owner review, responsive manual QA, and end-to-end lead test before any push/deployment |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
 | Shared VPS staging | Healthy; final-domain routes, edge TLS, and origin TLS active | Confirm Cloudflare Full (strict) mode |
 | Technical SEO foundation | Prepared; final domain intentionally noindex | Indexing decision and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
-| Analytics and Ads conversion | Lead ID, attribution, events, and checklist prepared | Lead log, real IDs, and offline conversion verification |
+| Analytics and Ads conversion | Lead ID, attribution, events, field schema, and empty Google Sheets-ready lead-log CSV prepared | Real lead operation, real tag IDs, and offline conversion verification |
 | Organic content system | Initial Instagram batch curated; commercial-proof publication contract and hidden-until-publishable component ready | Complete M-06 rights/context and build event/community proof first |
 | External market intelligence | Competitor refresh and owner evolution response complete | Validate H-009/E-12 for acquisition and H-008/E-11 for retention separately |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
-| Google Ads | Intentionally deferred | Pass Phase 1 launch gate |
+| Google Ads | Intentionally off; local event-only campaign draft and final URL prepared | Owner inputs, trust bridge, tracking/admin/economics gates, then one Search pilot |
 
 ## 2. Business Objective And Success Metrics
 
@@ -84,6 +84,7 @@ Google Ads jangan dioptimalkan hanya untuk clicks atau page views.
 - Area layanan: seluruh Indonesia; customer boleh datang/pickup, janji disarankan tetapi tidak wajib.
 - Pembayaran: transfer bank dan marketplace; DP 50%, pelunasan setelah produksi selesai dan sebelum barang dikirim.
 - Data minimum untuk hitung harga: jenis produk, jumlah pesanan, ukuran, bahan, jenis sablon, dan desain.
+- Arahan langsung owner pada 20 Juli 2026: sablon manual harus ditonjolkan dalam kata-kata offer untuk fokus event/komunitas. Arahan ini mengubah sudut copy, bukan menjadi bukti bahwa manual lebih unggul, lebih awet, lebih cepat, atau bergaransi.
 - Segmen paling kuat dari input owner/admin: event/komunitas, vendor, sekolah/kampus, dan kantor/perusahaan.
 - Target awal: 30-50 qualified lead/bulan, 10-20 customer baru/bulan, budget iklan percobaan Rp100 ribu-Rp700 ribu/bulan.
 - Layanan yang terlihat dari sumber dan asset: kaos polos, sablon custom, DTF, sablon manual, plastisol, discharge, rubber, puff, high density, foil, glitter, bludru, fullprint, bordir, jersey, totebag, dan apparel lain.
@@ -112,7 +113,7 @@ Instruksi user 19 Juli 2026 menunda pekerjaan setup eksternal. Item di bawah tet
 - WhatsApp nyata sudah dipasang; uji end-to-end sampai lead log masih wajib.
 - Target maksimal first response dan SOP admin disepakati.
 - Format quotation final dipilih: chat WhatsApp, PDF, spreadsheet, atau kombinasi.
-- Search Console, Google tag/Analytics, dan Ads conversion disiapkan.
+- Search Console, Google tag/Analytics, dan Ads conversion disiapkan dengan ID nyata.
 - Google Business Profile diaudit dan akses/PIC diverifikasi.
 - Approval owner untuk klaim publik: harga mulai, MOQ, lead time, QC/garansi, review/testimoni, dan material visual.
 
@@ -235,7 +236,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - Local runtime: Docker/OrbStack, container `orplyn-web`, URL `http://localhost:3010`.
 - Shared VPS staging: `https://orplyn.103-59-94-121.nip.io`.
 - VPS path: `/opt/orplyn`; container `orplyn-production-orplyn-web-1`.
-- Deployed image: `orplyn-web:20260719T013245Z-774f8fe` for `linux/amd64`, built with canonical `https://orplyn.id` and indexing disabled.
+- Deployed release: `20260719T082000Z-3890f1b`, built with canonical `https://orplyn.id` and indexing disabled.
 - Reverse proxy: existing Caddy, connected only through `kohnu-production_edge`; Orplyn exposes no host port.
 - Runtime guardrails: Caddy allows only GET/HEAD, non-root user, read-only filesystem, all capabilities dropped, 256 MiB memory, 0.5 CPU, 100 PID, bounded logs, healthcheck, and automatic restart.
 - Staging is protected by application `noindex`, blocked `robots.txt`, and Caddy `X-Robots-Tag`.
@@ -245,6 +246,7 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 - `/` - main lead funnel dan local intent page.
 - `/layanan/sablon-dtf-satuan` - DTF dan kaos custom mulai 1 pcs.
 - `/layanan/kaos-event-komunitas` - kebutuhan kelompok dan event.
+- `/lp/kaos-event-komunitas` - campaign landing lokal untuk future Google Ads; navigasi minim, satu CTA primer, dan selalu `noindex` agar tidak bersaing dengan halaman SEO.
 - `/layanan/produksi-clothing-brand` - clothing brand dan special print.
 - `/layanan/bordir-seragam` - bordir dan seragam.
 - `/layanan/jersey-custom` - jersey tim dan komunitas.
@@ -257,7 +259,10 @@ SOP awal tersedia di `marketing/06-whatsapp-sales/wa-sales-flow.md`.
 
 ### Conversion behavior
 
-- Form utama ada di `website/app/components/QuoteBuilder.tsx`.
+- Kandidat lokal memakai `website/app/components/WhatsAppQuickStart.tsx` sebagai jalur utama. CTA event/batch dan satuan langsung membuka WhatsApp Aulia dengan template yang dapat diedit.
+- `/lp/kaos-event-komunitas` hanya memakai template event/batch dan label aksi `Minta estimasi`; full navigation, jalur satuan, related services, dan form panjang tidak dirender pada route tersebut.
+- Quick-start membuat Lead ID, mempertahankan UTM/landing page/GCLID/GBRAID/WBRAID, dan memicu event teknis `whatsapp_quick_start` serta `whatsapp_open`. Klik tidak dianggap qualified lead.
+- Form lengkap di `website/app/components/QuoteBuilder.tsx` tetap tersedia sebagai opsi sekunder pada `/kontak#quote`; form tidak lagi menghalangi CTA utama homepage atau service pages.
 - Nomor placeholder bawaan: `6280000000000`.
 - Nomor owner/admin yang dipakai pada build lokal: `6282317579311`.
 - Jika placeholder masih aktif, form menampilkan status dan tidak membuka nomor palsu.
@@ -285,6 +290,8 @@ Important: `llms.txt` tidak menjamin sebuah AI akan merekomendasikan Orplyn. Pub
 
 Latest local verification on 19 Juli 2026 after D-013:
 
+- Atas arahan owner, local-only conversion candidate mengubah homepage, header, mobile sticky CTA, service pages, portfolio, footer, dan privacy CTA menjadi direct-to-WhatsApp. Hero lokal sekarang menjual kemudahan faktual: buyer tidak perlu memilih teknik sendiri, sementara event/community tetap jalur acquisition utama dan satuan tetap sekunder.
+- Kandidat ini belum dipush atau dideploy. Public release `20260719T082000Z-3890f1b` tetap tidak berubah.
 - Documentation audit consolidated active direction in `marketing/README.md`; old SERP/audit/research recommendations are explicitly historical when they conflict with D-012.
 - Homepage, event landing, header navigation, metadata, schema, `llms.txt`, and WhatsApp intake are factual event-first; DTF/kaos polos remain secondary routes.
 - Commercial-proof data model and reusable section are implemented on homepage, service pages, and portfolio. With zero publishable records, no proof placeholder renders publicly.
@@ -292,8 +299,8 @@ Latest local verification on 19 Juli 2026 after D-013:
 - Hero delivery uses the real Orplyn production image as a 1600px WebP (about 207 KB, down from the 442 KB JPEG source).
 - `npm run lint`: zero errors, 13 existing/pattern image-element warnings.
 - `npm run build`: passed.
-- `node --test tests/rendered-html.test.mjs`: 6/6 passed.
-- Local Docker rebuild passed; `orplyn-web` is healthy at `http://localhost:3010`. Homepage and event landing returned HTTP 200, event use case is selected, canonical/noindex are intact, and the commercial-proof section is absent while data is empty.
+- `node --test tests/rendered-html.test.mjs`: 7/7 passed, termasuk direct WhatsApp templates dan optional full-brief contact path.
+- Local Docker rebuild passed; `orplyn-web` is healthy at `http://localhost:3010`. Homepage and event landing returned HTTP 200; canonical/noindex and proof gating remain intact.
 - Release `orplyn-web:20260719T082000Z-3890f1b` deployed successfully to `/opt/orplyn`. All deployment routes returned HTTP 200, canonical matched `https://orplyn.id/`, intentional noindex remained active, and live HTML contained the event-first H1, selected event use case, date field, WebP hero, and no empty commercial-proof section.
 - Public WebP returned 200 as `image/webp`, 212,134 bytes, and `CF-Cache-Status: HIT`. Orplyn, Kohnu API/web/Postgres, personal-brand containers, and 9Router remained up; `kohnu.com`, redirected `app.kohnu.com`, and the 9Router dashboard resolved to HTTP 200.
 - In-app browser runtime was unavailable for this session, so responsive screenshot QA remains a manual gate and is not claimed complete.
@@ -466,18 +473,19 @@ Start only after Phase 1 exit gate.
 
 Recommended initial structure under D-012:
 
-- One campaign only: `Search - Kaos Event/Komunitas - Tangsel/Jaksel`.
+- One campaign only: `Search - Kaos Event/Komunitas - Ciputat/Tangsel`.
 - DTF satuan, kaos polos, dan layanan lain remain inbound routes and must not become parallel campaigns until a later owner decision.
 
-Landing mapping:
+Landing mapping under D-014:
 
-- Event keywords -> `/layanan/kaos-event-komunitas`.
+- Event Ads keywords -> `/lp/kaos-event-komunitas`.
+- Event organic/local SEO -> `/layanan/kaos-event-komunitas`.
 - Route lain tetap tersedia untuk organic/inbound traffic, bukan initial Ads destination.
 
 Initial operating rules:
 
 - Use high-intent Search first.
-- Start with Jabodetabek while allowing broader shipping language only where relevant.
+- Start with presence-only targeting in Ciputat/Tangerang Selatan. Expand to Jabodetabek only after owner-approved healthy CPA, higher budget, and available admin/production capacity.
 - Build negative keyword list for jobs, tutorials, machines, ink supplies, templates, free designs, and unrelated DIY intent.
 - Do not launch Performance Max before reliable conversion data and enough creative assets.
 - Do not scale based on cheap clicks. Scale based on qualified leads and sales.
@@ -682,17 +690,55 @@ This section is chronological history, not a flat list of simultaneous instructi
 - Updated the owner-facing proof request and manual queue. M-06 is now the only `NEXT`; M-01 through M-05 and M-11 through M-13 are `LATER` while setup is deferred.
 - Added and visually inspected a 1600px WebP hero derived from the existing Orplyn production image. Local lint/build/render tests and Docker health passed.
 - Deployed release `20260719T082000Z-3890f1b` to the existing isolated Orplyn stack. Public route/canonical/noindex verification passed, live event-first HTML and proof gating were confirmed, Cloudflare served the WebP from cache, and neighboring VPS services stayed healthy. Responsive screenshot QA remains pending because the in-app browser runtime was unavailable.
+- Owner requested a local-first iteration before any push or deployment. Built a tracked direct-to-WhatsApp candidate with separate editable templates for event/batch and single orders, moved the long form to an optional contact-page path, and rewrote the hero around the verified buyer benefit of getting help choosing materials and techniques. No deadline-risk, quality, guarantee, testimonial, price, or capacity claim was added; public release remains unchanged pending owner approval.
+- On `2026-07-19`, completed the read-and-map checkpoint for owner feedback `ORPLYN-OWNER-FEEDBACK-001`, `ORPLYN-OWNER-FEEDBACK-002`, `ORPLYN-OWNER-FEEDBACK-003`, and `ORPLYN-OWNER-FEEDBACK-004`. No website code, public copy, campaign, indexing, deployment, or publication was changed during this checkpoint.
+- Integrated direction from feedback 001-004: event/community remains the sole acquisition focus; top-of-funnel volume precedes further funnel polish; deadline-risk handling is the H-009/E-12 acquisition hypothesis; saved specifications remain the H-008/E-11 retention hypothesis; the first paid channel is Google Search only after launch gates; SEO runs in parallel; Meta is deferred to later retargeting/proof roles; and all SEO/Ads pages remain under paths on the single canonical domain `orplyn.id`, not a separate domain or subdomain.
+- Recorded the trust-bridge decision model from `ORPLYN-OWNER-FEEDBACK-004`: `p(beli) = p(kenal) x p(percaya) x p(mampu bayar) x ...`, while an offer is rejected when `Value(customer) < Cost + Risk + Effort`. Ads can buy more awareness/intent capture, but cannot substitute for verified trust; for cold paid traffic, event proof and risk reduction must be real, permissioned, and visible before spend begins.
+- Classified verified/internal facts separately from hypotheses. Owner-reported facts include the event/community priority across frequency, revenue, margin, and repeat; the current 2-5 new chats/week baseline; the real WhatsApp/admin/domain; and the active single-domain infrastructure. They remain owner-reported rather than lead-log/audit-verified where noted. Assumptions requiring tests include representative buyer fear/status language, H-009/H-008 outcomes, benchmark CPC/CVR/ROI and derived CPA, a 10-30-click/day learning floor, exact Search-vs-Meta economics for Orplyn, conversion lift from a thicker trust bridge, and any SEO-ranking benefit attributed to subfolders.
+- Found no direct conflict between feedback 001-004 and the AGENTS.md Non-Negotiable Rules because every feedback document explicitly preserves the Public-Claim Gate and forbids launching Ads now. Operational tensions remain open: feedback 001 prioritizes GBP/reviews and feedback 002 calls for parallel SEO, while the current AGENTS.md work order and latest user instruction defer external setup; feedback 002 narrows initial geo to Ciputat/Tangerang Selatan while older owner data names Jabodetabek as the three-month priority; its 10-30-click/day floor can exceed the owner trial budget of Rp100 ribu-Rp700 ribu/month; feedback 004 says GCLID capture is pending while current source/handoff records show capture hooks already exist but tag IDs, end-to-end verification, lead log, and offline conversion import do not. Current timing rules win, and the remaining items require reconciliation before campaign design rather than silent selection.
+- Recorded a documentation sync gap: the requested repo files for feedback 002-004 were absent from `marketing/07-market-research/`. This checkpoint read their owner-authored repo-ready sources in Hermes (`Orplyn-Feedback-Channel-Strategy-Repo-Ready.md`, `Orplyn-Feedback-Domain-Architecture-Repo-Ready.md`, and `Orplyn-Feedback-Trust-Bridge-Repo-Ready.md`) and did not copy or publish them during the read-only strategy phase.
+- Set the per-role follow-up order by event impact, without authorizing execution: product/content first gathers M-06 event records, context, redaction, and publication permission; designer/engineer then prepares a mobile-first contextual case structure plus lead-log/tracking requirements without invented proof; marketer validates the baseline and activates only gated event/community owned demand before proposing one Search pilot; copywriter maps factual proof to buyer risk/status language but keeps every outcome line internal until its claim gate passes. Non-event paid landing examples remain deferred under D-012.
+- Reaffirmed both hard boundaries from feedback 001-004: no testimonial, customer, event count, on-time result, guarantee, price, capacity, or risk-reduction outcome becomes public without real evidence, permission, relevant pilot, operating rules, and owner-approved wording; Google Ads remains off until at minimum the event trust bridge, conversion tracking, lead log/offline outcome loop, offer, admin readiness, economics, and all AGENTS.md launch gates are ready.
+- Recorded D-014: the single future Google Ads destination is `/lp/kaos-event-komunitas` on the canonical `orplyn.id` domain. The existing `/layanan/kaos-event-komunitas` remains the deep, navigable SEO page; the `/lp/` route is a campaign-canonical, permanently `noindex` conversion page with minimal chrome and one repeated primary action, `Minta estimasi` to tracked event WhatsApp. This prevents campaign message leakage without creating a separate domain/subdomain or competing organic page.
+- Implemented D-014 locally only. The landing uses factual assistance with material, technique, MOQ, and schedule selection; it does not claim deadline safety, on-time performance, guarantee, customer count, price, capacity, or testimonial. Four distinct trust collections exist for on-time records, aggregate event counts, contextual portfolio, and testimonials, but each collection is empty and the component returns `null` until evidence, publication permission, owner approval, and `publishable` status all pass.
+- Added the empty Google Sheets-ready `deliverables/launch-readiness/Orplyn - Lead Log.csv` plus `marketing/06-whatsapp-sales/lead-log-schema.md`, covering source/campaign, event date, qualified lead, quote, sale, revenue, gross profit, response time, lost reason, click identifiers, and offline conversion state. No fabricated lead row was added; owner/user must still select the operating platform/PIC and run real leads through it.
+- Added `marketing/04-google-ads/search-event-campaign-draft-2026-07-19.md` with exact/phrase event intent, negative seeds, one theme per ad group, Manual CPC/Maximize Clicks direction, strict Ciputat/Tangerang Selatan geo, and a gated Jabodetabek expansion. No account, AW/G tag ID, billing, campaign, push, deployment, indexing, or ad activation occurred; Google Ads remains OFF.
+- Final local verification for D-014 passed: `git diff --check` clean; lint 0 errors with 17 existing/new raw-image optimization warnings; production build successful; all 8 rendered smoke tests passed; Docker rebuilt `orplyn-web` healthy; `/`, `/layanan/kaos-event-komunitas`, and `/lp/kaos-event-komunitas` returned 200; Ads landing emitted self-canonical plus `noindex, follow`, exactly three repeated `Minta estimasi` WhatsApp links, no full navigation, no trust placeholder, and no prohibited deadline/guarantee/testimonial wording. Responsive screenshot QA remains pending because the browser runtime reported no available browser.
+
+### 20 Juli 2026
+
+- Recorded the latest direct owner direction as `ORPLYN-OWNER-DIRECTION-005` in `marketing/07-market-research/owner-direction-manual-printing-2026-07-20.md`: foreground sablon manual in the offer wording.
+- Reconciled the direction with D-012 and D-014: event/community remains the sole acquisition segment; `/lp/kaos-event-komunitas` remains the Ads route; `/layanan/kaos-event-komunitas` remains the deep SEO route; DTF single and kaos polos remain secondary inbound offers.
+- Owner then confirmed the manual scope: plastisol, rubber/pasta, discharge, high density, glow in the dark, glitter/foil, flocking/beludru, and superwhite. DTF remains a digital technique and a secondary inbound lane, not a manual-event headline.
+- Owner confirmed manual MOQ and timing: 12 pcs for one color, 24 pcs for designs with more than one color, and a normal estimate of 3-7 working days depending on quantity and queue. Urgent orders must be checked against schedule, capacity, and work type; no priority or deadline outcome is promised.
+- Implemented the resulting factual copy pass locally only: homepage, event SEO service page, and Ads landing now foreground manual printing for event/community; the tracked WhatsApp template identifies the manual-event need. The Ads route remains `/lp/kaos-event-komunitas` and stays `noindex`.
+- Owner supplied an indicative manual-shirt range of Rp50.000-Rp90.000/pcs, dependent on technique, material, colors, placement, and quantity. It is recorded for qualification but deliberately not published pending explicit public-wording approval.
+- The Public-Claim Gate remains fully active. No local copy claims that manual is better, more durable, faster, on-time, guaranteed, or otherwise superior. Capacity numbers, cutoff, QC/rework, proof publication, and public price approval remain open.
+- Local verification after the manual copy pass: lint completed with 0 errors and 17 existing raw-image warnings; production build passed; all 8 rendered tests passed; Docker rebuilt and `orplyn-web` is healthy; the local Ads landing returned HTTP 200 with H1 `Sablon manual untuk kaos event & komunitas.` No push, deployment, indexing change, account setup, or Ads activation occurred.
+- Owner then directed the team to use the supplied `assets/proof/` materials rather than leaving them as archive-only. The proof audit selected a Google review and Hari Kartini order as factual event/community evidence, plus a customer response beside a plastisol output as factual manual-technique evidence. Both are now rendered in the local homepage, event SEO service page, and `/lp/kaos-event-komunitas`; DTF is not mislabeled as manual, and neither proof carries a quantity, deadline, capacity, guarantee, or universal quality claim.
+- Proof integration verification passed locally: lint had 0 errors, production build and all 8 rendered tests passed, `orplyn-web` is healthy, and the Ads landing HTML contains both selected proof cards plus their local image assets. No public deployment or Ads activation occurred.
+- Before the next local review, the public derivative of the Hari Kartini Google-review screenshot was cropped to remove the reviewer display name while preserving the review text and product photo. The supplied original remains internal under `assets/proof/`; only the redacted derivative is web-referenced.
+- Reworked proof presentation after local review found that fixed-height `object-fit: cover` cards cropped the evidence and made review text unreadable. Commercial proof images now use full-frame `contain`; a separate interactive proof slider presents all eight owner-authorized proof assets one at a time with next/previous controls, item indicators, full-size access, and factual source-context labels. It is available on the local homepage and event Ads landing. Lint stayed at 0 errors with 18 raw-image warnings; production build and 8 rendered tests passed. Browser-driven visual QA remains pending because no browser runtime is available.
+- Read advisory Hermes feedback 006-009 from its index and recorded the response in `marketing/07-market-research/hermes-feedback-006-009-response-2026-07-20.md`. Implemented only gate-safe work: an event/manual process block on LP and event SEO page; LP workshop presence with NAP, hours, owner-confirmed visit/pickup, and Google Maps link; and proof placement correction. The LP now keeps only two immediately visible event/manual proof cards, while the full eight-item slider stays on the homepage as a cross-service archive.
+- Constructive disagreements are explicit: filtering proof is accepted for human message-match, but the unverified claim that a cross-segment proof slider automatically harms Google Quality Score/CPC is rejected; D-015 requires manual to remain foregrounded, so the LP H1 combines need and method rather than removing manual; payment risk-reversal and lighter WhatsApp intake are deferred until owner approval/data. The Maps recommendation is implemented as a direct map link rather than an iframe because the verified short Maps URL is lighter and sufficient for verification.
+- Geo and public price remain owner gates. Inbound can continue to serve Indonesia, while the existing paid pilot remains Ciputat/Tangerang Selatan unless owner explicitly selects national targeting or an expansion rule. The owner-question list now asks for that paid-geo decision, expansion metric, and approval of public Rp50.000-Rp90.000 manual-price wording. No Ads, deployment, indexing, tag, or public price activation occurred.
+- Final local verification after Hermes response: lint 0 errors (18 existing raw-image warnings), production build passed, 8 rendered tests passed, Docker rebuilt successfully, and `http://localhost:3010/lp/kaos-event-komunitas` returned HTTP 200 with the revised need-plus-manual H1, craft-process block, and local workshop trust block. The off-segment proof slider identifier is absent from the LP.
+- Normalized the owner-supplied `assets/fotoproduksi/` archive for human/AI use without altering image pixels or publishing any new asset. It now separates four contextual order photos under `orders/` from eight production-process photos under `process/`, uses stable ASCII filenames, and includes `ASSET-MANIFEST.md` with confirmed context, relevance, and per-asset public-claim boundaries. Two legacy filenames had embedded `/` characters and had unintentionally formed nested directories; those paths are eliminated.
+- The new asset audit confirms three order photos have explicit event/panitia context, one is class/community context pending event confirmation, and all four contextual order photos currently documented are DTF or DTF combinations. They may support factual event/volume context after permission but are not evidence of manual printing. The eight manual-process images can substantiate the visible process only; they must not be linked to a named order, customer, deadline, quantity, quality outcome, or technique detail not confirmed by owner.
+- Recorded owner clarification that many customer chats contain only design/order exchange rather than the event name. Such chat evidence is now classified `customer feedback - event context unknown` until a message or owner confirmation supplies the use-case context. It is not discarded, but it cannot be used to prove an event/community order in the Ads LP.
+- Owner then confirmed permission to use the existing production-photo archive for website and advertising. The local Ads LP now renders three authorized contextual event/panitia portfolios (Perpisahan BKB PAUD Kartini, Hari Kartini PAUD/MI Bustanul Aulad, and panitia BAGANA) through the existing gated trust bridge, plus a factual manual squeegee-process photo in the craft section. The event portfolio captions retain their real DTF techniques; manual-process media is not falsely attached to a named order. The later request for one or two event/manual order examples is deferred and does not block the current local candidate.
+- Replaced the three repeated primary CTA labels on the local Ads LP (hero, final section, and mobile sticky CTA) from `Minta estimasi sablon manual` to `Cek kebutuhan & minta estimasi`. This is a single, consistent direct-to-WhatsApp action that frames the verified consultation benefit before quotation; it does not add a second CTA, alter the WhatsApp template, or change tracking.
 
 ## 16. Immediate Next Actions
 
-Latest user direction on 19 Juli 2026 supersedes the previous sequencing note that deferred all website work. Active sequence is: consolidate conflicting documentation, finish a factual event-first source website, verify it, and prepare a gated commercial-proof surface. External account setup remains paused.
+Latest user direction on 19 Juli 2026 requires website changes to remain local until the owner is satisfied. Active sequence is: review the homepage plus dedicated `/lp/kaos-event-komunitas` candidate locally, preserve factual event-first focus and proof gating, then push/deploy only after explicit owner approval. External account setup and Ads remain paused.
 
 Human-only tasks are tracked sequentially in `deliverables/launch-readiness/Orplyn - Daftar Tugas Manual.txt`. Keep exactly one item marked `NEXT`; current item is M-06, five representative event/community orders plus publication context and permission. M-01 through M-05 are intentionally `LATER` while external setup is deferred.
 
-1. Finish the factual event-first homepage, event landing, WhatsApp intake, and gated commercial-proof component; keep DTF single and kaos polos accessible as secondary routes.
-2. Run lint, production build, rendered smoke tests, local container health, core-route checks, and responsive manual QA when browser tooling is available.
+1. Review the local manual-printing copy pass at `http://localhost:3010` and `http://localhost:3010/lp/kaos-event-komunitas`; confirm public wording for the Rp50.000-Rp90.000 range only if the owner wants it displayed, then approve before any push or deployment.
+2. Lint, production build, 8 rendered smoke tests, local container health, and core-route checks are complete. Run responsive screenshot/manual QA when browser tooling is available.
 3. Complete M-06 publication rights/context, then publish only verified event/community proof records. Do not attach deadline, bestseller, customer, quantity, or outcome claims without evidence and permission.
-4. Run one manual CTA-to-WhatsApp test and create the minimum operational lead log. Capture source, segment, event date, qualified, quote, sale, revenue, gross profit, response time, and lost reason; verify the owner baseline of 2-5 chats/week from actual records.
+4. Import/operate the prepared lead-log CSV and run one manual CTA-to-WhatsApp test. Capture source, segment, event date, qualified, quote, sale, revenue, gross profit, response time, and lost reason; verify the owner baseline of 2-5 chats/week from actual records.
 5. Approve capacity, cut-off, rush-order, QC/rework, quotation, and admin/production ownership through M-07/M-08. These rules are required to accept event orders responsibly, not permission to advertise a deadline promise.
 6. When the user resumes external setup, complete M-01 through M-05, Cloudflare `Full (strict)`, GBP/NAP, Search Console, Google tag, conversion verification, indexing, and review acquisition.
 7. Run E-08 for referrals from verified event/repeat customers and E-03 as focused event/community demand generation. Do not split focus across unrelated segments.

@@ -13,7 +13,7 @@ last_updated: 2026-07-19
 
 Website menghasilkan brief dengan Lead ID, jalur satuan/batch, penggunaan, produk, jumlah yang sesuai MOQ, bahan, deadline, desain, lokasi, source, campaign, landing page, dan click identifier. Nomor WhatsApp sales sudah dikonfirmasi: `6282317579311`. PIC/admin utama: Aulia. Jam admin Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
 
-Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari semua CTA, target first response, format lead log, dan template follow-up final. Per arahan user 19 Juli 2026, setup/admin activation dikerjakan setelah website source selesai.
+Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari semua CTA, target first response, pengoperasian lead log, dan template follow-up final. Schema serta CSV kosong sudah tersedia di `lead-log-schema.md` dan `../../deliverables/launch-readiness/Orplyn - Lead Log.csv`; belum ada data lead nyata di dalamnya.
 
 ## Goal
 
@@ -73,13 +73,15 @@ Minimum data untuk quotation dari owner: jenis produk, jumlah, ukuran, bahan, je
 
 Catatan publikasi: lead time tergantung antrean, jumlah, deadline, kesulitan desain, dan ketersediaan bahan. Jangan tampilkan sebagai janji mutlak sebelum owner approve copy final.
 
-## Follow-Up Rule
+## Follow-Up Draft - Pending M-08
 
-- Follow-up lead 1-2 kali.
-- Lead dianggap tidak aktif setelah 7 hari tanpa respons.
-- Saat ini lead masih dicatat di WhatsApp; lead log/CRM sederhana perlu dibuat sebelum Ads jalan.
+- Usulan awal adalah follow-up lead 1-2 kali dan menutup lead tanpa respons setelah 7 hari.
+- Angka tersebut belum menjadi SLA aktif sampai owner dan Aulia menyetujuinya pada M-08.
+- Lead log skeleton sudah dibuat; platform, PIC input/review, dan satu test lead nyata masih harus diaktifkan sebelum Ads jalan.
 
 ## Lead Log Minimum
+
+Kontrak field lengkap dan vocabulary status berada di `lead-log-schema.md`.
 
 Satu baris per Lead ID:
 

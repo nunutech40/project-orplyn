@@ -1,14 +1,28 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
-import { MessageCircle } from "./Icons";
+import { business } from "../lib/site-data";
+import { WhatsAppQuickStart } from "./WhatsAppQuickStart";
 
-export function MobileQuoteCta() {
+type MobileQuoteCtaProps = {
+  label?: string;
+  placement?: string;
+  heroSelector?: string;
+  product?: string;
+  useCase?: string;
+};
+
+export function MobileQuoteCta({
+  label = "Chat order event / batch",
+  placement = "mobile_sticky_batch",
+  heroSelector = ".hero",
+  product = "Kaos custom event / komunitas",
+  useCase = "Event / komunitas",
+}: MobileQuoteCtaProps = {}) {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const hero = document.querySelector(".hero");
+    const hero = document.querySelector(heroSelector);
 
     if (!hero) return;
 
@@ -18,14 +32,19 @@ export function MobileQuoteCta() {
 
     observer.observe(hero);
     return () => observer.disconnect();
-  }, []);
+  }, [heroSelector]);
 
   if (!visible) return null;
 
   return (
-    <Link className="mobile-quote-cta" href="#quote">
-      <MessageCircle size={20} aria-hidden="true" />
-      Minta estimasi
-    </Link>
+    <WhatsAppQuickStart
+      whatsappNumber={business.whatsapp}
+      lane="batch"
+      label={label}
+      className="mobile-quote-cta"
+      product={product}
+      useCase={useCase}
+      placement={placement}
+    />
   );
 }

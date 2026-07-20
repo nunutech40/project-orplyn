@@ -15,6 +15,9 @@ Status 18 Juli 2026: Form Owner Tahap 1, Form Owner Tahap 2, dan Survey Customer
 
 ## P1 - Sebelum Ads Diperbesar
 
+- Untuk pilot Google Ads event/community, owner memilih urutan area yang mana: Ciputat/Tangerang Selatan dulu lalu melebar berdasarkan hasil, atau langsung nasional? Catatan: seluruh Indonesia tetap dapat dilayani melalui inbound; pertanyaan ini hanya untuk budget Ads berbayar.
+- Jika memilih ekspansi bertahap, metrik apa yang harus tercapai sebelum membuka area berikutnya: jumlah qualified lead, sale, gross profit, atau periode evaluasi?
+- Apakah owner menyetujui wording publik rentang harga kaos sablon manual sekitar Rp50.000-Rp90.000/pcs, dengan penjelasan faktor teknik, bahan, warna, posisi sablon, dan jumlah?
 - Tier harga grosir detail per produk: 6-11, 12-23, 24-49, 50-99, 100+ pcs, atau struktur lain?
 - Produk atau layanan apa yang kapasitasnya paling aman untuk didorong 30 hari ke depan?
 - Produk apa yang sedang overload atau sebaiknya tidak diiklankan?

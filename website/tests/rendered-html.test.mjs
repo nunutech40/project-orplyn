@@ -22,6 +22,15 @@ async function render(pathname = "/") {
   );
 }
 
+function getWhatsAppMessages(html) {
+  return [...html.matchAll(/href="(https:\/\/wa\.me\/[^\"]+)"/gi)].map(
+    ([, href]) => {
+      const encodedMessage = href.replaceAll("&amp;", "&").split("?text=")[1] || "";
+      return decodeURIComponent(encodedMessage);
+    },
+  );
+}
+
 test("server-renders the Orplyn lead funnel", async () => {
   const response = await render();
   assert.equal(response.status, 200);
@@ -29,48 +38,54 @@ test("server-renders the Orplyn lead funnel", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="id">/i);
-  assert.match(html, /Jasa Sablon Kaos Event &amp; Komunitas Ciputat/i);
+  assert.match(html, /Sablon Manual Kaos Event &amp; Komunitas Ciputat/i);
   assert.match(
     html,
-    /<h1>Kaos custom untuk event &amp; komunitas\.<\/h1>/i,
+    /<h1>Sablon manual untuk kaos event &amp; komunitas\.<\/h1>/i,
   );
-  assert.match(html, /Sampaikan jumlah, desain, dan tanggal pakai/i);
-  assert.match(html, /Minta estimasi/i);
-  assert.match(html, /Lihat hasil produksi/i);
-  assert.match(html, /FOKUS EVENT &amp; KOMUNITAS/i);
-  assert.match(html, /TANGGAL PAKAI DICATAT/i);
+  assert.match(html, /Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia/i);
+  assert.match(html, /Minta estimasi sablon manual/i);
+  assert.match(html, /Chat order satuan/i);
+  assert.match(html, /Lihat hasil produksi Orplyn/i);
+  assert.match(html, /LANGSUNG CHAT AULIA/i);
+  assert.match(html, /DTF MULAI 1 PCS/i);
   assert.match(html, /Mulai dari kebutuhan acaramu/i);
-  assert.match(html, /Kirim detail &amp; minta estimasi/i);
-  assert.doesNotMatch(html, /Mulai brief|Cek estimasi/i);
-  const productSelect = html.match(
-    /<select[^>]*id="quote-product-full"[^>]*>[\s\S]*?<\/select>/i,
-  )?.[0];
-  const quantitySelect = html.match(
-    /<select[^>]*id="quote-quantity-full"[^>]*>[\s\S]*?<\/select>/i,
-  )?.[0];
-  const useCaseSelect = html.match(
-    /<select[^>]*id="quote-use-case-full"[^>]*>[\s\S]*?<\/select>/i,
-  )?.[0];
-  assert.ok(productSelect, "homepage product select should render");
-  assert.ok(quantitySelect, "homepage quantity select should render");
-  assert.ok(useCaseSelect, "homepage use-case select should render");
-  assert.doesNotMatch(productSelect, /\bdisabled\b/i);
-  assert.doesNotMatch(quantitySelect, /\bdisabled\b/i);
-  assert.match(productSelect, /Pilih produk/i);
-  assert.match(quantitySelect, /value="1 pcs"/i);
-  assert.match(
-    useCaseSelect,
-    /<option value="Event \/ komunitas" selected="">Event \/ komunitas<\/option>/i,
+  assert.match(html, /Tidak perlu mengisi form di website/i);
+  assert.match(html, /href="\/kontak#quote"/i);
+  assert.doesNotMatch(html, /id="quote-product-full"/i);
+  assert.doesNotMatch(html, /id="quote-quantity-full"/i);
+
+  const whatsappMessages = getWhatsAppMessages(html);
+  assert.ok(whatsappMessages.length >= 4, "homepage should render direct WhatsApp links");
+  assert.ok(
+    whatsappMessages.some((message) =>
+      message.includes("kaos untuk event / produksi batch"),
+    ),
+    "homepage should include the event/batch WhatsApp template",
+  );
+  assert.ok(
+    whatsappMessages.some((message) =>
+      message.includes("pesanan satuan / test print"),
+    ),
+    "homepage should include the single-order WhatsApp template",
+  );
+  assert.ok(
+    whatsappMessages.some((message) => message.includes("Tanggal dipakai:")),
+    "event template should ask for the event date",
   );
   const primaryServicesStart = html.indexOf("service-feature");
   const primaryServicesEnd = html.indexOf("</section>", primaryServicesStart);
   const primaryServicesHtml = html.slice(primaryServicesStart, primaryServicesEnd);
   assert.ok(
-    primaryServicesHtml.indexOf("Kaos Custom Event &amp; Komunitas") <
+    primaryServicesHtml.indexOf("Sablon Manual untuk Kaos Event &amp; Komunitas") <
       primaryServicesHtml.indexOf("Sablon DTF &amp; Kaos Custom Satuan"),
     "event/community should be the dominant offer before supporting offers",
   );
-  assert.doesNotMatch(html, /id="bukti-pesanan"/i);
+  assert.match(html, /id="bukti-pesanan"/i);
+  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+  assert.match(html, /Contoh hasil warna sablon plastisol/i);
+  assert.match(html, /Lihat bukti satu per satu, tanpa dipotong/i);
+  assert.match(html, /ulasan-google-hari-kartini-redacted\.jpeg/i);
   assert.doesNotMatch(html, /Lorem ipsum|Customer A|testimoni segera hadir/i);
   assert.match(html, /0823-1757-9311/i);
   assert.match(html, /\/brand\/orplyn-horizontal-white\.png/i);
@@ -91,7 +106,14 @@ test("server-renders a high-intent DTF service landing page", async () => {
   assert.match(html, /"@type":"Service"/i);
   assert.match(html, /Minimum order 1 pcs/i);
   assert.match(html, /PANDUAN ORDER/i);
-  assert.match(html, /MINTA ESTIMASI/i);
+  assert.match(html, /Chat order satuan/i);
+  assert.match(html, /LANJUT KE WHATSAPP/i);
+  const whatsappMessages = getWhatsAppMessages(html);
+  assert.ok(
+    whatsappMessages.some((message) =>
+      message.includes("Mau dibuat: Sablon DTF & Kaos Custom Satuan"),
+    ),
+  );
   assert.match(
     html,
     /rel="canonical" href="http:\/\/localhost:3010\/layanan\/sablon-dtf-satuan"/i,
@@ -103,14 +125,93 @@ test("applies the product MOQ to a batch landing page", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<h1>Kaos Custom Event &amp; Komunitas<\/h1>/i);
+  assert.match(html, /<h1>Sablon Manual untuk Kaos Event &amp; Komunitas<\/h1>/i);
   assert.match(html, /Sampaikan jumlah, desain, tanggal pakai, dan lokasi/i);
-  assert.match(html, /checked="" value="batch"/i);
-  assert.match(html, /value="sablon-manual-plastisol"/i);
-  assert.match(html, /value="12-23 pcs"/i);
-  assert.doesNotMatch(html, /value="1 pcs"/i);
-  assert.doesNotMatch(html, /value="2-5 pcs"/i);
-  assert.doesNotMatch(html, /id="bukti-pesanan"/i);
+  assert.match(html, /Chat order batch/i);
+  assert.doesNotMatch(html, /id="quote-product-compact"/i);
+  const whatsappMessages = getWhatsAppMessages(html);
+  assert.ok(
+    whatsappMessages.some((message) =>
+      message.includes("Mau dibuat: Sablon Manual untuk Kaos Event & Komunitas"),
+    ),
+  );
+  assert.ok(
+    whatsappMessages.some((message) => message.includes("Perkiraan jumlah:")),
+  );
+  assert.match(html, /id="bukti-pesanan"/i);
+  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+});
+
+test("server-renders the focused event Ads landing with approved contextual proof", async () => {
+  const response = await render("/lp/kaos-event-komunitas");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(
+    html,
+    /<h1>Kaos event &amp; komunitas dengan sablon manual\.<\/h1>/i,
+  );
+  assert.match(
+    html,
+    /Aulia membantu\s+mengecek bahan, teknik manual, minimum order, serta estimasi\s+produksi sesuai detail pesanan dan antrean/i,
+  );
+  assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
+  assert.match(html, /Minimum sablon manual untuk 1 warna/i);
+  assert.match(html, /Estimasi produksi normal/i);
+  assert.match(html, /Lead ID dan sumber kunjungan ikut tercatat otomatis/i);
+  assert.match(
+    html,
+    /rel="canonical" href="http:\/\/localhost:3010\/lp\/kaos-event-komunitas"/i,
+  );
+  assert.match(html, /<meta name="robots" content="noindex, follow"/i);
+
+  const whatsappMessages = getWhatsAppMessages(html);
+  assert.ok(
+    whatsappMessages.length >= 3,
+    "Ads landing should repeat one direct WhatsApp action",
+  );
+  assert.ok(
+    whatsappMessages.every((message) =>
+      message.includes("kaos untuk event / produksi batch"),
+    ),
+    "every WhatsApp CTA on the Ads landing should use the event template",
+  );
+  assert.ok(
+    whatsappMessages.every((message) => message.includes("Tanggal dipakai:")),
+    "every WhatsApp CTA should ask for the event date",
+  );
+
+  assert.doesNotMatch(html, /aria-label="Navigasi utama"/i);
+  assert.doesNotMatch(html, /aria-label="Navigasi seluler"/i);
+  assert.doesNotMatch(html, /Chat order satuan|Isi brief lengkap|Layanan lain/i);
+  assert.match(html, /data-testid="ads-trust-bridge"/i);
+  assert.match(html, /Kaos perpisahan BKB PAUD Kartini/i);
+  assert.match(html, /Kaos peserta Hari Kartini/i);
+  assert.match(html, /Kaos panitia BAGANA/i);
+  assert.match(html, /order-event-panitia-bagana-dtf\.jpeg/i);
+  assert.match(html, /id="bukti-pesanan-event"/i);
+  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+  assert.doesNotMatch(html, /id="arsip-bukti-event"/i);
+  assert.match(html, /Sablon manual dikerjakan lewat screen/i);
+  assert.match(html, /process-manual-squeegee\.jpeg/i);
+  assert.match(html, /Boleh datang atau pickup di workshop/i);
+  assert.match(html, /Lihat lokasi di Google Maps/i);
+  assert.doesNotMatch(
+    html,
+    /tepat waktu|aman dari drama|garansi|customer a|testimoni segera hadir/i,
+  );
+});
+
+test("keeps the detailed brief as an optional contact-page path", async () => {
+  const response = await render("/kontak");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /OPSIONAL · BRIEF LENGKAP/i);
+  assert.match(html, /Chat event \/ batch/i);
+  assert.match(html, /Chat order satuan/i);
+  assert.match(html, /id="quote-product-compact"/i);
+  assert.match(html, /id="quote-quantity-compact"/i);
 });
 
 test("keeps local and staging builds out of search indexes", async () => {
@@ -151,6 +252,7 @@ test("publishes crawler discovery files", async () => {
   assert.match(sitemap, /http:\/\/localhost:3010\/portfolio/i);
   assert.match(sitemap, /http:\/\/localhost:3010\/kebijakan-privasi/i);
   assert.match(sitemap, /http:\/\/localhost:3010\/layanan\/jersey-custom/i);
+  assert.doesNotMatch(sitemap, /\/lp\/kaos-event-komunitas/i);
   assert.ok(
     sitemap.indexOf("/layanan/kaos-event-komunitas") <
       sitemap.indexOf("/layanan/sablon-dtf-satuan"),

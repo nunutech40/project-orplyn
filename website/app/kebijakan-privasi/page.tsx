@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, MessageCircle } from "../components/Icons";
+import { ArrowLeft } from "../components/Icons";
+import { WhatsAppQuickStart } from "../components/WhatsAppQuickStart";
 import { business } from "../lib/site-data";
 
 export const metadata: Metadata = {
@@ -64,9 +65,15 @@ export default function PrivacyPage() {
           Pertanyaan atau permintaan terkait data dapat disampaikan melalui
           WhatsApp resmi Orplyn di {business.whatsappDisplay}.
         </p>
-        <Link className="button button-dark" href="/#quote">
-          <MessageCircle size={19} aria-hidden="true" /> Hubungi Orplyn
-        </Link>
+        <WhatsAppQuickStart
+          whatsappNumber={business.whatsapp}
+          lane="batch"
+          label="Hubungi Orplyn"
+          className="button button-dark"
+          product="Kaos custom event / komunitas"
+          useCase="Event / komunitas"
+          placement="privacy_contact_batch"
+        />
       </article>
     </>
   );
