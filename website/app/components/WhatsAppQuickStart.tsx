@@ -12,6 +12,10 @@ import {
 import { WHATSAPP_PLACEHOLDER } from "../lib/site-data";
 import type { FunnelLane } from "../lib/site-data";
 
+const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+const googleAdsLeadStartedLabel =
+  process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL;
+
 type WhatsAppQuickStartProps = {
   whatsappNumber: string;
   lane: FunnelLane;
@@ -129,6 +133,12 @@ export function WhatsAppQuickStart({
       ...eventData,
     });
     window.gtag?.("event", "whatsapp_open", eventData);
+    if (googleAdsId && googleAdsLeadStartedLabel) {
+      window.gtag?.("event", "conversion", {
+        send_to: `${googleAdsId}/${googleAdsLeadStartedLabel}`,
+        transaction_id: leadId,
+      });
+    }
     window.open(
       createWhatsAppUrl(whatsappNumber, message),
       "_blank",

@@ -1,6 +1,6 @@
 # Orplyn Project Handoff
 
-Last updated: 20 Juli 2026
+Last updated: 21 Juli 2026
 
 Dokumen ini adalah single source of truth untuk melanjutkan project Orplyn dari chat, model, atau agent lain. Baca dokumen ini sebelum mengusulkan strategi baru atau mengubah website.
 
@@ -22,19 +22,19 @@ Funnel web memiliki dua jalur order, tetapi acquisition aktif hanya berfokus pad
 | Commercial facts and offer | Event-first acquisition; sablon manual is the primary offer angle, with confirmed technique scope, MOQ, and normal estimate; DTF/kaos polos are secondary inbound offers | M-06 verified proof, then owner approval for public event price anchor and capacity |
 | Product differentiation | Owner evolution recorded as D-012: H-009 acquisition and H-008 retention are separated | Five event orders for E-12; repeat opportunities for E-11; no public claim before gate |
 | Raw asset archive | Drive complete; latest Instagram batch complete | Confirm rights and archive 17 older IG posts if useful |
-| Web funnel source | Event-first release `20260719T082000Z-3890f1b` remains live; local-only candidate adds direct WhatsApp and dedicated Ads landing `/lp/kaos-event-komunitas` | Owner review, responsive manual QA, and end-to-end lead test before any push/deployment |
+| Web funnel source | Event Ads LP source is direct-to-WhatsApp, proof-backed, and noindex; latest source commit is `4662a81` with local cleanup in progress | Responsive manual QA, end-to-end lead test, then deploy only approved source |
 | Docker/OrbStack runtime | Local runtime healthy | Keep local checks passing |
 | Shared VPS staging | Healthy; final-domain routes, edge TLS, and origin TLS active | Confirm Cloudflare Full (strict) mode |
 | Technical SEO foundation | Prepared; final domain intentionally noindex | Indexing decision and Search Console |
 | Google Business Profile | Access exists via `orplyn.id@gmail.com`; audit pending | Complete P0 rows and verify ownership/PIC |
 | AI discovery foundation | Prepared | Public sources, reviews, and citations |
-| Analytics and Ads conversion | Lead ID, attribution, events, field schema, and empty Google Sheets-ready lead-log CSV prepared | Real lead operation, real tag IDs, and offline conversion verification |
+| Analytics and Ads conversion | Lead ID, attribution, events, field schema, empty lead-log CSV, Google tag env hooks, and Ads conversion hook for WhatsApp quick-start prepared | Real Google tag ID, Ads label, lead operation, and offline conversion verification |
 | Organic content system | Initial Instagram batch curated; commercial-proof publication contract and hidden-until-publishable component ready | Complete M-06 rights/context and build event/community proof first |
 | External market intelligence | Competitor refresh and owner evolution response complete | Validate H-009/E-12 for acquisition and H-008/E-11 for retention separately |
 | Owner research pack | Tahap 1, Tahap 2, and first customer survey filled | Resolve remaining unknowns and owner approval |
 | Launch readiness checklist | Word checklist prepared | Assign PIC and complete evidence columns |
 | Hermes marketing operations | Installed and smoke-tested | Add cookie secret only if full Instagram history is needed |
-| Google Ads | Intentionally off; local event-only campaign draft and final URL prepared | Owner inputs, trust bridge, tracking/admin/economics gates, then one Search pilot |
+| Google Ads | Intentionally off; event-only campaign draft, setup runbook, final URL, negative seeds, and conversion env contract prepared | Account IDs, Tag Assistant verification, lead log operation, admin/economics gates, then one paused Search pilot |
 
 ## 2. Business Objective And Success Metrics
 
@@ -732,6 +732,13 @@ This section is chronological history, not a flat list of simultaneous instructi
 - Read and responded to advisory `ORPLYN-HERMES-FEEDBACK-012` locally. The LP Ads only now uses a problem-first H1 candidate, a clear four-detail explanation, separated factual event-order versus plastisol-feedback proof, and four visible pre-chat FAQs. The SEO `/layanan/` route was intentionally untouched. The four-field form was deferred because #12 itself makes it an owner-approved experiment; no CTA points to a form that does not exist. The response and disagreements are recorded in `marketing/07-market-research/hermes-feedback-012-response-2026-07-20.md`; H1/form decisions are recorded in `questions-for-owner.md`. No push, deploy, indexing, tag, or Ads activity occurred.
 - Direct owner instruction then replaced that advisory deferral: the local Ads LP now includes a four-field event brief immediately after the proof section. It collects only name plus city, quantity, event date, and design status in the browser, then opens WhatsApp Aulia with the completed brief, Lead ID, and attribution; it does not store personal data on the server or claim a quote, deadline, or outcome. The hero remains direct-to-WhatsApp, while the form serves buyers who want their first message structured. Headings and proof hierarchy were also made visibly more commercial. This remains local only; no push, deploy, indexing, tag, or Ads activation occurred.
 - Owner immediately corrected the conversion decision after reviewing the local form: the first objective is chat volume, not pre-chat qualification. The four-field form and its browser validation were removed entirely. All event LP CTAs now open WhatsApp directly with a structured, editable template; Aulia collects missing detail inside the conversation. This removes an unnecessary cold-traffic hurdle while preserving Lead ID and attribution on the WhatsApp action. Local only; no push, deploy, indexing, tag, or Ads activation occurred.
+
+### 21 Juli 2026
+
+- Began Google Ads setup preparation after the user reactivated the workstream. Google Ads remains `OFF`: no account, billing, campaign, keyword, ad, tag ID, indexing, or activation was performed from the repo.
+- Added Ads conversion support to direct WhatsApp quick-start CTAs. When `NEXT_PUBLIC_GOOGLE_TAG_ID`, `NEXT_PUBLIC_GOOGLE_ADS_ID`, and `NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL` are supplied and the site is rebuilt, each valid CTA click sends `whatsapp_open` plus a Google Ads `conversion` event using the Orplyn Lead ID as `transaction_id`. This remains a secondary technical signal, not the primary business conversion.
+- Added `marketing/04-google-ads/google-ads-setup-runbook-2026-07-21.md` as the operational setup checklist for account settings, conversion action, env values, campaign skeleton, negative seeds, location targeting, and pre-launch verification. It preserves the event/community-only focus, `/lp/kaos-event-komunitas` final URL, `noindex` LP policy, Public-Claim Gate, and offline qualified/converted lead direction.
+- Cleaned local LP copy that had introduced ungated outcome promises. Removed public wording equivalent to free rework and hour-based estimate promises; kept the CTA direct-to-WhatsApp as `Cek kebutuhan & minta estimasi`.
 
 ## 16. Immediate Next Actions
 

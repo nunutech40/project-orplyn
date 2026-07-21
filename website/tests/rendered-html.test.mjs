@@ -3,7 +3,10 @@ import test from "node:test";
 
 async function render(pathname = "/") {
   const workerUrl = new URL("../dist/server/index.js", import.meta.url);
-  workerUrl.searchParams.set("test", `${process.pid}-${Date.now()}-${pathname}`);
+  workerUrl.searchParams.set(
+    "test",
+    `${process.pid}-${Date.now()}-${pathname}`,
+  );
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
@@ -38,12 +41,13 @@ test("server-renders the Orplyn lead funnel", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="id">/i);
-  assert.match(html, /Sablon Manual Kaos Event &amp; Komunitas Ciputat/i);
+  assert.match(html, /Sablon Manual Kaos Event/);
+  assert.match(html, /Komunitas Ciputat/);
+  assert.match(html, /<h1>Sablon manual untuk kaos event/);
   assert.match(
     html,
-    /<h1>Sablon manual untuk kaos event &amp; komunitas\.<\/h1>/i,
+    /Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia/i,
   );
-  assert.match(html, /Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia/i);
   assert.match(html, /Minta estimasi sablon manual/i);
   assert.match(html, /Chat order satuan/i);
   assert.match(html, /Lihat hasil produksi Orplyn/i);
@@ -56,7 +60,10 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.doesNotMatch(html, /id="quote-quantity-full"/i);
 
   const whatsappMessages = getWhatsAppMessages(html);
-  assert.ok(whatsappMessages.length >= 4, "homepage should render direct WhatsApp links");
+  assert.ok(
+    whatsappMessages.length >= 4,
+    "homepage should render direct WhatsApp links",
+  );
   assert.ok(
     whatsappMessages.some((message) =>
       message.includes("kaos untuk event / produksi batch"),
@@ -75,10 +82,13 @@ test("server-renders the Orplyn lead funnel", async () => {
   );
   const primaryServicesStart = html.indexOf("service-feature");
   const primaryServicesEnd = html.indexOf("</section>", primaryServicesStart);
-  const primaryServicesHtml = html.slice(primaryServicesStart, primaryServicesEnd);
+  const primaryServicesHtml = html.slice(
+    primaryServicesStart,
+    primaryServicesEnd,
+  );
   assert.ok(
-    primaryServicesHtml.indexOf("Sablon Manual untuk Kaos Event &amp; Komunitas") <
-      primaryServicesHtml.indexOf("Sablon DTF &amp; Kaos Custom Satuan"),
+    primaryServicesHtml.indexOf("Sablon Manual untuk Kaos Event") <
+      primaryServicesHtml.indexOf("Sablon DTF"),
     "event/community should be the dominant offer before supporting offers",
   );
   assert.match(html, /id="bukti-pesanan"/i);
@@ -89,11 +99,17 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.doesNotMatch(html, /Lorem ipsum|Customer A|testimoni segera hadir/i);
   assert.match(html, /0823-1757-9311/i);
   assert.match(html, /\/brand\/orplyn-horizontal-white\.png/i);
-  assert.match(html, /"logo":"http:\/\/localhost:3010\/brand\/orplyn-monogram-black\.png"/i);
+  assert.match(
+    html,
+    /"logo":"http:\/\/localhost:3010\/brand\/orplyn-monogram-black\.png"/i,
+  );
   assert.match(html, /"@type":"LocalBusiness"/i);
   assert.match(html, /"@type":"FAQPage"/i);
   assert.match(html, /rel="canonical" href="http:\/\/localhost:3010\/"/i);
-  assert.doesNotMatch(html, /codex-preview|react-loading-skeleton|Codex is working/i);
+  assert.doesNotMatch(
+    html,
+    /codex-preview|react-loading-skeleton|Codex is working/i,
+  );
 });
 
 test("server-renders a high-intent DTF service landing page", async () => {
@@ -101,8 +117,10 @@ test("server-renders a high-intent DTF service landing page", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Sablon DTF &amp; Kaos Custom Satuan di Ciputat/i);
-  assert.match(html, /<h1>Sablon DTF &amp; Kaos Custom Satuan<\/h1>/i);
+  assert.match(html, /Sablon DTF/);
+  assert.match(html, /Kaos Custom Satuan di Ciputat/);
+  assert.match(html, /<h1>Sablon DTF/);
+  assert.match(html, /Kaos Custom Satuan<\/h1>/);
   assert.match(html, /"@type":"Service"/i);
   assert.match(html, /Minimum order 1 pcs/i);
   assert.match(html, /PANDUAN ORDER/i);
@@ -125,14 +143,17 @@ test("applies the product MOQ to a batch landing page", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /<h1>Sablon Manual untuk Kaos Event &amp; Komunitas<\/h1>/i);
+  assert.match(html, /<h1>Sablon Manual untuk Kaos Event/);
+  assert.match(html, /Komunitas<\/h1>/);
   assert.match(html, /Sampaikan jumlah, desain, tanggal pakai, dan lokasi/i);
   assert.match(html, /Chat order batch/i);
   assert.doesNotMatch(html, /id="quote-product-compact"/i);
   const whatsappMessages = getWhatsAppMessages(html);
   assert.ok(
     whatsappMessages.some((message) =>
-      message.includes("Mau dibuat: Sablon Manual untuk Kaos Event & Komunitas"),
+      message.includes(
+        "Mau dibuat: Sablon Manual untuk Kaos Event & Komunitas",
+      ),
     ),
   );
   assert.ok(
@@ -149,11 +170,11 @@ test("server-renders the focused event Ads landing with approved contextual proo
   const html = await response.text();
   assert.match(
     html,
-    /<h1>Bikin kaos event tanpa bingung bahan, teknik, dan minimum order\.<\/h1>/i,
+    /<h1>Kaos Event Siap Pakai, Tanpa Pusing Urusan Teknis\.<\/h1>/i,
   );
   assert.match(
     html,
-    /Aulia bantu cek pilihan\s+manual atau DTF, MOQ, serta estimasi sebelum produksi dilanjutkan/i,
+    /Aulia akan mengecek pilihan\s+sablon manual, bahan, MOQ, serta estimasi produksinya/i,
   );
   assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
   assert.match(html, /Minimum sablon manual untuk 1 warna/i);
@@ -186,7 +207,10 @@ test("server-renders the focused event Ads landing with approved contextual proo
 
   assert.doesNotMatch(html, /aria-label="Navigasi utama"/i);
   assert.doesNotMatch(html, /aria-label="Navigasi seluler"/i);
-  assert.doesNotMatch(html, /Chat order satuan|Isi brief lengkap|Layanan lain/i);
+  assert.doesNotMatch(
+    html,
+    /Chat order satuan|Isi brief lengkap|Layanan lain/i,
+  );
   assert.match(html, /data-testid="ads-trust-bridge"/i);
   assert.match(html, /Hasil order event yang bisa dilihat konteksnya/i);
   assert.match(html, /Kaos perpisahan BKB PAUD Kartini/i);
@@ -202,11 +226,15 @@ test("server-renders the focused event Ads landing with approved contextual proo
   assert.doesNotMatch(html, /Lanjutkan Brief ke WhatsApp/i);
   assert.match(html, /Yang sering ditanyakan sebelum minta estimasi/i);
   assert.match(html, /Minimum ordernya berapa\?/i);
+  assert.doesNotMatch(html, /perbaiki tanpa biaya tambahan/i);
+  assert.match(html, /Bisa bikin sample atau test print dulu/i);
   assert.doesNotMatch(html, /"@type":"FAQPage"/i);
   assert.match(html, /Sablon manual dikerjakan lewat screen/i);
   assert.match(html, /process-manual-squeegee\.jpeg/i);
   assert.match(html, /Boleh datang atau pickup di workshop/i);
   assert.match(html, /Lihat lokasi di Google Maps/i);
+  assert.doesNotMatch(html, /dalam hitungan jam/i);
+  assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
   assert.doesNotMatch(
     html,
     /tepat waktu|aman dari drama|garansi|customer a|testimoni segera hadir/i,
@@ -237,7 +265,10 @@ test("server-renders the privacy notice used by the brief form", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
-  assert.match(html, /Data pesanan dipakai untuk menanggapi permintaan estimasi/i);
+  assert.match(
+    html,
+    /Data pesanan dipakai untuk menanggapi permintaan estimasi/i,
+  );
   assert.match(html, /GCLID, GBRAID, atau WBRAID/i);
   assert.match(
     html,
@@ -253,7 +284,10 @@ test("publishes crawler discovery files", async () => {
   assert.equal(robotsResponse.status, 200);
   assert.equal(sitemapResponse.status, 200);
   assert.equal(llmsResponse.status, 200);
-  assert.match(llmsResponse.headers.get("content-type") ?? "", /^text\/plain\b/i);
+  assert.match(
+    llmsResponse.headers.get("content-type") ?? "",
+    /^text\/plain\b/i,
+  );
 
   const robots = await robotsResponse.text();
   const sitemap = await sitemapResponse.text();

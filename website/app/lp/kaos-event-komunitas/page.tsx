@@ -50,8 +50,7 @@ const checkItems = [
   },
   {
     title: "Minimum order",
-    description:
-      "MOQ disesuaikan dengan produk dan teknik yang dipakai.",
+    description: "MOQ disesuaikan dengan produk dan teknik yang dipakai.",
   },
   {
     title: "Estimasi produksi",
@@ -81,6 +80,11 @@ const landingFaqs = [
     answer:
       "Bisa. Workshop ada di Ciputat, Tangerang Selatan. Kamu bisa datang atau pickup; janji datang disarankan agar kebutuhanmu langsung dicek admin.",
   },
+  {
+    question: "Bisa bikin sample atau test print dulu?",
+    answer:
+      "Bisa. Kamu bisa minta satu sample berbayar sebelum lanjut ke produksi jumlah besar. Biaya sample akan didiskusikan saat percakapan WhatsApp.",
+  },
 ];
 
 export default function EventCommunityAdsLandingPage() {
@@ -102,11 +106,13 @@ export default function EventCommunityAdsLandingPage() {
         />
         <div className="ads-hero-overlay" aria-hidden="true" />
         <div className="ads-hero-content">
-          <p className="eyebrow">SABLON MANUAL KAOS EVENT & KOMUNITAS · CIPUTAT</p>
-          <h1>Bikin Kaos Event Tanpa Bingung Bahan, Teknik, dan Minimum Order.</h1>
+          <p className="eyebrow">
+            SABLON MANUAL KAOS EVENT & KOMUNITAS · CIPUTAT
+          </p>
+          <h1>Kaos Event Siap Pakai, Tanpa Pusing Urusan Teknis.</h1>
           <p className="ads-hero-copy">
-            Kirim desain, jumlah, dan tanggal acara. Aulia bantu cek pilihan
-            manual atau DTF, MOQ, serta estimasi sebelum produksi dilanjutkan.
+            Kirim jumlah, desain, dan tanggal acara. Aulia akan mengecek pilihan
+            sablon manual, bahan, MOQ, serta estimasi produksinya.
           </p>
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
@@ -147,10 +153,13 @@ export default function EventCommunityAdsLandingPage() {
       <section className="ads-value-section">
         <div className="ads-section-heading">
           <p className="eyebrow eyebrow-dark">YANG DIBANTU CEK</p>
-          <h2>Kamu bawa kebutuhan acaranya. Detail produksinya kita periksa bersama.</h2>
+          <h2>
+            Kamu bawa kebutuhan acaranya. Detail produksinya kita periksa
+            bersama.
+          </h2>
           <p>
-            Kamu tidak perlu menentukan semua spesifikasi di awal. Empat hal
-            ini diperiksa sebelum harga dan jadwal dikonfirmasi.
+            Kamu tidak perlu menentukan semua spesifikasi di awal. Empat hal ini
+            diperiksa sebelum harga dan jadwal dikonfirmasi.
           </p>
         </div>
         <div className="ads-value-grid">
@@ -180,7 +189,10 @@ export default function EventCommunityAdsLandingPage() {
             <span>01</span>
             <div>
               <h3>Jumlah kaos</h3>
-              <p>Perkiraan jumlah membantu mengecek minimum order dan jalur produksi.</p>
+              <p>
+                Perkiraan jumlah membantu mengecek minimum order dan jalur
+                produksi.
+              </p>
             </div>
           </li>
           <li>
@@ -217,7 +229,10 @@ export default function EventCommunityAdsLandingPage() {
         description="Ditampilkan terpisah dari hasil order event agar konteks tekniknya tetap jelas."
       />
 
-      <section className="local-presence-proof" aria-label="Lokasi workshop Orplyn">
+      <section
+        className="local-presence-proof"
+        aria-label="Lokasi workshop Orplyn"
+      >
         <div>
           <p className="eyebrow eyebrow-dark">WORKSHOP ORPLYN · CIPUTAT</p>
           <h2>Boleh datang atau pickup di workshop.</h2>
@@ -238,13 +253,21 @@ export default function EventCommunityAdsLandingPage() {
               <dd>{business.adminHours}</dd>
             </div>
           </dl>
-          <a className="local-presence-map" href={business.maps} target="_blank" rel="noreferrer">
+          <a
+            className="local-presence-map"
+            href={business.maps}
+            target="_blank"
+            rel="noreferrer"
+          >
             <MapPin size={19} aria-hidden="true" /> Lihat lokasi di Google Maps
           </a>
         </div>
       </section>
 
-      <section className="section faq-section ads-faq-section" aria-label="Pertanyaan sebelum chat">
+      <section
+        className="section faq-section ads-faq-section"
+        aria-label="Pertanyaan sebelum chat"
+      >
         <div className="faq-heading">
           <p className="eyebrow eyebrow-dark">PERTANYAAN SEBELUM CHAT</p>
           <h2>Yang sering ditanyakan sebelum minta estimasi.</h2>
@@ -261,8 +284,8 @@ export default function EventCommunityAdsLandingPage() {
 
       <section className="ads-final-cta">
         <div>
-          <p className="eyebrow">MULAI DARI BRIEF SINGKAT</p>
-          <h2>Ceritakan kebutuhan eventmu ke Aulia.</h2>
+          <p className="eyebrow">MULAI DARI CHAT SINGKAT</p>
+          <h2>Kirim detail eventmu ke Aulia.</h2>
           <p>
             Admin aktif {business.adminHours}. Workshop berada di Ciputat,
             Tangerang Selatan.

@@ -3,8 +3,8 @@ document_id: ORPLYN-GOOGLE-ADS-001
 document_type: deferred_operational_plan
 status: deferred_until_launch_gate
 primary_segment: event_and_community
-active_decision_id: D-012
-last_updated: 2026-07-19
+active_decision_id: D-015
+last_updated: 2026-07-21
 ---
 
 # Google Ads Plan
@@ -69,8 +69,10 @@ Route DTF, clothing brand, bordir, jersey, totebag, dan kaos polos tetap tersedi
 
 Campaign draft lokal, keyword exact/phrase, negative seed, bidding direction,
 geo gate, dan pre-activation checklist berada di
-`search-event-campaign-draft-2026-07-19.md`. Dokumen tersebut tidak memberi
-izin membuat account atau menyalakan Ads.
+`search-event-campaign-draft-2026-07-19.md`. Runbook setup akun, conversion
+action, env, dan verifikasi pre-launch berada di
+`google-ads-setup-runbook-2026-07-21.md`. Dokumen-dokumen tersebut tidak memberi
+izin menyalakan Ads.
 
 Google requires destinations to be functional, useful, crawlable, accessible, and easy to navigate. Source website readiness must therefore include working common-device routes, original Orplyn content, clear navigation, no forced redirect/download, mobile usability, and a final URL on `orplyn.id`. Official references:
 
