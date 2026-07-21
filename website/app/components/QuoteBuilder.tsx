@@ -206,6 +206,8 @@ export function QuoteBuilder({
     if (googleAdsId && googleAdsLeadStartedLabel) {
       window.gtag?.("event", "conversion", {
         send_to: `${googleAdsId}/${googleAdsLeadStartedLabel}`,
+        value: 1.0,
+        currency: "IDR",
         transaction_id: leadId,
       });
     }

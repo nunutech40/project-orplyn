@@ -61,11 +61,20 @@ NEXT_PUBLIC_GOOGLE_ADS_ID=AW-XXXXXXXXX
 NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL=XXXXXXXXXXXXXXX
 ```
 
+Orplyn setup per 21 Juli 2026:
+
+```bash
+NEXT_PUBLIC_GOOGLE_TAG_ID=AW-374076115
+NEXT_PUBLIC_GOOGLE_ADS_ID=AW-374076115
+NEXT_PUBLIC_GOOGLE_ADS_LEAD_STARTED_LABEL=-KloCLqt6NMcENPlr7IB
+```
+
 Setelah env diisi, rebuild image. CTA `WhatsAppQuickStart` dan form lama
 `QuoteBuilder` sama-sama mengirim:
 
 - `whatsapp_open`
-- `conversion` ke `AW-ID/LABEL`
+- `conversion` ke `AW-374076115/-KloCLqt6NMcENPlr7IB`
+- `value: 1.0` dan `currency: IDR`, sesuai action Google Ads
 - `transaction_id` = Lead ID Orplyn
 
 ### Primary business conversion
