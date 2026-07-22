@@ -24,11 +24,11 @@ Per 22 Juli 2026:
 - Staging publik terisolasi berjalan di VPS bersama pada `https://orplyn.103-59-94-121.nip.io`, sengaja `noindex`, dengan deployment portabel di `ops/production/`.
 - Domain final `orplyn.id` aktif melalui Cloudflare. Delegasi `cleo.ns.cloudflare.com`/`stella.ns.cloudflare.com`, proxied apex/www, edge HTTPS, origin HTTPS, dan redirect permanen `www` ke apex sudah terverifikasi.
 - Owner evolution lens 19 Juli 2026 menetapkan event/komunitas sebagai satu fokus acquisition. H-009/E-12 adalah hypothesis deadline-risk untuk first order; H-008/E-11 adalah retention hypothesis untuk repeat order. Keduanya belum menjadi public claim.
-- Homepage, dedicated event/komunitas dan DTF/satuan, enam landing layanan, portfolio, kontak, privasi, schema, sitemap, robots, `llms.txt`, dan campaign landing `/lp/kaos-event-komunitas` sudah tersedia. Public tracking release terakhir adalah `orplyn-web:20260721T072430Z-0a03bbb`; kandidat homepage/portfolio terbaru masih lokal dan belum dideploy.
-- Domain utama lokal menjelaskan kemampuan Orplyn secara lengkap: sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom. Event/komunitas tetap featured offer pertama dan satu-satunya fokus acquisition.
+- Homepage, dedicated event/komunitas dan DTF/satuan, enam landing layanan, portfolio, kontak, privasi, schema, sitemap, robots, `llms.txt`, dan campaign landing `/lp/kaos-event-komunitas` sudah tersedia. Public release aktif adalah `orplyn-web:20260722T050533Z-8eae04a`.
+- Domain utama live menjelaskan kemampuan Orplyn secara lengkap: sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom. Event/komunitas tetap featured offer pertama dan satu-satunya fokus acquisition.
 - Brand voice provisional aktif: **tegas, keren, dapat dipercaya, dan membersamai**, dengan brand idea `Sablon dan apparel custom. Dibuat untuk dipakai bersama.` Detail dan guardrail ada di `marketing/05-content/orplyn-brand-voice-2026-07-22.md`; owner/user dapat memperbaruinya kemudian.
 - CTA utama membuka WhatsApp Aulia langsung dengan template editable, Lead ID, UTM, landing page, GCLID/GBRAID/WBRAID, serta event teknis yang tetap terpisah dari qualified lead.
-- Bukti order/proses yang ada dan berizin sudah dipakai sesuai konteks. DTF tidak dilabeli manual; deadline, kapasitas, jumlah event total, garansi, dan outcome lain tetap gated.
+- Bukti order/proses yang ada dan berizin sudah dipakai sesuai konteks. LP Ads live memuat tiga order event, enam contoh hasil manual, empat dokumentasi proses, serta dua ulasan/tanggapan yang berizin. DTF tidak dilabeli manual; deadline, kapasitas, jumlah event total, garansi, dan outcome lain tetap gated.
 - Local/staging sengaja `noindex` melalui `NEXT_PUBLIC_ALLOW_INDEXING=false`.
 - External market snapshot, offer/SERP refresh, dan growth experiment backlog tersedia di `marketing/07-market-research/`.
 - Tiga formulir Word nonteknis untuk owner/customer tersedia di `deliverables/owner-research/`; file canonical sudah diganti dengan versi terisi.
@@ -78,13 +78,11 @@ Jika dua sumber bertentangan, jangan menebak. Pakai informasi owner yang paling 
 
 Urutan kerja aktif:
 
-1. Review kandidat homepage/portfolio terbaru di local; pertahankan brand voice provisional dan Public-Claim Gate.
-2. Jalankan final responsive visual QA dan uji CTA nyata ke WhatsApp Aulia pada ponsel; jangan mengubah status noindex.
-3. Push/deploy kandidat terbaru hanya setelah user menyetujui hasil lokal.
-4. Operasikan lead log sampai qualified, quote, sale, revenue, dan gross profit.
-5. Lengkapi offer event, capacity/cut-off, admin readiness, dan quotation melalui M-07/M-08.
-6. Selesaikan GBP/NAP, Search Console, dan indexing hanya ketika gate serta PIC siap; Google tag Ads tidak perlu dipasang ulang.
-7. Jalankan satu pilot Search Ads event/community hanya setelah semua launch gate lulus; jangan membagi budget awal ke DTF atau segmen lain.
+1. Jalankan final responsive visual QA dan uji CTA nyata ke WhatsApp Aulia pada ponsel; jangan mengubah status noindex.
+2. Operasikan lead log sampai qualified, quote, sale, revenue, dan gross profit.
+3. Lengkapi offer event, capacity/cut-off, admin readiness, dan quotation melalui M-07/M-08.
+4. Selesaikan GBP/NAP, Search Console, dan indexing hanya ketika gate serta PIC siap; Google tag Ads tidak perlu dipasang ulang.
+5. Jalankan satu pilot Search Ads event/community hanya setelah semua launch gate lulus; jangan membagi budget awal ke DTF atau segmen lain.
 
 ## Website Invariants
 

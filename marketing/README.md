@@ -50,7 +50,7 @@ Per status 22 Juli 2026:
 3. `/lp/kaos-event-komunitas` tetap menjadi satu-satunya destination Ads: direct-to-WhatsApp, navigasi minim, CTA `Cek kebutuhan & minta estimasi`, bukti event/manual yang tersedia, FAQ, NAP, dan intentional `noindex`.
 4. Google tag `AW-374076115` dan conversion label WhatsApp lead-start sudah live. Ini baru sinyal sekunder; qualified lead, quote, sale, revenue, dan gross profit tetap harus dicatat di lead log.
 5. Bukti yang ada sudah dipakai sesuai izin dan konteks. Contoh event dengan teknik manual tetap menjadi peningkatan opsional ketika tersedia, bukan blocker website saat ini.
-6. Review kandidat lokal di `http://localhost:3010`, jalankan responsive/manual CTA QA pada ponsel, lalu push/deploy hanya setelah user menyetujui kandidat terbaru.
+6. Release `orplyn-web:20260722T050533Z-8eae04a` sudah live; lanjutkan responsive/manual CTA QA pada ponsel dan pertahankan Public-Claim Gate pada iterasi berikutnya.
 7. GBP, Search Console, indexing, lead-log operation, admin readiness, offer/capacity approval, dan pilot Ads masih belum selesai. Ads tetap OFF sampai gate lulus.
 
 ## Document Status Map

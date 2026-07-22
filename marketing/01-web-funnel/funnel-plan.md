@@ -11,7 +11,7 @@ last_updated: 2026-07-22
 
 ## Status
 
-Funnel fokus-konversi sudah diimplementasikan dan diselaraskan ke D-012. Public release terakhir yang tercatat untuk tracking adalah `orplyn-web:20260721T072430Z-0a03bbb`; kandidat domain utama yang lebih lengkap masih lokal. Homepage memperkenalkan keseluruhan Orplyn, lalu menempatkan event/community sebagai featured offer pertama. LP `/lp/kaos-event-komunitas` tetap sempit untuk Ads. CTA membuka WhatsApp langsung dengan template editable, Lead ID, dan attribution; detail lanjutan dikumpulkan Aulia di dalam chat.
+Funnel fokus-konversi sudah diimplementasikan dan diselaraskan ke D-012. Public release aktif adalah `orplyn-web:20260722T050533Z-8eae04a`. Homepage memperkenalkan keseluruhan Orplyn, lalu menempatkan event/community sebagai featured offer pertama. LP `/lp/kaos-event-komunitas` tetap sempit untuk Ads dan membawa proof stack mandiri agar visitor tidak perlu pindah ke homepage. CTA membuka WhatsApp langsung dengan template editable, Lead ID, dan attribution; detail lanjutan dikumpulkan Aulia di dalam chat.
 
 Nomor WhatsApp nyata, aturan order owner, domain, Cloudflare, HTTPS, Google Ads tag, dan conversion label lead-start sudah aktif. Website sengaja `noindex`. Launch blocker tersisa: Search Console, GBP/NAP correction, lead log operasional, offer/capacity/admin approval, end-to-end WhatsApp verification, indexing decision, dan final responsive manual QA.
 
