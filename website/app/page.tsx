@@ -14,6 +14,10 @@ import { MobileQuoteCta } from "./components/MobileQuoteCta";
 import { ProofSlider } from "./components/ProofSlider";
 import { WhatsAppQuickStart } from "./components/WhatsAppQuickStart";
 import {
+  adsTrustEvidence,
+  getPublishableAdsTrustEvidence,
+} from "./lib/ads-trust-evidence";
+import {
   business,
   homepagePortfolio,
   primaryServices,
@@ -34,6 +38,10 @@ export const metadata: Metadata = {
 const serviceIcons = [Shirt, ScanLine, Palette];
 const featuredService = primaryServices[0]!;
 const supportingServices = primaryServices.slice(1);
+const homepageTrustEvidence = getPublishableAdsTrustEvidence(adsTrustEvidence);
+const baganaCase = homepageTrustEvidence.contextualPortfolio.find(
+  (proof) => proof.id === "event-panitia-bagana",
+);
 
 const faqs = [
   {
@@ -171,23 +179,44 @@ export default function Home() {
       />
 
       <section className="hero">
-        <img
-          className="hero-media"
-          src="/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg"
-          alt="Hasil sablon manual pada kaos produksi Orplyn"
-          width="1600"
-          height="900"
-          loading="eager"
-          fetchPriority="high"
-        />
+        <div
+          className="hero-workshop-media"
+          role="img"
+          aria-label="Proses sablon manual dari persiapan screen, penarikan rakel, hingga curing di workshop Orplyn"
+        >
+          <img
+            src="/catalog/process/manual/02-proses-sablon.jpeg"
+            alt=""
+            width="960"
+            height="1280"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <img
+            src="/catalog/process/manual/14-process-manual-color-layer-application.jpeg"
+            alt=""
+            width="908"
+            height="1600"
+            loading="eager"
+            fetchPriority="high"
+          />
+          <img
+            src="/catalog/process/manual/01-proses-sablon-meja-curing.jpeg"
+            alt=""
+            width="960"
+            height="1280"
+            loading="eager"
+            fetchPriority="high"
+          />
+        </div>
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">ORPLYN APPAREL &amp; PRINT STUDIO · CIPUTAT</p>
-          <h1>Sablon dan apparel custom. Dibuat untuk dipakai bersama.</h1>
+          <p className="eyebrow">ORPLYN · WORKSHOP LEGOSO, CIPUTAT</p>
+          <h1>Sablon dan apparel custom dari workshop Orplyn di Legoso.</h1>
           <p className="hero-copy">
-            Dari workshop Orplyn di Ciputat: sablon manual, DTF, kaos event,
-            polo, hoodie, jersey, jaket, konveksi, dan apparel custom untuk
-            acara, tim, komunitas, brand, dan kebutuhan personal.
+            Kebutuhan acara, tim, komunitas, brand, dan pesanan personal dibahas
+            langsung bersama Admin Aulia. Bahan, teknik, dan jalur produksinya
+            dicek sesuai desain serta jumlah.
           </p>
           <div className="hero-actions">
             <WhatsAppQuickStart
@@ -199,8 +228,8 @@ export default function Home() {
               useCase="Kebutuhan apparel custom"
               placement="homepage_hero_batch"
             />
-            <Link className="button button-ghost-light" href="#layanan">
-              Lihat kemampuan Orplyn <ArrowRight size={18} aria-hidden="true" />
+            <Link className="button button-ghost-light" href="#workshop">
+              Kenali workshop Orplyn <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
           <div className="hero-secondary-links">
@@ -232,21 +261,81 @@ export default function Home() {
       </section>
 
       <section
-        className="section capability-overview"
+        className="section workshop-story"
         id="layanan"
         aria-labelledby="capability-title"
       >
-        <div className="section-heading">
-          <div>
-            <p className="eyebrow eyebrow-dark">ORPLYN UNTUK BANYAK KEBUTUHAN</p>
+        <div className="workshop-story-grid" id="workshop">
+          <div className="workshop-story-copy">
+            <p className="eyebrow eyebrow-dark">DARI LEGOSO, CIPUTAT</p>
             <h2 id="capability-title">
-              Untuk acara yang disiapkan, tim yang dibangun, dan identitas yang ingin dibawa.
+              Kebutuhanmu dibahas dengan orangnya. Prosesnya bisa kamu lihat.
             </h2>
+            <p className="workshop-story-lead">
+              Orplyn bekerja dari workshop di Jl. Legoso Selatan II. Kebutuhan
+              sablon manual, DTF, dan apparel custom dibahas lebih dulu sebelum
+              diarahkan ke bahan, teknik, dan proses yang sesuai.
+            </p>
+
+            <div className="aulia-identity">
+              <span className="aulia-avatar" aria-hidden="true">A</span>
+              <div>
+                <strong>Admin Aulia</strong>
+                <span>Kontak pertama untuk cek kebutuhan · {business.adminHours}</span>
+              </div>
+              <WhatsAppQuickStart
+                whatsappNumber={business.whatsapp}
+                lane="batch"
+                label="Langsung chat Aulia"
+                product="Sablon / apparel custom"
+                useCase="Kebutuhan apparel custom"
+                placement="homepage_workshop_aulia"
+              />
+            </div>
+
+            <div className="workshop-process-facts" aria-label="Proses dan peran Orplyn">
+              <div>
+                <span>01</span>
+                <strong>Mulai dari kebutuhan</strong>
+                <p>Jumlah, desain, dan waktu pakai dibicarakan lewat satu kontak.</p>
+              </div>
+              <div>
+                <span>02</span>
+                <strong>Lihat proses manualnya</strong>
+                <p>Screen, tarikan rakel, lapisan warna, dan curing didokumentasikan.</p>
+              </div>
+              <div>
+                <span>03</span>
+                <strong>Siap dipakai bersama</strong>
+                <p>Untuk acara, panitia, komunitas, tim, brand, atau kebutuhan personal.</p>
+              </div>
+            </div>
           </div>
-          <p>
-            Orplyn mengerjakan sablon manual, DTF, kaos event, polo, hoodie,
-            jersey, jaket, konveksi, dan apparel custom.
-          </p>
+
+          {baganaCase && (
+            <article className="workshop-case-card">
+              <img
+                src={baganaCase.image}
+                alt={baganaCase.imageAlt}
+                width="900"
+                height="1600"
+                loading="lazy"
+              />
+              <div className="workshop-case-content">
+                <p className="eyebrow">PESANAN PANITIA · JAKARTA</p>
+                <h3>{baganaCase.quantityLabel} kaos panitia BAGANA.</h3>
+                <p>
+                  Kebutuhan acara ini menggunakan {baganaCase.materialAndTechnique}.
+                </p>
+                <span>Pekerjaan nyata Orplyn · {baganaCase.locationLabel}</span>
+              </div>
+            </article>
+          )}
+        </div>
+
+        <div className="capability-heading">
+          <p className="eyebrow eyebrow-dark">YANG BISA DIKERJAKAN ORPLYN</p>
+          <h3>Kebutuhan apparel yang berbeda, dibahas dari satu tempat.</h3>
         </div>
         <div className="capability-tags" aria-label="Jenis produk dan layanan Orplyn">
           {[

@@ -42,16 +42,24 @@ test("server-renders the Orplyn lead funnel", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="id">/i);
   assert.match(html, /Sablon Manual, DTF &amp; Apparel Custom Ciputat/);
-  assert.match(html, /ORPLYN UNTUK BANYAK KEBUTUHAN/);
-  assert.match(html, /<h1>Sablon dan apparel custom. Dibuat untuk dipakai bersama/);
+  assert.match(html, /DARI LEGOSO, CIPUTAT/);
   assert.match(
     html,
-    /Dari workshop Orplyn di Ciputat: sablon manual, DTF, kaos event/i,
+    /<h1>Sablon dan apparel custom dari workshop Orplyn di Legoso\.<\/h1>/i,
+  );
+  assert.match(
+    html,
+    /Kebutuhan acara, tim, komunitas, brand, dan pesanan personal dibahas\s+langsung bersama Admin Aulia/i,
   );
   assert.match(html, /Cek kebutuhan &amp; minta estimasi/i);
-  assert.match(html, /Lihat kemampuan Orplyn/i);
+  assert.match(html, /Kenali workshop Orplyn/i);
   assert.match(html, /Lihat hasil produksi Orplyn/i);
   assert.match(html, /LANGSUNG CHAT ADMIN \(AULIA\)/i);
+  assert.match(html, /Kontak pertama untuk cek kebutuhan/i);
+  assert.match(html, /Screen, tarikan rakel, lapisan warna, dan curing/i);
+  assert.match(html, /1\.000 pcs/i);
+  assert.match(html, /kaos panitia BAGANA/i);
+  assert.match(html, /Cotton combed 24s · DTF/i);
   assert.match(html, /Instagram @orplyn\.id/i);
   assert.match(html, /https:\/\/www\.instagram\.com\/orplyn\.id\//i);
   assert.match(html, /DTF MULAI 1 PCS/i);
@@ -175,7 +183,7 @@ test("server-renders the focused event Ads landing with approved contextual proo
   );
   assert.match(
     html,
-    /Aulia membantu mengecek\s+sablon manual, bahan, MOQ, serta estimasi sebelum produksi dimulai/i,
+    /Kirim jumlah, desain, dan tanggal acara langsung ke Admin Aulia\.\s+Dari workshop Orplyn di Legoso, bahan, teknik manual, MOQ, serta\s+estimasi dicek sebelum produksi dimulai/i,
   );
   assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
   assert.match(html, /Minimum sablon manual untuk 1 warna/i);
@@ -241,7 +249,7 @@ test("server-renders the focused event Ads landing with approved contextual proo
   assert.doesNotMatch(html, /"@type":"FAQPage"/i);
   assert.match(html, /Sablon manual dikerjakan lewat screen/i);
   assert.match(html, /process-manual-squeegee\.jpeg/i);
-  assert.match(html, /Boleh datang atau pickup di workshop/i);
+  assert.match(html, /Datang atau pickup langsung di workshop Legoso/i);
   assert.match(html, /Lihat lokasi di Google Maps/i);
   assert.doesNotMatch(html, /dalam hitungan jam/i);
   assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
@@ -256,11 +264,30 @@ test("keeps the detailed brief as an optional contact-page path", async () => {
   assert.equal(response.status, 200);
 
   const html = await response.text();
+  assert.match(html, /Langsung bicara dengan Admin Aulia/i);
+  assert.match(html, /Aulia menerima kebutuhanmu langsung/i);
+  assert.match(html, /Pesanmu masuk langsung ke Aulia/i);
   assert.match(html, /OPSIONAL · BRIEF LENGKAP/i);
   assert.match(html, /Chat event \/ batch/i);
   assert.match(html, /Chat order satuan/i);
   assert.match(html, /id="quote-product-compact"/i);
   assert.match(html, /id="quote-quantity-compact"/i);
+});
+
+test("turns the portfolio into contextual work before the wider catalog", async () => {
+  const response = await render("/portfolio");
+  assert.equal(response.status, 200);
+
+  const html = await response.text();
+  assert.match(html, /Ada kebutuhan di balik setiap pesanan/i);
+  assert.match(html, /Pekerjaan yang datang dengan konteks nyata/i);
+  assert.match(html, /Kaos perpisahan BKB PAUD Kartini/i);
+  assert.match(html, /Kaos peserta Hari Kartini/i);
+  assert.match(html, /Kaos panitia BAGANA/i);
+  assert.match(html, /1\.000 pcs/i);
+  assert.match(html, /HASIL &amp; PROSES LAINNYA/i);
+  assert.match(html, /Generation Class/i);
+  assert.doesNotMatch(html, /tepat waktu|kapasitas 1\.000/i);
 });
 
 test("keeps local and staging builds out of search indexes", async () => {

@@ -23,30 +23,39 @@ export default function ContactPage() {
   return (
     <>
       <section className="page-intro contact-intro">
-        <p className="eyebrow">KONTAK & LOKASI</p>
-        <h1>Bawa kebutuhanmu ke Orplyn.</h1>
+        <p className="eyebrow">KONTAK ORPLYN · LEGOSO, CIPUTAT</p>
+        <h1>Langsung bicara dengan Admin Aulia.</h1>
         <p>
-          Ceritakan apa yang ingin dibuat, untuk siapa, jumlahnya, dan kapan
-          dipakai. Pilih template event/batch atau satuan untuk langsung chat
-          Admin Aulia; brief lengkap tetap tersedia sebagai pilihan.
+          Ceritakan apa yang ingin dibuat, jumlahnya, dan kapan dipakai. Aulia
+          menjadi kontak pertama untuk membantu mengecek kebutuhan sebelum
+          pesanan masuk ke tahap berikutnya.
         </p>
       </section>
 
       <section className="contact-grid">
         <div className="contact-info">
-          <div>
-            <MessageCircle size={25} aria-hidden="true" />
-            <h2>WhatsApp sales</h2>
+          <div className="contact-aulia-card">
+            <div className="contact-aulia-heading">
+              <span className="aulia-avatar aulia-avatar-dark" aria-hidden="true">A</span>
+              <div>
+                <p className="eyebrow">ADMIN ORPLYN</p>
+                <h2>Aulia menerima kebutuhanmu langsung.</h2>
+              </div>
+            </div>
             <p>
-              {business.whatsappDisplay} · Aulia
-              <br />
-              Admin {business.adminHours}
+              Pesanmu masuk langsung ke Aulia. Pilih jalur event/batch atau
+              satuan, lalu lanjutkan detailnya di WhatsApp.
             </p>
+            <span className="contact-aulia-meta">
+              <MessageCircle size={18} aria-hidden="true" />
+              {business.whatsappDisplay} · {business.adminHours}
+            </span>
             <div className="contact-wa-links">
               <WhatsAppQuickStart
                 whatsappNumber={business.whatsapp}
                 lane="batch"
-                label="Chat event / batch"
+                label="Chat event / batch dengan Aulia"
+                className="button button-primary"
                 product="Kaos custom event / komunitas"
                 useCase="Event / komunitas"
                 placement="contact_card_batch"
@@ -55,6 +64,7 @@ export default function ContactPage() {
                 whatsappNumber={business.whatsapp}
                 lane="single"
                 label="Chat order satuan"
+                className="button button-ghost-light"
                 placement="contact_card_single"
               />
             </div>
@@ -89,17 +99,25 @@ export default function ContactPage() {
           </div>
           <div className="contact-image">
             <img
-              src="/catalog/process/manual/01-proses-sablon-meja-curing.jpeg"
-              alt="Workshop dan proses produksi Orplyn"
-              width="900"
-              height="1200"
+              src="/catalog/process/manual/14-process-manual-color-layer-application.jpeg"
+              alt="Proses penarikan rakel sablon manual di workshop Orplyn"
+              width="908"
+              height="1600"
             />
+            <div>
+              <span>WORKSHOP LEGOSO</span>
+              <strong>Proses manual yang bisa dilihat, bukan hanya hasil akhirnya.</strong>
+            </div>
           </div>
         </div>
 
         <div className="contact-quote" id="quote">
           <p className="eyebrow eyebrow-dark">OPSIONAL · BRIEF LENGKAP</p>
-          <h2>Rapikan detail pesananmu lebih dulu.</h2>
+          <h2>Kalau detailnya sudah siap, susun brief lebih lengkap.</h2>
+          <p>
+            Jalur tercepat tetap chat langsung. Form ini tersedia kalau kamu
+            ingin merapikan spesifikasi sebelum membuka WhatsApp.
+          </p>
           <QuoteBuilder whatsappNumber={business.whatsapp} compact />
         </div>
       </section>

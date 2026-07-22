@@ -106,12 +106,13 @@ export default function EventCommunityAdsLandingPage() {
         <div className="ads-hero-overlay" aria-hidden="true" />
         <div className="ads-hero-content">
           <p className="eyebrow">
-            SABLON MANUAL KAOS EVENT & KOMUNITAS · CIPUTAT
+            SABLON MANUAL KAOS EVENT · WORKSHOP LEGOSO, CIPUTAT
           </p>
           <h1>Kaos Event untuk Tim, Panitia, dan Komunitas.</h1>
           <p className="ads-hero-copy">
-            Kirim jumlah, desain, dan tanggal acara. Aulia membantu mengecek
-            sablon manual, bahan, MOQ, serta estimasi sebelum produksi dimulai.
+            Kirim jumlah, desain, dan tanggal acara langsung ke Admin Aulia.
+            Dari workshop Orplyn di Legoso, bahan, teknik manual, MOQ, serta
+            estimasi dicek sebelum produksi dimulai.
           </p>
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
@@ -235,8 +236,8 @@ export default function EventCommunityAdsLandingPage() {
         aria-label="Lokasi workshop Orplyn"
       >
         <div>
-          <p className="eyebrow eyebrow-dark">WORKSHOP ORPLYN · CIPUTAT</p>
-          <h2>Boleh datang atau pickup di workshop.</h2>
+          <p className="eyebrow eyebrow-dark">WORKSHOP ORPLYN · LEGOSO, CIPUTAT</p>
+          <h2>Datang atau pickup langsung di workshop Legoso.</h2>
           <p>
             Lokasi workshop bisa didatangi untuk pickup. Janji datang disarankan
             agar kebutuhanmu bisa dicek bersama admin.
@@ -288,8 +289,8 @@ export default function EventCommunityAdsLandingPage() {
           <p className="eyebrow">MULAI DARI CHAT SINGKAT</p>
           <h2>Mulai kaos untuk acaramu.</h2>
           <p>
-            Admin aktif {business.adminHours}. Workshop berada di Ciputat,
-            Tangerang Selatan.
+            Pesanmu masuk langsung ke Admin Aulia pada {business.adminHours}.
+            Workshop berada di Legoso, Ciputat.
           </p>
           <span className="ads-location">
             <MapPin size={18} aria-hidden="true" /> {business.address}
