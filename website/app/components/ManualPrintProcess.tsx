@@ -23,9 +23,9 @@ export function ManualPrintProcess() {
       </div>
       <figure className="manual-process-visual">
         <img
-          src="/proof/process-manual-squeegee.jpeg"
+          src="/catalog/process/manual/13-process-manual-large-format-squeegee.jpeg"
           alt="Tarik rakel pada proses sablon manual Orplyn"
-          width="739"
+          width="963"
           height="1600"
           loading="lazy"
         />

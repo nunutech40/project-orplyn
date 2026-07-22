@@ -248,7 +248,7 @@ test("server-renders the focused event Ads landing with approved contextual proo
   assert.match(html, /Bisa bikin sample atau test print dulu/i);
   assert.doesNotMatch(html, /"@type":"FAQPage"/i);
   assert.match(html, /Sablon manual dikerjakan lewat screen/i);
-  assert.match(html, /process-manual-squeegee\.jpeg/i);
+  assert.match(html, /13-process-manual-large-format-squeegee\.jpeg/i);
   assert.match(html, /Datang atau pickup langsung di workshop Legoso/i);
   assert.match(html, /Lihat lokasi di Google Maps/i);
   assert.doesNotMatch(html, /dalam hitungan jam/i);

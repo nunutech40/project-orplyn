@@ -549,7 +549,7 @@ export const portfolio = [
     category: "Proses sablon manual",
   },
   {
-    image: "/catalog/process/manual/11-process-manual-squeegee-application.jpeg",
+    image: "/catalog/process/manual/13-process-manual-large-format-squeegee.jpeg",
     title: "Tarik rakel",
     category: "Proses sablon manual",
   },

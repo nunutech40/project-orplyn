@@ -39,7 +39,7 @@ const manualProcess = [
   },
   {
     image:
-      "/catalog/process/manual/11-process-manual-squeegee-application.jpeg",
+      "/catalog/process/manual/13-process-manual-large-format-squeegee.jpeg",
     title: "Penarikan rakel pada screen",
   },
   {
