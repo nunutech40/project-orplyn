@@ -28,7 +28,7 @@ export default function ContactPage() {
         <p>
           Ceritakan apa yang ingin dibuat, untuk siapa, jumlahnya, dan kapan
           dipakai. Pilih template event/batch atau satuan untuk langsung chat
-          Aulia; brief lengkap tetap tersedia sebagai pilihan.
+          Admin Aulia; brief lengkap tetap tersedia sebagai pilihan.
         </p>
       </section>
 

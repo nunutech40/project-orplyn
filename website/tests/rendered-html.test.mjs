@@ -51,7 +51,9 @@ test("server-renders the Orplyn lead funnel", async () => {
   assert.match(html, /Cek kebutuhan &amp; minta estimasi/i);
   assert.match(html, /Lihat kemampuan Orplyn/i);
   assert.match(html, /Lihat hasil produksi Orplyn/i);
-  assert.match(html, /LANGSUNG CHAT AULIA/i);
+  assert.match(html, /LANGSUNG CHAT ADMIN \(AULIA\)/i);
+  assert.match(html, /Instagram @orplyn\.id/i);
+  assert.match(html, /https:\/\/www\.instagram\.com\/orplyn\.id\//i);
   assert.match(html, /DTF MULAI 1 PCS/i);
   assert.match(html, /Saat semua bergerak bersama, identitasnya harus terlihat/i);
   assert.match(html, /Tidak perlu mengisi form di website/i);

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   ArrowRight,
+  Camera,
   CheckCircle2,
   MapPin,
   Palette,
@@ -202,10 +203,20 @@ export default function Home() {
               Lihat kemampuan Orplyn <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
-          <Link className="hero-proof-link" href="#hasil-produksi">
-            Lihat hasil produksi Orplyn
-            <ArrowRight size={18} aria-hidden="true" />
-          </Link>
+          <div className="hero-secondary-links">
+            <Link className="hero-proof-link" href="#hasil-produksi">
+              Lihat hasil produksi Orplyn
+              <ArrowRight size={18} aria-hidden="true" />
+            </Link>
+            <a
+              className="hero-proof-link"
+              href={business.instagram}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Camera size={18} aria-hidden="true" /> Instagram @orplyn.id
+            </a>
+          </div>
         </div>
         <div className="hero-location">
           <MapPin size={18} aria-hidden="true" />
@@ -214,7 +225,7 @@ export default function Home() {
       </section>
 
       <section className="capability-strip" aria-label="Aturan order utama Orplyn">
-        <span>LANGSUNG CHAT AULIA</span>
+        <span>LANGSUNG CHAT ADMIN (AULIA)</span>
         <span>DTF MULAI 1 PCS</span>
         <span>MANUAL 1 WARNA MULAI 12 PCS</span>
         <span>PICKUP DI CIPUTAT</span>
