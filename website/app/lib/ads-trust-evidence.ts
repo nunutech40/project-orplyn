@@ -66,7 +66,7 @@ export const adsTrustEvidence: AdsTrustEvidence = {
       materialAndTechnique: "Cotton combed 24s · DTF",
       locationLabel: "Tangerang",
       context: "Kaos custom lengan panjang anak untuk perpisahan tahun pelajaran 2025/2026 di Tangerang.",
-      image: "/proof/order-event-perpisahan-bkb-paud-kartini-dtf.jpeg",
+      image: "/proof/redacted/order-event-perpisahan-bkb-paud-kartini-dtf-faces-redacted.png",
       imageAlt: "Kaos custom anak untuk acara perpisahan BKB PAUD Kartini",
     },
     {
@@ -81,7 +81,7 @@ export const adsTrustEvidence: AdsTrustEvidence = {
       materialAndTechnique: "Kaos PE · DTF",
       locationLabel: "Tangerang",
       context: "Kaos custom peserta peringatan Hari Kartini PAUD/MI Bustanul Aulad di Tangerang.",
-      image: "/proof/order-event-hari-kartini-bustanul-aulad-dtf.jpeg",
+      image: "/proof/redacted/order-event-hari-kartini-bustanul-aulad-dtf-faces-redacted.png",
       imageAlt: "Kaos custom peserta acara Hari Kartini PAUD atau MI Bustanul Aulad",
     },
     {

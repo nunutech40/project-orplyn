@@ -409,7 +409,7 @@ export const secondaryServices = services.filter(
 
 export const portfolio = [
   {
-    image: "/catalog/orders/01-order-event-perpisahan-bkb-paud-kartini-tangerang-dtf-15pcs.jpeg",
+    image: "/proof/redacted/order-event-perpisahan-bkb-paud-kartini-dtf-faces-redacted.png",
     title: "Perpisahan BKB PAUD Kartini",
     category: "Order event · DTF",
   },
@@ -419,7 +419,7 @@ export const portfolio = [
     category: "Order kelas · DTF efek khusus",
   },
   {
-    image: "/catalog/orders/03-order-event-hari-kartini-bustanul-aulad-tangerang-dtf-15pcs.jpeg",
+    image: "/proof/redacted/order-event-hari-kartini-bustanul-aulad-dtf-faces-redacted.png",
     title: "Hari Kartini Bustanul Aulad",
     category: "Order sekolah · DTF",
   },
