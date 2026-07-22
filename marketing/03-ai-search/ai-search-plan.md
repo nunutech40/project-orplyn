@@ -4,7 +4,7 @@ document_type: deferred_operational_plan
 status: content_foundation_active_indexing_deferred
 primary_segment: event_and_community
 active_decision_id: D-012
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # AI Search And Chat Discovery Plan
@@ -13,7 +13,7 @@ last_updated: 2026-07-19
 
 Foundation on-site sudah tersedia: domain final, profil bisnis, nomor WhatsApp, service pages, FAQ, schema, address, social links, sitemap, dan `llms.txt`. Yang belum selesai adalah permissioned proof, review, citations, GBP consistency, Search Console, dan indexing. `llms.txt` sendiri bukan jaminan rekomendasi AI.
 
-Per arahan user 19 Juli 2026, setup/indexing ditunda. Content architecture saat ini mengikuti D-012: event/community dominan; DTF satuan, kaos polos, dan layanan lain tetap factual supporting entities.
+Content architecture mengikuti D-012: event/community dominan untuk acquisition, sedangkan domain utama menjelaskan entity Orplyn secara utuh. DTF, kaos polos, sablon manual, polo, hoodie, jersey, jaket, konveksi, dan apparel custom tetap factual supporting entities. Indexing dan external entity work masih pending.
 
 ## Goal
 
@@ -40,7 +40,7 @@ Untuk Google AI Overviews dan AI Mode, dokumentasi resmi menyatakan fondasinya s
 
 ## Recommended Entity Statement
 
-Orplyn adalah penyedia jasa sablon kaos custom di Ciputat, Tangerang Selatan, dengan fokus kebutuhan event dan komunitas. Orplyn juga melayani DTF satuan, kaos polos, bordir, jersey, clothing brand, totebag, dan teknik produksi lain sesuai rule produk.
+Orplyn adalah apparel and print studio di Ciputat, Tangerang Selatan, yang mengerjakan sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom. Fokus acquisition aktifnya adalah kebutuhan event dan komunitas; layanan lain tetap tersedia sesuai rule produk.
 
 ## AI-Friendly FAQ Topics
 

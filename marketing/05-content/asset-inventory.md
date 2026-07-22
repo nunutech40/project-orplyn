@@ -1,10 +1,12 @@
 # Asset Inventory
 
+Last updated: 2026-07-22
+
 Asset mentah ada di `assets/raw/google-drive/` dan `assets/raw/instagram/`.
 
 Arahan aktif 19 Juli 2026: prioritaskan aset hasil produksi untuk event/komunitas. Foto produk tetap berfungsi sebagai proof of work, sedangkan testimoni, nilai transaksi, jumlah pesanan, deadline, dan outcome komersial hanya boleh dipublikasikan setelah melewati `commercial-proof-publication-contract.md`.
 
-Status 16 Juli 2026: 156 file sekitar 606 MB sudah tersimpan dari Google Drive dalam 20 kategori. Dua belas image terpilih sudah dioptimalkan untuk website di `website/public/images/`, dan dua file logo transparan tersedia. Batch Instagram terbaru menambah 12 post, 28 media file, dan sekitar 89 MB; kurasi awal menghasilkan 8 selected, 2 reserve, dan 2 hold.
+Arsip raw Google Drive tetap berisi 156 file sekitar 606 MB dalam 20 kategori. Aset tambahan owner telah dinormalisasi ke `assets/curated/` dengan manifest AI-readable, lalu 36 hasil/proses terpilih diterbitkan ke `website/public/catalog/`. Homepage memakai subset terbaru; `/portfolio` memuat katalog lengkap tanpa crop melalui frame `object-fit: contain`. Dua logo transparan tersedia. Batch Instagram 12 post/28 media tetap menjadi arsip terpisah dengan status kurasi awal.
 
 ## Categories
 
@@ -66,11 +68,10 @@ P1 yang terpilih:
 
 ## Next Asset Work
 
-- Audit ulang image website dengan event/komunitas sebagai prioritas akuisisi.
-- Minta dan verifikasi bukti transaksi event/komunitas; jangan membuat placeholder testimoni publik.
+- Tambahkan contoh event/komunitas dengan teknik sablon manual bila owner kelak mengirimkannya; ini peningkatan proof, bukan blocker saat ini.
+- Pertahankan pemisahan `finished/manual`, `finished/dtf`, kategori produk, order berkonteks, dan proses pada manifest curated.
 - Konfirmasi teknik, desain customer, wajah, dan izin publikasi untuk 8 post terpilih.
-- Optimalkan empat aset P0 untuk ukuran website; jangan memasukkan MP4 raw langsung ke bundle.
+- Optimalkan aset yang benar-benar dipakai; jangan memasukkan MP4 raw atau seluruh arsip ke bundle.
 - Arsipkan 17 post lama dengan cookie browser bila histori tersebut masih relevan untuk proof.
-- Pisahkan foto hasil jadi, proses produksi, close-up detail, dan video.
-- Rename asset terpilih dengan nama SEO-friendly.
+- Jangan mengembalikan galeri ke fixed crop; produk harus terlihat utuh meski rasio sumber berbeda.
 - Tandai teknik yang belum pasti agar tidak menjadi klaim copy yang salah.

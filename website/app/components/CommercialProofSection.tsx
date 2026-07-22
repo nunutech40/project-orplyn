@@ -11,9 +11,9 @@ type CommercialProofSectionProps = {
 export function CommercialProofSection({
   proofs,
   id = "bukti-pesanan",
-  eyebrow = "BUKTI PESANAN TERVERIFIKASI",
-  title = "Detail pesanan nyata, bukan sekadar galeri.",
-  description = "Bukti dipilih dari sumber yang ditinjau dan disetujui pemilik untuk ditampilkan. Detail yang tidak tersedia tidak kami tambahkan.",
+  eyebrow = "HASIL ORDER & TANGGAPAN PELANGGAN",
+  title = "Lihat hasil yang sudah dikerjakan Orplyn.",
+  description = "Lihat konteks pesanan, teknik yang digunakan, dan tanggapan pelanggan pada beberapa hasil produksi Orplyn.",
 }: CommercialProofSectionProps) {
   if (proofs.length === 0) return null;
 

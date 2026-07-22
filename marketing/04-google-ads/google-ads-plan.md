@@ -4,16 +4,16 @@ document_type: deferred_operational_plan
 status: deferred_until_launch_gate
 primary_segment: event_and_community
 active_decision_id: D-015
-last_updated: 2026-07-21
+last_updated: 2026-07-22
 ---
 
 # Google Ads Plan
 
 ## Status
 
-Belum diluncurkan dan sengaja ditunda. Domain final serta HTTPS sudah aktif; local-only Ads landing, Lead ID, attribution, lead-log skeleton, dan secondary conversion hook sudah disiapkan. Source candidate belum dipush atau dideploy.
+Belum diluncurkan dan sengaja ditahan. Domain final, HTTPS, Ads landing, Lead ID, attribution, lead-log skeleton, Google Ads tag, dan secondary lead-start conversion sudah live. Homepage/portfolio redesign terbaru masih lokal dan tidak mengubah destination Ads.
 
-Launch gate belum lulus karena Google tag/conversion, Search Console/indexing, approval copy/proof publik, capacity/economics, lead log, admin readiness, dan uji WhatsApp end-to-end belum selesai. Per arahan user 19 Juli 2026, seluruh setup eksternal dikerjakan setelah dokumentasi dan website source selesai.
+Launch gate belum lulus karena Search Console/indexing, GBP/NAP, approval offer/capacity/economics, lead-log operation, admin readiness, dan uji WhatsApp end-to-end belum selesai. Tag terpasang bukan izin menyalakan campaign.
 
 ## When To Start
 
@@ -91,7 +91,7 @@ Primary business conversion:
 Secondary technical conversion signal:
 
 - Valid website brief yang membuka WhatsApp dan memicu `whatsapp_brief_submit`, `generate_lead`, serta `whatsapp_open`.
-- Google Ads `lead started` conversion setelah ID dan label dikonfigurasi.
+- Google Ads `lead started` conversion dengan tag `AW-374076115` dan label yang sudah dikonfigurasi.
 - Event memakai Lead ID sebagai `transaction_id` untuk membantu deduplikasi.
 
 Consideration only:

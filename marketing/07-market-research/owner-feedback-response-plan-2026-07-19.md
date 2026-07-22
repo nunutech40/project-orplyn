@@ -11,7 +11,7 @@ retention_hypothesis_id: H-008
 decision_ids: [D-012]
 experiment_ids: [E-01, E-03, E-05, E-08, E-11, E-12]
 snapshot_date: 2026-07-19
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # Respons Strategi Atas Owner Feedback
@@ -23,6 +23,10 @@ Tujuan: memperbesar qualified lead dan sales dari segmen event/komunitas tanpa m
 ## Latest Implementation Clarification - 19 Juli 2026
 
 Instruksi user terbaru mengizinkan konsolidasi dokumentasi dan perapihan website menjadi event-first selama copy tetap faktual. Ini tidak mengubah Public-Claim Gate: website boleh meminta tanggal pakai, jumlah, desain, dan lokasi, tetapi belum boleh menjanjikan hasil deadline, slot, bebas masalah H-1, atau kemudahan repeat. Setup eksternal seperti GBP, Search Console, Google tag, indexing, dan Ads tetap ditunda sampai user mengaktifkannya kembali.
+
+## Current Clarification - 22 Juli 2026
+
+Google Ads tag dan lead-start conversion sudah dipasang, tetapi Ads tetap OFF. Domain utama sekarang boleh memperkenalkan kemampuan Orplyn secara lengkap dan memakai brand voice provisional yang tegas, keren, dapat dipercaya, dan membersamai. Ini tidak mengubah segment concentration: LP Ads dan campaign tetap event/community only. Brand voice bukan bukti deadline, kualitas, kapasitas, atau outcome.
 
 ## AI Reading Contract
 

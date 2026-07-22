@@ -26,12 +26,12 @@ export function ProofSlider({ id = "arsip-bukti" }: ProofSliderProps) {
     <section className="proof-slider-section" id={id} aria-label="Arsip bukti pelanggan">
       <div className="proof-slider-heading">
         <div>
-          <p className="eyebrow eyebrow-dark">ARSIP BUKTI PELANGGAN</p>
-          <h2>Lihat bukti satu per satu, tanpa dipotong.</h2>
+          <p className="eyebrow eyebrow-dark">HASIL ORDER &amp; TANGGAPAN PELANGGAN</p>
+          <h2>Dari Hari Kartini sampai jersey dan repeat order.</h2>
         </div>
         <p>
-          Setiap item ditampilkan sesuai konteks aslinya. Bukti DTF, jersey,
-          kaos polos, dan event tidak kami samakan menjadi satu klaim.
+          Setiap pesanan punya kebutuhan dan konteksnya sendiri. Pilih item
+          untuk melihat hasil serta tanggapan pelanggan.
         </p>
       </div>
 
@@ -72,7 +72,10 @@ export function ProofSlider({ id = "arsip-bukti" }: ProofSliderProps) {
                 aria-label={`Tampilkan bukti ${index + 1}: ${item.title}`}
                 aria-current={index === activeIndex ? "true" : undefined}
                 title={`Bukti ${index + 1}`}
-              />
+              >
+                <img src={item.image} alt="" aria-hidden="true" />
+                <span>{index + 1}</span>
+              </button>
             ))}
           </div>
           <button type="button" onClick={showNext} aria-label="Bukti berikutnya" title="Bukti berikutnya">

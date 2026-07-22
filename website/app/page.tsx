@@ -10,13 +10,11 @@ import {
   Shirt,
 } from "./components/Icons";
 import { MobileQuoteCta } from "./components/MobileQuoteCta";
-import { CommercialProofSection } from "./components/CommercialProofSection";
 import { ProofSlider } from "./components/ProofSlider";
 import { WhatsAppQuickStart } from "./components/WhatsAppQuickStart";
-import { commercialProofs } from "./lib/commercial-proofs";
 import {
   business,
-  portfolio,
+  homepagePortfolio,
   primaryServices,
   secondaryServices,
   siteUrl,
@@ -24,9 +22,9 @@ import {
 } from "./lib/site-data";
 
 export const metadata: Metadata = {
-  title: "Sablon Manual Kaos Event & Komunitas Ciputat",
+  title: "Sablon Manual, DTF & Apparel Custom Ciputat",
   description:
-    "Sablon manual untuk kaos event dan komunitas di Orplyn, Ciputat. Kirim jumlah, desain, dan tanggal pakai untuk mengecek MOQ serta estimasi produksi.",
+    "Orplyn mengerjakan sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom di Ciputat.",
   alternates: {
     canonical: "/",
   },
@@ -35,7 +33,6 @@ export const metadata: Metadata = {
 const serviceIcons = [Shirt, ScanLine, Palette];
 const featuredService = primaryServices[0]!;
 const supportingServices = primaryServices.slice(1);
-const homepageProofs = commercialProofs.slice(0, 3);
 
 const faqs = [
   {
@@ -82,9 +79,9 @@ const localBusinessSchema = {
   alternateName: business.longName,
   url: siteUrl,
   logo: `${siteUrl}/brand/orplyn-monogram-black.png`,
-  image: `${siteUrl}/images/hero-sablon.webp`,
+  image: `${siteUrl}/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg`,
   description:
-    "Jasa sablon kaos custom untuk event dan komunitas di Ciputat, Tangerang Selatan. DTF satuan, kaos polos, bordir, jersey, dan merchandise juga tersedia.",
+    "Sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom di Ciputat, Tangerang Selatan.",
   address: {
     "@type": "PostalAddress",
     streetAddress: "Jl. Legoso Sel. II No.43, Pisangan",
@@ -175,8 +172,8 @@ export default function Home() {
       <section className="hero">
         <img
           className="hero-media"
-          src="/images/hero-sablon.webp"
-          alt="Kaos custom hasil produksi Orplyn untuk kebutuhan kelompok"
+          src="/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg"
+          alt="Hasil sablon manual pada kaos produksi Orplyn"
           width="1600"
           height="900"
           loading="eager"
@@ -184,30 +181,26 @@ export default function Home() {
         />
         <div className="hero-overlay" aria-hidden="true" />
         <div className="hero-content">
-          <p className="eyebrow">KAOS EVENT &amp; KOMUNITAS · WORKSHOP CIPUTAT</p>
-          <h1>Sablon manual untuk kaos event &amp; komunitas.</h1>
+          <p className="eyebrow">ORPLYN APPAREL &amp; PRINT STUDIO · CIPUTAT</p>
+          <h1>Sablon dan apparel custom. Dibuat untuk dipakai bersama.</h1>
           <p className="hero-copy">
-            Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia. Orplyn
-            bantu mengecek bahan, teknik manual, minimum order, dan estimasi
-            sesuai detail pesanan serta antrean produksi.
+            Dari workshop Orplyn di Ciputat: sablon manual, DTF, kaos event,
+            polo, hoodie, jersey, jaket, konveksi, dan apparel custom untuk
+            acara, tim, komunitas, brand, dan kebutuhan personal.
           </p>
           <div className="hero-actions">
             <WhatsAppQuickStart
               whatsappNumber={business.whatsapp}
               lane="batch"
-              label="Minta estimasi sablon manual"
+              label="Cek kebutuhan & minta estimasi"
               className="button button-primary"
-              product="Sablon manual kaos event / komunitas"
-              useCase="Event / komunitas"
+              product="Sablon / apparel custom"
+              useCase="Kebutuhan apparel custom"
               placement="homepage_hero_batch"
             />
-            <WhatsAppQuickStart
-              whatsappNumber={business.whatsapp}
-              lane="single"
-              label="Chat order satuan"
-              className="button button-ghost-light"
-              placement="homepage_hero_single"
-            />
+            <Link className="button button-ghost-light" href="#layanan">
+              Lihat kemampuan Orplyn <ArrowRight size={18} aria-hidden="true" />
+            </Link>
           </div>
           <Link className="hero-proof-link" href="#hasil-produksi">
             Lihat hasil produksi Orplyn
@@ -227,11 +220,46 @@ export default function Home() {
         <span>PICKUP DI CIPUTAT</span>
       </section>
 
+      <section
+        className="section capability-overview"
+        id="layanan"
+        aria-labelledby="capability-title"
+      >
+        <div className="section-heading">
+          <div>
+            <p className="eyebrow eyebrow-dark">ORPLYN UNTUK BANYAK KEBUTUHAN</p>
+            <h2 id="capability-title">
+              Untuk acara yang disiapkan, tim yang dibangun, dan identitas yang ingin dibawa.
+            </h2>
+          </div>
+          <p>
+            Orplyn mengerjakan sablon manual, DTF, kaos event, polo, hoodie,
+            jersey, jaket, konveksi, dan apparel custom.
+          </p>
+        </div>
+        <div className="capability-tags" aria-label="Jenis produk dan layanan Orplyn">
+          {[
+            "Sablon manual",
+            "DTF",
+            "Kaos event",
+            "Polo",
+            "Hoodie",
+            "Jersey",
+            "Jaket",
+            "Konveksi",
+            "Apparel custom",
+            "Ciputat",
+          ].map((item) => (
+            <span key={item}>{item}</span>
+          ))}
+        </div>
+      </section>
+
       <section className="section section-services" id="paket">
         <div className="section-heading">
           <div>
-            <p className="eyebrow eyebrow-dark">FOKUS EVENT &amp; KOMUNITAS</p>
-            <h2>Mulai dari kebutuhan acaramu.</h2>
+            <p className="eyebrow eyebrow-dark">UNTUK EVENT &amp; KOMUNITAS</p>
+            <h2>Saat semua bergerak bersama, identitasnya harus terlihat.</h2>
           </div>
           <p>
             Tanggal pakai, jumlah, desain, dan lokasi membantu admin mengecek
@@ -305,18 +333,18 @@ export default function Home() {
 
       <section className="section proof-section" id="hasil-produksi">
         <div className="proof-intro">
-          <p className="eyebrow">HASIL PRODUKSI NYATA</p>
-          <h2>Lihat hasil Orplyn sebelum menentukan pilihan.</h2>
+          <p className="eyebrow">DARI DESAIN KE HASIL JADI</p>
+          <h2>Lihat hasilnya. Kenali cara kerjanya.</h2>
           <p>
-            Foto hasil dan proses produksi membantu melihat warna, tekstur, dan
-            penerapan teknik pada kebutuhan yang berbeda.
+            Jelajahi hasil sablon, apparel custom, dan proses produksi untuk
+            menemukan arah yang paling dekat dengan kebutuhanmu.
           </p>
           <Link className="button button-light" href="/portfolio">
             Lihat semua hasil <ArrowRight size={18} aria-hidden="true" />
           </Link>
         </div>
         <div className="portfolio-preview">
-          {portfolio.slice(0, 6).map((item, index) => (
+          {homepagePortfolio.map((item, index) => (
             <figure key={item.image} className={`portfolio-item item-${index + 1}`}>
               <img
                 src={item.image}
@@ -334,14 +362,12 @@ export default function Home() {
         </div>
       </section>
 
-      <CommercialProofSection proofs={homepageProofs} />
-
-      <ProofSlider />
+      <ProofSlider id="bukti-pesanan" />
 
       <section className="section why-section">
         <div className="why-image">
           <img
-            src="/images/proses-sablon.jpg"
+            src="/catalog/process/manual/01-proses-sablon-meja-curing.jpeg"
             alt="Proses sablon kaos di workshop Orplyn"
             width="1080"
             height="1440"
@@ -349,12 +375,12 @@ export default function Home() {
           />
         </div>
         <div className="why-content">
-          <p className="eyebrow eyebrow-dark">KENAPA MULAI DI ORPLYN</p>
-          <h2>Nggak perlu menebak bahan dan teknik sendiri.</h2>
+          <p className="eyebrow eyebrow-dark">CARA ORPLYN BEKERJA</p>
+          <h2>Kebutuhan dulu. Teknik menyusul.</h2>
           <p className="lead-copy">
-            Ceritakan kebutuhan acaramu ke Aulia. Pilihan bahan, teknik,
-            minimum order, dan estimasi dibahas setelah jumlah, desain, tanggal
-            pakai, serta lokasi diketahui.
+            Ceritakan akan dipakai untuk apa, kapan dibutuhkan, jumlahnya, dan
+            desain yang kamu bawa. Aulia membantu mengecek bahan, teknik,
+            minimum order, serta estimasi sebelum produksi dilanjutkan.
           </p>
           <ul className="check-list">
             <li>
@@ -381,7 +407,7 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">CARA ORDER</p>
-            <h2>Empat langkah menyiapkan pesanan event.</h2>
+            <h2>Dari chat ke produksi, detailnya dibahas satu per satu.</h2>
           </div>
           <p>Detail yang lengkap membantu admin memberi estimasi lebih sesuai.</p>
         </div>
@@ -404,7 +430,7 @@ export default function Home() {
       <section className="quote-section" id="quote">
         <div className="quote-copy">
           <p className="eyebrow">LANGSUNG KE WHATSAPP</p>
-          <h2>Pilih skala pesananmu. Template chat sudah disiapkan.</h2>
+          <h2>Mulai pesananmu dari WhatsApp.</h2>
           <p>
             Tidak perlu mengisi form di website. Buka WhatsApp, lengkapi bagian
             yang masih kosong, lalu kirim ke Aulia.
@@ -436,7 +462,7 @@ export default function Home() {
             <WhatsAppQuickStart
               whatsappNumber={business.whatsapp}
               lane="batch"
-              label="Minta estimasi sablon manual"
+              label="Cek kebutuhan & minta estimasi"
               className="button button-dark"
               product="Sablon manual kaos event / komunitas"
               useCase="Event / komunitas"
@@ -467,7 +493,7 @@ export default function Home() {
       <section className="section faq-section">
         <div className="faq-heading">
           <p className="eyebrow eyebrow-dark">FAQ ORDER</p>
-          <h2>Pertanyaan sebelum minta estimasi.</h2>
+          <h2>Yang perlu kamu tahu sebelum produksi.</h2>
         </div>
         <div className="faq-list">
           {faqs.map((faq) => (
@@ -482,7 +508,7 @@ export default function Home() {
       <section className="secondary-services-section">
         <div className="secondary-services-inner">
           <div>
-            <p className="eyebrow">LAYANAN PRODUKSI LAIN</p>
+            <p className="eyebrow">LEBIH DARI KAOS EVENT</p>
             <h2>Bordir, jersey, clothing brand, dan merchandise.</h2>
           </div>
           <div className="secondary-service-list">
@@ -499,7 +525,7 @@ export default function Home() {
       <section className="location-section">
         <div>
           <p className="eyebrow eyebrow-dark">WORKSHOP & ADMIN ORPLYN</p>
-          <h2>Pickup di Ciputat, kirim ke seluruh Indonesia.</h2>
+          <h2>Workshop di Ciputat. Kirim ke seluruh Indonesia.</h2>
           <p>{business.address}</p>
           <div className="location-meta">
             <span>WhatsApp {business.whatsappDisplay}</span>

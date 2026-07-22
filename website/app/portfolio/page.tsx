@@ -17,11 +17,11 @@ export default function PortfolioPage() {
   return (
     <>
       <section className="page-intro page-intro-portfolio">
-        <p className="eyebrow">PORTFOLIO ORPLYN</p>
-        <h1>Hasil produksi nyata dari workshop Orplyn.</h1>
+        <p className="eyebrow">HASIL DARI WORKSHOP ORPLYN</p>
+        <h1>Setiap pesanan datang dengan kebutuhan yang berbeda.</h1>
         <p>
-          Lihat contoh sablon, bordir, jersey, totebag, dan apparel custom sebelum
-          menentukan arah produksimu.
+          Dari sablon manual dan DTF sampai kaos event, totebag, jersey, dan
+          apparel custom. Lihat hasil serta proses sebelum menentukan arah produksimu.
         </p>
       </section>
 

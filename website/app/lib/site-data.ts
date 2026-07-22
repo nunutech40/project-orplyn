@@ -133,8 +133,8 @@ export const services: Service[] = [
       "Kaos custom dan sablon DTF mulai 1 pcs untuk kebutuhan personal, sampel, atau uji cetak.",
     description:
       "Kirim desain dan kebutuhanmu. Orplyn membantu mengecek bahan, ukuran cetak, jumlah, serta estimasi produksi sebelum pesanan dilanjutkan.",
-    image: "/images/sablon-pasta.jpg",
-    imageAlt: "Hasil sablon warna pada kaos produksi Orplyn",
+    image: "/catalog/dtf/02-hasil-dtf-desain-penuh-warna.jpeg",
+    imageAlt: "Hasil DTF desain penuh warna pada kaos produksi Orplyn",
     idealFor: [
       "Kaos custom personal",
       "Sampel atau uji cetak",
@@ -149,9 +149,9 @@ export const services: Service[] = [
     ],
     methods: ["DTF", "Kaos custom", "20s", "24s", "30s"],
     gallery: [
-      "/images/sablon-pasta.jpg",
-      "/images/hero-sablon.webp",
-      "/images/kaos-polos-warna.jpg",
+      "/catalog/dtf/01-hasil-dtf-planetarium.jpeg",
+      "/catalog/dtf/02-hasil-dtf-desain-penuh-warna.jpeg",
+      "/catalog/dtf/03-hasil-dtf-gid-reflektif.jpeg",
     ],
     quoteProductId: "kaos-custom-dtf",
     defaultLane: "single",
@@ -170,8 +170,8 @@ export const services: Service[] = [
       "Sablon manual untuk kaos panitia, reuni, komunitas, kampus, acara kantor, dan kebutuhan promosi.",
     description:
       "Sampaikan jumlah, desain, tanggal pakai, dan lokasi. Admin Orplyn mengecek bahan, teknik manual, minimum order, serta estimasi produksi sebelum harga dan jadwal dikonfirmasi.",
-    image: "/images/hero-sablon.webp",
-    imageAlt: "Hasil sablon penuh warna pada kaos hitam produksi Orplyn",
+    image: "/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg",
+    imageAlt: "Hasil sablon manual pada kaos produksi Orplyn",
     idealFor: [
       "Event dan kepanitiaan",
       "Komunitas dan klub",
@@ -186,9 +186,9 @@ export const services: Service[] = [
     ],
     methods: ["Plastisol", "Rubber / pasta", "Discharge", "High density", "Efek khusus"],
     gallery: [
-      "/images/hero-sablon.webp",
-      "/images/sablon-pasta.jpg",
-      "/images/sablon-discharge.jpg",
+      "/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg",
+      "/catalog/manual/04-hasil-manual-puff-pasta.jpeg",
+      "/catalog/manual/06-hasil-discharge.jpeg",
     ],
     quoteProductId: "sablon-manual-plastisol",
     defaultLane: "batch",
@@ -208,7 +208,7 @@ export const services: Service[] = [
       "Kaos polos mulai 1 pcs, dengan perhitungan grosir mulai 6 pcs dan pilihan bahan 20s, 24s, atau 30s.",
     description:
       "Pilih kaos polos berdasarkan bahan, warna, ukuran, dan jumlah. Ketersediaan stok tetap dikonfirmasi admin sebelum pembayaran.",
-    image: "/images/kaos-polos-warna.jpg",
+    image: "/catalog/kaos-polos/01-kaos-polos-warna.jpeg",
     imageAlt: "Pilihan warna kaos polos yang tersedia di Orplyn",
     idealFor: [
       "Kebutuhan personal",
@@ -224,9 +224,9 @@ export const services: Service[] = [
     ],
     methods: ["20s", "24s", "30s", "Sablon custom", "Pickup Ciputat"],
     gallery: [
-      "/images/kaos-polos-warna.jpg",
-      "/images/hero-sablon.webp",
-      "/images/sablon-pasta.jpg",
+      "/catalog/kaos-polos/01-kaos-polos-warna.jpeg",
+      "/catalog/kaos-polos/02-kaos-polos-warna-2.jpeg",
+      "/catalog/kaos-polos/03-kaos-polos-warna-3.jpeg",
     ],
     quoteProductId: "kaos-polos",
     defaultLane: "single",
@@ -244,7 +244,7 @@ export const services: Service[] = [
       "Pilihan teknik sablon untuk rilisan brand, merchandise, dan produksi berulang.",
     description:
       "Bahas desain, bahan, jumlah, dan karakter hasil yang diinginkan sebelum memilih teknik digital, manual, atau efek khusus.",
-    image: "/images/sablon-puff.jpg",
+    image: "/catalog/manual/04-hasil-manual-puff-pasta.jpeg",
     imageAlt: "Detail sablon puff timbul produksi Orplyn",
     idealFor: [
       "Clothing brand lokal",
@@ -268,9 +268,9 @@ export const services: Service[] = [
       "Bludru",
     ],
     gallery: [
-      "/images/sablon-puff.jpg",
-      "/images/sablon-discharge.jpg",
-      "/images/sablon-bludru.jpg",
+      "/catalog/manual/04-hasil-manual-puff-pasta.jpeg",
+      "/catalog/manual/05-hasil-manual-pasta-glitter.jpeg",
+      "/catalog/manual/06-hasil-discharge.jpeg",
     ],
     quoteProductId: "sablon-manual-plastisol",
     defaultLane: "batch",
@@ -362,7 +362,7 @@ export const services: Service[] = [
       "Totebag dan merchandise untuk promosi, seminar, event, hampers, dan kebutuhan organisasi.",
     description:
       "Bahas bahan, warna, ukuran, desain, dan jumlah untuk menyiapkan totebag atau merchandise sesuai kebutuhan acara.",
-    image: "/images/totebag-custom.jpg",
+    image: "/catalog/totebag/01-totebag-custom.jpeg",
     imageAlt: "Totebag oranye custom produksi Orplyn",
     idealFor: [
       "Seminar dan workshop",
@@ -378,9 +378,9 @@ export const services: Service[] = [
     ],
     methods: ["Sablon", "DTF", "Bordir", "Aplikasi desain"],
     gallery: [
-      "/images/totebag-custom.jpg",
-      "/images/proses-sablon.jpg",
-      "/images/bordir-seragam.jpg",
+      "/catalog/totebag/01-totebag-custom.jpeg",
+      "/catalog/totebag/02-totebag-custom-2.jpeg",
+      "/catalog/totebag/05-zipper-pouch-custom.jpeg",
     ],
     quoteProductId: "totebag-merchandise",
     defaultLane: "batch",
@@ -409,50 +409,194 @@ export const secondaryServices = services.filter(
 
 export const portfolio = [
   {
-    image: "/images/hero-sablon.webp",
-    title: "Sablon warna penuh",
-    category: "Kaos custom",
+    image: "/catalog/orders/01-order-event-perpisahan-bkb-paud-kartini-tangerang-dtf-15pcs.jpeg",
+    title: "Perpisahan BKB PAUD Kartini",
+    category: "Order event · DTF",
   },
   {
-    image: "/images/bordir-seragam.jpg",
-    title: "Bordir identitas tim",
-    category: "Seragam",
+    image: "/catalog/orders/02-order-class-generation-kudus-dtf-glow-reflective-30pcs.jpeg",
+    title: "Generation Class",
+    category: "Order kelas · DTF efek khusus",
   },
   {
-    image: "/images/sablon-puff.jpg",
-    title: "Detail sablon puff timbul",
-    category: "Efek sablon",
+    image: "/catalog/orders/03-order-event-hari-kartini-bustanul-aulad-tangerang-dtf-15pcs.jpeg",
+    title: "Hari Kartini Bustanul Aulad",
+    category: "Order sekolah · DTF",
   },
   {
-    image: "/images/jersey-custom.jpg",
-    title: "Jersey tim custom",
-    category: "Jersey",
+    image: "/catalog/orders/04-order-event-panitia-bagana-jakarta-dtf-1000pcs.jpeg",
+    title: "Panitia BAGANA",
+    category: "Order panitia · DTF",
   },
   {
-    image: "/images/sablon-discharge.jpg",
-    title: "Sablon discharge",
+    image: "/catalog/manual/01-hasil-plastisol-smoothie-kids.jpeg",
+    title: "Desain Smoothie Kids",
     category: "Sablon manual",
   },
   {
-    image: "/images/proses-sablon.jpg",
-    title: "Proses produksi di workshop",
-    category: "Proses produksi",
+    image: "/catalog/manual/02-hasil-plastisol-ilustrasi.jpeg",
+    title: "Ilustrasi plastisol",
+    category: "Sablon manual · plastisol",
   },
   {
-    image: "/images/bordir-kemeja.jpg",
-    title: "Kemeja bordir custom",
-    category: "Bordir",
+    image: "/catalog/manual/03-hasil-plastisol-desain-warna.jpeg",
+    title: "Desain warna plastisol",
+    category: "Sablon manual · plastisol",
   },
   {
-    image: "/images/totebag-custom.jpg",
-    title: "Totebag warna custom",
+    image: "/catalog/manual/04-hasil-manual-puff-pasta.jpeg",
+    title: "Efek puff dan pasta",
+    category: "Sablon manual · efek khusus",
+  },
+  {
+    image: "/catalog/manual/05-hasil-manual-pasta-glitter.jpeg",
+    title: "Pasta glitter",
+    category: "Sablon manual · efek khusus",
+  },
+  {
+    image: "/catalog/manual/06-hasil-discharge.jpeg",
+    title: "Hasil discharge",
+    category: "Sablon manual · discharge",
+  },
+  {
+    image: "/catalog/dtf/01-hasil-dtf-planetarium.jpeg",
+    title: "Desain Planetarium",
+    category: "DTF",
+  },
+  {
+    image: "/catalog/dtf/02-hasil-dtf-desain-penuh-warna.jpeg",
+    title: "Desain penuh warna",
+    category: "DTF",
+  },
+  {
+    image: "/catalog/dtf/03-hasil-dtf-gid-reflektif.jpeg",
+    title: "Efek glow dan reflektif",
+    category: "DTF · efek khusus",
+  },
+  {
+    image: "/catalog/kaos-polos/01-kaos-polos-warna.jpeg",
+    title: "Pilihan kaos polos",
+    category: "Kaos polos",
+  },
+  {
+    image: "/catalog/kaos-polos/02-kaos-polos-warna-2.jpeg",
+    title: "Kaos polos warna",
+    category: "Kaos polos",
+  },
+  {
+    image: "/catalog/kaos-polos/03-kaos-polos-warna-3.jpeg",
+    title: "Kaos polos warna lainnya",
+    category: "Kaos polos",
+  },
+  {
+    image: "/catalog/kaos-polos/04-kaos-polos-warna-4.jpeg",
+    title: "Kaos polos untuk custom",
+    category: "Kaos polos",
+  },
+  {
+    image: "/catalog/totebag/01-totebag-custom.jpeg",
+    title: "Totebag custom",
+    category: "Totebag",
+  },
+  {
+    image: "/catalog/totebag/02-totebag-custom-2.jpeg",
+    title: "Totebag custom warna",
+    category: "Totebag",
+  },
+  {
+    image: "/catalog/totebag/03-totebag-custom-3.jpeg",
+    title: "Totebag merchandise",
+    category: "Totebag",
+  },
+  {
+    image: "/catalog/totebag/04-totebag-custom-4.jpeg",
+    title: "Totebag untuk kebutuhan acara",
+    category: "Totebag",
+  },
+  {
+    image: "/catalog/totebag/05-zipper-pouch-custom.jpeg",
+    title: "Zipper pouch custom",
     category: "Merchandise",
   },
   {
-    image: "/images/sablon-pasta.jpg",
-    title: "Sablon multiwarna",
-    category: "Kaos custom",
+    image: "/catalog/process/manual/01-proses-sablon-meja-curing.jpeg",
+    title: "Meja curing",
+    category: "Proses sablon manual",
   },
+  {
+    image: "/catalog/process/manual/02-proses-sablon.jpeg",
+    title: "Persiapan proses sablon",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/03-proses-sablon.jpeg",
+    title: "Pengerjaan sablon manual",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/04-proses-sablon.jpeg",
+    title: "Pengerjaan warna pada kaos",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/05-proses-sablon.jpeg",
+    title: "Hasil proses di meja sablon",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/10-process-manual-ink-screen-preparation.jpeg",
+    title: "Persiapan screen dan tinta",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/11-process-manual-squeegee-application.jpeg",
+    title: "Tarik rakel",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/12-process-manual-squeegee-application-detail.jpeg",
+    title: "Detail penekanan rakel",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/13-process-manual-large-format-squeegee.jpeg",
+    title: "Pengerjaan area cetak",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/14-process-manual-color-layer-application.jpeg",
+    title: "Pengerjaan lapisan warna",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/15-process-manual-multilayer-stage.jpeg",
+    title: "Tahap beberapa lapisan warna",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/16-process-manual-curing-before-finishing.jpeg",
+    title: "Curing sebelum finishing",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/manual/17-process-manual-curing-drying.jpeg",
+    title: "Pengeringan hasil sablon",
+    category: "Proses sablon manual",
+  },
+  {
+    image: "/catalog/process/other/01-proses-zipper-pouch.jpeg",
+    title: "Proses zipper pouch",
+    category: "Proses merchandise",
+  },
+];
+
+export const homepagePortfolio = [
+  portfolio[4],
+  portfolio[9],
+  portfolio[10],
+  portfolio[13],
+  portfolio[17],
+  portfolio[22],
 ];
 
 export function getService(slug: string) {

@@ -70,7 +70,7 @@ export function SiteHeader() {
         <WhatsAppQuickStart
           whatsappNumber={business.whatsapp}
           lane="batch"
-          label="Chat WhatsApp"
+          label="Mulai di WhatsApp"
           className="header-cta"
           product="Kaos custom event / komunitas"
           useCase="Event / komunitas"
@@ -99,7 +99,7 @@ export function SiteHeader() {
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
             lane="batch"
-            label="Chat event / batch"
+            label="Cek kebutuhan & minta estimasi"
             product="Kaos custom event / komunitas"
             useCase="Event / komunitas"
             placement="mobile_menu_batch"

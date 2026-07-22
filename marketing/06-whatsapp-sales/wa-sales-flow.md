@@ -4,14 +4,14 @@ document_type: active_operational_plan
 status: workflow_defined_admin_setup_deferred
 primary_segment: event_and_community
 active_decision_id: D-012
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # WhatsApp Sales Flow
 
 ## Status
 
-Website menghasilkan brief dengan Lead ID, jalur satuan/batch, penggunaan, produk, jumlah yang sesuai MOQ, bahan, deadline, desain, lokasi, source, campaign, landing page, dan click identifier. Nomor WhatsApp sales sudah dikonfirmasi: `6282317579311`. PIC/admin utama: Aulia. Jam admin Senin-Sabtu 08:00-19:00; workshop/toko 08:00-17:00.
+Website membuka WhatsApp langsung dengan template editable untuk jalur satuan atau event/batch. Template membawa Lead ID, use case, produk awal, source, campaign, landing page, dan click identifier; calon customer melengkapi jumlah, tanggal, desain, serta lokasi di dalam chat. Google Ads lead-start conversion ikut dikirim sebagai sinyal sekunder. Nomor WhatsApp sales: `6282317579311`; PIC Aulia; jam admin Senin-Sabtu 08:00-19:00; workshop 08:00-17:00.
 
 Yang masih perlu dirapikan sebelum traffic publik: uji WhatsApp end-to-end dari semua CTA, target first response, pengoperasian lead log, dan template follow-up final. Schema serta CSV kosong sudah tersedia di `lead-log-schema.md` dan `../../deliverables/launch-readiness/Orplyn - Lead Log.csv`; belum ada data lead nyata di dalamnya.
 

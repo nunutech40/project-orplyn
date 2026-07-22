@@ -9,10 +9,10 @@ decision_ids: [D-011, D-012]
 finding_ids: [O-013, O-014]
 hypothesis_ids: [H-008, H-009]
 experiment_ids: [E-11, E-12]
-manual_dependencies: [M-06, M-07, M-08]
+manual_dependencies: [M-07, M-08, M-09, M-10]
 owner_direction_source: marketing/07-market-research/owner-feedback-evolution-lens-2026-07-19.md
 snapshot_date: 2026-07-19
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # Orplyn Differentiation And Product Strategy
@@ -20,6 +20,8 @@ last_updated: 2026-07-19
 Snapshot date: 19 Juli 2026  
 Decision status: internal product direction, not yet a public claim  
 Primary objective: qualified WhatsApp lead, sale, repeat order, and gross profit
+
+Current clarification (22 Juli 2026): M-06 is sufficient for the current factual website, but it does not prove H-009. The provisional brand voice and broader main-domain capability wording are presentation decisions, not validated differentiation. Event/community remains the only acquisition focus; E-12 and E-11 remain unproven.
 
 ## AI Reading Contract
 
@@ -44,7 +46,7 @@ This is the canonical internal document for Orplyn's differentiation thesis and 
 | Original product thesis selection | Complete as decision D-011 | `Spec-first, repeat-ready production` was selected for testing |
 | Owner evolution and role split | Complete as decision D-012 | Event deadline-risk is the acquisition hypothesis; spec-first is retained for repeat orders |
 | Product workflow design | Complete as MVP design | Data model, workflow, proof ladder, and experiment are documented |
-| Owner commercial approval | Pending M-06/M-07/M-08 | Proof, offer, process ownership, SLA, and operating rules are incomplete |
+| Owner commercial approval | Pending M-07/M-08 | Current proof is usable factually; offer, capacity, process ownership, SLA, and operating rules remain incomplete |
 | Customer discovery validation | Not started | 11 planned interviews have not been completed |
 | Five-order event pilot | Not started | E-12 has not produced deadline-risk operating evidence |
 | Repeat-ready pilot | Not started | E-11 has not produced repeat-order evidence |

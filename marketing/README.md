@@ -5,7 +5,7 @@ status: active
 canonical_for: marketing_document_interpretation_and_active_direction
 primary_segment: event_and_community
 active_decision_id: D-015
-last_updated: 2026-07-20
+last_updated: 2026-07-22
 ---
 
 # Orplyn Marketing Strategy Router
@@ -20,9 +20,11 @@ Dokumen ini bukan strategi tambahan. Fungsinya menentukan dokumen mana yang akti
 4. Baca `business-data/owner-answers.md` untuk fakta bisnis; perhatikan field yang masih menunggu approval publik.
 5. Untuk arah acquisition/retention terbaru, baca `07-market-research/owner-feedback-evolution-lens-2026-07-19.md` lalu `07-market-research/owner-feedback-response-plan-2026-07-19.md`.
 6. Untuk sudut offer terbaru, baca `07-market-research/owner-direction-manual-printing-2026-07-20.md`; arahan sablon manual mempersempit copy event/community dan tidak membuktikan klaim superioritas.
-7. Dokumen berstatus historical snapshot tidak boleh mengubah prioritas aktif tanpa owner decision baru.
-8. Jangan menggabungkan semua segment, offer, dan eksperimen lama menjadi satu campaign atau homepage.
-9. Tidak ada copy outcome yang boleh masuk ke website, GBP, WhatsApp, quotation, content, atau Ads hanya karena muncul sebagai hypothesis di dokumen internal.
+7. Untuk keluasan domain utama, baca `07-market-research/owner-direction-service-capabilities-2026-07-22.md`; homepage boleh menjelaskan seluruh kemampuan terkonfirmasi tanpa mengubah fokus campaign.
+8. Untuk karakter verbal sementara, baca `05-content/orplyn-brand-voice-2026-07-22.md`. Arah aktifnya tegas, keren, dapat dipercaya, dan membersamai; ini provisional dan dapat diperbarui owner/user.
+9. Dokumen berstatus historical snapshot tidak boleh mengubah prioritas aktif tanpa owner decision baru.
+10. Jangan menggabungkan semua segment, offer, dan eksperimen lama menjadi satu campaign. Domain utama boleh lengkap; LP Ads tetap sempit dan sesuai intent.
+11. Tidak ada copy outcome yang boleh masuk ke website, GBP, WhatsApp, quotation, content, atau Ads hanya karena muncul sebagai hypothesis di dokumen internal.
 
 ## Active Direction
 
@@ -32,6 +34,8 @@ Dokumen ini bukan strategi tambahan. Fungsinya menentukan dokumen mana yang akti
 - Arahan owner terbaru: tonjolkan sablon manual sebagai offer angle utama untuk event/komunitas; ini bukan bukti bahwa manual lebih unggul.
 - DTF satuan dan kaos polos tetap tersedia sebagai entry offer/inbound lane, bukan fokus campaign aktif.
 - Layanan lain tetap capability sekunder, bukan parallel acquisition campaign.
+- Domain utama memakai payung `Sablon dan apparel custom. Dibuat untuk dipakai bersama.` untuk memperkenalkan karakter dan cakupan Orplyn. Ini tidak menggantikan fokus event/community pada acquisition.
+- Karakter kerja saat ini: tegas, keren, trustable, dan membersamai kebutuhan acara, tim, komunitas, brand, serta pelanggan personal. Kepercayaan dibangun lewat fakta, proses, lokasi, hasil, dan bukti berizin; bukan kata sifat atau sejarah buatan.
 - H-009/E-12 menguji deadline-risk handling untuk first-order event acquisition. Ini belum menjadi public claim.
 - H-008/E-11 menguji saved specification untuk repeat-order retention. Ini bukan acquisition headline.
 - Public website boleh memakai fakta kategori, lokasi, MOQ, lead time normal, tanggal pakai sebagai input, serta proses pengecekan admin yang sudah benar-benar dilakukan.
@@ -39,15 +43,15 @@ Dokumen ini bukan strategi tambahan. Fungsinya menentukan dokumen mana yang akti
 
 ## Current Work Order
 
-Per arahan owner/user 20 Juli 2026:
+Per status 22 Juli 2026:
 
 1. Dokumentasi aktif sudah dikonsolidasikan ke D-015; snapshot lama tetap historical evidence.
-2. Homepage dan halaman layanan SEO event serta campaign landing `/lp/kaos-event-komunitas` kini menonjolkan sablon manual untuk event/community. Landing memakai navigasi minim, satu CTA primer `Minta estimasi sablon manual`, tracked WhatsApp quick-start, dan empat proof gate kosong. Kandidat ini belum dipush atau dideploy dan menunggu review owner.
-3. M-06 menjadi satu-satunya manual `NEXT`: tunggu dan verifikasi lima order event/community dari owner.
-4. Review kandidat lokal direct-to-WhatsApp di `http://localhost:3010`, lalu jalankan final responsive visual QA dan end-to-end WhatsApp test saat akses/perangkat tersedia.
-5. Setup GBP, Search Console, Google tag, indexing, dan Google Ads dilakukan kemudian.
-6. Ads tetap dilarang berjalan sebelum semua launch gate lulus.
-7. Scope istilah dan fakta manual sudah dikonfirmasi owner; local copy pass pada homepage, landing Ads, serta halaman SEO event sudah selesai. Draft keyword/ad copy tetap perlu direvisi sebelum Ads dipertimbangkan.
+2. Domain utama lokal sudah diperbarui menjadi payung Orplyn yang lebih lengkap, memakai aset terbaru, galeri tanpa crop, bukti pelanggan buyer-facing, dan brand voice provisional. Event/community tetap featured offer pertama.
+3. `/lp/kaos-event-komunitas` tetap menjadi satu-satunya destination Ads: direct-to-WhatsApp, navigasi minim, CTA `Cek kebutuhan & minta estimasi`, bukti event/manual yang tersedia, FAQ, NAP, dan intentional `noindex`.
+4. Google tag `AW-374076115` dan conversion label WhatsApp lead-start sudah live. Ini baru sinyal sekunder; qualified lead, quote, sale, revenue, dan gross profit tetap harus dicatat di lead log.
+5. Bukti yang ada sudah dipakai sesuai izin dan konteks. Contoh event dengan teknik manual tetap menjadi peningkatan opsional ketika tersedia, bukan blocker website saat ini.
+6. Review kandidat lokal di `http://localhost:3010`, jalankan responsive/manual CTA QA pada ponsel, lalu push/deploy hanya setelah user menyetujui kandidat terbaru.
+7. GBP, Search Console, indexing, lead-log operation, admin readiness, offer/capacity approval, dan pilot Ads masih belum selesai. Ads tetap OFF sampai gate lulus.
 
 ## Document Status Map
 
@@ -61,6 +65,8 @@ Per arahan owner/user 20 Juli 2026:
 | `00-brief/project-brief.md` | Concise active business and funnel brief |
 | `07-market-research/owner-feedback-evolution-lens-2026-07-19.md` | Latest owner priority direction, source-of-truth rank 1 |
 | `07-market-research/owner-direction-manual-printing-2026-07-20.md` | Latest owner offer-angle direction: foreground manual printing within event/community |
+| `07-market-research/owner-direction-service-capabilities-2026-07-22.md` | Owner direction for broader factual capability wording on the main domain |
+| `05-content/orplyn-brand-voice-2026-07-22.md` | Provisional brand character and copy guardrails for current website/content work |
 | `07-market-research/hermes-feedback-006-009-response-2026-07-20.md` | Advisory feedback reconciliation, accepted gate-safe changes, disagreements, and owner gates |
 | `07-market-research/hermes-feedback-012-response-2026-07-20.md` | LP Ads conversion rewrite response: local gate-safe implementation and form/H1 owner gates |
 | `07-market-research/owner-feedback-response-plan-2026-07-19.md` | Active role mapping, sequence, deferrals, and claim gates |
@@ -77,7 +83,7 @@ Per arahan owner/user 20 Juli 2026:
 | `03-ai-search/ai-search-plan.md` | Entity/content guidance | Secondary; setup/indexing deferred |
 | `04-google-ads/google-ads-plan.md` | Future event-first Search pilot | Deferred until launch gates pass |
 | `04-google-ads/search-event-campaign-draft-2026-07-19.md` | Local-only campaign skeleton, keywords, negatives, bidding, and geo gate | Draft; Ads off |
-| `05-content/asset-inventory.md` | Asset/proof selection and rights | Active; permission still required |
+| `05-content/asset-inventory.md` | Curated asset/proof inventory and rights boundaries | Active; current web assets permitted, new assets still require specific context/permission |
 | `06-whatsapp-sales/wa-sales-flow.md` | Qualification, lead log, and sales handoff | Active; external/admin setup deferred |
 | `06-whatsapp-sales/lead-log-schema.md` | Field contract from source through sale/gross profit | Skeleton ready; real operation pending |
 | `07-market-research/growth-experiment-backlog.md` | Tests, metrics, gates, and stop rules | Active; owner priority override applies |
@@ -106,6 +112,8 @@ Files under `00-brief/` with `survey`, `questions`, or `template` in the filenam
 - If an old recommendation says run setup now, follow the latest user instruction: external setup is deferred while documentation and website readiness are completed.
 - If a public claim conflicts with owner approval or evidence status, remove or gate the claim even when it could improve conversion.
 - If an old plan maps Ads to `/layanan/kaos-event-komunitas`, use D-014: SEO stays on `/layanan/kaos-event-komunitas`, while the sole Ads destination is `/lp/kaos-event-komunitas`.
+- If an old file treats three offers as equal or says the homepage must be event-only, use the current split: the main domain explains Orplyn's confirmed breadth, while event/community remains the featured offer and only paid acquisition focus.
+- If old copy sounds defensive, audit-like, or purely technical, use the provisional brand voice. Never trade factual accuracy for style.
 
 ## Website Readiness Contract
 

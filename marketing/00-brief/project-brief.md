@@ -4,12 +4,12 @@ document_type: active_internal_brief
 status: active
 primary_segment: event_and_community
 active_decision_id: D-012
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # Project Brief
 
-Status 19 Juli 2026: funnel sudah live dan sengaja `noindex`. Owner evolution lens sudah mengubah prioritas acquisition menjadi event/community only. Gunakan `marketing/README.md` untuk interpretasi dokumen dan `PROJECT-HANDOFF.md` untuk status, blocker, serta roadmap terbaru.
+Status 22 Juli 2026: funnel dan LP Ads sudah live dengan intentional `noindex`; Google tag serta conversion lead-start WhatsApp sudah terpasang. Kandidat domain utama terbaru sedang direview lokal. Owner evolution lens mempertahankan event/community sebagai satu-satunya fokus acquisition, sementara domain utama menjelaskan kemampuan Orplyn yang lebih lengkap. Gunakan `marketing/README.md` untuk interpretasi dokumen dan `PROJECT-HANDOFF.md` untuk status terbaru.
 
 ## Objective
 
@@ -36,7 +36,9 @@ Codex bertindak sebagai senior digital marketing untuk:
 
 ## Active Positioning
 
-Orplyn adalah jasa sablon kaos custom di Ciputat dengan fokus acquisition pada kebutuhan event dan komunitas. Pembeli menyampaikan jumlah, desain, tanggal pakai, serta lokasi agar admin dapat mengecek pilihan produksi, MOQ, dan estimasi. DTF satuan dan kaos polos tetap tersedia sebagai entry offer; layanan lain tetap capability sekunder.
+Orplyn adalah apparel and print studio di Ciputat yang mengerjakan sablon manual, DTF, kaos event, polo, hoodie, jersey, jaket, konveksi, dan apparel custom. Brand idea provisional untuk domain utama adalah **`Sablon dan apparel custom. Dibuat untuk dipakai bersama.`** Karakternya tegas, keren, dapat dipercaya, dan membersamai kebutuhan acara, tim, komunitas, brand, serta pesanan personal.
+
+Acquisition tetap hanya berfokus pada event/komunitas. DTF satuan, kaos polos, dan layanan lain tersedia sebagai supporting capability/inbound lane, bukan parallel paid campaign. Kepercayaan harus datang dari lokasi, proses, rule order, hasil produksi, dan bukti berizin; bukan klaim kualitas, sejarah, deadline, atau outcome yang dibuat-buat.
 
 ## Product Differentiation Direction
 
@@ -72,6 +74,6 @@ Goal halaman bukan branding doang, tapi membuat calon customer cepat:
 - Segmen acquisition aktif: event/komunitas. Vendor, sekolah/kampus, kantor/perusahaan, DTF satuan, dan kaos polos tetap opportunity/capability tetapi tidak dijalankan sebagai parallel campaign selama D-012 aktif.
 - Customer voice awal: butuh katalog/pricelist/paket range harga supaya lebih mudah memilih bahan, jenis sablon, dan budget.
 
-## Current Deferral
+## Current External Status
 
-Per arahan user 19 Juli 2026, setup GBP, Search Console, Google tag, indexing, dan Google Ads ditunda sampai dokumentasi serta website source selesai dirapikan. Penundaan ini bukan berarti launch gate dihapus.
+Google tag Ads dan event conversion lead-start WhatsApp sudah dipasang dan terdeteksi. GBP, Search Console, indexing publik, lead-log operation, admin readiness, approval offer/capacity, dan campaign masih belum selesai. Google Ads tetap OFF; pemasangan tag bukan izin menjalankan campaign.

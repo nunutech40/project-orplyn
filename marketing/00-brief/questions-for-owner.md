@@ -1,18 +1,15 @@
 # Remaining Questions For Owner
 
-Status 18 Juli 2026: Form Owner Tahap 1, Form Owner Tahap 2, dan Survey Customer awal sudah diisi. Jawaban terbaru sudah dipindahkan ke `business-data/owner-answers.md`. Jangan mengulang pertanyaan yang sudah terjawab kecuali butuh approval publik.
+Status 22 Juli 2026: form owner/customer awal sudah diisi; WhatsApp publik, capability utama, teknik/MOQ/estimasi manual, izin penggunaan bukti yang ada, dan arah homepage sudah dikonfirmasi. Daftar ini hanya menyimpan keputusan yang benar-benar masih terbuka. Jangan mengulang pertanyaan yang sudah terjawab.
 
 ## P0 - Sebelum Public Launch
 
-- Apakah owner menyetujui nomor WhatsApp publik `082317579311` / `6282317579311` untuk semua CTA website?
 - Target maksimal balas lead baru: kurang dari 5 menit, 5-15 menit, 16-30 menit, 31-60 menit, atau lebih?
 - Format quotation final: cukup chat WhatsApp, perlu PDF, spreadsheet, aplikasi, atau kombinasi?
 - Apakah owner menyetujui wording publik untuk MOQ dan lead time per produk?
 - Apakah owner menyetujui wording publik untuk kaos polos mulai Rp33.000/pcs?
 - Apakah owner menyetujui wording publik untuk rush order, revisi desain, DP, refund, dan QC/rework?
-- Review, testimoni chat, nama/logo customer, dan case study mana yang sudah punya izin publikasi?
-- Foto workshop, proses produksi, packing, hasil jadi, tim, atau owner video mana yang boleh dipakai?
-- Untuk LP Google Ads event, apakah owner menyetujui atau ingin mengubah kandidat H1: `Bikin kaos event tanpa bingung bahan, teknik, dan minimum order.`?
+- Untuk bukti baru berikutnya, bagian mana yang boleh menampilkan nama/logo/wajah, jumlah, timeline/outcome, atau kutipan? Izin bukti yang sekarang dipakai sudah dikonfirmasi, tetapi izin baru tetap harus spesifik.
 
 ## P1 - Sebelum Ads Diperbesar
 

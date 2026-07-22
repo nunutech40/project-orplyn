@@ -4,7 +4,7 @@ document_type: active_operational_plan
 status: on_page_active_external_setup_deferred
 primary_segment: event_and_community
 active_decision_id: D-012
-last_updated: 2026-07-19
+last_updated: 2026-07-22
 ---
 
 # SEO Google Plan
@@ -13,9 +13,9 @@ last_updated: 2026-07-19
 
 Technical foundation sudah tersedia: high-intent homepage, halaman DTF satuan, halaman event/community, kaos polos, service pages, metadata, canonical config, image alt, FAQ, LocalBusiness/Service/FAQ schema, sitemap, robots, dan NAP terlihat. Nomor WhatsApp dan jam sudah nyata. Final domain `https://orplyn.id` sudah aktif melalui Cloudflare, tetapi masih sengaja `noindex` melalui aplikasi dan Caddy.
 
-Yang masih pending adalah Search Console, Google tag/Analytics, lead log sampai sale, Google Business Profile, konsistensi nama bisnis, review autentik, proof/offer approval, manual QA, launch config, dan perubahan `NEXT_PUBLIC_ALLOW_INDEXING=true` hanya saat launch gate lulus.
+Google Ads tag dan lead-start conversion sudah terpasang. Yang masih pending adalah Search Console, analytics/lead log sampai sale, Google Business Profile, konsistensi nama bisnis/NAP, review autentik, offer/capacity approval, manual responsive QA, launch config, dan perubahan `NEXT_PUBLIC_ALLOW_INDEXING=true` hanya saat launch gate lulus.
 
-Per arahan user 19 Juli 2026, account setup, GBP, tag, dan indexing dikerjakan kemudian. Pekerjaan aktif sekarang adalah message hierarchy, on-page event/community, internal link, proof architecture, factual content, dan technical verification yang tidak membutuhkan akun eksternal.
+Domain utama kini menjelaskan sablon manual, DTF, dan apparel custom secara lebih lengkap dengan event/community sebagai featured offer. SEO route tetap eksploratif dan mendalam; LP Ads tetap `noindex` dan tidak masuk sitemap. Pekerjaan eksternal yang belum selesai adalah GBP, Search Console, indexing, review acquisition, dan measurement sampai sale.
 
 Audit terbaru dan urutan eksekusinya tersedia di `marketing/02-seo-google/seo-acquisition-audit-2026-07-18.md`.
 
@@ -39,7 +39,7 @@ Membuat Orplyn relevan untuk pencarian jasa sablon kaos event/komunitas di Ciput
 
 ### Deferred setup
 
-1. Verifikasi Search Console Domain Property dan pasang Google tag.
+1. Verifikasi Search Console Domain Property; Google Ads tag sudah terpasang, tetapi analytics dan end-to-end business conversion belum lengkap.
 2. Optimalkan Google Business Profile, real-world business name, category, dan konsistensi NAP.
 3. Buat launch config yang menghapus application dan Caddy `noindex` secara bersamaan.
 4. Izinkan indexing dan verifikasi homepage, event/community, DTF satuan, serta kaos polos.

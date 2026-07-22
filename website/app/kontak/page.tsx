@@ -24,11 +24,11 @@ export default function ContactPage() {
     <>
       <section className="page-intro contact-intro">
         <p className="eyebrow">KONTAK & LOKASI</p>
-        <h1>Hubungi Orplyn untuk cek harga dan waktu produksi.</h1>
+        <h1>Bawa kebutuhanmu ke Orplyn.</h1>
         <p>
-          Pilih template event/batch atau satuan untuk langsung chat Aulia.
-          Form lengkap tetap tersedia bila kamu ingin menyiapkan semua detail
-          sebelum membuka WhatsApp.
+          Ceritakan apa yang ingin dibuat, untuk siapa, jumlahnya, dan kapan
+          dipakai. Pilih template event/batch atau satuan untuk langsung chat
+          Aulia; brief lengkap tetap tersedia sebagai pilihan.
         </p>
       </section>
 
@@ -89,7 +89,7 @@ export default function ContactPage() {
           </div>
           <div className="contact-image">
             <img
-              src="/images/proses-sablon.jpg"
+              src="/catalog/process/manual/01-proses-sablon-meja-curing.jpeg"
               alt="Workshop dan proses produksi Orplyn"
               width="900"
               height="1200"
@@ -99,7 +99,7 @@ export default function ContactPage() {
 
         <div className="contact-quote" id="quote">
           <p className="eyebrow eyebrow-dark">OPSIONAL · BRIEF LENGKAP</p>
-          <h2>Siapkan semua detail sebelum masuk WhatsApp.</h2>
+          <h2>Rapikan detail pesananmu lebih dulu.</h2>
           <QuoteBuilder whatsappNumber={business.whatsapp} compact />
         </div>
       </section>

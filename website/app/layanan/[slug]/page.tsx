@@ -109,7 +109,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="hero-overlay" aria-hidden="true" />
         <div className="subpage-hero-content">
           <Link href="/#paket" className="back-link">
-            <ArrowLeft size={18} aria-hidden="true" /> Semua layanan
+            <ArrowLeft size={18} aria-hidden="true" /> Kemampuan Orplyn
           </Link>
           <p className="eyebrow">{service.eyebrow}</p>
           <h1>{service.title}</h1>
@@ -117,7 +117,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
             lane={service.defaultLane}
-            label={service.defaultLane === "batch" ? "Chat order batch" : "Chat order satuan"}
+            label={service.defaultLane === "batch" ? "Cek kebutuhan & minta estimasi" : "Chat order satuan"}
             className="button button-primary"
             product={service.title}
             useCase={service.defaultUseCase}
@@ -129,7 +129,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="service-order-facts" aria-label="Aturan order">
         <div>
           <p className="eyebrow eyebrow-dark">PANDUAN ORDER</p>
-          <h2>Minimum order dan estimasi produksi.</h2>
+          <h2>Ketahui minimum order dan estimasinya.</h2>
         </div>
         <ul>
           {service.orderFacts.map((fact) => (
@@ -145,7 +145,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="service-detail-section">
         <div className="service-detail-block">
           <p className="eyebrow eyebrow-dark">COCOK UNTUK</p>
-          <h2>Layanan ini cocok untuk kebutuhan berikut.</h2>
+          <h2>Dibuat untuk kebutuhan seperti ini.</h2>
           <ul className="detail-list">
             {service.idealFor.map((item) => (
               <li key={item}>
@@ -157,7 +157,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
 
         <div className="service-detail-block service-detail-accent">
           <p className="eyebrow">PILIHAN PRODUKSI</p>
-          <h2>Detail yang dapat disesuaikan.</h2>
+          <h2>Pilih detail yang membawa identitasmu.</h2>
           <ul className="detail-list">
             {service.capabilities.map((item) => (
               <li key={item}>
@@ -179,7 +179,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">DETAIL PRODUKSI</p>
-            <h2>Lihat hasil dan prosesnya.</h2>
+            <h2>Lihat hasilnya. Kenali detailnya.</h2>
           </div>
           <Link href="/portfolio">
             Lihat semua hasil <ArrowRight size={18} aria-hidden="true" />
@@ -204,9 +204,9 @@ export default async function ServicePage({ params }: ServicePageProps) {
       <section className="service-quote-section" id="service-quote">
         <div>
           <p className="eyebrow">LANJUT KE WHATSAPP</p>
-          <h2>Tanyakan {service.title.toLowerCase()} langsung ke Aulia.</h2>
+          <h2>Bawa kebutuhanmu ke Aulia.</h2>
           <p>
-            Template chat sudah memuat layanan yang sedang kamu lihat. Tinggal
+            Layanan yang sedang kamu lihat sudah masuk ke template chat. Tinggal
             lengkapi jumlah, desain, target selesai, dan lokasi.
           </p>
         </div>
@@ -219,7 +219,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
             lane={service.defaultLane}
-            label={service.defaultLane === "batch" ? "Chat event / batch" : "Chat order satuan"}
+            label={service.defaultLane === "batch" ? "Cek kebutuhan & minta estimasi" : "Chat order satuan"}
             className="button button-whatsapp"
             product={service.title}
             useCase={service.defaultUseCase}
@@ -235,7 +235,7 @@ export default async function ServicePage({ params }: ServicePageProps) {
         <div className="section-heading">
           <div>
             <p className="eyebrow eyebrow-dark">LAYANAN LAIN</p>
-            <h2>Lihat layanan Orplyn lainnya.</h2>
+            <h2>Orplyn juga mengerjakan.</h2>
           </div>
         </div>
         <div className="related-grid">

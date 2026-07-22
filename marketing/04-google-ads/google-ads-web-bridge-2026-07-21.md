@@ -202,3 +202,32 @@ Setup ini dipakai untuk tiga hal:
 Kalau setup ini belum ada, Google Ads tetap bisa dibuka, tapi Orplyn akan
 susah tahu apakah iklan benar-benar menghasilkan lead yang layak dijual.
 
+## Patokan Membaca Hasil Iklan
+
+Gunakan funnel berikut saat mengevaluasi data. Setiap tahap menjawab pertanyaan
+yang berbeda; jangan memakai metrik tahap awal sebagai pengganti hasil bisnis.
+
+| Tahap | Metrik | Cara membaca |
+|---|---|---|
+| Iklan tampil | Impression | Apakah iklan mendapat kesempatan tampil? |
+| Iklan diklik | Click, CTR, CPC | Apakah keyword dan iklan menarik bagi pencari? |
+| Landing dibuka | Page view/session | Apakah traffic sampai ke halaman yang benar? |
+| Isi dibaca | Scroll, waktu aktif, section viewed | Apakah halaman relevan dan mudah dipahami? Ini diagnosis, bukan tujuan utama. |
+| CTA ditekan | CTA click | Apakah pengunjung mulai berminat? |
+| WhatsApp dibuka | `whatsapp_open` dan Ads conversion | Lead started; belum berarti lead berkualitas. |
+| Chat memenuhi syarat | Qualified lead | Apakah kebutuhan cocok dengan fokus event/komunitas dan bisa ditindaklanjuti? |
+| Estimasi dikirim | Quote sent | Apakah percakapan sudah masuk proses penawaran? |
+| Penjualan terjadi | Won, revenue, gross profit | Ini hasil bisnis yang menjadi dasar keputusan budget. |
+
+Urutan diagnosisnya:
+
+1. Banyak impression tetapi sedikit click: periksa keyword, headline iklan, dan relevansi offer.
+2. Banyak click tetapi sedikit page engagement: periksa kecepatan, pesan hero, dan kecocokan landing dengan keyword.
+3. Banyak pengunjung tetapi sedikit WhatsApp open: periksa CTA, proof, lokasi, dan hambatan di halaman.
+4. Banyak WhatsApp open tetapi sedikit qualified lead: periksa kualitas traffic, template chat, MOQ, dan segmentasi keyword.
+5. Banyak qualified lead tetapi sedikit quote/sale: periksa respons admin, offer, harga, kapasitas, dan proses quotation.
+
+Scroll dan waktu baca boleh ditambahkan sebagai diagnostic, tetapi tidak dijadikan
+conversion utama. Patokan utama Orplyn adalah:
+
+`Biaya iklan -> chat -> qualified lead -> quote -> sale -> revenue/profit`

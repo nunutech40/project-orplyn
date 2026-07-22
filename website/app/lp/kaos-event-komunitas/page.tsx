@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { CheckCircle2, MapPin } from "../../components/Icons";
 import { AdsTrustBridge } from "../../components/AdsTrustBridge";
+import { AdsManualProofGallery } from "../../components/AdsManualProofGallery";
 import { CommercialProofSection } from "../../components/CommercialProofSection";
 import { ManualPrintProcess } from "../../components/ManualPrintProcess";
 import { MobileQuoteCta } from "../../components/MobileQuoteCta";
@@ -88,9 +89,7 @@ const landingFaqs = [
 ];
 
 export default function EventCommunityAdsLandingPage() {
-  const commercialProofs = getCommercialProofs("kaos-event-komunitas").filter(
-    (proof) => proof.id === "customer-feedback-plastisol-colour",
-  );
+  const commercialProofs = getCommercialProofs("kaos-event-komunitas");
 
   return (
     <div className="ads-landing">
@@ -109,10 +108,10 @@ export default function EventCommunityAdsLandingPage() {
           <p className="eyebrow">
             SABLON MANUAL KAOS EVENT & KOMUNITAS · CIPUTAT
           </p>
-          <h1>Kaos Event Siap Pakai, Tanpa Pusing Urusan Teknis.</h1>
+          <h1>Kaos Event untuk Tim, Panitia, dan Komunitas.</h1>
           <p className="ads-hero-copy">
-            Kirim jumlah, desain, dan tanggal acara. Aulia akan mengecek pilihan
-            sablon manual, bahan, MOQ, serta estimasi produksinya.
+            Kirim jumlah, desain, dan tanggal acara. Aulia membantu mengecek
+            sablon manual, bahan, MOQ, serta estimasi sebelum produksi dimulai.
           </p>
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
@@ -154,7 +153,7 @@ export default function EventCommunityAdsLandingPage() {
         <div className="ads-section-heading">
           <p className="eyebrow eyebrow-dark">YANG DIBANTU CEK</p>
           <h2>
-            Kamu bawa kebutuhan acaranya. Detail produksinya kita periksa
+            Kamu urus acaranya. Orplyn bantu wujudkan kaos yang akan dipakai
             bersama.
           </h2>
           <p>
@@ -221,12 +220,14 @@ export default function EventCommunityAdsLandingPage() {
 
       <AdsTrustBridge />
 
+      <AdsManualProofGallery />
+
       <CommercialProofSection
         proofs={commercialProofs}
-        id="feedback-plastisol"
-        eyebrow="TANGGAPAN PELANGGAN"
-        title="Feedback Pelanggan tentang Hasil Plastisol."
-        description="Ditampilkan terpisah dari hasil order event agar konteks tekniknya tetap jelas."
+        id="tanggapan-pelanggan"
+        eyebrow="ULASAN & TANGGAPAN PELANGGAN"
+        title="Bukan hanya hasilnya. Lihat juga tanggapan pemesannya."
+        description="Dua bukti yang sudah mendapat izin publikasi: ulasan pesanan Hari Kartini dan tanggapan pelanggan untuk hasil plastisol."
       />
 
       <section
@@ -285,7 +286,7 @@ export default function EventCommunityAdsLandingPage() {
       <section className="ads-final-cta">
         <div>
           <p className="eyebrow">MULAI DARI CHAT SINGKAT</p>
-          <h2>Kirim detail eventmu ke Aulia.</h2>
+          <h2>Mulai kaos untuk acaramu.</h2>
           <p>
             Admin aktif {business.adminHours}. Workshop berada di Ciputat,
             Tangerang Selatan.

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Jembatan Setup Web, Google Ads, dan WhatsApp Orplyn</title>
+<style>
+  @page { size: Letter; margin: 1in; }
+  body { font-family: Arial, sans-serif; font-size: 11pt; color: #000; line-height: 1.15; }
+  h1 { font-size: 26pt; font-weight: normal; margin: 0 0 3pt; }
+  h2 { font-size: 16pt; font-weight: normal; margin: 18pt 0 6pt; }
+  h3 { font-size: 14pt; font-weight: normal; color: #434343; margin: 16pt 0 4pt; }
+  p { margin: 0 0 8pt; }
+  .meta { color: #555; margin-bottom: 16pt; }
+  .answer { border-left: 4px solid #555; padding: 8pt 12pt; margin: 12pt 0 16pt; }
+  table { border-collapse: collapse; width: 100%; margin: 8pt 0 14pt; }
+  th, td { border: 1px solid #dadce0; padding: 7pt 8pt; vertical-align: top; }
+  th { text-align: left; font-weight: bold; }
+  ul, ol { margin-top: 0; margin-bottom: 8pt; padding-left: 28pt; }
+  li { margin-bottom: 4pt; }
+  code { font-family: Arial, sans-serif; }
+  .done { color: #1b5e20; }
+  .hold { color: #8a4b00; }
+</style>
+</head>
+<body>
+<h1>Jembatan Setup Web, Google Ads, dan WhatsApp Orplyn</h1>
+<p class="meta">Panduan ringkas untuk memahami setup tracking dan kesiapan iklan | 21 Juli 2026</p>
+
+<div class="answer">
+<p><strong>Jawaban singkat:</strong> setup ini diperlukan supaya iklan Google Ads tidak berhenti di klik. Kita bisa melihat apakah orang dari iklan masuk ke WhatsApp, lalu apakah chat itu menjadi lead yang memenuhi syarat, quotation, dan penjualan.</p>
+</div>
+
+<h2>Alur Sederhana</h2>
+<ol>
+  <li>Orang mencari kebutuhan kaos event atau komunitas di Google.</li>
+  <li>Iklan membawa mereka ke landing page event Orplyn.</li>
+  <li>CTA membuka WhatsApp Aulia dengan template brief singkat.</li>
+  <li>Website mencatat Lead ID dan sumber kunjungan.</li>
+  <li>Admin mencatat perkembangan lead sampai quote, sale, revenue, dan gross profit.</li>
+  <li>Data penjualan nantinya bisa dipakai untuk menilai keyword dan campaign.</li>
+</ol>
+
+<h2>Setup yang Menghubungkan Semuanya</h2>
+<table>
+  <tr><th>Bagian</th><th>Fungsi</th><th>Status Orplyn</th></tr>
+  <tr><td>Landing page</td><td>Halaman tujuan iklan yang fokus pada kaos event/komunitas dan CTA WhatsApp.</td><td class="done">Sudah ada: <code>orplyn.id/lp/kaos-event-komunitas</code>. Masih noindex sampai aktivasi SEO/Ads disetujui.</td></tr>
+  <tr><td>Google tag</td><td>Mengenalkan website ke akun Google Ads agar aktivitas website bisa diukur.</td><td class="done">Sudah aktif: <code>AW-374076115</code>.</td></tr>
+  <tr><td>Conversion action</td><td>Menentukan tindakan yang dihitung sebagai konversi oleh Google Ads.</td><td class="done">Sudah dibuat: <code>Mengirim formulir lead</code>.</td></tr>
+  <tr><td>Event conversion</td><td>Mencatat ketika pengunjung menekan CTA WhatsApp dari website.</td><td class="done">Sudah dipasang pada CTA WhatsApp dengan label <code>-KloCLqt6NMcENPlr7IB</code>.</td></tr>
+  <tr><td>Lead ID dan UTM</td><td>Membantu menghubungkan chat dengan sumber traffic, campaign, dan landing page.</td><td class="done">Sudah disiapkan di alur form/brief website.</td></tr>
+  <tr><td>Lead log</td><td>Mengukur kualitas chat sampai quotation dan penjualan nyata.</td><td class="done">Struktur field sudah tersedia. Pengisian dimulai saat lead nyata masuk.</td></tr>
+  <tr><td>Campaign Google Ads</td><td>Mengatur keyword, lokasi, budget, jam tayang, dan iklan.</td><td class="hold">Belum dinyalakan. Menunggu kesiapan offer, admin, dan pengecekan tracking.</td></tr>
+  <tr><td>Offline conversion</td><td>Mengirim kembali data qualified lead atau sale ke Google Ads.</td><td class="hold">Tahap lanjutan, setelah lead log punya data nyata yang cukup.</td></tr>
+</table>
+
+<h2>Kenapa Klik WhatsApp Saja Belum Cukup?</h2>
+<p>Klik WhatsApp adalah sinyal awal, bukan otomatis penjualan. Orang bisa membuka chat lalu tidak membalas, tidak cocok dengan MOQ, atau belum jadi memesan. Karena itu pencatatan harus dilanjutkan sampai status <strong>qualified</strong>, quotation, won/lost, revenue, dan gross profit.</p>
+
+<h2>Yang Sudah Beres Sekarang</h2>
+<ul>
+  <li>Landing page event/komunitas sudah live di domain utama.</li>
+  <li>Google tag <code>AW-374076115</code> sudah terpasang.</li>
+  <li>Conversion action dan label lead sudah dibuat di Google Ads.</li>
+  <li>CTA WhatsApp mengirim event conversion ke Google Ads.</li>
+  <li>Website sudah dideploy dan halaman LP mengembalikan HTTP 200.</li>
+</ul>
+
+<h2>Yang Belum Boleh Dilakukan</h2>
+<ul>
+  <li>Menyalakan campaign sebelum tracking dan alur admin diuji end-to-end.</li>
+  <li>Menganggap semua klik WhatsApp sebagai lead berkualitas.</li>
+  <li>Mengoptimasi iklan berdasarkan klik tanpa melihat quote dan sale.</li>
+  <li>Memasang klaim harga, testimoni, garansi, atau hasil yang belum disetujui dan dibuktikan.</li>
+</ul>
+
+<h2>Kesimpulan</h2>
+<p>Jembatan teknis utama antara website dan Google Ads sudah terpasang. Website mengirim sinyal ketika orang membuka WhatsApp, sementara lead log menjadi jembatan bisnis untuk mengetahui apakah sinyal itu benar-benar menghasilkan penjualan. Yang tersisa bukan sekadar kode, tetapi pengujian nyata, kesiapan admin, dan disiplin mencatat hasil chat sampai sale.</p>
+</body>
+</html>

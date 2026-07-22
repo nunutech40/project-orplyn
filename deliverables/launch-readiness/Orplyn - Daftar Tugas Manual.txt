@@ -1,5 +1,5 @@
 ORPLYN - DAFTAR TUGAS MANUAL
-Terakhir diperbarui: 19 Juli 2026
+Terakhir diperbarui: 22 Juli 2026
 
 TUJUAN
 
@@ -21,18 +21,18 @@ STATUS
 - LATER: sengaja ditunda sampai instruksi atau gate terkait aktif; bukan izin melewati tugas tersebut saat launch.
 - DONE: selesai dengan bukti.
 
-ARAHAN AKTIF 19 JULI 2026
+ARAHAN AKTIF 22 JULI 2026
 
-- Setup akun eksternal ditunda atas instruksi user: GBP, Search Console, GA4/Google tag, indexing, dan Ads.
-- Satu-satunya item NEXT sekarang adalah M-06 karena owner sedang diminta mengirim bukti order event/komunitas.
-- Penundaan setup tidak menghapus launch gate. Item tersebut kembali aktif hanya setelah user meminta setup dilanjutkan.
-- Google Ads tetap OFF. Tidak ada perubahan account, tag ID, billing, campaign, push, atau deployment dari pekerjaan lokal ini.
+- Google Ads tag dan conversion lead-start WhatsApp sudah dipasang, tetapi Google Ads tetap OFF.
+- Bukti yang tersedia sudah diizinkan owner dan dipakai sesuai konteks; contoh event dengan sablon manual dapat ditambahkan nanti tanpa memblokir website saat ini.
+- Domain utama menjelaskan seluruh capability terkonfirmasi, sedangkan LP Ads tetap fokus event/komunitas.
+- Tugas NEXT adalah approval offer/kapasitas dan wording komersial. GBP, Search Console, GA4, indexing, lead-log operation, QA, dan campaign tetap memiliki gate masing-masing.
 
 YANG SUDAH DISELESAIKAN AGENT SECARA LOKAL
 
 - Landing Ads event/community: `/lp/kaos-event-komunitas`.
 - Halaman SEO event/community tetap: `/layanan/kaos-event-komunitas`.
-- Empat slot proof sudah tersedia dan tersembunyi sampai publishable: bukti on-time, jumlah event, portfolio berkonteks, dan testimoni.
+- Portfolio event/panitia, bukti proses manual, dan tanggapan pelanggan yang tersedia sudah dipakai sesuai izin dan konteks. Outcome on-time, jumlah event total, kapasitas, serta garansi tetap gated.
 - Skeleton lead log kosong: `Orplyn - Lead Log.csv`.
 - Definisi field lead log: `marketing/06-whatsapp-sales/lead-log-schema.md`.
 - Draft campaign, keyword, negative, bidding, dan geo: `marketing/04-google-ads/search-event-campaign-draft-2026-07-19.md`.
@@ -40,9 +40,9 @@ YANG SUDAH DISELESAIKAN AGENT SECARA LOKAL
 INPUT YANG HANYA BISA DISELESAIKAN OWNER/USER
 
 1. Akses dan ownership akun Google serta billing Ads saat setup diaktifkan.
-2. ID Google tag/GA4/Ads yang nyata; jangan mengirim password.
-3. Lima bukti order event/community lengkap dengan konteks faktual.
-4. Izin publikasi terpisah untuk foto, desain/logo/wajah, nama, jumlah, timeline/outcome, dan kutipan.
+2. ID GA4 bila analytics tambahan akan dipakai; Google Ads tag/label sudah tersedia. Jangan mengirim password.
+3. Bukti event/manual tambahan hanya bila tersedia dan ingin dipublikasikan.
+4. Izin publikasi spesifik tetap dibutuhkan untuk bukti baru, terutama nama, wajah, timeline/outcome, dan kutipan.
 5. Approval offer event, harga/range, faktor harga, kapasitas/cut-off, serta wording komersial.
 
 ============================================================
@@ -181,7 +181,7 @@ Response rate:
 Catatan tema review:
 
 ============================================================
-M-06 [NEXT - SEBAGIAN SELESAI] KURASI BUKTI ORDER DAN FOTO REPRESENTATIF
+M-06 [DONE UNTUK WEBSITE SAAT INI] KURASI BUKTI ORDER DAN FOTO REPRESENTATIF
 ============================================================
 
 PIC: Owner
@@ -203,7 +203,9 @@ Data yang wajib didapat:
 
 DONE WHEN:
 
-Lima order mempunyai konteks bisnis dan status hak publikasi yang jelas.
+Bukti yang dipakai website mempunyai konteks dan izin yang jelas. Target lima
+order tetap boleh dilengkapi untuk case study/claim yang lebih kuat, tetapi
+tidak memblokir kandidat website faktual saat ini.
 
 HASIL:
 
@@ -211,11 +213,12 @@ Tanggal diterima: 20 Juli 2026
 Jumlah order dengan konteks event/panitia eksplisit: 3
 Foto proses sablon manual: 8
 Izin penggunaan website dan iklan: dikonfirmasi owner
-Folder/link aset: `assets/fotoproduksi/` dan manifest internalnya
+Folder/link aset: `assets/curated/` dan manifest canonical-nya
 Catatan: tiga order event saat ini adalah DTF; jangan dilabeli sebagai sablon manual. Bukti yang menghubungkan event dengan teknik manual dapat ditambahkan kemudian dan bukan penghalang untuk memakai portfolio yang sudah ada.
+Status keputusan: owner menyatakan gunakan bukti yang ada; follow-up event/manual ditunda.
 
 ============================================================
-M-07 [WAITING M-06] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
+M-07 [NEXT] MINTA APPROVAL OFFER DAN KLAIM KOMERSIAL
 ============================================================
 
 PIC: Owner
@@ -282,8 +285,8 @@ PIC: User + Aulia
 Tindakan manual:
 
 - Buka `https://orplyn.id` pada ponsel.
-- Isi brief satuan dan kirim.
-- Isi brief produksi/batch dan kirim.
+- Klik CTA satuan dan lengkapi template WhatsApp yang terbuka.
+- Klik CTA event/batch dan lengkapi template WhatsApp yang terbuka.
 - Pastikan pesan sampai ke Aulia dengan Lead ID, produk, jumlah, deadline, lokasi, dan source.
 - Pastikan admin dapat membalas tanpa meminta semua data dari awal.
 - Simpan screenshot pengirim dan penerima.
@@ -376,7 +379,7 @@ Akun owner:
 Bukti/screenshot:
 
 ============================================================
-M-13 [LATER - SETUP DITUNDA] BUAT GA4/GOOGLE TAG
+M-13 [SEBAGIAN SELESAI] GA4 DAN GOOGLE TAG
 ============================================================
 
 PIC: User
@@ -387,7 +390,8 @@ Tindakan manual:
 - Catat Measurement ID `G-...`.
 - Tentukan akun yang menjadi owner jangka panjang.
 - Berikan Measurement ID kepada agent untuk dipasang.
-- Google Ads conversion dibuat setelah lead log dan business conversion siap.
+- Google Ads tag `AW-374076115` dan conversion lead-start sudah terpasang; jangan dibuat ulang.
+- GA4 tetap opsional/pending bila dibutuhkan untuk analytics web yang lebih lengkap.
 
 DONE WHEN:
 
@@ -397,10 +401,10 @@ HASIL:
 
 Measurement ID:
 Akun owner:
-Bukti/screenshot:
+Bukti/screenshot: Google Ads mendeteksi destination `AW-374076115`; conversion lead-start live.
 
 ============================================================
-M-14 [WAITING M-06, M-07, M-09, M-10, M-12, M-13] MANUAL QA FINAL
+M-14 [WAITING M-07, M-09, M-10, M-12, M-13] MANUAL QA FINAL
 ============================================================
 
 PIC: User + Aulia + agent
@@ -408,7 +412,7 @@ PIC: User + Aulia + agent
 Tindakan manual:
 
 - Periksa homepage dan money pages pada ponsel serta desktop.
-- Periksa landing Ads lokal `/lp/kaos-event-komunitas` dan pastikan hanya ada satu aksi utama `Minta estimasi`.
+- Periksa landing Ads `/lp/kaos-event-komunitas` dan pastikan aksi utama konsisten `Cek kebutuhan & minta estimasi`.
 - Periksa telepon, alamat, jam, Maps, harga/offer, MOQ, lead time, dan proof.
 - Uji semua CTA WhatsApp.
 - Pastikan tidak ada klaim atau foto tanpa izin.

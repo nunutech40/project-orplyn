@@ -46,8 +46,8 @@ export function SiteFooter() {
             />
           </Link>
           <p>
-            Orplyn melayani kaos custom untuk event dan komunitas di Ciputat,
-            serta DTF satuan dan kaos polos sebagai pilihan order lainnya.
+            Sablon dan apparel custom dari workshop Orplyn di Ciputat. Dibuat
+            untuk acara, tim, komunitas, brand, dan kebutuhan personal.
           </p>
         </div>
 
@@ -71,7 +71,7 @@ export function SiteFooter() {
           <WhatsAppQuickStart
             whatsappNumber={business.whatsapp}
             lane="batch"
-            label={`WhatsApp ${business.whatsappDisplay}`}
+            label="Cek kebutuhan & minta estimasi"
             product="Kaos custom event / komunitas"
             useCase="Event / komunitas"
             placement="footer_batch"

@@ -10,7 +10,7 @@ last_updated: 2026-07-20
 
 ## Decision
 
-Owner/user instructed the project to use and maximize the supplied `assets/proof/` materials. This is recorded as owner approval to use selected proof in the local candidate, subject to factual wording and privacy minimization. On the same date, owner confirmed that the supplied `assets/fotoproduksi/` photos are also permitted for website and advertising use.
+Owner/user instructed the project to use and maximize the supplied `assets/proof/` materials. This is recorded as owner approval to use selected proof in the local candidate, subject to factual wording and privacy minimization. On the same date, owner confirmed that the supplied curated production photos are also permitted for website and advertising use. The canonical path is now `assets/curated/`.
 
 The review does **not** turn every screenshot into a claim about manual printing, deadline performance, repeat rate, capacity, or a general quality guarantee.
 
@@ -42,9 +42,9 @@ Three owner-authorized, contextual event/panitia order photos are now rendered i
 
 | Proof ID | Source asset | Context shown | Claim boundary |
 | --- | --- | --- | --- |
-| PROD-ORDER-001 | `assets/fotoproduksi/orders/01-order-event-perpisahan-bkb-paud-kartini-tangerang-dtf-15pcs.jpeg` | Perpisahan BKB PAUD Kartini; sekitar 15 pcs; cotton combed 24s; DTF; Tangerang | Event context only; not manual, on-time, or universal quality proof. |
-| PROD-ORDER-003 | `assets/fotoproduksi/orders/03-order-event-hari-kartini-bustanul-aulad-tangerang-dtf-15pcs.jpeg` | Hari Kartini PAUD/MI Bustanul Aulad; sekitar 15 pcs; PE; DTF; Tangerang | Event context only; not manual, on-time, or universal quality proof. |
-| PROD-ORDER-004 | `assets/fotoproduksi/orders/04-order-event-panitia-bagana-jakarta-dtf-1000pcs.jpeg` | Kaos panitia BAGANA; 1.000 pcs; cotton combed 24s; DTF; Jakarta | Factual portfolio context only; not capacity, on-time, or manual proof. |
+| PROD-ORDER-001 | `assets/curated/production-orders/01-order-event-perpisahan-bkb-paud-kartini-tangerang-dtf-15pcs.jpeg` | Perpisahan BKB PAUD Kartini; sekitar 15 pcs; cotton combed 24s; DTF; Tangerang | Event context only; not manual, on-time, or universal quality proof. |
+| PROD-ORDER-003 | `assets/curated/production-orders/03-order-event-hari-kartini-bustanul-aulad-tangerang-dtf-15pcs.jpeg` | Hari Kartini PAUD/MI Bustanul Aulad; sekitar 15 pcs; PE; DTF; Tangerang | Event context only; not manual, on-time, or universal quality proof. |
+| PROD-ORDER-004 | `assets/curated/production-orders/04-order-event-panitia-bagana-jakarta-dtf-1000pcs.jpeg` | Kaos panitia BAGANA; 1.000 pcs; cotton combed 24s; DTF; Jakarta | Factual portfolio context only; not capacity, on-time, or manual proof. |
 
 The LP also uses `PROD-PROCESS-011` as a factual photo of manual squeegee application. It is process evidence only and is not linked to any named event/order.
 

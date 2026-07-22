@@ -41,19 +41,19 @@ test("server-renders the Orplyn lead funnel", async () => {
 
   const html = await response.text();
   assert.match(html, /<html lang="id">/i);
-  assert.match(html, /Sablon Manual Kaos Event/);
-  assert.match(html, /Komunitas Ciputat/);
-  assert.match(html, /<h1>Sablon manual untuk kaos event/);
+  assert.match(html, /Sablon Manual, DTF &amp; Apparel Custom Ciputat/);
+  assert.match(html, /ORPLYN UNTUK BANYAK KEBUTUHAN/);
+  assert.match(html, /<h1>Sablon dan apparel custom. Dibuat untuk dipakai bersama/);
   assert.match(
     html,
-    /Kirim desain, jumlah, dan tanggal pakai langsung ke Aulia/i,
+    /Dari workshop Orplyn di Ciputat: sablon manual, DTF, kaos event/i,
   );
-  assert.match(html, /Minta estimasi sablon manual/i);
-  assert.match(html, /Chat order satuan/i);
+  assert.match(html, /Cek kebutuhan &amp; minta estimasi/i);
+  assert.match(html, /Lihat kemampuan Orplyn/i);
   assert.match(html, /Lihat hasil produksi Orplyn/i);
   assert.match(html, /LANGSUNG CHAT AULIA/i);
   assert.match(html, /DTF MULAI 1 PCS/i);
-  assert.match(html, /Mulai dari kebutuhan acaramu/i);
+  assert.match(html, /Saat semua bergerak bersama, identitasnya harus terlihat/i);
   assert.match(html, /Tidak perlu mengisi form di website/i);
   assert.match(html, /href="\/kontak#quote"/i);
   assert.doesNotMatch(html, /id="quote-product-full"/i);
@@ -92,9 +92,8 @@ test("server-renders the Orplyn lead funnel", async () => {
     "event/community should be the dominant offer before supporting offers",
   );
   assert.match(html, /id="bukti-pesanan"/i);
-  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
-  assert.match(html, /Contoh hasil warna sablon plastisol/i);
-  assert.match(html, /Lihat bukti satu per satu, tanpa dipotong/i);
+  assert.match(html, /HASIL ORDER &amp; TANGGAPAN PELANGGAN/i);
+  assert.match(html, /Dari Hari Kartini sampai jersey dan repeat order/i);
   assert.match(html, /ulasan-google-hari-kartini-redacted\.jpeg/i);
   assert.doesNotMatch(html, /Lorem ipsum|Customer A|testimoni segera hadir/i);
   assert.match(html, /0823-1757-9311/i);
@@ -146,7 +145,7 @@ test("applies the product MOQ to a batch landing page", async () => {
   assert.match(html, /<h1>Sablon Manual untuk Kaos Event/);
   assert.match(html, /Komunitas<\/h1>/);
   assert.match(html, /Sampaikan jumlah, desain, tanggal pakai, dan lokasi/i);
-  assert.match(html, /Chat order batch/i);
+  assert.match(html, /Cek kebutuhan &amp; minta estimasi/i);
   assert.doesNotMatch(html, /id="quote-product-compact"/i);
   const whatsappMessages = getWhatsAppMessages(html);
   assert.ok(
@@ -170,11 +169,11 @@ test("server-renders the focused event Ads landing with approved contextual proo
   const html = await response.text();
   assert.match(
     html,
-    /<h1>Kaos Event Siap Pakai, Tanpa Pusing Urusan Teknis\.<\/h1>/i,
+    /<h1>Kaos Event untuk Tim, Panitia, dan Komunitas\.<\/h1>/i,
   );
   assert.match(
     html,
-    /Aulia akan mengecek pilihan\s+sablon manual, bahan, MOQ, serta estimasi produksinya/i,
+    /Aulia membantu mengecek\s+sablon manual, bahan, MOQ, serta estimasi sebelum produksi dimulai/i,
   );
   assert.match(html, />Cek kebutuhan &amp; minta estimasi<\/a>/i);
   assert.match(html, /Minimum sablon manual untuk 1 warna/i);
@@ -217,9 +216,18 @@ test("server-renders the focused event Ads landing with approved contextual proo
   assert.match(html, /Kaos peserta Hari Kartini/i);
   assert.match(html, /Kaos panitia BAGANA/i);
   assert.match(html, /order-event-panitia-bagana-dtf\.jpeg/i);
-  assert.match(html, /id="feedback-plastisol"/i);
-  assert.match(html, /Feedback pelanggan tentang hasil plastisol/i);
-  assert.doesNotMatch(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+  assert.match(html, /id="tanggapan-pelanggan"/i);
+  assert.match(html, /Bukan hanya hasilnya\. Lihat juga tanggapan pemesannya/i);
+  assert.match(html, /Pesanan kaos Hari Kartini di Ciputat/i);
+  assert.match(html, /Lihat tekniknya dari hasil yang sudah dikerjakan/i);
+  assert.match(html, /Plastisol desain ilustrasi/i);
+  assert.match(html, /Hasil sablon discharge/i);
+  assert.match(html, /Screen, rakel, warna, lalu curing/i);
+  assert.match(html, /Persiapan screen dan tinta/i);
+  assert.match(
+    html,
+    /Kamu urus acaranya\. Orplyn bantu wujudkan kaos yang akan dipakai\s+bersama/i,
+  );
   assert.doesNotMatch(html, /id="arsip-bukti-event"/i);
   assert.match(html, /Supaya estimasi bisa dicek, siapkan 4 hal ini/i);
   assert.match(html, /Jumlah kaos/i);
